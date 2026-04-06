@@ -111,20 +111,36 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 .tf-btn.selected-true{border-color:var(--accent5);background:rgba(6,214,160,.2);color:var(--accent5)}
 .tf-btn.selected-false{border-color:var(--accent3);background:rgba(255,107,107,.2);color:var(--accent3)}
 
-/* matching */
+/* matching – drag & drop */
 .matching-container{display:flex;gap:1.5rem;align-items:flex-start}
 .matching-col{flex:1;display:flex;flex-direction:column;gap:.5rem}
 .matching-col-title{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:.35rem;padding-left:.25rem}
-.match-left-item{display:flex;align-items:center;gap:.6rem;padding:.7rem .9rem;background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-sm);font-size:.92rem;font-weight:700;cursor:pointer;transition:all .15s;min-height:50px}
-.match-left-item:hover,.match-left-item.selecting{border-color:var(--accent1);background:rgba(108,99,255,.1)}
+.match-left-item{display:flex;align-items:center;gap:.6rem;padding:.7rem .9rem;background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-sm);font-size:.92rem;font-weight:700;min-height:50px;transition:all .15s}
 .match-left-item.matched{border-color:var(--accent2);background:rgba(0,212,170,.08)}
 .match-dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;transition:all .15s}
-.match-left-item.selecting .match-dot{border-color:var(--accent1);background:var(--accent1)}
 .match-left-item.matched .match-dot{border-color:var(--accent2);background:var(--accent2)}
 .match-arrow{display:flex;flex-direction:column;justify-content:center;padding-top:1.8rem;color:var(--muted);font-size:1.3rem;align-items:center;min-width:24px}
-.match-right-item{display:flex;align-items:center;padding:.7rem .9rem;background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-sm);font-size:.92rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s;min-height:50px}
-.match-right-item:hover{border-color:var(--accent4);background:rgba(255,209,102,.08);color:var(--text)}
-.match-right-item.used{border-color:var(--accent2);background:rgba(0,212,170,.08);color:var(--accent2);opacity:.7;pointer-events:none}
+
+/* Drop zone column */
+.match-right-col{flex:1;display:flex;flex-direction:column;gap:.5rem}
+.match-drop-slot{min-height:50px;border:2px dashed var(--border);border-radius:var(--radius-sm);padding:.4rem .6rem;display:flex;align-items:center;transition:all .15s;background:var(--card);position:relative}
+.match-drop-slot.drag-over{border-color:var(--accent1);background:rgba(108,99,255,.1)}
+.match-drop-slot.filled{border-style:solid;border-color:var(--accent2);background:rgba(0,212,170,.07)}
+.match-drop-slot .slot-label{font-size:.7rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;position:absolute;top:3px;left:8px;opacity:.6}
+.match-drop-slot .slot-content{font-size:.88rem;font-weight:700;color:var(--accent2);padding-top:.9rem;width:100%}
+.match-drop-slot .slot-remove{position:absolute;top:4px;right:6px;background:none;border:none;color:var(--accent3);cursor:pointer;font-size:.85rem;opacity:.7;transition:opacity .15s;line-height:1}
+.match-drop-slot .slot-remove:hover{opacity:1}
+.match-drop-slot.empty-hint::before{content:'Kéo thả vào đây';font-size:.8rem;color:var(--muted);font-style:italic;width:100%;text-align:center}
+
+/* Draggable chips */
+.drag-pool{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;padding:.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);min-height:52px}
+.drag-chip{padding:.45rem .9rem;background:var(--card);border:2px solid var(--accent4);border-radius:100px;font-size:.85rem;font-weight:700;color:var(--accent4);cursor:grab;user-select:none;transition:all .15s;display:inline-flex;align-items:center;gap:.35rem}
+.drag-chip:hover{background:rgba(255,209,102,.1);transform:translateY(-2px);box-shadow:0 4px 12px rgba(255,209,102,.25)}
+.drag-chip:active,.drag-chip.dragging{cursor:grabbing;opacity:.5;transform:scale(.95)}
+.drag-chip.placed{display:none}
+.drag-chip.tap-selected{border-color:var(--accent1);color:var(--accent1);background:rgba(108,99,255,.18);box-shadow:0 0 0 3px rgba(108,99,255,.3);transform:translateY(-2px)}
+
+.match-hint{font-size:.8rem;color:var(--muted);background:rgba(108,99,255,.08);border:1px solid rgba(108,99,255,.2);border-radius:var(--radius-sm);padding:.5rem .75rem;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
 .match-pairs-display{margin-top:1rem;display:flex;flex-direction:column;gap:.45rem}
 .match-pair-row{display:flex;align-items:center;gap:.7rem;padding:.55rem .9rem;background:rgba(0,212,170,.06);border:1px solid rgba(0,212,170,.3);border-radius:var(--radius-sm);font-size:.88rem;font-weight:700;animation:popIn .2s ease}
 @keyframes popIn{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
@@ -133,7 +149,11 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 .match-pair-row .pair-right{color:var(--accent2);flex:1}
 .match-pair-row .pair-remove{background:none;border:none;color:var(--accent3);cursor:pointer;font-size:1rem;padding:0 .25rem;opacity:.7;transition:opacity .15s}
 .match-pair-row .pair-remove:hover{opacity:1}
-.match-hint{font-size:.8rem;color:var(--muted);background:rgba(108,99,255,.08);border:1px solid rgba(108,99,255,.2);border-radius:var(--radius-sm);padding:.5rem .75rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+
+@media(max-width:720px){
+  .matching-container{flex-direction:column}
+  .match-arrow{display:none}
+}
 
 /* nav */
 .q-nav{display:flex;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap}
@@ -227,6 +247,14 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
     <div class="form-group">
       <label>Họ và tên</label>
       <input type="text" id="studentName" placeholder="Nhập tên của bạn..." autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label>Lớp</label>
+      <input type="text" id="studentClass" placeholder="Ví dụ: 6A1, 7B2..." autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label>Trường</label>
+      <input type="text" id="studentSchool" placeholder="Nhập tên trường của bạn..." autocomplete="off">
     </div>
     <div class="form-group">
       <label>Danh mục</label>
@@ -410,13 +438,17 @@ function initLobby() {
       el.innerHTML = '';
     }
     document.getElementById('btnStart').disabled =
-      !qs.length || !document.getElementById('studentName').value.trim();
+      !qs.length || !document.getElementById('studentName').value.trim()
+      || !document.getElementById('studentClass').value.trim()
+      || !document.getElementById('studentSchool').value.trim();
   };
 
   catSel.addEventListener('change', refreshLevels);
   lvlSel.addEventListener('change', refreshMinitests);
   mtSel.addEventListener('change', refreshMeta);
   document.getElementById('studentName').addEventListener('input', refreshMeta);
+  document.getElementById('studentClass').addEventListener('input', refreshMeta);
+  document.getElementById('studentSchool').addEventListener('input', refreshMeta);
   refreshLevels();
 }
 
@@ -425,10 +457,12 @@ function initLobby() {
    ============================================================ */
 function startExam() {
   const name   = document.getElementById('studentName').value.trim();
+  const cls    = document.getElementById('studentClass').value.trim();
+  const school = document.getElementById('studentSchool').value.trim();
   const catId  = document.getElementById('categorySelect').value;
   const lvlId  = document.getElementById('levelSelect').value;
   const mtName = document.getElementById('minitestSelect').value;
-  if (!name) return;
+  if (!name || !cls || !school) return;
 
   const cat = State.quizData.categories.find(c => c.id === catId);
   const lv  = cat?.levels.find(l => l.id === lvlId);
@@ -446,6 +480,8 @@ function startExam() {
 
   State.session = {
     studentName:  name,
+    studentClass: cls,
+    studentSchool: school,
     category:     cat?.name || catId,
     level:        lv?.name  || lvlId,
     minitest:     mtName,
@@ -461,7 +497,7 @@ function startExam() {
   document.getElementById('lobby').style.display  = 'none';
   document.getElementById('exam').style.display   = 'flex';
   document.getElementById('result').style.display = 'none';
-  document.getElementById('topbarInfo').textContent = `👤 ${name} · ${mtName}`;
+  document.getElementById('topbarInfo').textContent = `👤 ${name} · ${cls} · ${mtName}`;
 
   buildSidebar();
   renderQuestion(0);
@@ -730,93 +766,198 @@ function selectTF(el) {
   updateSidebar();
 }
 
-/* ── MATCHING ── */
+/* ── MATCHING – DRAG & DROP ── */
 function renderMatching(q, qi) {
   const body = document.getElementById('q-body');
 
-  // Image-only question (empty pairs)
   if (!q.pairs || q.pairs.length === 0) {
     body.innerHTML = `<div class="q-img-notice">🖼️ Câu nối cột này dùng hình ảnh — vui lòng xem đề thi in.</div>`;
     return;
   }
 
-  if (!State.matching[qi])  State.matching[qi]  = {};
-  if (State.matchSel[qi] === undefined) State.matchSel[qi] = null;
-
-  const matched      = State.matching[qi];
+  if (!State.matching[qi]) State.matching[qi] = {};
+  const matched = State.matching[qi];  // { left: right }
   const matchedRights = new Set(Object.values(matched));
-  const selLeft      = State.matchSel[qi];
 
-  // Use shuffled display columns (set during prepareQuestions)
-  const leftItems  = q._leftShuffled  || [...new Set(q.pairs.map(p => p.left))];
+  const leftItems  = q._leftShuffled  || q.pairs.map(p => p.left);
   const rightItems = q._rightShuffled || [...new Set(q.pairs.map(p => p.right))];
 
+  // Build drag pool (unplaced right items)
+  const poolItems = rightItems.filter(r => !matchedRights.has(r));
+
   body.innerHTML = `
-    <div class="match-hint">💡 Nhấn một mục ở cột <strong>Trái</strong> → rồi nhấn mục tương ứng ở cột <strong>Phải</strong></div>
+    <div class="match-hint">🖱️ Kéo thả đáp án từ ô bên dưới vào vị trí tương ứng bên phải</div>
+
+    <div style="font-size:.75rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:.4rem">📦 Đáp án — kéo vào ô bên phải:</div>
+    <div class="drag-pool" id="dragPool-${qi}">
+      ${rightItems.map(r => `
+        <div class="drag-chip ${matchedRights.has(r) ? 'placed' : ''}"
+             draggable="true"
+             data-right="${encodeURIComponent(r)}"
+             data-qi="${qi}"
+             id="chip-${qi}-${encodeURIComponent(r)}">
+          ⠿ ${r}
+        </div>`).join('')}
+    </div>
+
     <div class="matching-container">
       <div class="matching-col">
         <div class="matching-col-title">Cột trái</div>
-        ${leftItems.map(left => `
-          <div class="match-left-item ${matched[left]?'matched':''} ${selLeft===left?'selecting':''}"
-               data-qi="${qi}" data-left="${encodeURIComponent(left)}"
-               onclick="selectMatchLeft(this)">
+        ${leftItems.map((left, idx) => `
+          <div class="match-left-item ${matched[left] ? 'matched' : ''}">
             <div class="match-dot"></div>
             <span>${left}</span>
-            ${matched[left] ? `<span style="margin-left:auto;font-size:.72rem;color:var(--accent2);white-space:nowrap;padding-left:.3rem">→ ${matched[left]}</span>` : ''}
           </div>`).join('')}
       </div>
-      <div class="match-arrow">↔</div>
-      <div class="matching-col">
-        <div class="matching-col-title">Cột phải</div>
-        ${rightItems.map(right => `
-          <div class="match-right-item ${matchedRights.has(right)?'used':''}"
-               data-qi="${qi}" data-right="${encodeURIComponent(right)}"
-               onclick="selectMatchRight(this)">
-            ${right}
+      <div class="match-arrow">→</div>
+      <div class="match-right-col">
+        <div class="matching-col-title">Kéo đáp án vào đây</div>
+        ${leftItems.map((left, idx) => `
+          <div class="match-drop-slot ${matched[left] ? 'filled' : 'empty-hint'}"
+               data-qi="${qi}"
+               data-left="${encodeURIComponent(left)}"
+               id="slot-${qi}-${idx}">
+            <span class="slot-label">${left.length > 18 ? left.slice(0,18)+'…' : left} →</span>
+            ${matched[left]
+              ? `<span class="slot-content">${matched[left]}</span>
+                 <button class="slot-remove"
+                         data-qi="${qi}" data-left="${encodeURIComponent(left)}"
+                         onclick="removeMatchDrop(this)">✕</button>`
+              : ''}
           </div>`).join('')}
       </div>
-    </div>
-    ${Object.keys(matched).length > 0 ? `
-      <div class="match-pairs-display">
-        <div style="font-size:.75rem;font-weight:800;color:var(--muted);margin-bottom:.3rem">✅ Cặp đã nối:</div>
-        ${Object.entries(matched).map(([l,r]) => `
-          <div class="match-pair-row">
-            <span class="pair-left">${l}</span>
-            <span class="pair-arrow">→</span>
-            <span class="pair-right">${r}</span>
-            <button class="pair-remove"
-                    data-qi="${qi}" data-left="${encodeURIComponent(l)}"
-                    onclick="removeMatch(this)">✕</button>
-          </div>`).join('')}
-      </div>` : ''}`;
+    </div>`;
+
+  // Bind drag events
+  body.querySelectorAll('.drag-chip').forEach(chip => {
+    chip.addEventListener('dragstart', onDragStart);
+    chip.addEventListener('dragend',   onDragEnd);
+    // Touch: tap to select chip
+    chip.addEventListener('click', onChipTap);
+  });
+  body.querySelectorAll('.match-drop-slot').forEach(slot => {
+    slot.addEventListener('dragover',  onDragOver);
+    slot.addEventListener('dragleave', onDragLeave);
+    slot.addEventListener('drop',      onDrop);
+    // Touch: tap to place selected chip
+    slot.addEventListener('click', onSlotTap);
+  });
 }
 
-function selectMatchLeft(el) {
-  const qi   = parseInt(el.dataset.qi);
-  const left = decodeURIComponent(el.dataset.left);
-  State.matchSel[qi] = State.matchSel[qi] === left ? null : left;
-  renderMatching(State.questions[qi], qi);
+// ── Drag helpers ──
+let _dragRight = null;
+let _dragQi    = null;
+let _dragChipEl = null;
+
+function onDragStart(e) {
+  _dragRight  = decodeURIComponent(e.currentTarget.dataset.right);
+  _dragQi     = parseInt(e.currentTarget.dataset.qi);
+  _dragChipEl = e.currentTarget;
+  e.currentTarget.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/plain', _dragRight);
 }
 
-function selectMatchRight(el) {
-  const qi    = parseInt(el.dataset.qi);
-  const right = decodeURIComponent(el.dataset.right);
-  const sel   = State.matchSel[qi];
-  if (!sel) return;
+function onDragEnd(e) {
+  e.currentTarget.classList.remove('dragging');
+}
+
+function onDragOver(e) {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'move';
+  e.currentTarget.classList.add('drag-over');
+}
+
+function onDragLeave(e) {
+  e.currentTarget.classList.remove('drag-over');
+}
+
+function onDrop(e) {
+  e.preventDefault();
+  e.currentTarget.classList.remove('drag-over');
+
+  const qi   = parseInt(e.currentTarget.dataset.qi);
+  const left = decodeURIComponent(e.currentTarget.dataset.left);
+  const right = _dragRight;
+
+  if (!right || qi !== _dragQi) return;
+
   if (!State.matching[qi]) State.matching[qi] = {};
-  State.matching[qi][sel] = right;
-  State.matchSel[qi] = null;
+
+  // If slot already has a value, return it to pool before replacing
+  const prev = State.matching[qi][left];
+  if (prev) {
+    const prevChip = document.getElementById(`chip-${qi}-${encodeURIComponent(prev)}`);
+    if (prevChip) prevChip.classList.remove('placed');
+  }
+
+  // If this right item was already placed somewhere else, free that slot
+  Object.keys(State.matching[qi]).forEach(l => {
+    if (State.matching[qi][l] === right && l !== left) {
+      delete State.matching[qi][l];
+    }
+  });
+
+  State.matching[qi][left] = right;
   State.session.clicks++;
   updateSidebar();
   renderMatching(State.questions[qi], qi);
 }
 
-function removeMatch(el) {
+function removeMatchDrop(el) {
   const qi   = parseInt(el.dataset.qi);
   const left = decodeURIComponent(el.dataset.left);
   if (State.matching[qi]) delete State.matching[qi][left];
+  State.session.clicks++;
   updateSidebar();
   renderMatching(State.questions[qi], qi);
+}
+
+// ── Touch/click tap-to-select for mobile ──
+let _tapChip = null;
+
+function onChipTap(e) {
+  const chip = e.currentTarget;
+  const qi   = parseInt(chip.dataset.qi);
+  // Deselect previous
+  document.querySelectorAll('.drag-chip.tap-selected').forEach(c => c.classList.remove('tap-selected'));
+  if (_tapChip === chip) { _tapChip = null; return; }
+  _tapChip = chip;
+  _dragRight  = decodeURIComponent(chip.dataset.right);
+  _dragQi     = qi;
+  chip.classList.add('tap-selected');
+}
+
+function onSlotTap(e) {
+  if (!_tapChip || !_dragRight) return;
+  const slot = e.currentTarget;
+  const qi   = parseInt(slot.dataset.qi);
+  if (qi !== _dragQi) return;
+  const left = decodeURIComponent(slot.dataset.left);
+
+  if (!State.matching[qi]) State.matching[qi] = {};
+
+  const prev = State.matching[qi][left];
+  if (prev) {
+    const prevChip = document.getElementById(`chip-${qi}-${encodeURIComponent(prev)}`);
+    if (prevChip) prevChip.classList.remove('placed');
+  }
+  Object.keys(State.matching[qi]).forEach(l => {
+    if (State.matching[qi][l] === _dragRight && l !== left) delete State.matching[qi][l];
+  });
+
+  State.matching[qi][left] = _dragRight;
+  State.session.clicks++;
+  _tapChip = null; _dragRight = null; _dragQi = null;
+  updateSidebar();
+  renderMatching(State.questions[qi], qi);
+}
+
+// ── Old click helpers kept as no-ops (grading still uses State.matching) ──
+function selectMatchLeft()  {}
+function selectMatchRight() {}
+function removeMatch(el) {
+  removeMatchDrop(el);
 }
 
 /* ============================================================
@@ -853,10 +994,6 @@ function submitExam() {
   const integrity = computeIntegrity(result, elapsed);
   saveRecord(result, elapsed, integrity);
   showResult(result, integrity);
-
-  // 🌐 Gửi kết quả lên Google Sheet (chạy nền, không chặn UI)
-  submitToGoogleSheet(result, elapsed, integrity);
-
 
   // 🌐 Gửi kết quả lên Google Sheet (chạy nền, không chặn UI)
   submitToGoogleSheet(result, elapsed, integrity);
@@ -962,9 +1099,11 @@ function saveRecord(result, elapsedSec, integrity) {
   const s   = State.session;
   const pct = Math.round((result.correct / result.total) * 100);
   const rec = {
-    id:           Date.now(),
-    studentName:  s.studentName,
-    category:     s.category,
+    id:            Date.now(),
+    studentName:   s.studentName,
+    studentClass:  s.studentClass  || '',
+    studentSchool: s.studentSchool || '',
+    category:      s.category,
     level:        s.level,
     minitest:     s.minitest,
     date:         new Date().toLocaleString('vi-VN'),
@@ -1059,7 +1198,7 @@ function renderRecords() {
   el.innerHTML = `
     <table class="records-table">
       <thead><tr>
-        <th>#</th><th>Học sinh</th><th>Bài thi</th>
+        <th>#</th><th>Học sinh</th><th>Lớp</th><th>Trường</th><th>Bài thi</th>
         <th>Điểm</th><th>Đúng/Tổng</th>
         <th>T.gian</th><th>Tab</th><th>Click</th>
         <th>Tính hợp lệ</th><th>Ngày làm</th>
@@ -1068,6 +1207,8 @@ function renderRecords() {
         <tr>
           <td style="color:var(--muted)">${i+1}</td>
           <td><strong>${r.studentName}</strong></td>
+          <td style="font-size:.85rem">${r.studentClass || '–'}</td>
+          <td style="font-size:.8rem">${r.studentSchool || '–'}</td>
           <td style="font-size:.8rem">${r.minitest}<br>
               <span style="color:var(--muted)">${r.level}</span></td>
           <td class="${r.score>=70?'pass':'fail'}">${r.score}%</td>
@@ -1095,11 +1236,12 @@ function exportCSV() {
   try { records = JSON.parse(localStorage.getItem('eduquiz_records') || '[]'); } catch {}
   if (!records.length) { alert('Không có dữ liệu để xuất.'); return; }
 
-  const h = ['STT','Học sinh','Danh mục','Cấp độ','Bài thi','Ngày','Điểm%',
+  const h = ['STT','Học sinh','Lớp','Trường','Danh mục','Cấp độ','Bài thi','Ngày','Điểm%',
              'Đúng','Sai','Bỏ qua','Tổng','Thời gian(s)','Chuyển tab',
              'Số lần click','TB giây/câu','Hết giờ','Hợp lệ','Cờ cảnh báo'];
   const rows = records.map((r,i) => [
-    i+1, r.studentName, r.category, r.level, r.minitest, r.date,
+    i+1, r.studentName, r.studentClass||'', r.studentSchool||'',
+    r.category, r.level, r.minitest, r.date,
     r.score, r.correct, r.incorrect ?? r.total-r.correct-r.skipped,
     r.skipped, r.total, r.elapsedSec, r.tabSwitches, r.clicks ?? 0,
     (r.avgSecPerQ||0).toFixed(1), r.timedOut?'Có':'Không',
@@ -1211,7 +1353,7 @@ const DEMO_DATA = {
 
 // ── ⚙️ CẤU HÌNH – CHỈ CẦN SỬA 1 DÒNG NÀY ──────────────────
 // Dán URL Google Apps Script Web App vào đây sau khi deploy
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwoqTNRIGf4Y3f4GMEAA3kyGGwxF0bpWPI8FMgkSRNOdP_WxMrVXEl-YQOtYPShT4IM7g/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbylcTLKJ29VRcPeHgdVZ5qfsfqPnxg0WYM0Af35f6yUYtEmIEg0YjGreh0wtkI-2xZXBg/exec';
 const REQUEST_TIMEOUT_MS = 10000;  // Timeout 10 giây
 
 // Tập hợp các bài đã nộp (chống gửi trùng phía client)
@@ -1290,17 +1432,19 @@ async function saveToGoogleSheet(data) {
 
   // Chuẩn bị payload
   const payload = {
-    submissionId: generateSubmissionId(data.studentName, data.testName),
-    studentName:  data.studentName  || 'Ẩn danh',
-    testName:     data.testName     || 'Không rõ',
-    score:        data.score        ?? 0,
-    correct:      data.correct      || '0/0',
-    time:         data.time         || '00:00',
-    tabSwitch:    data.tabSwitch    ?? 0,
-    clickCount:   data.clickCount   ?? 0,
-    status:       data.status       || 'OK',
-    timestamp:    data.timestamp    || new Date().toLocaleString('vi-VN'),
-    note:         data.note         || ''
+    submissionId:  generateSubmissionId(data.studentName, data.testName),
+    studentName:   data.studentName   || 'Ẩn danh',
+    studentClass:  data.studentClass  || '',
+    studentSchool: data.studentSchool || '',
+    testName:      data.testName      || 'Không rõ',
+    score:         data.score         ?? 0,
+    correct:       data.correct       || '0/0',
+    time:          data.time          || '00:00',
+    tabSwitch:     data.tabSwitch     ?? 0,
+    clickCount:    data.clickCount    ?? 0,
+    status:        data.status        || 'OK',
+    timestamp:     data.timestamp     || new Date().toLocaleString('vi-VN'),
+    note:          data.note          || ''
   };
 
   console.log('📦 [GoogleSheet] Payload:', payload);
@@ -1358,16 +1502,18 @@ async function submitToGoogleSheet(result, elapsedSec, integrity) {
   const ss2 = String(elapsedSec % 60).padStart(2, '0');
 
   await saveToGoogleSheet({
-    studentName: s.studentName,
-    testName:    [s.category, s.level, s.minitest].filter(Boolean).join(' > '),
-    score:       pct,
-    correct:     `${result.correct}/${result.total}`,
-    time:        `${mm}:${ss2}`,
-    tabSwitch:   integrity.tabSwitches,
-    clickCount:  integrity.clicks,
-    status:      integrity.valid ? 'OK' : 'Nghi van: ' + (integrity.flags[0] || ''),
-    timestamp:   new Date().toLocaleString('vi-VN'),
-    note:        integrity.timedOut ? 'Het gio' : ''
+    studentName:   s.studentName,
+    studentClass:  s.studentClass  || '',
+    studentSchool: s.studentSchool || '',
+    testName:      [s.category, s.level, s.minitest].filter(Boolean).join(' > '),
+    score:         pct,
+    correct:       `${result.correct}/${result.total}`,
+    time:          `${mm}:${ss2}`,
+    tabSwitch:     integrity.tabSwitches,
+    clickCount:    integrity.clicks,
+    status:        integrity.valid ? 'OK' : 'Nghi van: ' + (integrity.flags[0] || ''),
+    timestamp:     new Date().toLocaleString('vi-VN'),
+    note:          integrity.timedOut ? 'Het gio' : ''
   });
 }
 

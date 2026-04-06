@@ -70,7 +70,7 @@ function doPost(e) {
     // ── Bước 6: Tạo dòng tiêu đề nếu sheet còn trống ─────
     if (sheet.getLastRow() === 0) {
       var headers = [
-        'STT', 'Thời gian nộp', 'Họ tên học sinh', 'Tên bài thi',
+        'STT', 'Thời gian nộp', 'Họ tên học sinh', 'Lớp', 'Trường', 'Tên bài thi',
         'Điểm (%)', 'Đúng/Tổng', 'Thời gian làm bài',
         'Chuyển tab', 'Số lần click', 'Trạng thái', 'Ghi chú'
       ];
@@ -92,17 +92,19 @@ function doPost(e) {
     var timestamp  = data.timestamp || new Date().toLocaleString('vi-VN');
 
     var newRow = [
-      rowNumber,                    // STT (tự động)
-      timestamp,                    // Thời gian nộp bài
-      data.studentName  || '',      // Họ tên học sinh
-      data.testName     || '',      // Tên bài thi
-      data.score        || 0,       // Điểm %
-      data.correct      || '0/0',   // Ví dụ: 30/40
-      data.time         || '00:00', // Thời gian làm bài
-      data.tabSwitch    || 0,       // Số lần chuyển tab
-      data.clickCount   || 0,       // Số lần click chuột
-      data.status       || 'OK',    // OK / Gian lận
-      data.note         || ''       // Ghi chú thêm (nếu có)
+      rowNumber,                      // STT (tự động)
+      timestamp,                      // Thời gian nộp bài
+      data.studentName   || '',       // Họ tên học sinh
+      data.studentClass  || '',       // Lớp
+      data.studentSchool || '',       // Trường
+      data.testName      || '',       // Tên bài thi
+      data.score         || 0,        // Điểm %
+      data.correct       || '0/0',    // Ví dụ: 17/20
+      data.time          || '00:00',  // Thời gian làm bài
+      data.tabSwitch     || 0,        // Số lần chuyển tab
+      data.clickCount    || 0,        // Số lần click chuột
+      data.status        || 'OK',     // OK / Gian lận
+      data.note          || ''        // Ghi chú thêm (nếu có)
     ];
 
     // ── Bước 8: Ghi dữ liệu vào Sheet ────────────────────
@@ -148,17 +150,19 @@ function testDoPost() {
   var fakeEvent = {
     postData: {
       contents: JSON.stringify({
-        submissionId: 'test_' + Date.now(),
-        studentName:  'Nguyễn Văn Test',
-        testName:     'IC3 Demo Test',
-        score:        85,
-        correct:      '17/20',
-        time:         '12:34',
-        tabSwitch:    1,
-        clickCount:   42,
-        status:       'OK',
-        timestamp:    new Date().toLocaleString('vi-VN'),
-        note:         'Chạy từ hàm test'
+        submissionId:  'test_' + Date.now(),
+        studentName:   'Nguyễn Văn Test',
+        studentClass:  '6A1',
+        studentSchool: 'THCS Nguyễn Du',
+        testName:      'IC3 Demo Test',
+        score:         85,
+        correct:       '17/20',
+        time:          '12:34',
+        tabSwitch:     1,
+        clickCount:    42,
+        status:        'OK',
+        timestamp:     new Date().toLocaleString('vi-VN'),
+        note:          'Chạy từ hàm test'
       })
     }
   };
