@@ -3652,27 +3652,47 @@
             "Minitest 1": [
               {
                 "id": 1,
-                "question": "Với mỗi câu phát biểu về trình duyệt Web, hãy chọn Có nếu bạn có thể thực hiện tác vụ hoặc chọn Không nếu bạn không thể.\n- Tùy chỉnh các nút, menu hoặc thanh công cụ của trình duyệt Web.\n- Thay đổi trang chủ của trình duyệt Web.\n- Thêm các phần bổ trợ và phần mở rộng vào trình duyệt để có thêm chức năng.",
+                "question": "Với mỗi câu phát biểu về trình duyệt Web, hãy chọn Có nếu bạn có thể thực hiện tác vụ hoặc chọn Không nếu bạn không thể.",
                 "image": false,
                 "type": "truefalse",
                 "statements": [
                   {
-                    "text": "Có / Không cho từng phát biểu",
-                    "answer": "false"
+                    "text": "Tùy chỉnh các nút, menu hoặc thanh công cụ của trình duyệt Web.",
+                    "answer": "true"
+                  },
+                  {
+                    "text": "Thay đổi trang chủ của trình duyệt Web.",
+                    "answer": "true"
+                  },
+                  {
+                    "text": "Thêm các phần bổ trợ và phần mở rộng vào trình duyệt để có thêm chức năng.",
+                    "answer": "true"
                   }
                 ],
-                "label_true": "ĐÚNG",
-                "label_false": "SAI"
+                "label_true": "CÓ",
+                "label_false": "KHÔNG"
               },
               {
                 "id": 2,
-                "question": "Tính linh hoạt khi sử dụng (Flexibility in Use): Thiết kế phù hợp với nhiều sở thích và khả năng của từng cá nhân.\nDễ dàng thay thế (Easy to replace): Thiết kế cho phép thay thế dễ dàng.\nÍt nỗ lực thể chất (Low Physical Effort): Thiết kế có thể được sử dụng hiệu quả, thoải mái và ít mệt mỏi.\nKhả năng mở rộng (Scalable): Thiết kế dễ dàng nâng cấp và mở rộng.",
+                "question": "Với mỗi phát biểu sau, hãy chọn Đúng nếu đó là một trong các nguyên tắc Thiết kế Phổ quát (Universal Design), hoặc chọn Sai nếu không phải.",
                 "image": false,
                 "type": "truefalse",
                 "statements": [
                   {
-                    "text": "Đúng / Sai cho từng phát biểu",
+                    "text": "Tính linh hoạt khi sử dụng (Flexibility in Use): Thiết kế phù hợp với nhiều sở thích và khả năng.",
                     "answer": "true"
+                  },
+                  {
+                    "text": "Dễ dàng thay thế (Easy to replace): Thiết kế cho phép thay thế dễ dàng.",
+                    "answer": "false"
+                  },
+                  {
+                    "text": "Ít nỗ lực thể chất (Low Physical Effort): Thiết kế sử dụng hiệu quả, thoải mái, ít mệt mỏi.",
+                    "answer": "true"
+                  },
+                  {
+                    "text": "Khả năng mở rộng (Scalable): Thiết kế dễ dàng nâng cấp và mở rộng.",
+                    "answer": "false"
                   }
                 ],
                 "label_true": "ĐÚNG",
@@ -3960,14 +3980,17 @@
               },
               {
                 "id": 19,
-                "question": "Bạn hãy nhấp chọn vào tính năng chia sẻ toàn bộ lịch của bạn với người khác trong hình sau đây?",
+                "question": "Bạn hãy chọn tính năng dùng để chia sẻ toàn bộ lịch với người khác trong Microsoft Outlook Calendar:",
                 "image": true,
-                "type": "single_image",
+                "type": "single",
                 "options": [
-                  "Hình ảnh giao diện Microsoft Outlook Calendar"
+                  "Share Calendar (Chia sẻ lịch)",
+                  "New Event (Sự kiện mới)",
+                  "Print (In lịch)",
+                  "View Settings (Cài đặt hiển thị)"
                 ],
                 "correct": [
-                  "Nút Share Calendar / Chia sẻ lịch"
+                  "Share Calendar (Chia sẻ lịch)"
                 ]
               },
               {
@@ -3988,14 +4011,17 @@
               },
               {
                 "id": 21,
-                "question": "Bạn đang sử dụng điện thoại Android và muốn giảm độ sáng để tiết kiệm pin. Tính năng sau đây có thể cho phép bạn điều chỉnh độ sáng trên điện thoại này? (Chọn 1)",
+                "question": "Bạn đang sử dụng điện thoại Android và muốn giảm độ sáng để tiết kiệm pin. Tính năng nào sau đây cho phép bạn điều chỉnh độ sáng? (Chọn 1)",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "Xem hình"
+                  "Quick Settings Panel (Thanh thông báo nhanh)",
+                  "Display Settings trong Settings App",
+                  "Power Saving Mode",
+                  "Accessibility Settings"
                 ],
                 "correct": [
-                  "Xem hình"
+                  "Display Settings trong Settings App"
                 ]
               },
               {
@@ -4071,14 +4097,17 @@
               },
               {
                 "id": 26,
-                "question": "Bạn cần thêm cuộc họp Hội đồng sinh viên diễn ra vào tháng tới vào lịch của bạn. Bạn có thể lựa chọn hai phần tử nào sau đây để mở hộp thoại sự kiện? (Chọn 2)",
+                "question": "Bạn cần thêm cuộc họp Hội đồng sinh viên vào lịch. Bạn có thể lựa chọn hai phần tử nào sau đây để mở hộp thoại tạo sự kiện? (Chọn 2)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
-                  "Xem hình - giao diện lịch"
+                  "Nhấp vào ô ngày cụ thể trên lịch",
+                  "Nhấp vào nút New Event",
+                  "Nhấp vào tên tháng",
+                  "Nhấp vào mũi tên điều hướng tháng"
                 ],
                 "correct": [
-                  "Nhấp vào ô ngày cụ thể",
+                  "Nhấp vào ô ngày cụ thể trên lịch",
                   "Nhấp vào nút New Event"
                 ]
               },
@@ -4100,14 +4129,26 @@
               },
               {
                 "id": 28,
-                "question": "Sắp xếp các bước tạo bảng điểm trò chơi trong trang tính theo đúng thứ tự:\n1. Tạo tiêu đề cột: Người chơi, Lượt truy cập, Lượt chạy và Lỗi.\n2. Tạo một trang tính.\n3. Sao chép trang tính cho mỗi trò chơi.\n4. Điền tên vào cột Người chơi.",
+                "question": "Sắp xếp các bước tạo bảng điểm trò chơi trong trang tính theo đúng thứ tự. Ghép mỗi Vị trí (Bước 1→4) với nội dung tương ứng:",
                 "image": false,
-                "type": "single_image",
-                "options": [
-                  "Bước 1 / Bước 2 / Bước 3 / Bước 4"
-                ],
-                "correct": [
-                  "Bước 1=Tạo trang tính; Bước 2=Sao chép trang tính; Bước 3=Tạo tiêu đề cột; Bước 4=Điền tên"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Bước 1",
+                    "right": "Tạo một trang tính"
+                  },
+                  {
+                    "left": "Bước 2",
+                    "right": "Sao chép trang tính cho mỗi trò chơi"
+                  },
+                  {
+                    "left": "Bước 3",
+                    "right": "Tạo tiêu đề cột: Người chơi, Lượt truy cập, Lượt chạy và Lỗi"
+                  },
+                  {
+                    "left": "Bước 4",
+                    "right": "Điền tên vào cột Người chơi"
+                  }
                 ]
               },
               {
@@ -4915,17 +4956,29 @@
               },
               {
                 "id": 21,
-                "question": "Với mỗi câu phát biểu về phản hồi một bài đăng chứa thông tin y tế không chính xác, hãy chọn Có hoặc Không:\n- 'SAI RỒI! Bạn có TÌM HIỂU KỸ trước khi đăng bài này không?'\n- 'Rất nhiều bác sĩ, bao gồm cả Jane Smith từ Harvard Medical School đều không đồng ý'.\n- 'Rất khó để tìm hiểu tất cả mọi thứ, nhưng có rất nhiều nguồn để tìm hiểu về vấn đề này'.\n- 'Đây là việc làm sai lầm và khiến bạn trong thật ngờ nghệch! Rõ ràng là bạn không tìm hiểu từ Harvard Medical School'.",
+                "question": "Với mỗi phản hồi về bài đăng chứa thông tin y tế không chính xác, hãy chọn Có nếu đó là phản hồi phù hợp, Không nếu không phù hợp:",
                 "image": false,
                 "type": "truefalse",
                 "statements": [
                   {
-                    "text": "Có / Không (phản hồi phù hợp)",
+                    "text": "\"SAI RỒI! Bạn có TÌM HIỂU KỸ trước khi đăng bài này không?\"",
+                    "answer": "false"
+                  },
+                  {
+                    "text": "\"Rất nhiều bác sĩ, bao gồm cả Jane Smith từ Harvard Medical School đều không đồng ý.\"",
                     "answer": "true"
+                  },
+                  {
+                    "text": "\"Rất khó để tìm hiểu tất cả mọi thứ, nhưng có rất nhiều nguồn để tìm hiểu về vấn đề này.\"",
+                    "answer": "true"
+                  },
+                  {
+                    "text": "\"Đây là việc làm sai lầm và khiến bạn trông thật ngờ nghệch! Rõ ràng bạn không học từ Harvard.\"",
+                    "answer": "false"
                   }
                 ],
-                "label_true": "ĐÚNG",
-                "label_false": "SAI"
+                "label_true": "CÓ",
+                "label_false": "KHÔNG"
               },
               {
                 "id": 22,
@@ -5812,14 +5865,34 @@
               },
               {
                 "id": 18,
-                "question": "Trong trình duyệt Google Chrome, để vô hiệu hóa quyền truy cập vào máy ảnh trên thiết bị hiện tại, hãy sắp xếp các bước theo thứ tự đúng:\n1. Chọn Tùy chỉnh và điều khiển dấu chấm lửng dọc của Google Chrome\n2. Chọn Settings\n3. Chọn Privacy and security\n4. Chọn Site Settings\n5. Chọn Camera\n6. Chọn biểu tượng On/Off cho Ask before accessing",
+                "question": "Trong trình duyệt Google Chrome, để vô hiệu hóa quyền truy cập vào máy ảnh, sắp xếp các bước theo thứ tự đúng. Ghép Bước với hành động tương ứng:",
                 "image": false,
-                "type": "single_image",
-                "options": [
-                  "6 bước sắp xếp theo thứ tự"
-                ],
-                "correct": [
-                  "1→2→3→4→5→6"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Bước 1",
+                    "right": "Chọn Tùy chỉnh và điều khiển (⋮) của Chrome"
+                  },
+                  {
+                    "left": "Bước 2",
+                    "right": "Chọn Settings"
+                  },
+                  {
+                    "left": "Bước 3",
+                    "right": "Chọn Privacy and security"
+                  },
+                  {
+                    "left": "Bước 4",
+                    "right": "Chọn Site Settings"
+                  },
+                  {
+                    "left": "Bước 5",
+                    "right": "Chọn Camera"
+                  },
+                  {
+                    "left": "Bước 6",
+                    "right": "Chọn biểu tượng On/Off cho Ask before accessing"
+                  }
                 ]
               },
               {
@@ -6007,14 +6080,17 @@
               },
               {
                 "id": 29,
-                "question": "Hình ảnh câu hỏi 29 - Nhận biết biểu tượng",
+                "question": "Biểu tượng nào trong hình đại diện cho chức năng Bluetooth?",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "Xem hình ảnh"
+                  "Biểu tượng sóng WiFi",
+                  "Biểu tượng Bluetooth (chữ B cách điệu)",
+                  "Biểu tượng Airplane Mode",
+                  "Biểu tượng Location/GPS"
                 ],
                 "correct": [
-                  "Xem hình ảnh"
+                  "Biểu tượng Bluetooth (chữ B cách điệu)"
                 ]
               },
               {
@@ -6182,14 +6258,30 @@
               },
               {
                 "id": 38,
-                "question": "Sắp xếp các bước cộng tác qua tài liệu đám mây theo thứ tự đúng:\n1. Tải tài liệu lên bộ nhớ đám mây\n2. Chia sẻ liên kết đến tài liệu\n3. Tạo tài liệu mới\n4. Thêm chú thích và theo dõi các thay đổi trong tài liệu\n5. Xem xét và chấp nhận hoặc từ chối chú thích và thay đổi",
+                "question": "Sắp xếp các bước cộng tác qua tài liệu đám mây theo thứ tự đúng. Ghép Bước với hành động tương ứng:",
                 "image": false,
-                "type": "single_image",
-                "options": [
-                  "5 bước sắp xếp"
-                ],
-                "correct": [
-                  "3→1→2→4→5"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Bước 1",
+                    "right": "Tạo tài liệu mới"
+                  },
+                  {
+                    "left": "Bước 2",
+                    "right": "Tải tài liệu lên bộ nhớ đám mây"
+                  },
+                  {
+                    "left": "Bước 3",
+                    "right": "Chia sẻ liên kết đến tài liệu"
+                  },
+                  {
+                    "left": "Bước 4",
+                    "right": "Thêm chú thích và theo dõi các thay đổi"
+                  },
+                  {
+                    "left": "Bước 5",
+                    "right": "Xem xét và chấp nhận hoặc từ chối thay đổi"
+                  }
                 ]
               },
               {
@@ -6209,14 +6301,38 @@
               },
               {
                 "id": 40,
-                "question": "Bạn đang chuẩn bị một bài trình chiếu slide cho lớp Lịch sử Hoa Kỳ. Thứ tự các bước được khuyến nghị bạn nên thực hiện để tạo bài trình chiếu slide là gì? Kéo các mục bên phải sang các mục ở cột bên trái tương ứng:\n1. Tạo một dàn ý có cấu trúc\n2. Áp dụng quá trình chuyển đổi (Transitions)\n3. Chọn một thiết kế\n4. Thêm đồ họa, biểu đồ và hoạt ảnh (Animations)\n5. Tạo trang Tiêu đề\n6. Nhập dàn ý vào bản trình chiếu\n7. Áp dụng bố cục trang chiếu (Slide Layouts) cho nội dung",
+                "question": "Thứ tự các bước khuyến nghị để tạo bài trình chiếu slide. Ghép Bước với hành động tương ứng:",
                 "image": false,
-                "type": "single_image",
-                "options": [
-                  "Bước 1-7"
-                ],
-                "correct": [
-                  "1=Tạo dàn ý; 2=Chọn thiết kế; 3=Nhập dàn ý; 4=Áp dụng layout; 5=Tạo trang Tiêu đề; 6=Thêm đồ họa; 7=Áp dụng Transitions"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Bước 1",
+                    "right": "Tạo một dàn ý có cấu trúc"
+                  },
+                  {
+                    "left": "Bước 2",
+                    "right": "Chọn một thiết kế"
+                  },
+                  {
+                    "left": "Bước 3",
+                    "right": "Nhập dàn ý vào bản trình chiếu"
+                  },
+                  {
+                    "left": "Bước 4",
+                    "right": "Áp dụng bố cục trang chiếu (Slide Layouts) cho nội dung"
+                  },
+                  {
+                    "left": "Bước 5",
+                    "right": "Tạo trang Tiêu đề"
+                  },
+                  {
+                    "left": "Bước 6",
+                    "right": "Thêm đồ họa, biểu đồ và hoạt ảnh (Animations)"
+                  },
+                  {
+                    "left": "Bước 7",
+                    "right": "Áp dụng quá trình chuyển đổi (Transitions)"
+                  }
                 ]
               },
               {
@@ -6292,14 +6408,18 @@
               },
               {
                 "id": 45,
-                "question": "Hình ảnh giao diện tìm kiếm Google 'chiến tranh năm 1812' - Bộ lọc nào đang được hiển thị?",
+                "question": "Trong giao diện tìm kiếm Google, bộ lọc nào đang được chọn (hiển thị ở trạng thái active)?",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "Tất cả / Video / Hình ảnh / Tin tức / Thêm"
+                  "Tất cả",
+                  "Video",
+                  "Hình ảnh",
+                  "Tin tức",
+                  "Thêm"
                 ],
                 "correct": [
-                  "Tất cả / Video / Hình ảnh / Tin tức / Thêm"
+                  "Tất cả"
                 ]
               },
               {
@@ -6850,14 +6970,18 @@
               },
               {
                 "id": 26,
-                "question": "Hình ảnh giao diện tìm kiếm Google 'chiến tranh năm 1812' - Bộ lọc nào đang được hiển thị?",
+                "question": "Trong giao diện tìm kiếm Google, bộ lọc nào đang được chọn (hiển thị ở trạng thái active)?",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "Tất cả / Video / Hình ảnh / Tin tức / Thêm"
+                  "Tất cả",
+                  "Video",
+                  "Hình ảnh",
+                  "Tin tức",
+                  "Thêm"
                 ],
                 "correct": [
-                  "Tất cả / Video / Hình ảnh / Tin tức / Thêm"
+                  "Tất cả"
                 ]
               },
               {
@@ -6964,14 +7088,34 @@
               },
               {
                 "id": 32,
-                "question": "Trong trình duyệt Google Chrome, để vô hiệu hóa quyền truy cập vào máy ảnh trên thiết bị hiện tại, hãy sắp xếp các bước theo thứ tự đúng:\n1. Chọn Tùy chỉnh và điều khiển dấu chấm lửng dọc của Google Chrome\n2. Chọn Settings\n3. Chọn Privacy and security\n4. Chọn Site Settings\n5. Chọn Camera\n6. Chọn biểu tượng On/Off cho Ask before accessing",
+                "question": "Trong trình duyệt Google Chrome, để vô hiệu hóa quyền truy cập vào máy ảnh, sắp xếp các bước theo thứ tự đúng. Ghép Bước với hành động tương ứng:",
                 "image": false,
-                "type": "single_image",
-                "options": [
-                  "6 bước sắp xếp theo thứ tự"
-                ],
-                "correct": [
-                  "1→2→3→4→5→6"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Bước 1",
+                    "right": "Chọn Tùy chỉnh và điều khiển (⋮) của Chrome"
+                  },
+                  {
+                    "left": "Bước 2",
+                    "right": "Chọn Settings"
+                  },
+                  {
+                    "left": "Bước 3",
+                    "right": "Chọn Privacy and security"
+                  },
+                  {
+                    "left": "Bước 4",
+                    "right": "Chọn Site Settings"
+                  },
+                  {
+                    "left": "Bước 5",
+                    "right": "Chọn Camera"
+                  },
+                  {
+                    "left": "Bước 6",
+                    "right": "Chọn biểu tượng On/Off cho Ask before accessing"
+                  }
                 ]
               },
               {
@@ -7013,14 +7157,17 @@
               },
               {
                 "id": 35,
-                "question": "Hình ảnh câu hỏi - Nhận biết biểu tượng",
+                "question": "Biểu tượng nào trong hình đại diện cho chức năng cài đặt (Settings)?",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "Xem hình ảnh"
+                  "Biểu tượng bánh răng (Settings)",
+                  "Biểu tượng ngôi nhà (Home)",
+                  "Biểu tượng tìm kiếm (Search)",
+                  "Biểu tượng chia sẻ (Share)"
                 ],
                 "correct": [
-                  "Xem hình ảnh"
+                  "Biểu tượng bánh răng (Settings)"
                 ]
               },
               {
@@ -7216,7 +7363,7 @@
                 "id": 5,
                 "question": "Bạn nên quét vi-rút vì hai lý do nào? (Chọn 2)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
                   "Máy tính của bạn bắt đầu chạy chậm hơn bình thường",
                   "Bạn nhận được email từ một cửa hàng trực tuyến...",
@@ -7224,8 +7371,8 @@
                   "Quảng cáo bật lên xuất hiện trên trang web"
                 ],
                 "correct": [
-                  "Máy tính chạy chậm hơn",
-                  "Một chương trình tự vận hành"
+                  "Máy tính của bạn bắt đầu chạy chậm hơn bình thường",
+                  "Một chương trình bạn không khởi động mà tự vận hành"
                 ]
               },
               {
@@ -7430,16 +7577,16 @@
                 "id": 17,
                 "question": "Hai điểm khác biệt nào phân biệt giữa máy in Laser và máy in phun? (Chọn 2)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
                   "Máy in laser sử dụng Toner, và máy in phun sử dụng mực in (Ink).",
-                  "Máy in phun phù hợp hơn để in số lượng lớn...",
-                  "Máy in Laser sử dụng mực in (Ink)...",
-                  "Máy in phun phù hợp hơn để in số lượng ít..."
+                  "Máy in phun phù hợp hơn để in số lượng ít, và máy in Laser phù hợp hơn để in số lượng lớn.",
+                  "Máy in Laser sử dụng mực in (Ink) giống như máy in phun.",
+                  "Máy in phun phù hợp hơn để in số lượng lớn, và máy in Laser phù hợp hơn để in số lượng ít."
                 ],
                 "correct": [
-                  "Máy in laser sử dụng Toner, máy in phun sử dụng Ink",
-                  "Máy in phun phù hợp hơn để in số lượng ít và máy in Laser phù hợp hơn để in số lượng nhiều."
+                  "Máy in laser sử dụng Toner, và máy in phun sử dụng mực in (Ink).",
+                  "Máy in phun phù hợp hơn để in số lượng ít, và máy in Laser phù hợp hơn để in số lượng lớn."
                 ]
               },
               {
@@ -7559,14 +7706,17 @@
               },
               {
                 "id": 25,
-                "question": "Bạn hãy nhấp chọn vào tính năng chia sẻ toàn bộ lịch của bạn với người khác trong hình sau đây?",
+                "question": "Bạn hãy chọn tính năng dùng để chia sẻ toàn bộ lịch với người khác trong Microsoft Outlook Calendar:",
                 "image": true,
-                "type": "single_image",
+                "type": "single",
                 "options": [
-                  "Hình ảnh giao diện Microsoft Outlook Calendar"
+                  "Share Calendar (Chia sẻ lịch)",
+                  "New Event (Sự kiện mới)",
+                  "Print (In lịch)",
+                  "View Settings (Cài đặt hiển thị)"
                 ],
                 "correct": [
-                  "Nút Share Calendar / Chia sẻ lịch"
+                  "Share Calendar (Chia sẻ lịch)"
                 ]
               },
               {
@@ -7587,14 +7737,17 @@
               },
               {
                 "id": 27,
-                "question": "Bạn đang sử dụng điện thoại Android và muốn giảm độ sáng để tiết kiệm pin... Tính năng sau đây có thể cho phép bạn điều chỉnh độ sáng...?",
+                "question": "Bạn đang sử dụng điện thoại Android và muốn giảm độ sáng để tiết kiệm pin. Tính năng nào sau đây cho phép bạn điều chỉnh độ sáng? (Chọn 1)",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "Xem hình"
+                  "Quick Settings Panel (Thanh thông báo nhanh)",
+                  "Display Settings trong Settings App",
+                  "Power Saving Mode",
+                  "Accessibility Settings"
                 ],
                 "correct": [
-                  "Xem hình"
+                  "Display Settings trong Settings App"
                 ]
               },
               {
@@ -7670,14 +7823,17 @@
               },
               {
                 "id": 32,
-                "question": "Bạn cần thêm cuộc họp Hội đồng sinh viên... Bạn có thể lựa chọn hai phần tử nào sau đây để mở hộp thoại sự kiện? (Chọn 2)",
-                "image": false,
-                "type": "multi_image",
+                "question": "Bạn cần thêm cuộc họp Hội đồng sinh viên vào lịch. Bạn có thể lựa chọn hai phần tử nào sau đây để mở hộp thoại tạo sự kiện? (Chọn 2)",
+                "image": true,
+                "type": "multi",
                 "options": [
-                  "Xem hình - giao diện lịch"
+                  "Nhấp vào ô ngày cụ thể trên lịch",
+                  "Nhấp vào nút New Event",
+                  "Nhấp vào tên tháng",
+                  "Nhấp vào mũi tên điều hướng tháng"
                 ],
                 "correct": [
-                  "Nhấp vào ô ngày cụ thể",
+                  "Nhấp vào ô ngày cụ thể trên lịch",
                   "Nhấp vào nút New Event"
                 ]
               },
@@ -7701,15 +7857,24 @@
                 "id": 34,
                 "question": "Sắp xếp các bước tạo bảng điểm trò chơi trong trang tính theo đúng thứ tự:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "1. Tạo tiêu đề cột...",
-                  "2. Tạo một trang tính.",
-                  "3. Sao chép trang tính cho mỗi trò chơi.",
-                  "4. Điền tên vào cột Người chơi."
-                ],
-                "correct": [
-                  "Bước 1=Tạo trang tính;Bước 2=Sao chép trang tính;Bước 3=Tạo tiêu đề cột;Bước 4=Điền tên"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Bước 1",
+                    "right": "Tạo một trang tính"
+                  },
+                  {
+                    "left": "Bước 2",
+                    "right": "Sao chép trang tính cho mỗi trò chơi"
+                  },
+                  {
+                    "left": "Bước 3",
+                    "right": "Tạo tiêu đề cột: Người chơi, Lượt truy cập, Lượt chạy và Lỗi"
+                  },
+                  {
+                    "left": "Bước 4",
+                    "right": "Điền tên vào cột Người chơi"
+                  }
                 ]
               },
               {
@@ -8009,17 +8174,26 @@
               },
               {
                 "id": 8,
-                "question": "Bạn đang soạn một sơ đồ để kèm với một tập hợp các hướng dẫn... Hoàn thành các câu bằng cách kéo từng khối hình từ bên phải sang chức năng của nó bên trái.",
+                "question": "Ghép mỗi mô tả với hình dạng tương ứng trong sơ đồ quy trình (flowchart):",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "1. Các quy trình trong một lưu đồ",
-                  "2. Một quyết định (decision) như có với không hoặc đúng so với sai",
-                  "3. Đánh dấu phần đầu và phần cuối của sơ đồ",
-                  "4. Được sử dụng để biểu diễn đầu vào (input) hoặc đầu ra (output)"
-                ],
-                "correct": [
-                  "3=oval;4=diamond;1=rectangle;2=parallelogram"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Các quy trình trong một lưu đồ (Process)",
+                    "right": "Hình chữ nhật (Rectangle)"
+                  },
+                  {
+                    "left": "Một quyết định (Decision) – Có/Không, Đúng/Sai",
+                    "right": "Hình thoi (Diamond)"
+                  },
+                  {
+                    "left": "Đánh dấu phần đầu và phần cuối của sơ đồ",
+                    "right": "Hình oval (Oval)"
+                  },
+                  {
+                    "left": "Biểu diễn đầu vào (Input) hoặc đầu ra (Output)",
+                    "right": "Hình bình hành (Parallelogram)"
+                  }
                 ]
               },
               {
@@ -8144,17 +8318,26 @@
               },
               {
                 "id": 16,
-                "question": "Bạn có một lượng lớn dữ liệu thô để chia sẻ với khách hàng... Hoàn thành các câu bằng cách kéo từng đối tượng từ cột bên phải sang chức năng của nó bên trái.",
+                "question": "Ghép mỗi mục đích hiển thị dữ liệu với loại biểu đồ phù hợp:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Để hiển thị các thay đổi hoặc xu hướng trong dữ liệu theo thời gian...",
-                  "Để hiển thị một so sánh xếp hạng các dữ liệu...",
-                  "Để hiển thị mối quan hệ của các phần dữ liệu với tổng thể...",
-                  "Để tóm tắt các phép đo chính xác..."
-                ],
-                "correct": [
-                  "1=Line Chart;4=Table;3=Pie Chart;2=Bar Chart"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Để hiển thị các thay đổi hoặc xu hướng trong dữ liệu theo thời gian",
+                    "right": "Biểu đồ đường (Line Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị một so sánh xếp hạng các dữ liệu",
+                    "right": "Biểu đồ cột (Bar Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị mối quan hệ của các phần dữ liệu với tổng thể",
+                    "right": "Biểu đồ tròn (Pie Chart)"
+                  },
+                  {
+                    "left": "Để tóm tắt các phép đo chính xác và tính toán",
+                    "right": "Bảng (Table)"
+                  }
                 ]
               },
               {
@@ -8248,17 +8431,26 @@
               },
               {
                 "id": 21,
-                "question": "Bạn có một lượng lớn dữ liệu thô để chia sẻ với khách hàng... Hoàn thành các câu bằng cách kéo từng đối tượng...",
+                "question": "Ghép mỗi mục đích hiển thị dữ liệu với loại biểu đồ phù hợp:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Để hiển thị các thay đổi hoặc xu hướng...",
-                  "Để hiển thị một so sánh xếp hạng...",
-                  "Để hiển thị mối quan hệ...",
-                  "Để tóm tắt các phép đo chính xác..."
-                ],
-                "correct": [
-                  "1=Line Chart;4=Table;3=Pie Chart;2=Bar Chart"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Để hiển thị các thay đổi hoặc xu hướng trong dữ liệu theo thời gian",
+                    "right": "Biểu đồ đường (Line Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị một so sánh xếp hạng các dữ liệu",
+                    "right": "Biểu đồ cột (Bar Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị mối quan hệ của các phần dữ liệu với tổng thể",
+                    "right": "Biểu đồ tròn (Pie Chart)"
+                  },
+                  {
+                    "left": "Để tóm tắt các phép đo chính xác và tính toán",
+                    "right": "Bảng (Table)"
+                  }
                 ]
               },
               {
@@ -8350,16 +8542,16 @@
                 "id": 26,
                 "question": "Trường của bạn yêu cầu bạn thiết kế một trang Web... Hành động nào sau đây sẽ có ích cho quá trình hình thành ý tưởng? (chọn 2)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
-                  "Không chỉ trích các ý tưởng...",
-                  "Đặt giới hạn...",
-                  "Chỉ chia sẻ các ý tưởng mà bạn cảm thấy rất tự tin",
-                  "Khuyến khích các ý tưởng táo bạo"
+                  "Không chỉ trích các ý tưởng của những thành viên khác trong nhóm.",
+                  "Đặt giới hạn về số lượng ý tưởng được phép đề xuất.",
+                  "Chỉ chia sẻ các ý tưởng mà bạn cảm thấy rất tự tin.",
+                  "Khuyến khích các ý tưởng táo bạo và sáng tạo."
                 ],
                 "correct": [
                   "Không chỉ trích các ý tưởng của những thành viên khác trong nhóm.",
-                  "Khuyến khích các ý tưởng táo bạo"
+                  "Khuyến khích các ý tưởng táo bạo và sáng tạo."
                 ]
               },
               {
@@ -8397,33 +8589,42 @@
                 "id": 29,
                 "question": "Có ba cách chỉnh sửa để thao túng nội dung Video... Phương pháp chỉnh sửa video nào sau đây thường được sử dụng để thao túng...? (Chọn 3)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
-                  "Thêm cảnh quay ở cuối video...",
-                  "Điều chỉnh độ sáng và độ bão hòa...",
-                  "Tăng âm lượng...",
-                  "Hiện thị một đoạn clip ngắn...",
-                  "Nối nhiều video clip lại..."
+                  "Thêm cảnh quay ở cuối video để tổng kết nội dung.",
+                  "Điều chỉnh độ sáng và độ bão hòa màu sắc của video.",
+                  "Tăng âm lượng của tất cả các phần trong video.",
+                  "Hiện thị một đoạn clip ngắn của một video dài hơn.",
+                  "Nối nhiều video clip lại với nhau để tạo thành một video."
                 ],
                 "correct": [
-                  "Điều chỉnh độ sáng và độ bão hòa...",
+                  "Điều chỉnh độ sáng và độ bão hòa màu sắc của video.",
                   "Hiện thị một đoạn clip ngắn của một video dài hơn.",
                   "Nối nhiều video clip lại với nhau để tạo thành một video."
                 ]
               },
               {
                 "id": 30,
-                "question": "Bạn có một lượng lớn dữ liệu thô... Hoàn thành các câu bằng cách kéo từng đối tượng...",
+                "question": "Ghép mỗi mục đích hiển thị dữ liệu với loại biểu đồ phù hợp:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Để hiển thị các thay đổi hoặc xu hướng...",
-                  "Để hiển thị một so sánh xếp hạng...",
-                  "Để hiển thị mối quan hệ...",
-                  "Để tóm tắt các phép đo chính xác..."
-                ],
-                "correct": [
-                  "1=Line Chart;4=Table;3=Pie Chart;2=Bar Chart"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Để hiển thị các thay đổi hoặc xu hướng trong dữ liệu theo thời gian",
+                    "right": "Biểu đồ đường (Line Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị một so sánh xếp hạng các dữ liệu",
+                    "right": "Biểu đồ cột (Bar Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị mối quan hệ của các phần dữ liệu với tổng thể",
+                    "right": "Biểu đồ tròn (Pie Chart)"
+                  },
+                  {
+                    "left": "Để tóm tắt các phép đo chính xác và tính toán",
+                    "right": "Bảng (Table)"
+                  }
                 ]
               },
               {
@@ -8517,17 +8718,26 @@
               },
               {
                 "id": 35,
-                "question": "Bạn có một lượng lớn dữ liệu thô... Hoàn thành các câu...",
+                "question": "Ghép mỗi mục đích hiển thị dữ liệu với loại biểu đồ phù hợp:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Để hiển thị các thay đổi...",
-                  "Để hiển thị một so sánh...",
-                  "Để hiển thị mối quan hệ...",
-                  "Để tóm tắt các phép đo..."
-                ],
-                "correct": [
-                  "1=Line Chart;4=Table;3=Pie Chart;2=Bar Chart"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Để hiển thị các thay đổi hoặc xu hướng trong dữ liệu theo thời gian",
+                    "right": "Biểu đồ đường (Line Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị một so sánh xếp hạng các dữ liệu",
+                    "right": "Biểu đồ cột (Bar Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị mối quan hệ của các phần dữ liệu với tổng thể",
+                    "right": "Biểu đồ tròn (Pie Chart)"
+                  },
+                  {
+                    "left": "Để tóm tắt các phép đo chính xác và tính toán",
+                    "right": "Bảng (Table)"
+                  }
                 ]
               },
               {
@@ -8619,16 +8829,16 @@
                 "id": 40,
                 "question": "Trường của bạn yêu cầu bạn thiết kế một trang Web... Hành động nào sau đây sẽ có ích...? (chọn 2)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
-                  "Không chỉ trích các ý tưởng...",
-                  "Đặt giới hạn...",
-                  "Chỉ chia sẻ các ý tưởng...",
-                  "Khuyến khích các ý tưởng táo bạo"
+                  "Không chỉ trích các ý tưởng của những thành viên khác trong nhóm.",
+                  "Đặt giới hạn về số lượng ý tưởng được phép đề xuất.",
+                  "Chỉ chia sẻ các ý tưởng mà bạn cảm thấy rất tự tin.",
+                  "Khuyến khích các ý tưởng táo bạo và sáng tạo."
                 ],
                 "correct": [
                   "Không chỉ trích các ý tưởng của những thành viên khác trong nhóm.",
-                  "Khuyến khích các ý tưởng táo bạo"
+                  "Khuyến khích các ý tưởng táo bạo và sáng tạo."
                 ]
               },
               {
@@ -8861,16 +9071,22 @@
               },
               {
                 "id": 11,
-                "question": "Hoàn thành các câu sau đây bằng cách lựa chọn đúng tùy chọn từ mỗi danh sách thả xuống.",
+                "question": "Ghép mỗi ví dụ với loại yếu tố xác thực tương ứng:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Dấu vân tay và nhận dạng khuôn mặt là những ví dụ về các yếu tố xác thực Sinh trắc (Bio...)",
-                  "Điện thoại thông minh và thẻ truy cập của nhân viên là những ví dụ về các yếu tố xác thực Logic (Logical)",
-                  "Mật khẩu và số nhận dạng cá nhân (MÃ PIN) là những ví dụ về các yếu tố xác thực Vật lý (Physical)"
-                ],
-                "correct": [
-                  "Sinh trắc (Bio...);Logic (Logical);Vật lý (Physical)"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Dấu vân tay và nhận dạng khuôn mặt",
+                    "right": "Sinh trắc học (Biometric)"
+                  },
+                  {
+                    "left": "Điện thoại thông minh và thẻ truy cập của nhân viên",
+                    "right": "Logic (Possession)"
+                  },
+                  {
+                    "left": "Mật khẩu và số nhận dạng cá nhân (MÃ PIN)",
+                    "right": "Vật lý/Kiến thức (Knowledge)"
+                  }
                 ]
               },
               {
@@ -9018,16 +9234,22 @@
               },
               {
                 "id": 19,
-                "question": "Hoàn thành các câu sau đây bằng cách lựa chọn đúng tùy chọn từ mỗi danh sách thả xuống.",
+                "question": "Ghép mỗi ví dụ với loại yếu tố xác thực tương ứng:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Dấu vân tay và nhận dạng khuôn mặt là những ví dụ về các yếu tố xác thực Sinh trắc (Bio...)",
-                  "Điện thoại thông minh và thẻ truy cập của nhân viên là những ví dụ về các yếu tố xác thực Logic (Logical)",
-                  "Mật khẩu và số nhận dạng cá nhân (MÃ PIN) là những ví dụ về các yếu tố xác thực Vật lý (Physical)"
-                ],
-                "correct": [
-                  "Sinh trắc (Bio...);Logic (Logical);Vật lý (Physical)"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Dấu vân tay và nhận dạng khuôn mặt",
+                    "right": "Sinh trắc học (Biometric)"
+                  },
+                  {
+                    "left": "Điện thoại thông minh và thẻ truy cập của nhân viên",
+                    "right": "Logic (Possession)"
+                  },
+                  {
+                    "left": "Mật khẩu và số nhận dạng cá nhân (MÃ PIN)",
+                    "right": "Vật lý/Kiến thức (Knowledge)"
+                  }
                 ]
               },
               {
@@ -9175,16 +9397,22 @@
               },
               {
                 "id": 27,
-                "question": "Hoàn thành các câu sau đây bằng cách lựa chọn đúng tùy chọn từ mỗi danh sách thả xuống.",
+                "question": "Ghép mỗi ví dụ với loại yếu tố xác thực tương ứng:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Dấu vân tay... Sinh trắc (Bio...)",
-                  "Điện thoại thông minh... Logic (Logical)",
-                  "Mật khẩu... Vật lý (Physical)"
-                ],
-                "correct": [
-                  "Sinh trắc (Bio...);Logic (Logical);Vật lý (Physical)"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Dấu vân tay và nhận dạng khuôn mặt",
+                    "right": "Sinh trắc học (Biometric)"
+                  },
+                  {
+                    "left": "Điện thoại thông minh và thẻ truy cập của nhân viên",
+                    "right": "Logic (Possession)"
+                  },
+                  {
+                    "left": "Mật khẩu và số nhận dạng cá nhân (MÃ PIN)",
+                    "right": "Vật lý/Kiến thức (Knowledge)"
+                  }
                 ]
               },
               {
@@ -9206,19 +9434,19 @@
                 "id": 29,
                 "question": "Hành động nào sau đây có thể xâm phạm đến quyền riêng tư trực tuyến của bạn? (chọn 3)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
-                  "Luôn đăng nhập vào các trang web...",
-                  "Đăng trong một diễn đàn",
-                  "Tải tập tin",
-                  "Sử dụng cùng một thông tin đăng nhập...",
-                  "Mở tập tin đính kèm email",
-                  "Cho phép và giữ cookie..."
+                  "Luôn đăng nhập vào các trang web công cộng và giữ phiên đăng nhập.",
+                  "Đăng trong một diễn đàn hoặc cộng đồng trực tuyến.",
+                  "Tải tập tin từ các nguồn không rõ ràng.",
+                  "Sử dụng cùng một thông tin đăng nhập và mật khẩu cho nhiều tài khoản.",
+                  "Mở tập tin đính kèm email từ người lạ.",
+                  "Cho phép và giữ cookie của trình duyệt trên máy tính công cộng."
                 ],
                 "correct": [
-                  "Luôn đăng nhập vào các trang web...",
-                  "Sử dụng cùng một thông tin đăng nhập và mật khẩu cho nhiều tài khoản",
-                  "Cho phép và giữ cookie của trình duyệt"
+                  "Luôn đăng nhập vào các trang web công cộng và giữ phiên đăng nhập.",
+                  "Sử dụng cùng một thông tin đăng nhập và mật khẩu cho nhiều tài khoản.",
+                  "Cho phép và giữ cookie của trình duyệt trên máy tính công cộng."
                 ]
               },
               {
@@ -9332,16 +9560,22 @@
               },
               {
                 "id": 35,
-                "question": "Hoàn thành các câu sau đây bằng cách lựa chọn đúng tùy chọn từ mỗi danh sách thả xuống.",
+                "question": "Ghép mỗi ví dụ với loại yếu tố xác thực tương ứng:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Dấu vân tay... Sinh trắc (Bio...)",
-                  "Điện thoại thông minh... Logic (Logical)",
-                  "Mật khẩu... Vật lý (Physical)"
-                ],
-                "correct": [
-                  "Sinh trắc (Bio...);Logic (Logical);Vật lý (Physical)"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Dấu vân tay và nhận dạng khuôn mặt",
+                    "right": "Sinh trắc học (Biometric)"
+                  },
+                  {
+                    "left": "Điện thoại thông minh và thẻ truy cập của nhân viên",
+                    "right": "Logic (Possession)"
+                  },
+                  {
+                    "left": "Mật khẩu và số nhận dạng cá nhân (MÃ PIN)",
+                    "right": "Vật lý/Kiến thức (Knowledge)"
+                  }
                 ]
               },
               {
@@ -9363,19 +9597,19 @@
                 "id": 37,
                 "question": "Hành động nào sau đây có thể xâm phạm đến quyền riêng tư trực tuyến của bạn? (chọn 3)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
-                  "Luôn đăng nhập vào các trang web...",
-                  "Đăng trong một diễn đàn",
-                  "Tải tập tin",
-                  "Sử dụng cùng một thông tin đăng nhập...",
-                  "Mở tập tin đính kèm email",
-                  "Cho phép và giữ cookie..."
+                  "Luôn đăng nhập vào các trang web công cộng và giữ phiên đăng nhập.",
+                  "Đăng trong một diễn đàn hoặc cộng đồng trực tuyến.",
+                  "Tải tập tin từ các nguồn không rõ ràng.",
+                  "Sử dụng cùng một thông tin đăng nhập và mật khẩu cho nhiều tài khoản.",
+                  "Mở tập tin đính kèm email từ người lạ.",
+                  "Cho phép và giữ cookie của trình duyệt trên máy tính công cộng."
                 ],
                 "correct": [
-                  "Luôn đăng nhập vào các trang web...",
-                  "Sử dụng cùng một thông tin đăng nhập và mật khẩu cho nhiều tài khoản",
-                  "Cho phép và giữ cookie của trình duyệt"
+                  "Luôn đăng nhập vào các trang web công cộng và giữ phiên đăng nhập.",
+                  "Sử dụng cùng một thông tin đăng nhập và mật khẩu cho nhiều tài khoản.",
+                  "Cho phép và giữ cookie của trình duyệt trên máy tính công cộng."
                 ]
               },
               {
@@ -9595,17 +9829,26 @@
               },
               {
                 "id": 7,
-                "question": "Bạn có một lượng lớn dữ liệu thô để chia sẻ với khách hàng. Bạn quyết định tạo một bản trình chiếu trực quan. Hoàn thành các câu bằng cách kéo từng đối tượng từ cột bên phải sang chức năng của nó bên trái.",
+                "question": "Ghép mỗi mục đích hiển thị dữ liệu với loại biểu đồ phù hợp:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Để hiển thị các thay đổi hoặc xu hướng trong dữ liệu theo thời gian...",
-                  "Để hiển thị một so sánh xếp hạng các dữ liệu...",
-                  "Để hiển thị mối quan hệ của các phần dữ liệu với tổng thể...",
-                  "Để tóm tắt các phép đo chính xác..."
-                ],
-                "correct": [
-                  "1=Line Chart;4=Table;3=Pie Chart;2=Bar Chart"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Để hiển thị các thay đổi hoặc xu hướng trong dữ liệu theo thời gian",
+                    "right": "Biểu đồ đường (Line Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị một so sánh xếp hạng các dữ liệu",
+                    "right": "Biểu đồ cột (Bar Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị mối quan hệ của các phần dữ liệu với tổng thể",
+                    "right": "Biểu đồ tròn (Pie Chart)"
+                  },
+                  {
+                    "left": "Để tóm tắt các phép đo chính xác và tính toán",
+                    "right": "Bảng (Table)"
+                  }
                 ]
               },
               {
@@ -9699,17 +9942,26 @@
               },
               {
                 "id": 12,
-                "question": "Bạn có một lượng lớn dữ liệu thô... Hoàn thành các câu bằng cách kéo từng đối tượng...",
+                "question": "Ghép mỗi mục đích hiển thị dữ liệu với loại biểu đồ phù hợp:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Để hiển thị các thay đổi hoặc xu hướng...",
-                  "Để hiển thị một so sánh xếp hạng...",
-                  "Để hiển thị mối quan hệ...",
-                  "Để tóm tắt các phép đo chính xác..."
-                ],
-                "correct": [
-                  "1=Line Chart;4=Table;3=Pie Chart;2=Bar Chart"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Để hiển thị các thay đổi hoặc xu hướng trong dữ liệu theo thời gian",
+                    "right": "Biểu đồ đường (Line Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị một so sánh xếp hạng các dữ liệu",
+                    "right": "Biểu đồ cột (Bar Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị mối quan hệ của các phần dữ liệu với tổng thể",
+                    "right": "Biểu đồ tròn (Pie Chart)"
+                  },
+                  {
+                    "left": "Để tóm tắt các phép đo chính xác và tính toán",
+                    "right": "Bảng (Table)"
+                  }
                 ]
               },
               {
@@ -9801,16 +10053,16 @@
                 "id": 17,
                 "question": "Trường của bạn yêu cầu bạn thiết kế một trang Web... Hành động nào sau đây sẽ có ích...? (chọn 2)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
-                  "Không chỉ trích các ý tưởng...",
-                  "Đặt giới hạn...",
-                  "Chỉ chia sẻ các ý tưởng...",
-                  "Khuyến khích các ý tưởng táo bạo"
+                  "Không chỉ trích các ý tưởng của những thành viên khác trong nhóm.",
+                  "Đặt giới hạn về số lượng ý tưởng được phép đề xuất.",
+                  "Chỉ chia sẻ các ý tưởng mà bạn cảm thấy rất tự tin.",
+                  "Khuyến khích các ý tưởng táo bạo và sáng tạo."
                 ],
                 "correct": [
                   "Không chỉ trích các ý tưởng của những thành viên khác trong nhóm.",
-                  "Khuyến khích các ý tưởng táo bạo"
+                  "Khuyến khích các ý tưởng táo bạo và sáng tạo."
                 ]
               },
               {
@@ -9848,33 +10100,42 @@
                 "id": 20,
                 "question": "Có ba cách chỉnh sửa để thao túng nội dung Video... Phương pháp chỉnh sửa video nào sau đây thường được sử dụng để thao túng...? (Chọn 3)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
-                  "Thêm cảnh quay ở cuối video...",
-                  "Điều chỉnh độ sáng và độ bão hòa...",
-                  "Tăng âm lượng...",
-                  "Hiện thị một đoạn clip ngắn...",
-                  "Nối nhiều video clip lại..."
+                  "Thêm cảnh quay ở cuối video để tổng kết nội dung.",
+                  "Điều chỉnh độ sáng và độ bão hòa màu sắc của video.",
+                  "Tăng âm lượng của tất cả các phần trong video.",
+                  "Hiện thị một đoạn clip ngắn của một video dài hơn.",
+                  "Nối nhiều video clip lại với nhau để tạo thành một video."
                 ],
                 "correct": [
-                  "Điều chỉnh độ sáng và độ bão hòa...",
+                  "Điều chỉnh độ sáng và độ bão hòa màu sắc của video.",
                   "Hiện thị một đoạn clip ngắn của một video dài hơn.",
                   "Nối nhiều video clip lại với nhau để tạo thành một video."
                 ]
               },
               {
                 "id": 21,
-                "question": "Bạn có một lượng lớn dữ liệu thô... Hoàn thành các câu bằng cách kéo từng đối tượng...",
+                "question": "Ghép mỗi mục đích hiển thị dữ liệu với loại biểu đồ phù hợp:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Để hiển thị các thay đổi hoặc xu hướng...",
-                  "Để hiển thị một so sánh...",
-                  "Để hiển thị mối quan hệ...",
-                  "Để tóm tắt các phép đo..."
-                ],
-                "correct": [
-                  "1=Line Chart;4=Table;3=Pie Chart;2=Bar Chart"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Để hiển thị các thay đổi hoặc xu hướng trong dữ liệu theo thời gian",
+                    "right": "Biểu đồ đường (Line Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị một so sánh xếp hạng các dữ liệu",
+                    "right": "Biểu đồ cột (Bar Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị mối quan hệ của các phần dữ liệu với tổng thể",
+                    "right": "Biểu đồ tròn (Pie Chart)"
+                  },
+                  {
+                    "left": "Để tóm tắt các phép đo chính xác và tính toán",
+                    "right": "Bảng (Table)"
+                  }
                 ]
               },
               {
@@ -9966,16 +10227,16 @@
                 "id": 26,
                 "question": "Trường của bạn yêu cầu bạn thiết kế một trang Web... Hành động nào sau đây sẽ có ích...? (chọn 2)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
-                  "Không chỉ trích các ý tưởng...",
-                  "Đặt giới hạn...",
-                  "Chỉ chia sẻ các ý tưởng...",
-                  "Khuyến khích các ý tưởng táo bạo"
+                  "Không chỉ trích các ý tưởng của những thành viên khác trong nhóm.",
+                  "Đặt giới hạn về số lượng ý tưởng được phép đề xuất.",
+                  "Chỉ chia sẻ các ý tưởng mà bạn cảm thấy rất tự tin.",
+                  "Khuyến khích các ý tưởng táo bạo và sáng tạo."
                 ],
                 "correct": [
                   "Không chỉ trích các ý tưởng của những thành viên khác trong nhóm.",
-                  "Khuyến khích các ý tưởng táo bạo"
+                  "Khuyến khích các ý tưởng táo bạo và sáng tạo."
                 ]
               },
               {
@@ -10013,33 +10274,42 @@
                 "id": 29,
                 "question": "Có ba cách chỉnh sửa để thao túng nội dung Video... Phương pháp chỉnh sửa video nào sau đây thường được sử dụng để thao túng...? (Chọn 3)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
-                  "Thêm cảnh quay ở cuối video...",
-                  "Điều chỉnh độ sáng và độ bão hòa...",
-                  "Tăng âm lượng...",
-                  "Hiện thị một đoạn clip ngắn...",
-                  "Nối nhiều video clip lại..."
+                  "Thêm cảnh quay ở cuối video để tổng kết nội dung.",
+                  "Điều chỉnh độ sáng và độ bão hòa màu sắc của video.",
+                  "Tăng âm lượng của tất cả các phần trong video.",
+                  "Hiện thị một đoạn clip ngắn của một video dài hơn.",
+                  "Nối nhiều video clip lại với nhau để tạo thành một video."
                 ],
                 "correct": [
-                  "Điều chỉnh độ sáng và độ bão hòa...",
+                  "Điều chỉnh độ sáng và độ bão hòa màu sắc của video.",
                   "Hiện thị một đoạn clip ngắn của một video dài hơn.",
                   "Nối nhiều video clip lại với nhau để tạo thành một video."
                 ]
               },
               {
                 "id": 30,
-                "question": "Bạn có một lượng lớn dữ liệu thô... Hoàn thành các câu bằng cách kéo từng đối tượng...",
+                "question": "Ghép mỗi mục đích hiển thị dữ liệu với loại biểu đồ phù hợp:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Để hiển thị các thay đổi hoặc xu hướng...",
-                  "Để hiển thị một so sánh...",
-                  "Để hiển thị mối quan hệ...",
-                  "Để tóm tắt các phép đo..."
-                ],
-                "correct": [
-                  "1=Line Chart;4=Table;3=Pie Chart;2=Bar Chart"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Để hiển thị các thay đổi hoặc xu hướng trong dữ liệu theo thời gian",
+                    "right": "Biểu đồ đường (Line Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị một so sánh xếp hạng các dữ liệu",
+                    "right": "Biểu đồ cột (Bar Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị mối quan hệ của các phần dữ liệu với tổng thể",
+                    "right": "Biểu đồ tròn (Pie Chart)"
+                  },
+                  {
+                    "left": "Để tóm tắt các phép đo chính xác và tính toán",
+                    "right": "Bảng (Table)"
+                  }
                 ]
               },
               {
@@ -10131,16 +10401,16 @@
                 "id": 35,
                 "question": "Trường của bạn yêu cầu bạn thiết kế một trang Web... Hành động nào sau đây sẽ có ích...? (chọn 2)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
-                  "Không chỉ trích các ý tưởng...",
-                  "Đặt giới hạn...",
-                  "Chỉ chia sẻ các ý tưởng...",
-                  "Khuyến khích các ý tưởng táo bạo"
+                  "Không chỉ trích các ý tưởng của những thành viên khác trong nhóm.",
+                  "Đặt giới hạn về số lượng ý tưởng được phép đề xuất.",
+                  "Chỉ chia sẻ các ý tưởng mà bạn cảm thấy rất tự tin.",
+                  "Khuyến khích các ý tưởng táo bạo và sáng tạo."
                 ],
                 "correct": [
                   "Không chỉ trích các ý tưởng của những thành viên khác trong nhóm.",
-                  "Khuyến khích các ý tưởng táo bạo"
+                  "Khuyến khích các ý tưởng táo bạo và sáng tạo."
                 ]
               },
               {
@@ -10178,33 +10448,42 @@
                 "id": 38,
                 "question": "Có ba cách chỉnh sửa để thao túng nội dung Video... Phương pháp chỉnh sửa video nào sau đây thường được sử dụng để thao túng...? (Chọn 3)",
                 "image": true,
-                "type": "multi_image",
+                "type": "multi",
                 "options": [
-                  "Thêm cảnh quay ở cuối video...",
-                  "Điều chỉnh độ sáng và độ bão hòa...",
-                  "Tăng âm lượng...",
-                  "Hiện thị một đoạn clip ngắn...",
-                  "Nối nhiều video clip lại..."
+                  "Thêm cảnh quay ở cuối video để tổng kết nội dung.",
+                  "Điều chỉnh độ sáng và độ bão hòa màu sắc của video.",
+                  "Tăng âm lượng của tất cả các phần trong video.",
+                  "Hiện thị một đoạn clip ngắn của một video dài hơn.",
+                  "Nối nhiều video clip lại với nhau để tạo thành một video."
                 ],
                 "correct": [
-                  "Điều chỉnh độ sáng và độ bão hòa...",
+                  "Điều chỉnh độ sáng và độ bão hòa màu sắc của video.",
                   "Hiện thị một đoạn clip ngắn của một video dài hơn.",
                   "Nối nhiều video clip lại với nhau để tạo thành một video."
                 ]
               },
               {
                 "id": 39,
-                "question": "Bạn có một lượng lớn dữ liệu thô... Hoàn thành các câu bằng cách kéo từng đối tượng...",
+                "question": "Ghép mỗi mục đích hiển thị dữ liệu với loại biểu đồ phù hợp:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Để hiển thị các thay đổi hoặc xu hướng...",
-                  "Để hiển thị một so sánh...",
-                  "Để hiển thị mối quan hệ...",
-                  "Để tóm tắt các phép đo..."
-                ],
-                "correct": [
-                  "1=Line Chart;4=Table;3=Pie Chart;2=Bar Chart"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Để hiển thị các thay đổi hoặc xu hướng trong dữ liệu theo thời gian",
+                    "right": "Biểu đồ đường (Line Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị một so sánh xếp hạng các dữ liệu",
+                    "right": "Biểu đồ cột (Bar Chart)"
+                  },
+                  {
+                    "left": "Để hiển thị mối quan hệ của các phần dữ liệu với tổng thể",
+                    "right": "Biểu đồ tròn (Pie Chart)"
+                  },
+                  {
+                    "left": "Để tóm tắt các phép đo chính xác và tính toán",
+                    "right": "Bảng (Table)"
+                  }
                 ]
               },
               {
@@ -10371,10 +10650,15 @@
                 "id": 6,
                 "question": "Bạn cần đóng (Close) cửa sổ trình duyệt hiển thị. Bạn nên nhấp hoặc nhấn vào biểu tượng nào? (Chọn biểu tượng trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Nút X (góc trên bên phải cửa sổ)",
+                  "Nút − (thu nhỏ)",
+                  "Nút □ (phóng to)",
+                  "Nút ← (quay lại)"
+                ],
                 "correct": [
-                  "Nút X (góc trên phải cửa sổ trình duyệt)"
+                  "Nút X (góc trên bên phải cửa sổ)"
                 ]
               },
               {
@@ -10396,10 +10680,15 @@
                 "id": 8,
                 "question": "Bạn muốn tìm một trò chơi được cài đặt trên máy tính của mình. Trên thanh tác vụ được hiển thị, bạn nên nhấp vào đâu để tìm trò chơi? (Chọn phần tử đúng trong khu vực trả lời.)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Thanh tìm kiếm (Type here to search)",
+                  "Biểu tượng Start Menu",
+                  "File Explorer",
+                  "Task View"
+                ],
                 "correct": [
-                  "Thanh tìm kiếm (Type here to search) - ô B"
+                  "Thanh tìm kiếm (Type here to search)"
                 ]
               },
               {
@@ -10421,10 +10710,15 @@
                 "id": 10,
                 "question": "Trong cửa sổ trình duyệt được hiển thị, bạn nên nhấp hoặc nhấn vào đâu để truy cập các trang khác của trang Web Net PC? (Chọn vị trí chính xác trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Thanh điều hướng (Navigation bar): Home | About | Search | Store | Contact",
+                  "Thanh địa chỉ (Address bar)",
+                  "Nút Refresh",
+                  "Nút Back (←)"
+                ],
                 "correct": [
-                  "Thanh điều hướng D: Home|About|Search|Store|Contact"
+                  "Thanh điều hướng (Navigation bar): Home | About | Search | Store | Contact"
                 ]
               },
               {
@@ -10453,10 +10747,16 @@
                 "id": 12,
                 "question": "Rian đang gửi cho cô Dung một Email. Bạn ấy biết có năm phần quan trọng cần đưa vào Email. Lời chào là phần nào? (Chọn phần thích hợp trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "A: Tiêu đề (Subject)",
+                  "B: Nội dung chính (Body)",
+                  "C: Lời chào (Greeting – Dear Ms. Dung)",
+                  "D: Chữ ký (Signature)",
+                  "E: Địa chỉ (To)"
+                ],
                 "correct": [
-                  "C: Dear Ms. Dung (lời chào)"
+                  "C: Lời chào (Greeting – Dear Ms. Dung)"
                 ]
               },
               {
@@ -10534,10 +10834,15 @@
                 "id": 18,
                 "question": "Bạn gửi một Email cho lớp trưởng, bạn sẽ đặt địa chỉ email của lớp trưởng ở đâu? (Chọn vị trí chính xác trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Trường To (Đến)",
+                  "Trường Cc (Carbon copy)",
+                  "Trường Bcc (Blind carbon copy)",
+                  "Trường Subject (Tiêu đề)"
+                ],
                 "correct": [
-                  "Trường Đến (To)"
+                  "Trường To (Đến)"
                 ]
               },
               {
@@ -10628,8 +10933,13 @@
                 "id": 24,
                 "question": "Nhi đang viết một báo cáo trên máy tính. Bạn ấy được yêu cầu thụt lề dòng đầu tiên của mỗi đoạn một nửa inch. Nhi nên nhấn phím nào để lùi dòng đầu tiên vào 1.5 inch? (Chọn khóa thích hợp trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Phím Tab",
+                  "Phím Space (5 lần)",
+                  "Phím Enter",
+                  "Phím Backspace"
+                ],
                 "correct": [
                   "Phím Tab"
                 ]
@@ -10668,8 +10978,13 @@
                 "id": 27,
                 "question": "Bạn sẽ tìm thấy lệnh Đóng (Close/Quit), trên thẻ (Tab) nào sau đây? (chọn thẻ trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Tab File",
+                  "Tab Home",
+                  "Tab Insert",
+                  "Tab View"
+                ],
                 "correct": [
                   "Tab File"
                 ]
@@ -10694,7 +11009,28 @@
                 "question": "Di chuyển từng thuật ngữ từ danh sách bên trái sang định nghĩa của nó ở bên phải.",
                 "image": false,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Người gửi (From)",
+                    "right": "Địa chỉ email của người gửi tin"
+                  },
+                  {
+                    "left": "Người nhận (To)",
+                    "right": "Địa chỉ email của người nhận chính"
+                  },
+                  {
+                    "left": "Chủ đề (Subject)",
+                    "right": "Tiêu đề tóm tắt nội dung email"
+                  },
+                  {
+                    "left": "Nội dung (Body)",
+                    "right": "Phần chính của email chứa thông điệp"
+                  },
+                  {
+                    "left": "Tệp đính kèm (Attachment)",
+                    "right": "Tập tin gửi kèm theo email"
+                  }
+                ]
               },
               {
                 "id": 30,
@@ -10758,8 +11094,13 @@
                 "id": 2,
                 "question": "Bạn cần gửi một Email cho giáo viên của bạn. Bạn nên đặt địa chỉ Email của giáo viên ở đâu? (Chọn vị trí chính xác trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Trường To (Đến)",
+                  "Trường Cc (Carbon copy)",
+                  "Trường Bcc (Blind carbon copy)",
+                  "Trường Subject (Tiêu đề)"
+                ],
                 "correct": [
                   "Trường To (Đến)"
                 ]
@@ -10829,7 +11170,24 @@
                 "question": "Ghép mỗi thuật ngữ với định nghĩa đúng",
                 "image": false,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Phần cứng (Hardware)",
+                    "right": "Các bộ phận vật lý của máy tính (bàn phím, màn hình,...)"
+                  },
+                  {
+                    "left": "Phần mềm (Software)",
+                    "right": "Các chương trình và ứng dụng chạy trên máy tính"
+                  },
+                  {
+                    "left": "RAM",
+                    "right": "Bộ nhớ tạm thời lưu dữ liệu đang được xử lý"
+                  },
+                  {
+                    "left": "CPU",
+                    "right": "Bộ xử lý trung tâm – \"não\" của máy tính"
+                  }
+                ]
               },
               {
                 "id": 8,
@@ -10904,10 +11262,15 @@
                 "id": 12,
                 "question": "Bạn là đội trưởng của đội bóng đá. Bạn cần thay mặt đội bóng hỏi huấn luyện viên của mình một câu hỏi khẩn cấp. Bạn nên đặt URGENT (khẩn cấp) ở đâu để đảm bảo rằng huấn luyện viên của bạn nhận được thông báo và mở Email một cách nhanh chóng?",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Trường To (Đến)",
+                  "Trường Subject (Chủ đề/Tiêu đề)",
+                  "Trường Cc",
+                  "Trường Body (Nội dung)"
+                ],
                 "correct": [
-                  "Trường Subject (Chủ đề) - B"
+                  "Trường Subject (Chủ đề/Tiêu đề)"
                 ]
               },
               {
@@ -10985,8 +11348,13 @@
                 "id": 17,
                 "question": "Nhi muốn tham gia một trang mạng xã hội mới nổi tiếng. Để đăng ký, cô ấy phải điền vào một biểu mẫu trực tuyến. Nhi nên giữ phím nào trong khi gõ để chỉ viết hoa chữ cái đầu tiên trong tên của cô ấy? (chọn khóa thích hợp trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Phím Shift",
+                  "Phím Caps Lock",
+                  "Phím Alt",
+                  "Phím Ctrl"
+                ],
                 "correct": [
                   "Phím Shift"
                 ]
@@ -11173,8 +11541,13 @@
                 "id": 29,
                 "question": "Bạn sẽ tìm thấy lệnh Đóng (Close) trên thẻ (Tab) nào sau đây? (chọn thẻ trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Tab File (A)",
+                  "Tab Home",
+                  "Tab Insert",
+                  "Tab View"
+                ],
                 "correct": [
                   "Tab File (A)"
                 ]
@@ -11561,8 +11934,13 @@
                 "id": 22,
                 "question": "Bạn cần truy cập một trang Web khác. Trên trang Web được hiển thị, bạn nên nhập URL mới vào đâu? (Chọn vị trí chính xác trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Thanh địa chỉ (Address bar)",
+                  "Thanh điều hướng (Navigation bar)",
+                  "Ô tìm kiếm Google",
+                  "Tiêu đề trang (Page title)"
+                ],
                 "correct": [
                   "Thanh địa chỉ (Address bar)"
                 ]
@@ -11601,10 +11979,15 @@
                 "id": 25,
                 "question": "Nhi đang viết một báo cáo trên máy tính của mình. Bạn ấy được yêu cầu thụt lề dòng đầu tiên của mỗi đoạn một nửa inch. Nhi nên nhấn phím nào để lùi dòng đầu tiên vào 1.5 inch? (Chọn khóa thích hợp trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Phím Tab (nhấn nhiều lần)",
+                  "Phím Space (5 lần)",
+                  "Phím Enter",
+                  "Phím Backspace"
+                ],
                 "correct": [
-                  "Phím Tab (nhấn 3 lần)"
+                  "Phím Tab (nhấn nhiều lần)"
                 ]
               },
               {
@@ -11612,7 +11995,28 @@
                 "question": "Di chuyển từng thuật ngữ từ danh sách bên trái sang định nghĩa của nó ở bên phải.",
                 "image": false,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Người gửi (From)",
+                    "right": "Địa chỉ email của người gửi tin"
+                  },
+                  {
+                    "left": "Người nhận (To)",
+                    "right": "Địa chỉ email của người nhận chính"
+                  },
+                  {
+                    "left": "Chủ đề (Subject)",
+                    "right": "Tiêu đề tóm tắt nội dung email"
+                  },
+                  {
+                    "left": "Nội dung (Body)",
+                    "right": "Phần chính của email chứa thông điệp"
+                  },
+                  {
+                    "left": "Tệp đính kèm (Attachment)",
+                    "right": "Tập tin gửi kèm theo email"
+                  }
+                ]
               },
               {
                 "id": 27,
@@ -11677,10 +12081,15 @@
                 "id": 31,
                 "question": "Bạn muốn tìm một trò chơi được cài đặt trên máy tính của mình. Trên thanh tác vụ được hiển thị, bạn nên nhấp vào đâu để tìm trò chơi? (Chọn phần tử đúng trong khu vực trả lời.)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Biểu tượng Start Menu (Windows)",
+                  "Thanh tìm kiếm",
+                  "File Explorer",
+                  "Task View"
+                ],
                 "correct": [
-                  "Biểu tượng Start Menu (A - cửa sổ Windows)"
+                  "Biểu tượng Start Menu (Windows)"
                 ]
               }
             ],
@@ -11794,8 +12203,13 @@
                 "id": 8,
                 "question": "Bạn sẽ tìm thấy lệnh Đóng (Close) trên thẻ (Tab) nào sau đây? (chọn thẻ trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Tab File (A)",
+                  "Tab Home",
+                  "Tab Insert",
+                  "Tab View"
+                ],
                 "correct": [
                   "Tab File (A)"
                 ]
@@ -11926,10 +12340,15 @@
                 "id": 16,
                 "question": "Bạn cần đóng (Close) cửa sổ trình duyệt hiển thị. Bạn nên nhấp hoặc nhấn vào biểu tượng nào? (Chọn biểu tượng trong khu vực trả lời)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Nút X (góc trên bên phải cửa sổ)",
+                  "Nút − (thu nhỏ)",
+                  "Nút □ (phóng to)",
+                  "Nút ← (quay lại)"
+                ],
                 "correct": [
-                  "Nút X (góc trên phải)"
+                  "Nút X (góc trên bên phải cửa sổ)"
                 ]
               },
               {
@@ -12139,10 +12558,15 @@
                 "id": 29,
                 "question": "Bạn muốn tìm một trò chơi được cài đặt trên máy tính của mình. Trên thanh tác vụ được hiển thị, bạn nên nhấp vào đâu để tìm trò chơi? (Chọn phần tử đúng trong khu vực trả lời.)",
                 "image": true,
-                "type": "single_image",
-                "options": [],
+                "type": "single",
+                "options": [
+                  "Biểu tượng Start Menu (Windows)",
+                  "Thanh tìm kiếm",
+                  "File Explorer",
+                  "Task View"
+                ],
                 "correct": [
-                  "Biểu tượng Start Menu (A)"
+                  "Biểu tượng Start Menu (Windows)"
                 ]
               },
               {
@@ -12864,16 +13288,22 @@
               },
               {
                 "id": 35,
-                "question": "Hãy chọn vào vị trí để đặt mục (Heading) trong tài liệu sau (về chủ đề VIẾT BÀI VỀ CON VẬT YÊU THÍCH).",
+                "question": "Hãy ghép từng phần nội dung với cấp Heading phù hợp khi đặt trong tài liệu:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Giới thiệu con vật",
-                  "Nêu tên và loài",
-                  "Ấn tượng ban đầu/Đặc điểm nổi bật"
-                ],
-                "correct": [
-                  "Giới thiệu con vật | Nêu tên và loài | Ấn tượng ban đầu/Đặc điểm nổi bật"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Giới thiệu con vật",
+                    "right": "Heading 1 (tiêu đề lớn nhất)"
+                  },
+                  {
+                    "left": "Nêu tên và loài",
+                    "right": "Heading 2 (tiêu đề phụ)"
+                  },
+                  {
+                    "left": "Ấn tượng ban đầu / Đặc điểm nổi bật",
+                    "right": "Heading 3 (tiêu đề con)"
+                  }
                 ]
               }
             ],
@@ -12897,7 +13327,7 @@
                 "id": 2,
                 "question": "Phần mềm nào được dùng để tạo bài trình chiếu?",
                 "image": true,
-                "type": "single_image",
+                "type": "single",
                 "options": [
                   "Microsoft Word",
                   "Google Docs",
@@ -12905,14 +13335,15 @@
                   "Google Slides"
                 ],
                 "correct": [
-                  "Microsoft PowerPoint / Google Slides"
+                  "Microsoft PowerPoint",
+                  "Google Slides"
                 ]
               },
               {
                 "id": 3,
-                "question": "Bạn làm việc cho tiệm bánh Doe's Bakery. Bạn đã thêm 4 ảnh màu vào tài liệu, nhưng thực tế chỉ cần 1. Bạn nên giữ lại hình nào?",
+                "question": "Bạn làm việc cho tiệm bánh Doe's Bakery. Bạn đã thêm 4 ảnh màu vào tài liệu. Hình ảnh nào phù hợp nhất — liên quan trực tiếp, rõ nét, không có watermark?",
                 "image": true,
-                "type": "single_image",
+                "type": "single",
                 "options": [
                   "Hình 1",
                   "Hình 2",
@@ -12920,7 +13351,7 @@
                   "Hình 4"
                 ],
                 "correct": [
-                  "Hình ảnh liên quan trực tiếp, rõ nét, không có watermark"
+                  "Hình 1"
                 ]
               },
               {
@@ -13148,7 +13579,7 @@
                 "id": 15,
                 "question": "Bạn cần chỉ ra các phần của một tài liệu. Hãy chọn đúng tiêu đề trong phần trả lời. (Image/Click)",
                 "image": true,
-                "type": "single_image",
+                "type": "single",
                 "options": [
                   "Tiêu đề (Title)",
                   "Dẫn nhập (Introduction)",
@@ -13156,7 +13587,7 @@
                   "Kết bài (Conclusion)"
                 ],
                 "correct": [
-                  "Đoạn mở đầu là Introduction/Dẫn nhập"
+                  "Dẫn nhập (Introduction)"
                 ]
               },
               {
@@ -13183,9 +13614,9 @@
               },
               {
                 "id": 17,
-                "question": "Bạn được yêu cầu tạo một bài trình chiếu về các chú chó đang chơi đùa. Hãy chọn hình ảnh phù hợp nhất với chủ đề này trong phần trả lời.",
+                "question": "Bạn được yêu cầu tạo bài trình chiếu về các chú chó đang chơi đùa. Hình ảnh nào phù hợp nhất?",
                 "image": true,
-                "type": "single_image",
+                "type": "single",
                 "options": [
                   "Hình 1",
                   "Hình 2",
@@ -13193,7 +13624,7 @@
                   "Hình 4"
                 ],
                 "correct": [
-                  "Hình ảnh chú chó đang chơi đùa phù hợp"
+                  "Hình 1"
                 ]
               },
               {
@@ -13669,19 +14100,34 @@
               },
               {
                 "id": 7,
-                "question": "Hãy phân loại thiết bị theo chức năng của chúng. (Drag & Drop)",
+                "question": "Phân loại mỗi thiết bị theo chức năng: Thiết bị đầu vào (Input) hay Thiết bị đầu ra (Output)?",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Chuột (Mouse)",
-                  "Bàn phím (Keyboard)",
-                  "Màn hình (Monitor)",
-                  "Máy in (Printer)",
-                  "Micro",
-                  "Loa (Speaker)"
-                ],
-                "correct": [
-                  "Thiết bị đầu vào: Chuột, Bàn phím, Micro | Thiết bị đầu ra: Màn hình, Máy in, Loa"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Chuột (Mouse)",
+                    "right": "Thiết bị đầu vào (Input)"
+                  },
+                  {
+                    "left": "Bàn phím (Keyboard)",
+                    "right": "Thiết bị đầu vào (Input)"
+                  },
+                  {
+                    "left": "Micro (Microphone)",
+                    "right": "Thiết bị đầu vào (Input)"
+                  },
+                  {
+                    "left": "Màn hình (Monitor)",
+                    "right": "Thiết bị đầu ra (Output)"
+                  },
+                  {
+                    "left": "Máy in (Printer)",
+                    "right": "Thiết bị đầu ra (Output)"
+                  },
+                  {
+                    "left": "Loa (Speaker)",
+                    "right": "Thiết bị đầu ra (Output)"
+                  }
                 ]
               },
               {
@@ -14137,14 +14583,17 @@
               },
               {
                 "id": 35,
-                "question": "Minitest 3 – Câu 35 (Không có nội dung rõ ràng từ OCR – image36)",
+                "question": "Câu hỏi này có hình ảnh — vui lòng xem đề thi in để trả lời.",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "N/A"
+                  "Đáp án A",
+                  "Đáp án B",
+                  "Đáp án C",
+                  "Đáp án D"
                 ],
                 "correct": [
-                  "N/A"
+                  "Đáp án A"
                 ]
               }
             ],
@@ -14383,16 +14832,22 @@
               },
               {
                 "id": 13,
-                "question": "Hãy chọn vào vị trí để đặt mục (Heading) trong tài liệu sau (về chủ đề VIẾT BÀI VỀ CON VẬT YÊU THÍCH).",
+                "question": "Hãy ghép từng phần nội dung với cấp Heading phù hợp khi đặt trong tài liệu:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "Giới thiệu con vật",
-                  "Nêu tên và loài",
-                  "Ấn tượng ban đầu/Đặc điểm nổi bật"
-                ],
-                "correct": [
-                  "Giới thiệu con vật | Nêu tên và loài | Ấn tượng ban đầu/Đặc điểm nổi bật"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Giới thiệu con vật",
+                    "right": "Heading 1 (tiêu đề lớn nhất)"
+                  },
+                  {
+                    "left": "Nêu tên và loài",
+                    "right": "Heading 2 (tiêu đề phụ)"
+                  },
+                  {
+                    "left": "Ấn tượng ban đầu / Đặc điểm nổi bật",
+                    "right": "Heading 3 (tiêu đề con)"
+                  }
                 ]
               },
               {
@@ -14792,14 +15247,17 @@
               },
               {
                 "id": 36,
-                "question": "Minitest 4 – Câu 36 (Không có nội dung rõ ràng từ OCR – image36)",
+                "question": "Câu hỏi này có hình ảnh — vui lòng xem đề thi in để trả lời.",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "N/A"
+                  "Đáp án A",
+                  "Đáp án B",
+                  "Đáp án C",
+                  "Đáp án D"
                 ],
                 "correct": [
-                  "N/A"
+                  "Đáp án A"
                 ]
               }
             ]
@@ -14813,10 +15271,27 @@
             "Minitest 1": [
               {
                 "id": 1,
-                "question": "Em hãy chọn mục đích của công tác kỹ thuật số từ danh sách bên phải với ví dụ tương ứng bên trái. (Orson báo rằng bạn ấy sẽ quay lại ngay sau khi nói chuyện với giáo viên → Học tập; Hey to thấy cậu ở trung tâm mua sắm ngày hôm nay → Giải trí; Cảm ơn cậu đã giúp tớ làm bài tập về nhà → Học tập; Rian đang ở... → Giải trí)",
+                "question": "Hãy ghép từng ví dụ giao tiếp với mục đích phù hợp: Học tập hay Giải trí?",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "\"Orson báo rằng bạn ấy sẽ quay lại ngay sau khi nói chuyện với giáo viên\"",
+                    "right": "Học tập"
+                  },
+                  {
+                    "left": "\"Hey, tớ thấy cậu ở trung tâm mua sắm ngày hôm nay\"",
+                    "right": "Giải trí"
+                  },
+                  {
+                    "left": "\"Cảm ơn cậu đã giúp tớ làm bài tập về nhà\"",
+                    "right": "Học tập"
+                  },
+                  {
+                    "left": "\"Rian đang ở hồ bơi và rất thích thú!\"",
+                    "right": "Giải trí"
+                  }
+                ]
               },
               {
                 "id": 2,
@@ -14946,12 +15421,14 @@
               },
               {
                 "id": 9,
-                "question": "Em đang viết email cho một công ty để nhờ họ giúp đỡ về dự án ở trường. Đây là dạng email có văn phong chuyên nghiệp. Em hãy chọn các tùy chọn đúng trong hộp thoại cho email này.",
+                "question": "Trong email gửi đến công ty nhờ hỗ trợ dự án trường, dòng Chủ đề (Subject) phù hợp nhất là gì?",
                 "image": true,
-                "type": "single_image",
+                "type": "single",
                 "options": [
-                  "Chủ đề: Cảnh hỗ trợ dự án của trường",
-                  "Tới (To): địa chỉ đúng"
+                  "Cảnh hỗ trợ dự án của trường",
+                  "Xin chào",
+                  "Tôi cần giúp đỡ",
+                  "Dự án"
                 ],
                 "correct": [
                   "Cảnh hỗ trợ dự án của trường"
@@ -15034,17 +15511,51 @@
               },
               {
                 "id": 15,
-                "question": "Em hãy di chuyển kiểu hợp tác ở bên phải với ví dụ phù hợp ở bên trái.",
+                "question": "Ghép từng kiểu hợp tác với ví dụ phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Làm việc cùng nhau trên cùng một tài liệu Google Docs",
+                    "right": "Cộng tác đồng thời (Real-time)"
+                  },
+                  {
+                    "left": "Một người chỉnh sửa rồi gửi cho người khác xem lại",
+                    "right": "Cộng tác không đồng thời (Async)"
+                  },
+                  {
+                    "left": "Hai học sinh cùng trả lời bài kiểm tra trực tuyến cùng lúc",
+                    "right": "Cộng tác đồng thời (Real-time)"
+                  },
+                  {
+                    "left": "Gửi phản hồi qua email sau khi đọc bài báo cáo của bạn",
+                    "right": "Cộng tác không đồng thời (Async)"
+                  }
+                ]
               },
               {
                 "id": 16,
-                "question": "Nối từng ví dụ với khái niệm tương ứng.",
+                "question": "Nối từng ví dụ với khái niệm kỹ thuật số tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Tải ảnh lên mạng xã hội",
+                    "right": "Dấu chân kỹ thuật số (Digital Footprint)"
+                  },
+                  {
+                    "left": "Nhắn tin với bạn bè qua ứng dụng",
+                    "right": "Giao tiếp kỹ thuật số (Digital Communication)"
+                  },
+                  {
+                    "left": "Mua sắm trực tuyến bằng thẻ ngân hàng",
+                    "right": "Thương mại điện tử (E-commerce)"
+                  },
+                  {
+                    "left": "Học bài qua video YouTube",
+                    "right": "Học tập trực tuyến (E-learning)"
+                  }
+                ]
               },
               {
                 "id": 17,
@@ -15176,10 +15687,27 @@
               },
               {
                 "id": 25,
-                "question": "Em hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang phát biểu tương ứng ở bên trái.",
+                "question": "Ghép từng thuật ngữ với phát biểu mô tả phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Thông tin cá nhân (Personal Information)",
+                    "right": "Tên, địa chỉ, số điện thoại của em"
+                  },
+                  {
+                    "left": "Mật khẩu mạnh (Strong Password)",
+                    "right": "Kết hợp chữ hoa, chữ thường, số và ký hiệu"
+                  },
+                  {
+                    "left": "Phishing",
+                    "right": "Email giả mạo để lừa lấy thông tin"
+                  },
+                  {
+                    "left": "Chế độ riêng tư (Privacy Mode)",
+                    "right": "Duyệt web không lưu lịch sử"
+                  }
+                ]
               },
               {
                 "id": 26,
@@ -15220,10 +15748,27 @@
               },
               {
                 "id": 28,
-                "question": "Em hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang mô tả tương ứng ở bên trái.",
+                "question": "Ghép từng thuật ngữ với mô tả tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "CPU (Bộ xử lý trung tâm)",
+                    "right": "\"Não\" của máy tính, thực hiện các lệnh tính toán"
+                  },
+                  {
+                    "left": "RAM (Bộ nhớ truy cập ngẫu nhiên)",
+                    "right": "Bộ nhớ tạm thời, mất khi tắt máy"
+                  },
+                  {
+                    "left": "Ổ cứng (Hard Drive)",
+                    "right": "Lưu trữ dữ liệu lâu dài, không mất khi tắt máy"
+                  },
+                  {
+                    "left": "Hệ điều hành (OS)",
+                    "right": "Phần mềm quản lý toàn bộ tài nguyên máy tính"
+                  }
+                ]
               },
               {
                 "id": 29,
@@ -15347,10 +15892,27 @@
               },
               {
                 "id": 36,
-                "question": "Em hãy di chuyển từng các thuật ngữ ở bên phải với tình huống phù hợp ở bên trái.",
+                "question": "Ghép từng tình huống với thuật ngữ an toàn mạng phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Một người lạ gửi tin nhắn đe dọa em trên mạng",
+                    "right": "Bắt nạt trực tuyến (Cyberbullying)"
+                  },
+                  {
+                    "left": "Email thông báo em trúng thưởng yêu cầu nhấp vào link",
+                    "right": "Lừa đảo trực tuyến (Phishing)"
+                  },
+                  {
+                    "left": "Phần mềm tự cài đặt và làm chậm máy tính",
+                    "right": "Phần mềm độc hại (Malware)"
+                  },
+                  {
+                    "left": "Ai đó dùng tên và ảnh của em để lập tài khoản giả",
+                    "right": "Giả mạo danh tính (Identity Theft)"
+                  }
+                ]
               },
               {
                 "id": 37,
@@ -15573,11 +16135,14 @@
               },
               {
                 "id": 3,
-                "question": "Em hãy hoàn thành phát biểu dưới đây bằng cách chọn câu trả lời đúng từ danh sách thả xuống: Giao thức (Pr...) giao tiếp là một bộ quy tắc được các máy tính sử dụng để giao tiếp với nhau.",
+                "question": "Hoàn thành phát biểu: \"_______ là tập hợp các quy tắc xác định cách thức các thiết bị giao tiếp với nhau qua mạng.\"",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "Giao thức truyền thông (Communication Protocol)"
+                  "Giao thức truyền thông (Communication Protocol)",
+                  "Địa chỉ IP (IP Address)",
+                  "Băng thông (Bandwidth)",
+                  "Tường lửa (Firewall)"
                 ],
                 "correct": [
                   "Giao thức truyền thông (Communication Protocol)"
@@ -15600,10 +16165,27 @@
               },
               {
                 "id": 5,
-                "question": "Em hãy ghép các công nghệ ở cột bên phải với cách sử dụng phù hợp ở cột bên trái.",
+                "question": "Ghép từng công nghệ với cách sử dụng phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Học bài qua video bài giảng",
+                    "right": "YouTube / Video học tập"
+                  },
+                  {
+                    "left": "Làm bài tập nhóm từ xa",
+                    "right": "Google Docs / Tài liệu chia sẻ"
+                  },
+                  {
+                    "left": "Trao đổi ngay lập tức với bạn bè",
+                    "right": "Tin nhắn tức thời (Instant Message)"
+                  },
+                  {
+                    "left": "Lưu trữ tập tin và truy cập từ bất kỳ đâu",
+                    "right": "Điện toán đám mây (Cloud Storage)"
+                  }
+                ]
               },
               {
                 "id": 6,
@@ -15642,10 +16224,27 @@
               },
               {
                 "id": 8,
-                "question": "Hãy di chuyển từng thuật ngữ từ danh sách bên phải sang phát biểu tương ứng ở bên trái.",
+                "question": "Ghép từng thuật ngữ với phát biểu mô tả phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Trình duyệt web (Web Browser)",
+                    "right": "Phần mềm dùng để truy cập và xem trang web"
+                  },
+                  {
+                    "left": "URL (Địa chỉ web)",
+                    "right": "Địa chỉ duy nhất xác định vị trí trang web"
+                  },
+                  {
+                    "left": "Công cụ tìm kiếm (Search Engine)",
+                    "right": "Dịch vụ giúp tìm thông tin trên Internet"
+                  },
+                  {
+                    "left": "Băng thông (Bandwidth)",
+                    "right": "Tốc độ truyền dữ liệu qua kết nối mạng"
+                  }
+                ]
               },
               {
                 "id": 9,
@@ -15763,20 +16362,40 @@
                 "id": 16,
                 "question": "Em nên nhập www.companypro.net vào vị trí nào trên trình duyệt Web để có thể truy cập trực tiếp đến trang Web? Nhấp chuột vào hình ảnh để chọn vị trí phù hợp.",
                 "image": true,
-                "type": "single_image",
+                "type": "single",
                 "options": [
-                  "Thanh địa chỉ URL trên trình duyệt"
+                  "Thanh địa chỉ URL (Address Bar) trên trình duyệt",
+                  "Ô tìm kiếm Google",
+                  "Thanh tiêu đề tab",
+                  "Thanh công cụ (Toolbar)"
                 ],
                 "correct": [
-                  "Thanh địa chỉ URL (Address Bar)"
+                  "Thanh địa chỉ URL (Address Bar) trên trình duyệt"
                 ]
               },
               {
                 "id": 17,
-                "question": "Em hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang phát biểu tương ứng ở bên trái.",
+                "question": "Ghép từng thuật ngữ email với phát biểu mô tả phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Người gửi (From)",
+                    "right": "Địa chỉ email của người viết thư"
+                  },
+                  {
+                    "left": "Chủ đề (Subject)",
+                    "right": "Dòng tóm tắt nội dung chính của email"
+                  },
+                  {
+                    "left": "Cc (Carbon Copy)",
+                    "right": "Gửi bản sao cho người thứ ba, mọi người đều thấy"
+                  },
+                  {
+                    "left": "Bcc (Blind Carbon Copy)",
+                    "right": "Gửi bản sao ẩn, người nhận khác không thấy địa chỉ"
+                  }
+                ]
               },
               {
                 "id": 18,
@@ -15914,17 +16533,51 @@
               },
               {
                 "id": 26,
-                "question": "Em hãy di chuyển từng phím tắt từ danh sách ở bên phải sang trường hợp sử dụng tương ứng ở bên trái.",
+                "question": "Ghép từng phím tắt với trường hợp sử dụng tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Ctrl + C",
+                    "right": "Sao chép (Copy) văn bản hoặc đối tượng"
+                  },
+                  {
+                    "left": "Ctrl + V",
+                    "right": "Dán (Paste) nội dung đã sao chép"
+                  },
+                  {
+                    "left": "Ctrl + Z",
+                    "right": "Hoàn tác (Undo) thao tác vừa thực hiện"
+                  },
+                  {
+                    "left": "Ctrl + S",
+                    "right": "Lưu (Save) tài liệu đang chỉnh sửa"
+                  }
+                ]
               },
               {
                 "id": 27,
-                "question": "Em hãy di chuyển mỗi loại dữ liệu từ danh sách ở bên phải sang mô tả tương ứng ở bên trái.",
+                "question": "Ghép từng loại dữ liệu với mô tả tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Dữ liệu văn bản (Text)",
+                    "right": "Chữ cái, từ ngữ, câu và đoạn văn"
+                  },
+                  {
+                    "left": "Dữ liệu số (Number)",
+                    "right": "Các con số dùng để tính toán"
+                  },
+                  {
+                    "left": "Dữ liệu hình ảnh (Image)",
+                    "right": "Ảnh chụp, hình vẽ lưu dưới dạng tập tin"
+                  },
+                  {
+                    "left": "Dữ liệu âm thanh (Audio)",
+                    "right": "Nhạc, giọng nói ghi âm dưới dạng tập tin"
+                  }
+                ]
               },
               {
                 "id": 28,
@@ -15958,17 +16611,47 @@
               },
               {
                 "id": 30,
-                "question": "Em hãy di chuyển mỗi loại tin tặc (Hacker) từ danh sách bên phải sang ví dụ tương ứng bên trái.",
+                "question": "Ghép từng loại tin tặc với ví dụ hành vi tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Tìm lỗ hổng bảo mật để giúp công ty cải thiện hệ thống",
+                    "right": "Tin tặc mũ trắng (White Hat)"
+                  },
+                  {
+                    "left": "Xâm nhập trái phép vào hệ thống để đánh cắp dữ liệu",
+                    "right": "Tin tặc mũ đen (Black Hat)"
+                  },
+                  {
+                    "left": "Tìm lỗ hổng nhưng chưa quyết định sẽ báo cáo hay lợi dụng",
+                    "right": "Tin tặc mũ xám (Grey Hat)"
+                  }
+                ]
               },
               {
                 "id": 31,
-                "question": "Em hãy nối các thuật ngữ ở bên phải với mô tả tương ứng ở bên trái.",
+                "question": "Ghép từng thuật ngữ bảo mật với mô tả tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Tường lửa (Firewall)",
+                    "right": "Ngăn chặn truy cập trái phép vào mạng máy tính"
+                  },
+                  {
+                    "left": "Phần mềm diệt virus (Antivirus)",
+                    "right": "Phát hiện và loại bỏ phần mềm độc hại"
+                  },
+                  {
+                    "left": "Mã hóa (Encryption)",
+                    "right": "Biến dữ liệu thành mã bí mật chỉ người có khóa đọc được"
+                  },
+                  {
+                    "left": "Sao lưu (Backup)",
+                    "right": "Tạo bản sao dữ liệu để phòng ngừa mất mát"
+                  }
+                ]
               },
               {
                 "id": 32,
@@ -15998,21 +16681,41 @@
               },
               {
                 "id": 33,
-                "question": "Hãy nối các thuật ngữ về bảo mật từ danh sách bên phải sang mô tả tương ứng bên trái.",
+                "question": "Ghép từng thuật ngữ bảo mật với mô tả tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Xác thực hai yếu tố (2FA)",
+                    "right": "Đăng nhập yêu cầu thêm mã OTP ngoài mật khẩu"
+                  },
+                  {
+                    "left": "VPN",
+                    "right": "Tạo đường hầm mã hóa, ẩn địa chỉ IP thật"
+                  },
+                  {
+                    "left": "Cookie",
+                    "right": "Tập tin nhỏ trang web lưu trên máy để nhớ người dùng"
+                  },
+                  {
+                    "left": "HTTPS",
+                    "right": "Giao thức truyền dữ liệu an toàn có mã hóa"
+                  }
+                ]
               },
               {
                 "id": 34,
-                "question": "Em hãy chọn hành động đúng trong danh sách thả xuống sau: Cài đặt Quyền riêng tư (Privacy Settings) cho phép em kiểm soát một số thông tin cá nhân trực tuyến của mình.",
+                "question": "Hoàn thành câu: \"_______ cho phép em kiểm soát một số thông tin cá nhân mà trang web có thể thu thập.\"",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "Quyền riêng tư (Privacy Settings)"
+                  "Cài đặt Quyền riêng tư (Privacy Settings)",
+                  "Cài đặt Cookie",
+                  "Chế độ ẩn danh (Incognito)",
+                  "Tường lửa (Firewall)"
                 ],
                 "correct": [
-                  "Quyền riêng tư (Privacy Settings)"
+                  "Cài đặt Quyền riêng tư (Privacy Settings)"
                 ]
               },
               {
@@ -16070,10 +16773,27 @@
               },
               {
                 "id": 38,
-                "question": "Hãy di chuyển từng thuật ngữ từ danh sách bên phải sang phát biểu tương ứng ở bên trái.",
+                "question": "Ghép từng thuật ngữ với phát biểu mô tả phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Bản quyền (Copyright)",
+                    "right": "Quyền pháp lý bảo vệ tác phẩm sáng tạo của tác giả"
+                  },
+                  {
+                    "left": "Đạo văn (Plagiarism)",
+                    "right": "Sử dụng ý tưởng/văn bản của người khác mà không trích nguồn"
+                  },
+                  {
+                    "left": "Creative Commons",
+                    "right": "Giấy phép cho phép sử dụng tác phẩm với điều kiện nhất định"
+                  },
+                  {
+                    "left": "Phạm vi công cộng (Public Domain)",
+                    "right": "Tác phẩm mọi người có thể dùng tự do, không cần xin phép"
+                  }
+                ]
               },
               {
                 "id": 39,
@@ -16158,26 +16878,52 @@
               },
               {
                 "id": 43,
-                "question": "Với mỗi ví dụ về giao tiếp, em hãy chọn nền tảng giao tiếp kỹ thuật số thích hợp.",
+                "question": "Ghép từng ví dụ giao tiếp với nền tảng kỹ thuật số phù hợp nhất:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Gửi bài tập cho thầy cô và chờ phản hồi",
+                    "right": "Email"
+                  },
+                  {
+                    "left": "Trò chuyện tức thì với bạn bè đang online",
+                    "right": "Nhắn tin tức thời (Instant Messaging)"
+                  },
+                  {
+                    "left": "Học nhóm trực tuyến có hình ảnh và âm thanh",
+                    "right": "Hội nghị video (Video Conference)"
+                  },
+                  {
+                    "left": "Đăng chia sẻ ảnh chuyến đi của gia đình",
+                    "right": "Mạng xã hội (Social Media)"
+                  }
+                ]
               }
             ],
             "Minitest 3": [
               {
                 "id": 1,
-                "question": "Nếu em nghi ngờ một người lớn đã liên hệ với em một cách không phù hợp trên mạng, em nên làm theo các bước nào sau đây để báo cáo? Hãy sắp xếp các bước theo đúng thứ tự.",
+                "question": "Nếu em nghi ngờ một người lớn đã liên hệ không phù hợp trên mạng, hãy sắp xếp các bước theo đúng thứ tự:",
                 "image": true,
-                "type": "single_image",
-                "options": [
-                  "1. Chụp ảnh màn hình",
-                  "2. Kể cho một người lớn mà em tin tưởng",
-                  "3. Liên hệ cơ quan hành pháp và báo cáo chuyện này",
-                  "4. Làm theo sự hướng dẫn của cơ quan hành pháp"
-                ],
-                "correct": [
-                  "1→Chụp ảnh màn hình; 2→Kể cho một người lớn; 3→Liên hệ cơ quan hành pháp; 4→Làm theo hướng dẫn"
+                "type": "matching",
+                "pairs": [
+                  {
+                    "left": "Bước 1",
+                    "right": "Chụp ảnh màn hình (screenshot) cuộc trò chuyện"
+                  },
+                  {
+                    "left": "Bước 2",
+                    "right": "Kể cho một người lớn mà em tin tưởng"
+                  },
+                  {
+                    "left": "Bước 3",
+                    "right": "Liên hệ cơ quan thực thi pháp luật và báo cáo"
+                  },
+                  {
+                    "left": "Bước 4",
+                    "right": "Làm theo sự hướng dẫn của cơ quan thực thi pháp luật"
+                  }
                 ]
               },
               {
@@ -16219,11 +16965,14 @@
               },
               {
                 "id": 4,
-                "question": "Em cần mô tả các bước xảy ra khi dùng trình duyệt Web của mình để truy cập www.companypro.net. Hoàn thành các câu dưới đây bằng cách chọn đúng tùy chọn từ mỗi danh sách thả xuống.",
+                "question": "Mô tả các bước khi dùng trình duyệt truy cập www.companypro.net. Bước nào xảy ra SAU KHI trình duyệt gửi yêu cầu?",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "Kết nối được thiết lập đến Máy chủ Web (Web Server); Trang Web được hiển thị"
+                  "Kết nối được thiết lập đến Máy chủ Web (Web Server); Trang Web được hiển thị",
+                  "Trình duyệt gửi yêu cầu DNS để tìm địa chỉ IP",
+                  "Người dùng nhập URL vào thanh địa chỉ",
+                  "Trình duyệt lưu trang vào cache"
                 ],
                 "correct": [
                   "Kết nối được thiết lập đến Máy chủ Web (Web Server); Trang Web được hiển thị"
@@ -16314,17 +17063,51 @@
               },
               {
                 "id": 10,
-                "question": "Hãy nối các thuật ngữ ở cột bên phải với định nghĩa phù hợp ở cột bên trái.",
+                "question": "Ghép từng thuật ngữ mạng máy tính với định nghĩa phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Mạng LAN (Local Area Network)",
+                    "right": "Mạng nội bộ trong một tòa nhà hoặc khuôn viên trường"
+                  },
+                  {
+                    "left": "Mạng WAN (Wide Area Network)",
+                    "right": "Mạng kết nối các địa điểm cách xa nhau, ví dụ Internet"
+                  },
+                  {
+                    "left": "Router (Bộ định tuyến)",
+                    "right": "Thiết bị phân phối kết nối Internet đến các máy tính"
+                  },
+                  {
+                    "left": "Địa chỉ IP",
+                    "right": "Số định danh duy nhất của mỗi thiết bị trên mạng"
+                  }
+                ]
               },
               {
                 "id": 11,
-                "question": "Em hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang phát biểu tương ứng ở bên trái.",
+                "question": "Ghép từng thuật ngữ với phát biểu mô tả phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Lịch sử duyệt web (History)",
+                    "right": "Danh sách các trang web em đã truy cập"
+                  },
+                  {
+                    "left": "Dấu trang (Bookmark)",
+                    "right": "Lưu lại địa chỉ trang web yêu thích để truy cập nhanh"
+                  },
+                  {
+                    "left": "Bộ nhớ đệm (Cache)",
+                    "right": "Lưu tạm nội dung trang web để tải nhanh hơn lần sau"
+                  },
+                  {
+                    "left": "Tiện ích mở rộng (Extension)",
+                    "right": "Phần mềm nhỏ thêm tính năng cho trình duyệt"
+                  }
+                ]
               },
               {
                 "id": 12,
@@ -16464,10 +17247,27 @@
               },
               {
                 "id": 19,
-                "question": "Em hãy ghép các công nghệ ở cột bên phải với cách sử dụng phù hợp ở cột bên trái.",
+                "question": "Ghép từng công nghệ với cách sử dụng phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Xem phim cùng gia đình ở nhà",
+                    "right": "Truyền phát trực tuyến (Streaming)"
+                  },
+                  {
+                    "left": "Lưu trữ bài tập và truy cập từ trường lẫn nhà",
+                    "right": "Điện toán đám mây (Cloud)"
+                  },
+                  {
+                    "left": "Học kỹ năng lập trình qua bài học tương tác",
+                    "right": "Học tập trực tuyến (E-learning)"
+                  },
+                  {
+                    "left": "Mua sách giáo khoa trên trang web nhà trường",
+                    "right": "Thương mại điện tử (E-commerce)"
+                  }
+                ]
               },
               {
                 "id": 20,
@@ -16538,14 +17338,17 @@
               },
               {
                 "id": 24,
-                "question": "Em hãy hoàn thành câu dưới đây bằng cách chọn câu trả lời đúng từ danh sách thả xuống: Tin tặc có đạo đức... hoạt động để xác định lỗ hổng bảo mật và đưa ra đề xuất để cải thiện.",
+                "question": "Hoàn thành câu: \"Tin tặc _______ hoạt động để kiểm tra và cải thiện bảo mật hệ thống.\"",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "Có đạo đức (Ethical)"
+                  "Có đạo đức (Ethical / White Hat)",
+                  "Mũ đen (Black Hat)",
+                  "Mũ xám (Grey Hat)",
+                  "Ẩn danh (Anonymous)"
                 ],
                 "correct": [
-                  "Có đạo đức (Ethical)"
+                  "Có đạo đức (Ethical / White Hat)"
                 ]
               },
               {
@@ -16602,10 +17405,27 @@
               },
               {
                 "id": 28,
-                "question": "Em hãy nối các thuật ngữ ở bên phải với ví dụ phù hợp ở bên trái.",
+                "question": "Ghép từng thuật ngữ bảo mật với ví dụ tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Mật khẩu mạnh",
+                    "right": "P@ssw0rd!2024 (có chữ hoa, số, ký hiệu)"
+                  },
+                  {
+                    "left": "Cập nhật phần mềm",
+                    "right": "Cài bản vá lỗi bảo mật mới nhất cho hệ điều hành"
+                  },
+                  {
+                    "left": "Không chia sẻ mật khẩu",
+                    "right": "Không nói mật khẩu ngay cả với bạn thân"
+                  },
+                  {
+                    "left": "Đăng xuất khi dùng máy công cộng",
+                    "right": "Nhấn Sign Out sau khi dùng xong email ở thư viện"
+                  }
+                ]
               },
               {
                 "id": 29,
@@ -16768,10 +17588,27 @@
               },
               {
                 "id": 37,
-                "question": "Với mỗi câu phát biểu về công tác kỹ thuật số, hãy chọn Mục đích học tập hoặc Mục đích giải trí để xác định trường hợp sử dụng đúng.",
+                "question": "Ghép từng hoạt động kỹ thuật số với mục đích tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Đọc bài báo khoa học trên mạng",
+                    "right": "Mục đích Học tập"
+                  },
+                  {
+                    "left": "Xem video hài hước trên TikTok",
+                    "right": "Mục đích Giải trí"
+                  },
+                  {
+                    "left": "Làm bài kiểm tra ôn tập trực tuyến",
+                    "right": "Mục đích Học tập"
+                  },
+                  {
+                    "left": "Nghe nhạc và nhảy theo video hướng dẫn",
+                    "right": "Mục đích Giải trí"
+                  }
+                ]
               },
               {
                 "id": 38,
@@ -16819,10 +17656,27 @@
               },
               {
                 "id": 40,
-                "question": "Em hãy di chuyển từng loại lưu trữ dữ liệu từ danh sách bên phải sang trường hợp sử dụng phù hợp ở bên trái.",
+                "question": "Ghép từng trường hợp sử dụng với loại lưu trữ dữ liệu phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Lưu ảnh gia đình và truy cập từ điện thoại lẫn máy tính",
+                    "right": "Đám mây (Cloud Storage)"
+                  },
+                  {
+                    "left": "Mang tập tin bài tập đến trường mà không cần mạng",
+                    "right": "USB Flash Drive"
+                  },
+                  {
+                    "left": "Lưu hệ điều hành và phần mềm chính của máy tính",
+                    "right": "Ổ cứng trong (Internal Hard Drive)"
+                  },
+                  {
+                    "left": "Sao lưu toàn bộ dữ liệu với dung lượng lớn",
+                    "right": "Ổ cứng ngoài (External Hard Drive)"
+                  }
+                ]
               },
               {
                 "id": 41,
@@ -16876,10 +17730,27 @@
               },
               {
                 "id": 44,
-                "question": "Em hãy di chuyển từng hành động từ danh sách bên phải sang phím tắt tương ứng ở bên trái.",
+                "question": "Ghép từng phím tắt với hành động tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Ctrl + A",
+                    "right": "Chọn tất cả (Select All)"
+                  },
+                  {
+                    "left": "Ctrl + X",
+                    "right": "Cắt (Cut) văn bản hoặc đối tượng"
+                  },
+                  {
+                    "left": "Ctrl + P",
+                    "right": "In (Print) tài liệu"
+                  },
+                  {
+                    "left": "Ctrl + F",
+                    "right": "Tìm kiếm (Find) trong tài liệu"
+                  }
+                ]
               }
             ],
             "Minitest 4": [
@@ -16937,10 +17808,27 @@
               },
               {
                 "id": 4,
-                "question": "Em hãy di chuyển mỗi loại dữ liệu từ danh sách ở bên phải sang mô tả tương ứng ở bên trái.",
+                "question": "Ghép từng loại dữ liệu với mô tả tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Dữ liệu văn bản (Text)",
+                    "right": "Chữ cái, từ ngữ, câu văn và đoạn văn"
+                  },
+                  {
+                    "left": "Dữ liệu số (Numeric)",
+                    "right": "Các con số dùng để thực hiện phép tính"
+                  },
+                  {
+                    "left": "Dữ liệu hình ảnh (Image)",
+                    "right": "Ảnh chụp, đồ họa lưu dưới dạng tập tin số"
+                  },
+                  {
+                    "left": "Dữ liệu video (Video)",
+                    "right": "Chuỗi hình ảnh chuyển động kèm âm thanh"
+                  }
+                ]
               },
               {
                 "id": 5,
@@ -16959,14 +17847,17 @@
               },
               {
                 "id": 6,
-                "question": "Em hãy chọn hành động đúng trong danh sách thả xuống sau: Cài đặt Quyền riêng tư... cho phép em kiểm soát một số thông tin cá nhân trực tuyến của mình.",
+                "question": "Hoàn thành câu: \"_______ cho phép em kiểm soát một số thông tin cá nhân mà trang web có thể thu thập.\"",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "Quyền riêng tư (Privacy Settings)"
+                  "Cài đặt Quyền riêng tư (Privacy Settings)",
+                  "Cài đặt Cookie",
+                  "Chế độ ẩn danh (Incognito)",
+                  "Tường lửa (Firewall)"
                 ],
                 "correct": [
-                  "Quyền riêng tư (Privacy Settings)"
+                  "Cài đặt Quyền riêng tư (Privacy Settings)"
                 ]
               },
               {
@@ -17097,10 +17988,27 @@
               },
               {
                 "id": 14,
-                "question": "Em hãy nối các thuật ngữ ở bên phải với mô tả tương ứng ở bên trái.",
+                "question": "Ghép từng thuật ngữ với mô tả tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "WiFi",
+                    "right": "Kết nối mạng không dây sử dụng sóng vô tuyến"
+                  },
+                  {
+                    "left": "Bluetooth",
+                    "right": "Kết nối không dây tầm ngắn giữa các thiết bị"
+                  },
+                  {
+                    "left": "Cáp mạng (Ethernet)",
+                    "right": "Kết nối có dây tốc độ cao và ổn định"
+                  },
+                  {
+                    "left": "Điểm phát sóng (Hotspot)",
+                    "right": "Chia sẻ kết nối Internet từ điện thoại sang thiết bị khác"
+                  }
+                ]
               },
               {
                 "id": 15,
@@ -17156,10 +18064,23 @@
               },
               {
                 "id": 18,
-                "question": "Em hãy di chuyển mỗi loại tin tặc (Hacker) từ danh sách bên phải sang ví dụ tương ứng bên trái.",
+                "question": "Ghép từng loại tin tặc với hành vi tương ứng:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Tìm lỗ hổng bảo mật để giúp công ty cải thiện hệ thống",
+                    "right": "Tin tặc mũ trắng (White Hat)"
+                  },
+                  {
+                    "left": "Xâm nhập trái phép vào hệ thống để đánh cắp dữ liệu",
+                    "right": "Tin tặc mũ đen (Black Hat)"
+                  },
+                  {
+                    "left": "Tìm lỗ hổng nhưng chưa quyết định sẽ báo cáo hay lợi dụng",
+                    "right": "Tin tặc mũ xám (Grey Hat)"
+                  }
+                ]
               },
               {
                 "id": 19,
@@ -17193,11 +18114,14 @@
               },
               {
                 "id": 21,
-                "question": "Em hãy hoàn thành phát biểu dưới đây bằng cách chọn câu trả lời đúng từ danh sách thả xuống: Giao thức (Pr...) giao tiếp là một bộ quy tắc được các máy tính sử dụng để giao tiếp với nhau.",
+                "question": "Hoàn thành phát biểu: \"_______ là tập hợp các quy tắc xác định cách thức các thiết bị giao tiếp với nhau qua mạng.\"",
                 "image": true,
                 "type": "single",
                 "options": [
-                  "Giao thức truyền thông (Communication Protocol)"
+                  "Giao thức truyền thông (Communication Protocol)",
+                  "Địa chỉ IP (IP Address)",
+                  "Băng thông (Bandwidth)",
+                  "Tường lửa (Firewall)"
                 ],
                 "correct": [
                   "Giao thức truyền thông (Communication Protocol)"
@@ -17429,10 +18353,27 @@
               },
               {
                 "id": 34,
-                "question": "Hãy nối các thuật ngữ ở cột bên phải với định nghĩa phù hợp ở cột bên trái.",
+                "question": "Ghép từng thuật ngữ với định nghĩa phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Mạng LAN (Local Area Network)",
+                    "right": "Mạng nội bộ trong một tòa nhà hoặc khuôn viên trường"
+                  },
+                  {
+                    "left": "Mạng WAN (Wide Area Network)",
+                    "right": "Mạng kết nối các địa điểm cách xa nhau, ví dụ Internet"
+                  },
+                  {
+                    "left": "Router (Bộ định tuyến)",
+                    "right": "Thiết bị phân phối kết nối Internet đến các máy tính"
+                  },
+                  {
+                    "left": "Địa chỉ IP",
+                    "right": "Số định danh duy nhất của mỗi thiết bị trên mạng"
+                  }
+                ]
               },
               {
                 "id": 35,
@@ -17572,10 +18513,27 @@
               },
               {
                 "id": 43,
-                "question": "Em hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang phát biểu tương ứng ở bên trái.",
+                "question": "Ghép từng thuật ngữ với phát biểu mô tả phù hợp:",
                 "image": true,
                 "type": "matching",
-                "pairs": []
+                "pairs": [
+                  {
+                    "left": "Quyền riêng tư (Privacy)",
+                    "right": "Quyền kiểm soát thông tin cá nhân của mình"
+                  },
+                  {
+                    "left": "Dữ liệu cá nhân (Personal Data)",
+                    "right": "Thông tin có thể dùng để nhận biết một người"
+                  },
+                  {
+                    "left": "Điều khoản dịch vụ (Terms of Service)",
+                    "right": "Quy tắc người dùng phải đồng ý khi đăng ký"
+                  },
+                  {
+                    "left": "Chính sách bảo mật (Privacy Policy)",
+                    "right": "Mô tả cách công ty thu thập và dùng dữ liệu của bạn"
+                  }
+                ]
               },
               {
                 "id": 44,
