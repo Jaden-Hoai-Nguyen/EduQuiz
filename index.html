@@ -2029,8 +2029,636 @@ function getImageIllustration(q) {
     </div>`;
   }
 
-  // ── Default: generic image notice ───────────────────────
-  return `<div class="q-img-notice">🖼️ Câu hỏi này có hình ảnh — vui lòng xem đề thi in để tham khảo hình minh họa.</div>`;
+  // ── Mật khẩu / Password ──────────────────────────────────
+  if (txt.includes('mật khẩu') || txt.includes('password') || txt.includes('đăng nhập') || txt.includes('tài khoản') && txt.includes('bảo vệ')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Tạo Mật khẩu Mạnh (Strong Password)</text>
+        <rect x="15" y="32" width="290" height="38" rx="6" fill="#161929" stroke="#ffd166" stroke-width="1.5"/>
+        <text x="25" y="50" fill="#ffd166" font-size="8" font-family="monospace" font-weight="700">🔑  T@y_2024#Secure!</text>
+        <text x="25" y="64" fill="#06d6a0" font-size="6.5" font-family="monospace">✔ Chữ HOA + thường  ✔ Số  ✔ Ký tự đặc biệt  ✔ ≥8 ký tự</text>
+        ${[['❌ Dùng tên thật','#ff6b6b','Nguyenvana'],['❌ Số dễ đoán','#ff6b6b','12345678'],['❌ Ngày sinh','#ff6b6b','01011990'],['✓ Chữ+Số+Ký tự','#06d6a0','Mx9@qR!z'],['✓ Ít nhất 8 ký tự','#06d6a0','Trung@2024'],['✓ Không tên thú','#06d6a0','kH#7mQ!9']].map(([l,c,ex],i)=>`
+          <rect x="${10+(i%3)*103}" y="${80+Math.floor(i/3)*36}" width="93" height="30" rx="5" fill="#161929" stroke="${c}" stroke-width="1"/>
+          <text x="${56+(i%3)*103}" y="${93+Math.floor(i/3)*36}" fill="${c}" font-size="6.5" text-anchor="middle" font-family="monospace" font-weight="700">${l}</text>
+          <text x="${56+(i%3)*103}" y="${104+Math.floor(i/3)*36}" fill="#7b82b4" font-size="6" text-anchor="middle" font-family="monospace">${ex}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">🔐 Mật khẩu mạnh: kết hợp chữ hoa, thường, số và ký tự đặc biệt</div>
+    </div>`;
+  }
+
+  // ── Email interface / Giao diện Email ────────────────────
+  if (txt.includes('email') || txt.includes('hộp thư') || txt.includes('chuyển tiếp') || txt.includes('forward') || txt.includes('reply') || txt.includes('inbox') || txt.includes('bcc') || txt.includes('trường') && txt.includes('địa chỉ')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 175" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="165" rx="8" fill="#1e2236" stroke="#00d4aa" stroke-width="1.5"/>
+        <rect x="5" y="5" width="310" height="26" rx="8" fill="#2a2f4a"/>
+        <rect x="5" y="22" width="310" height="9" fill="#2a2f4a"/>
+        <text x="20" y="21" fill="#00d4aa" font-size="9" font-family="monospace" font-weight="700">📧 Compose Email</text>
+        ${[['From','giaovien@truong.edu.vn','#7b82b4'],['To','hocsinh@truong.edu.vn ★','#ffd166'],['Cc','phuhuynh@mail.com','#7b82b4'],['Bcc','admin@truong.edu.vn','#6c63ff'],['Subject','Thông báo kiểm tra ngày mai ★','#06d6a0']].map(([lbl,val,c],i)=>`
+          <rect x="10" y="${36+i*20}" width="300" height="18" rx="3" fill="#161929" stroke="${c==='#7b82b4'?'#2a2f4a':c}" stroke-width="${c==='#7b82b4'?'0.5':'1.2'}"/>
+          <text x="16" y="${48+i*20}" fill="#7b82b4" font-size="7" font-family="monospace">${lbl}:</text>
+          <text x="58" y="${48+i*20}" fill="${c}" font-size="7" font-family="monospace">${val}</text>
+        `).join('')}
+        <rect x="10" y="140" width="300" height="22" rx="4" fill="#161929"/>
+        <text x="20" y="153" fill="#7b82b4" font-size="7" font-family="monospace">Nội dung email...</text>
+        <text x="160" y="168" fill="#7b82b4" font-size="6.5" text-anchor="middle" font-family="monospace">★ To = người nhận chính | Subject = tiêu đề | Bcc = ẩn người nhận</text>
+      </svg>
+      <div class="img-caption">📧 Giao diện soạn Email – các trường To, From, Subject, Cc, Bcc</div>
+    </div>`;
+  }
+
+  // ── Thiết bị nhập xuất / Input Output devices ─────────────
+  if (txt.includes('thiết bị nhập') || txt.includes('thiết bị xuất') || txt.includes('input') || txt.includes('output') || txt.includes('nhập dữ liệu') || txt.includes('xuất dữ liệu')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Thiết bị Nhập / Xuất (Input / Output)</text>
+        <rect x="10" y="32" width="143" height="110" rx="6" fill="#161929" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="81" y="48" fill="#6c63ff" font-size="8" text-anchor="middle" font-family="monospace" font-weight="700">📥 INPUT (Nhập)</text>
+        ${[['⌨','Bàn phím'],['🖱','Chuột'],['📷','Webcam'],['🎤','Micro'],['📡','Scanner']].map(([e,t],i)=>`
+          <text x="30" y="${62+i*17}" font-size="12" text-anchor="middle">${e}</text>
+          <text x="80" y="${64+i*17}" fill="#7b82b4" font-size="7" font-family="monospace">${t}</text>
+        `).join('')}
+        <rect x="167" y="32" width="143" height="110" rx="6" fill="#161929" stroke="#ffd166" stroke-width="1.5"/>
+        <text x="238" y="48" fill="#ffd166" font-size="8" text-anchor="middle" font-family="monospace" font-weight="700">📤 OUTPUT (Xuất)</text>
+        ${[['🖥','Màn hình'],['🖨','Máy in'],['🔊','Loa'],['📺','Máy chiếu'],['💡','Đèn LED']].map(([e,t],i)=>`
+          <text x="185" y="${62+i*17}" font-size="12" text-anchor="middle">${e}</text>
+          <text x="238" y="${64+i*17}" fill="#7b82b4" font-size="7" font-family="monospace">${t}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">📥📤 Thiết bị Nhập (Input) và Thiết bị Xuất (Output)</div>
+    </div>`;
+  }
+
+  // ── Internet an toàn / Online Safety K3-K4 ───────────────
+  if (txt.includes('an toàn') && (txt.includes('trực tuyến') || txt.includes('internet') || txt.includes('mạng')) || txt.includes('người lạ') || txt.includes('nguy hiểm') && txt.includes('trực tuyến')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#06d6a0" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">An toàn Trực tuyến (Online Safety)</text>
+        ${[
+          ['🚫','Không chia sẻ địa chỉ nhà','#ff6b6b'],
+          ['🚫','Không gặp người lạ quen online','#ff6b6b'],
+          ['🚫','Không click link lạ','#ff6b6b'],
+          ['✅','Nói với người lớn khi bất an','#06d6a0'],
+          ['✅','Dùng nickname, không tên thật','#06d6a0'],
+          ['✅','Báo cáo nội dung xấu','#06d6a0'],
+        ].map(([e,t,c],i)=>`
+          <rect x="${10+(i%2)*155}" y="${34+Math.floor(i/2)*38}" width="145" height="32" rx="5" fill="#161929" stroke="${c}" stroke-width="1.2"/>
+          <text x="${32+(i%2)*155}" y="${54+Math.floor(i/2)*38}" font-size="14" text-anchor="middle">${e}</text>
+          <text x="${105+(i%2)*155}" y="${54+Math.floor(i/2)*38}" fill="${c}" font-size="6.5" text-anchor="middle" font-family="monospace">${t}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">🛡️ Quy tắc An toàn Trực tuyến cho học sinh</div>
+    </div>`;
+  }
+
+  // ── Tìm kiếm trực tuyến / Search techniques ──────────────
+  if (txt.includes('tìm kiếm') || txt.includes('search engine') || txt.includes('công cụ tìm kiếm') || txt.includes('kết quả tìm kiếm')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Kỹ thuật Tìm kiếm Hiệu quả</text>
+        <rect x="10" y="32" width="300" height="22" rx="11" fill="#161929" stroke="#ffd166" stroke-width="1.5"/>
+        <text x="28" y="47" fill="#7b82b4" font-size="10">🔍</text>
+        <text x="48" y="47" fill="#ffd166" font-size="8" font-family="monospace">"động vật biển" filetype:pdf</text>
+        ${[
+          ['🎯','Từ khóa cụ thể','Tìm "khí hậu Việt Nam" thay vì "thời tiết"','#6c63ff'],
+          ['"..."','Cụm từ chính xác','Đặt trong ngoặc kép để tìm chính xác','#ffd166'],
+          ['-','Loại từ khóa','climate -snow để loại bỏ từ "snow"','#ff6b6b'],
+          ['📅','Lọc theo ngày','Tìm bài viết trong 1 tháng/năm gần đây','#06d6a0'],
+        ].map(([e,n,d,c],i)=>`
+          <rect x="${10+(i%2)*155}" y="${62+Math.floor(i/2)*42}" width="145" height="36" rx="5" fill="#161929" stroke="${c}" stroke-width="1.2"/>
+          <text x="${34+(i%2)*155}" y="${83+Math.floor(i/2)*42}" font-size="13" text-anchor="middle" fill="${c}" font-family="monospace" font-weight="700">${e}</text>
+          <text x="${105+(i%2)*155}" y="${77+Math.floor(i/2)*42}" fill="${c}" font-size="7" text-anchor="middle" font-family="monospace" font-weight="700">${n}</text>
+          <text x="${105+(i%2)*155}" y="${89+Math.floor(i/2)*42}" fill="#7b82b4" font-size="5.5" text-anchor="middle" font-family="monospace">${d}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">🔍 Kỹ thuật tìm kiếm: từ khóa, ngoặc kép, bộ lọc</div>
+    </div>`;
+  }
+
+  // ── Phần mềm / Software types ─────────────────────────────
+  if (txt.includes('phần mềm') || txt.includes('ứng dụng') && (txt.includes('loại') || txt.includes('mục đích') || txt.includes('miễn phí')) || txt.includes('app') && txt.includes('điện thoại')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Phân loại Phần mềm (Software Types)</text>
+        ${[
+          ['🆓','Miễn phí (Freeware)','Dùng thoải mái, không mất phí','#06d6a0'],
+          ['🔓','Mã nguồn mở','Có thể xem, sửa code nguồn','#00d4aa'],
+          ['💰','Thương mại','Phải mua bản quyền mới dùng','#ffd166'],
+          ['⏳','Dùng thử (Trial)','Dùng miễn phí trong thời gian giới hạn','#f4845f'],
+          ['🏢','Hệ điều hành','Quản lý toàn bộ phần cứng','#6c63ff'],
+          ['📱','Ứng dụng (App)','Chạy trên điện thoại/máy tính bảng','#ff6b6b'],
+        ].map(([e,n,d,c],i)=>`
+          <rect x="${10+(i%3)*103}" y="${34+Math.floor(i/3)*55}" width="93" height="46" rx="6" fill="#161929" stroke="${c}" stroke-width="1.2"/>
+          <text x="${34+(i%3)*103}" y="${56+Math.floor(i/3)*55}" font-size="15" text-anchor="middle">${e}</text>
+          <text x="${64+(i%3)*103}" y="${51+Math.floor(i/3)*55}" fill="${c}" font-size="7" font-family="monospace" font-weight="700">${n}</text>
+          <text x="${64+(i%3)*103}" y="${63+Math.floor(i/3)*55}" fill="#7b82b4" font-size="5.5" font-family="monospace">${d}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">💾 Các loại Phần mềm: Freeware, Mã nguồn mở, Thương mại</div>
+    </div>`;
+  }
+
+  // ── Hệ điều hành / Operating systems ─────────────────────
+  if (txt.includes('hệ điều hành') || txt.includes('windows') || txt.includes('macos') || txt.includes('linux') || txt.includes('ios') && txt.includes('android')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Hệ điều hành (Operating Systems)</text>
+        ${[
+          ['⊞','Windows','Microsoft','#00a4ef','PC/Laptop'],
+          ['','macOS','Apple','#a2aaad','MacBook/iMac'],
+          ['🐧','Linux','Open Source','#ffd166','Lập trình viên'],
+          ['🤖','Android','Google','#3ddc84','Điện thoại Android'],
+          ['','iOS','Apple','#7b82b4','iPhone/iPad'],
+          ['🌐','Chrome OS','Google','#ff6b6b','Chromebook'],
+        ].map(([e,n,co,c,d],i)=>`
+          <rect x="${10+(i%3)*103}" y="${34+Math.floor(i/3)*55}" width="93" height="46" rx="6" fill="#161929" stroke="${c}" stroke-width="1.2"/>
+          <text x="${34+(i%3)*103}" y="${56+Math.floor(i/3)*55}" font-size="15" text-anchor="middle" fill="${c}">${e||n[0]}</text>
+          <text x="${64+(i%3)*103}" y="${51+Math.floor(i/3)*55}" fill="${c}" font-size="7.5" font-family="monospace" font-weight="700">${n}</text>
+          <text x="${64+(i%3)*103}" y="${63+Math.floor(i/3)*55}" fill="#7b82b4" font-size="5.5" font-family="monospace">${d}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">🖥️ Các Hệ điều hành phổ biến và thiết bị tương ứng</div>
+    </div>`;
+  }
+
+  // ── Chứng chỉ / phần mềm văn bản / Word processing ──────
+  if (txt.includes('soạn thảo') || txt.includes('văn bản') && (txt.includes('tài liệu') || txt.includes('định dạng') || txt.includes('chỉnh sửa')) || txt.includes('lưu tập tin') || txt.includes('đặt tên tập tin')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 175" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="165" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <rect x="5" y="5" width="310" height="26" rx="8" fill="#2a2f4a"/>
+        <rect x="5" y="22" width="310" height="9" fill="#2a2f4a"/>
+        <text x="20" y="21" fill="#6c63ff" font-size="9" font-family="monospace" font-weight="700">W Microsoft Word</text>
+        <rect x="10" y="36" width="300" height="18" rx="3" fill="#161929" stroke="#2a2f4a"/>
+        ${['B','I','U','|','≡','≡','≡','|','A','🔗'].map((t,i)=>`<text x="${18+i*22}" y="${49}" fill="${['B','I','U'].includes(t)?'#ffd166':'#7b82b4'}" font-size="${t==='B'?10:t==='I'?9:8}" font-family="monospace" font-weight="${t==='B'?'700':'400'}">${t}</text>`).join('')}
+        <rect x="10" y="58" width="300" height="100" rx="4" fill="#f8f9ff" opacity=".04" stroke="#2a2f4a"/>
+        ${['Tiêu đề bài viết','','Đây là đoạn văn mẫu. Bạn có thể nhập nội dung','vào đây và định dạng bằng các nút ở thanh trên.','','Để lưu: Ctrl+S  |  Để in: Ctrl+P  |  Tìm: Ctrl+F'].map((t,i)=>`
+          <text x="20" y="${72+i*14}" fill="${i===0?'#e8eaf6':i===5?'#00d4aa':'#7b82b4'}" font-size="${i===0?9:7}" font-family="monospace" font-weight="${i===0?'700':'400'}">${t}</text>
+        `).join('')}
+        <text x="160" y="162" fill="#7b82b4" font-size="7" text-anchor="middle" font-family="monospace">Đặt tên: BaiNghienCuu_v2.docx  (không dùng ký tự đặc biệt)</text>
+      </svg>
+      <div class="img-caption">📝 Soạn thảo văn bản Word – định dạng, lưu và đặt tên tập tin</div>
+    </div>`;
+  }
+
+  // ── Phishing / Lừa đảo online ─────────────────────────────
+  if (txt.includes('lừa đảo') || txt.includes('phishing') || txt.includes('giả mạo') || txt.includes('scam') || txt.includes('mạo danh')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#ff6b6b" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Nhận biết Lừa đảo Trực tuyến (Phishing)</text>
+        <rect x="10" y="32" width="300" height="75" rx="6" fill="#161929" stroke="#ff6b6b" stroke-width="1.5"/>
+        <text x="22" y="48" fill="#ff6b6b" font-size="8" font-family="monospace" font-weight="700">⚠ Email đáng ngờ:</text>
+        <text x="22" y="62" fill="#ffd166" font-size="7" font-family="monospace">Từ: service@bankv1etcom.net ← ❌ Tên miền giả!</text>
+        <text x="22" y="76" fill="#7b82b4" font-size="7" font-family="monospace">Tiêu đề: KHẨN! Tài khoản bị khóa - Xác minh ngay!</text>
+        <text x="22" y="90" fill="#ff6b6b" font-size="6.5" font-family="monospace">→ Link: http://fake-bank.ru/login ← ❌ URL lạ!</text>
+        <text x="22" y="100" fill="#7b82b4" font-size="6" font-family="monospace">Nhập mật khẩu để mở khóa tài khoản của bạn...</text>
+        ${[['🚩','URL đáng ngờ','#ff6b6b'],['🚩','Yêu cầu khẩn cấp','#ff6b6b'],['🚩','Lỗi chính tả','#ffd166'],['✅','Kiểm tra tên miền','#06d6a0'],['✅','Liên hệ trực tiếp','#06d6a0'],['✅','Không click link lạ','#06d6a0']].map(([e,t,c],i)=>`
+          <rect x="${10+(i%3)*103}" y="${116+Math.floor(i/3)*22}" width="93" height="18" rx="4" fill="#161929" stroke="${c}" stroke-width="0.8"/>
+          <text x="${25+(i%3)*103}" y="${128+Math.floor(i/3)*22}" font-size="9" text-anchor="middle">${e}</text>
+          <text x="${62+(i%3)*103}" y="${129+Math.floor(i/3)*22}" fill="${c}" font-size="6.5" text-anchor="middle" font-family="monospace">${t}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">🎣 Phishing – cách nhận biết và tránh lừa đảo trực tuyến</div>
+    </div>`;
+  }
+
+  // ── Virus / Malware / Spyware ─────────────────────────────
+  if (txt.includes('virus') || txt.includes('malware') || txt.includes('phần mềm độc hại') || txt.includes('spyware') || txt.includes('ransomware') || txt.includes('trojan')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#ff6b6b" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Phần mềm Độc hại (Malware)</text>
+        ${[
+          ['🦠','Virus','Lây lan qua file, email','#ff6b6b'],
+          ['🔒','Ransomware','Mã hóa file, đòi tiền chuộc','#ffd166'],
+          ['🕵','Spyware','Theo dõi bí mật người dùng','#6c63ff'],
+          ['🐴','Trojan','Giả mạo phần mềm hợp lệ','#f4845f'],
+          ['💣','Worm','Tự nhân bản qua mạng','#06d6a0'],
+          ['📢','Adware','Hiển thị quảng cáo ép buộc','#00d4aa'],
+        ].map(([e,n,d,c],i)=>`
+          <rect x="${10+(i%3)*103}" y="${34+Math.floor(i/3)*55}" width="93" height="46" rx="6" fill="#161929" stroke="${c}" stroke-width="1.2"/>
+          <text x="${34+(i%3)*103}" y="${56+Math.floor(i/3)*55}" font-size="15" text-anchor="middle">${e}</text>
+          <text x="${64+(i%3)*103}" y="${51+Math.floor(i/3)*55}" fill="${c}" font-size="7.5" font-family="monospace" font-weight="700">${n}</text>
+          <text x="${64+(i%3)*103}" y="${63+Math.floor(i/3)*55}" fill="#7b82b4" font-size="5.5" font-family="monospace">${d}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">🦠 Các loại Phần mềm Độc hại (Malware) và tác hại</div>
+    </div>`;
+  }
+
+  // ── Tệp tin / File management ─────────────────────────────
+  if (txt.includes('tập tin') || txt.includes('thư mục') || txt.includes('folder') || txt.includes('file') && (txt.includes('đính kèm') || txt.includes('định dạng') || txt.includes('đuôi'))) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#ffd166" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Quản lý Tập tin (File Management)</text>
+        <text x="25" y="45" font-size="20" text-anchor="middle">📁</text>
+        <text x="70" y="40" fill="#ffd166" font-size="8" font-family="monospace" font-weight="700">BaiBao_HocKy1/</text>
+        <line x1="25" y1="48" x2="25" y2="130" stroke="#2a2f4a" stroke-width="1.5"/>
+        ${[
+          ['📝','BaiBao.docx','Văn bản Word','#6c63ff'],
+          ['📊','DuLieu.xlsx','Bảng tính Excel','#06d6a0'],
+          ['📸','AnhMinhHoa.jpg','Hình ảnh JPEG','#ffd166'],
+          ['📋','TrinhBay.pptx','Slide PowerPoint','#f4845f'],
+          ['📄','TomTat.pdf','Tài liệu PDF','#ff6b6b'],
+        ].map(([e,f,d,c],i)=>`
+          <line x1="25" y1="${58+i*15}" x2="40" y2="${58+i*15}" stroke="#2a2f4a" stroke-width="1"/>
+          <text x="45" y="${62+i*15}" font-size="10" text-anchor="middle">${e}</text>
+          <text x="60" y="${62+i*15}" fill="${c}" font-size="7" font-family="monospace" font-weight="700">${f}</text>
+          <text x="170" y="${62+i*15}" fill="#7b82b4" font-size="6.5" font-family="monospace">${d}</text>
+        `).join('')}
+        <text x="160" y="148" fill="#7b82b4" font-size="7" text-anchor="middle" font-family="monospace">Đặt tên tệp: không dùng ký tự đặc biệt, rõ nghĩa</text>
+      </svg>
+      <div class="img-caption">📁 Cấu trúc thư mục và các định dạng tập tin phổ biến</div>
+    </div>`;
+  }
+
+  // ── Thông tin cá nhân / FOMO / Mạng xã hội K7 ───────────
+  if (txt.includes('fomo') || txt.includes('sợ bỏ lỡ') || txt.includes('mạng xã hội') && (txt.includes('ảnh hưởng') || txt.includes('danh tiếng') || txt.includes('đăng tải'))) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Mạng xã hội & Ảnh hưởng tâm lý</text>
+        <rect x="10" y="32" width="145" height="110" rx="6" fill="#161929" stroke="#ff6b6b" stroke-width="1.5"/>
+        <text x="82" y="48" fill="#ff6b6b" font-size="8" text-anchor="middle" font-family="monospace" font-weight="700">⚠ FOMO</text>
+        <text x="82" y="62" font-size="20" text-anchor="middle">😰</text>
+        ${['• Lo lắng khi offline','• So sánh bản thân','• Kiểm tra liên tục','• Mất ngủ vì MXH'].map((t,i)=>`
+          <text x="82" y="${80+i*13}" fill="#7b82b4" font-size="6.5" text-anchor="middle" font-family="monospace">${t}</text>`).join('')}
+        <rect x="165" y="32" width="145" height="110" rx="6" fill="#161929" stroke="#06d6a0" stroke-width="1.5"/>
+        <text x="237" y="48" fill="#06d6a0" font-size="8" text-anchor="middle" font-family="monospace" font-weight="700">✅ Sử dụng lành mạnh</text>
+        <text x="237" y="62" font-size="20" text-anchor="middle">😊</text>
+        ${['• Đặt giới hạn thời gian','• Theo dõi nội dung tích cực','• Không so sánh bản thân','• Ưu tiên gặp gỡ thực tế'].map((t,i)=>`
+          <text x="237" y="${80+i*13}" fill="#7b82b4" font-size="6.5" text-anchor="middle" font-family="monospace">${t}</text>`).join('')}
+      </svg>
+      <div class="img-caption">📱 FOMO và cách sử dụng Mạng xã hội lành mạnh</div>
+    </div>`;
+  }
+
+  // ── Danh tiếng số / Digital reputation ───────────────────
+  if (txt.includes('danh tiếng') || txt.includes('hồ sơ') && (txt.includes('trực tuyến') || txt.includes('kỹ thuật số') || txt.includes('linkedin')) || txt.includes('xin việc') && txt.includes('trực tuyến')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Danh tiếng Số (Digital Reputation)</text>
+        <rect x="10" y="32" width="300" height="55" rx="6" fill="#161929" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="40" y="58" font-size="28" text-anchor="middle">👤</text>
+        <text x="95" y="48" fill="#6c63ff" font-size="8" font-family="monospace" font-weight="700">Hồ sơ Trực tuyến của Bạn</text>
+        <text x="95" y="62" fill="#7b82b4" font-size="6.5" font-family="monospace">Ảnh đại diện  |  Bài đăng  |  Bình luận  |  Like</text>
+        <text x="95" y="76" fill="#7b82b4" font-size="6.5" font-family="monospace">Nhóm tham gia  |  Thông tin cá nhân  |  Review</text>
+        ${[['🟢','Nội dung tích cực','Khen ngợi người khác, chia sẻ kiến thức','#06d6a0'],['🔴','Nội dung tiêu cực','Xúc phạm, tin đồn, tranh cãi','#ff6b6b'],['🟡','Hình ảnh không phù hợp','Ảnh không chuyên nghiệp khi xin việc','#ffd166']].map(([e,n,d,c],i)=>`
+          <rect x="10" y="${95+i*18}" width="300" height="16" rx="3" fill="#161929" stroke="${c}" stroke-width="0.8"/>
+          <text x="20" y="${106+i*18}" font-size="9" text-anchor="middle">${e}</text>
+          <text x="82" y="${106+i*18}" fill="${c}" font-size="6.5" font-family="monospace" font-weight="700">${n}</text>
+          <text x="200" y="${106+i*18}" fill="#7b82b4" font-size="5.5" font-family="monospace">${d}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">🌟 Danh tiếng số – nội dung bạn đăng ảnh hưởng đến hình ảnh bản thân</div>
+    </div>`;
+  }
+
+  // ── Kết nối internet / Network connection K3-K4 ──────────
+  if (txt.includes('kết nối') && (txt.includes('wifi') || txt.includes('internet') || txt.includes('bluetooth') || txt.includes('dây')) || txt.includes('có dây') || txt.includes('không dây')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#00d4aa" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Kết nối Internet</text>
+        <rect x="10" y="32" width="143" height="110" rx="6" fill="#161929" stroke="#00d4aa" stroke-width="1.5"/>
+        <text x="81" y="50" fill="#00d4aa" font-size="8" text-anchor="middle" font-family="monospace" font-weight="700">📶 Không dây (WiFi)</text>
+        <text x="81" y="74" font-size="25" text-anchor="middle">📡</text>
+        ${['• Tiện lợi, di chuyển thoải mái','• Tốc độ chậm hơn','• Dễ bị nhiễu sóng','• Phổ biến: WiFi 5GHz'].map((t,i)=>`
+          <text x="81" y="${98+i*12}" fill="#7b82b4" font-size="6.5" text-anchor="middle" font-family="monospace">${t}</text>`).join('')}
+        <rect x="167" y="32" width="143" height="110" rx="6" fill="#161929" stroke="#ffd166" stroke-width="1.5"/>
+        <text x="238" y="50" fill="#ffd166" font-size="8" text-anchor="middle" font-family="monospace" font-weight="700">🔌 Có dây (Ethernet)</text>
+        <text x="238" y="74" font-size="25" text-anchor="middle">🔗</text>
+        ${['• Tốc độ nhanh, ổn định','• Không bị nhiễu sóng','• Phải dùng dây cáp','• Ít di động hơn'].map((t,i)=>`
+          <text x="238" y="${98+i*12}" fill="#7b82b4" font-size="6.5" text-anchor="middle" font-family="monospace">${t}</text>`).join('')}
+      </svg>
+      <div class="img-caption">📶 So sánh kết nối WiFi (không dây) và Ethernet (có dây)</div>
+    </div>`;
+  }
+
+  // ── Thời gian sử dụng màn hình / Screen time ─────────────
+  if (txt.includes('thời gian màn hình') || txt.includes('screen time') || txt.includes('sử dụng thiết bị') && txt.includes('giờ') || txt.includes('nghỉ giải lao') || txt.includes('mỏi mắt')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#06d6a0" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Quy tắc 20-20-20 & Screen Time</text>
+        <circle cx="80" cy="88" r="52" fill="none" stroke="#161929" stroke-width="12"/>
+        <circle cx="80" cy="88" r="52" fill="none" stroke="#06d6a0" stroke-width="12" stroke-dasharray="163 326" stroke-dashoffset="81"/>
+        <circle cx="80" cy="88" r="52" fill="none" stroke="#ffd166" stroke-width="12" stroke-dasharray="82 326" stroke-dashoffset="-82"/>
+        <circle cx="80" cy="88" r="52" fill="none" stroke="#ff6b6b" stroke-width="12" stroke-dasharray="81 326" stroke-dashoffset="-164"/>
+        <text x="80" y="84" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace" font-weight="700">Phân bổ</text>
+        <text x="80" y="98" fill="#7b82b4" font-size="7" text-anchor="middle" font-family="monospace">Thời gian</text>
+        ${[['#06d6a0','Học tập (50%)'],['#ffd166','Giải trí (25%)'],['#ff6b6b','Mạng XH (25%)']].map(([c,t],i)=>`
+          <rect x="155" y="${48+i*28}" width="10" height="10" rx="2" fill="${c}"/>
+          <text x="170" y="${58+i*28}" fill="${c}" font-size="7" font-family="monospace">${t}</text>
+        `).join('')}
+        <rect x="155" y="140" width="155" height="14" rx="4" fill="#161929" stroke="#6c63ff"/>
+        <text x="232" y="150" fill="#6c63ff" font-size="6.5" text-anchor="middle" font-family="monospace">Quy tắc 20-20-20: mỗi 20 phút</text>
+        <text x="20" y="152" fill="#7b82b4" font-size="7" text-anchor="middle" font-family="monospace">👁</text>
+        <text x="50" y="152" fill="#7b82b4" font-size="6.5" font-family="monospace">Nhìn xa 20 feet, 20 giây</text>
+      </svg>
+      <div class="img-caption">⏱️ Quy tắc 20-20-20: Cứ 20 phút nhìn vật ở xa 20 feet trong 20 giây</div>
+    </div>`;
+  }
+
+  // ── Phong trào / Tư thế ngồi máy tính / Ergonomics ───────
+  if (txt.includes('tư thế') || txt.includes('công thái học') || txt.includes('ergonomic') || txt.includes('cổ tay') || txt.includes('chấn thương') && txt.includes('máy tính') || txt.includes('rsi')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#06d6a0" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Tư thế Ngồi Máy tính Đúng (Ergonomics)</text>
+        <!-- Stick figure sitting correctly -->
+        <circle cx="90" cy="50" r="14" fill="#6c63ff" opacity=".8"/>
+        <text x="90" y="55" fill="#fff" font-size="12" text-anchor="middle">👤</text>
+        <line x1="90" y1="64" x2="90" y2="100" stroke="#6c63ff" stroke-width="3"/>
+        <line x1="90" y1="75" x2="65" y2="90" stroke="#6c63ff" stroke-width="2"/>
+        <line x1="90" y1="75" x2="115" y2="90" stroke="#6c63ff" stroke-width="2"/>
+        <line x1="90" y1="100" x2="70" y2="120" stroke="#6c63ff" stroke-width="2"/>
+        <line x1="90" y1="100" x2="110" y2="120" stroke="#6c63ff" stroke-width="2"/>
+        <!-- Monitor -->
+        <rect x="120" y="55" width="55" height="40" rx="4" fill="#161929" stroke="#00d4aa" stroke-width="1.5"/>
+        <line x1="147" y1="95" x2="147" y2="108" stroke="#00d4aa" stroke-width="2"/>
+        <rect x="130" y="108" width="34" height="5" rx="2" fill="#00d4aa" opacity=".5"/>
+        <!-- Guidelines -->
+        ${[['✅','Mắt ngang màn hình','#06d6a0',165,45],['✅','Cổ tay thẳng','#06d6a0',165,62],['✅','Lưng thẳng 90°','#06d6a0',165,79],['✅','Chân chạm sàn','#06d6a0',165,96],['❌','Cúi đầu xuống','#ff6b6b',165,116],['❌','Chân không chạm sàn','#ff6b6b',165,133]].map(([e,t,c,x,y])=>`
+          <text x="${x}" y="${y}" fill="${c}" font-size="7" font-family="monospace">${e} ${t}</text>`).join('')}
+      </svg>
+      <div class="img-caption">🪑 Tư thế ngồi máy tính đúng để tránh chấn thương (Ergonomics)</div>
+    </div>`;
+  }
+
+  // ── Sáng tạo nội dung / Creative Commons ─────────────────
+  if (txt.includes('giấy phép') || txt.includes('creative commons') || txt.includes('tài sản sáng tạo') || txt.includes('bản quyền') && (txt.includes('sử dụng') || txt.includes('cho phép'))) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Giấy phép Tài sản sáng tạo (Creative Commons)</text>
+        ${[
+          ['CC BY','Ghi công tác giả','Tự do chia sẻ & chỉnh sửa','#06d6a0','✅'],
+          ['CC BY-SA','Ghi công + Chia sẻ tương tự','Sửa được nhưng phải dùng CC','#00d4aa','✅'],
+          ['CC BY-ND','Ghi công + Không chỉnh sửa','Chỉ chia sẻ nguyên bản','#ffd166','⚠'],
+          ['CC BY-NC','Ghi công + Phi thương mại','Không dùng mục đích kiếm tiền','#f4845f','⚠'],
+          ['All Rights Reserved','©️ Bản quyền đầy đủ','Cần xin phép tác giả','#ff6b6b','❌'],
+          ['Public Domain','Miền công cộng','Tự do sử dụng hoàn toàn','#6c63ff','✅'],
+        ].map(([n,d1,d2,c,e],i)=>`
+          <rect x="${10+(i%2)*155}" y="${34+Math.floor(i/2)*38}" width="145" height="32" rx="5" fill="#161929" stroke="${c}" stroke-width="1"/>
+          <text x="${25+(i%2)*155}" y="${53+Math.floor(i/2)*38}" font-size="10" text-anchor="middle">${e}</text>
+          <text x="${95+(i%2)*155}" y="${47+Math.floor(i/2)*38}" fill="${c}" font-size="6.5" font-family="monospace" font-weight="700">${n}</text>
+          <text x="${95+(i%2)*155}" y="${59+Math.floor(i/2)*38}" fill="#7b82b4" font-size="5.5" font-family="monospace">${d2}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">©️ Các loại Giấy phép Tài sản sáng tạo (Creative Commons)</div>
+    </div>`;
+  }
+
+  // ── Truyền thông trực tuyến / Streaming ──────────────────
+  if (txt.includes('trực tuyến') && (txt.includes('phát sóng') || txt.includes('streaming') || txt.includes('truyền thông') || txt.includes('podcast')) || txt.includes('nền tảng phát')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#ff6b6b" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Truyền thông Trực tuyến (Streaming)</text>
+        ${[
+          ['📺','Video Streaming','YouTube, Netflix','#ff6b6b'],
+          ['🎵','Music Streaming','Spotify, Apple Music','#06d6a0'],
+          ['🎮','Game Streaming','Twitch, GeForce Now','#6c63ff'],
+          ['🎙','Podcast','Spotify, Apple Podcast','#ffd166'],
+          ['📻','Radio Online','Phát sóng âm thanh trực tiếp','#f4845f'],
+          ['📡','Live Stream','Phát sóng trực tiếp','#00d4aa'],
+        ].map(([e,n,d,c],i)=>`
+          <rect x="${10+(i%3)*103}" y="${34+Math.floor(i/3)*55}" width="93" height="46" rx="6" fill="#161929" stroke="${c}" stroke-width="1.2"/>
+          <text x="${34+(i%3)*103}" y="${56+Math.floor(i/3)*55}" font-size="15" text-anchor="middle">${e}</text>
+          <text x="${64+(i%3)*103}" y="${51+Math.floor(i/3)*55}" fill="${c}" font-size="7" font-family="monospace" font-weight="700">${n}</text>
+          <text x="${64+(i%3)*103}" y="${63+Math.floor(i/3)*55}" fill="#7b82b4" font-size="5.5" font-family="monospace">${d}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">📡 Các dịch vụ Truyền thông Trực tuyến phổ biến</div>
+    </div>`;
+  }
+
+  // ── Thương mại điện tử / Giao dịch trực tuyến ────────────
+  if (txt.includes('mua hàng') || txt.includes('thương mại điện tử') || txt.includes('e-commerce') || txt.includes('đặt hàng') || txt.includes('giỏ hàng')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#06d6a0" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Mua sắm Trực tuyến (E-Commerce)</text>
+        ${[
+          {icon:'🔍',step:'1. Tìm sản phẩm',desc:'Tìm kiếm & so sánh',c:'#6c63ff',x:15,y:35},
+          {icon:'🛒',step:'2. Thêm vào giỏ',desc:'Chọn số lượng, màu',c:'#ffd166',x:120,y:35},
+          {icon:'💳',step:'3. Thanh toán',desc:'Thẻ/Ví điện tử',c:'#00d4aa',x:225,y:35},
+        ].map(({icon,step,desc,c,x,y})=>`
+          <rect x="${x}" y="${y}" width="90" height="70" rx="6" fill="#161929" stroke="${c}" stroke-width="1.5"/>
+          <text x="${x+45}" y="${y+28}" font-size="20" text-anchor="middle">${icon}</text>
+          <text x="${x+45}" y="${y+44}" fill="${c}" font-size="6.5" text-anchor="middle" font-family="monospace" font-weight="700">${step}</text>
+          <text x="${x+45}" y="${y+56}" fill="#7b82b4" font-size="6" text-anchor="middle" font-family="monospace">${desc}</text>
+        `).join('')}
+        <text x="109" y="75" fill="#ffd166" font-size="14" text-anchor="middle">→</text>
+        <text x="214" y="75" fill="#ffd166" font-size="14" text-anchor="middle">→</text>
+        ${[
+          {icon:'📦',step:'4. Xác nhận đơn',desc:'Email/SMS xác nhận',c:'#f4845f',x:15,y:120},
+          {icon:'🚚',step:'5. Giao hàng',desc:'Theo dõi đơn hàng',c:'#ff6b6b',x:120,y:120},
+          {icon:'⭐',step:'6. Đánh giá',desc:'Review sản phẩm',c:'#06d6a0',x:225,y:120},
+        ].map(({icon,step,desc,c,x,y})=>`
+          <rect x="${x}" y="${y}" width="90" height="30" rx="5" fill="#161929" stroke="${c}" stroke-width="1"/>
+          <text x="${x+18}" y="${y+20}" font-size="13" text-anchor="middle">${icon}</text>
+          <text x="${x+58}" y="${y+16}" fill="${c}" font-size="6.5" font-family="monospace" font-weight="700">${step}</text>
+          <text x="${x+58}" y="${y+26}" fill="#7b82b4" font-size="5.5" font-family="monospace">${desc}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">🛒 Quy trình Mua sắm Trực tuyến – 6 bước từ tìm kiếm đến đánh giá</div>
+    </div>`;
+  }
+
+  // ── Trình bày / Presentation slide ───────────────────────
+  if (txt.includes('bài thuyết trình') || txt.includes('trình chiếu') || txt.includes('slide') || txt.includes('powerpoint') || txt.includes('thuyết trình')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 175" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="165" rx="8" fill="#1e2236" stroke="#f4845f" stroke-width="1.5"/>
+        <rect x="5" y="5" width="310" height="26" rx="8" fill="#2a2f4a"/>
+        <rect x="5" y="22" width="310" height="9" fill="#2a2f4a"/>
+        <text x="20" y="21" fill="#f4845f" font-size="9" font-family="monospace" font-weight="700">P Microsoft PowerPoint</text>
+        <!-- Slide panel -->
+        <rect x="10" y="36" width="70" height="115" rx="4" fill="#161929" stroke="#2a2f4a"/>
+        <text x="45" y="50" fill="#7b82b4" font-size="7" text-anchor="middle" font-family="monospace">Slides</text>
+        ${[1,2,3,4].map((n,i)=>`
+          <rect x="15" y="${56+i*24}" width="60" height="20" rx="3" fill="${i===0?'#6c63ff':'#1e2236'}" stroke="${i===0?'#6c63ff':'#2a2f4a'}"/>
+          <text x="45" y="${68+i*24}" fill="${i===0?'#fff':'#7b82b4'}" font-size="6" text-anchor="middle" font-family="monospace">Slide ${n}</text>
+        `).join('')}
+        <!-- Main slide canvas -->
+        <rect x="88" y="36" width="222" height="115" rx="6" fill="#6c63ff" opacity=".1" stroke="#6c63ff"/>
+        <rect x="95" y="44" width="208" height="30" rx="4" fill="#161929"/>
+        <text x="199" y="64" fill="#e8eaf6" font-size="11" text-anchor="middle" font-family="monospace" font-weight="700">Tiêu đề Slide</text>
+        <rect x="95" y="80" width="100" height="65" rx="4" fill="#161929" stroke="#2a2f4a"/>
+        <text x="145" y="100" font-size="18" text-anchor="middle">📊</text>
+        <text x="145" y="118" fill="#7b82b4" font-size="6.5" text-anchor="middle" font-family="monospace">Biểu đồ / Hình ảnh</text>
+        <rect x="200" y="80" width="103" height="65" rx="4" fill="#161929" stroke="#2a2f4a"/>
+        ${['• Điểm 1','• Điểm 2','• Điểm 3','• Kết luận'].map((t,i)=>`
+          <text x="210" y="${96+i*13}" fill="#7b82b4" font-size="7" font-family="monospace">${t}</text>`).join('')}
+        <text x="199" y="162" fill="#7b82b4" font-size="7" text-anchor="middle" font-family="monospace">Quy tắc: 1 ý/slide, ít chữ, nhiều hình ảnh</text>
+      </svg>
+      <div class="img-caption">🖥️ Slide thuyết trình – layout đơn giản, rõ ràng, nhiều hình ảnh</div>
+    </div>`;
+  }
+
+  // ── AI / Trí tuệ nhân tạo ─────────────────────────────────
+  if (txt.includes('trí tuệ nhân tạo') || txt.includes('ai ') || txt.includes('máy học') || txt.includes('machine learning') || txt.includes('chatbot') || txt.includes('tự động hóa') && txt.includes('thông minh')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Trí tuệ Nhân tạo (Artificial Intelligence)</text>
+        <text x="160" y="65" font-size="28" text-anchor="middle">🤖</text>
+        <text x="160" y="82" fill="#6c63ff" font-size="9" text-anchor="middle" font-family="monospace" font-weight="700">AI</text>
+        ${[
+          ['🔍','Nhận diện hình','Recognition','#6c63ff',30,110],
+          ['💬','Chatbot','NLP','#ffd166',92,125],
+          ['🎵','Âm nhạc','Sáng tạo','#06d6a0',154,110],
+          ['🚗','Xe tự lái','Autonomous','#ff6b6b',216,125],
+          ['🏥','Y tế','Chẩn đoán','#f4845f',278,110],
+        ].map(([e,n,k,c,x,y])=>`
+          <line x1="${x}" y1="${y-8}" x2="160" y2="82" stroke="${c}" stroke-width="0.8" stroke-dasharray="3,2" opacity=".5"/>
+          <text x="${x}" y="${y}" font-size="14" text-anchor="middle">${e}</text>
+          <text x="${x}" y="${y+12}" fill="${c}" font-size="6" text-anchor="middle" font-family="monospace" font-weight="700">${n}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">🤖 Trí tuệ Nhân tạo (AI) – các lĩnh vực ứng dụng</div>
+    </div>`;
+  }
+
+  // ── Điều khoản / AUP / Terms of Service ──────────────────
+  if (txt.includes('điều khoản') || txt.includes('aup') || txt.includes('chính sách') && txt.includes('sử dụng') || txt.includes('thỏa thuận') || txt.includes('điều khoản dịch vụ')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Chính sách Sử dụng Được chấp nhận (AUP)</text>
+        <rect x="10" y="32" width="300" height="110" rx="6" fill="#161929" stroke="#ffd166" stroke-width="1.5"/>
+        <text x="35" y="52" font-size="18" text-anchor="middle">📋</text>
+        <text x="150" y="52" fill="#ffd166" font-size="8" font-family="monospace" font-weight="700">Acceptable Use Policy (AUP)</text>
+        <line x1="20" y1="60" x2="300" y2="60" stroke="#2a2f4a" stroke-width="1"/>
+        ${[
+          ['📌','Phần Định nghĩa','Giải thích các thuật ngữ quan trọng','#6c63ff'],
+          ['📜','Tuyên bố Chính sách','Những gì được và không được làm','#ffd166'],
+          ['⚖','Phần Vi phạm','Hậu quả khi không tuân thủ','#ff6b6b'],
+          ['✅','Cam kết người dùng','Người dùng phải đồng ý','#06d6a0'],
+        ].map(([e,n,d,c],i)=>`
+          <text x="28" y="${76+i*18}" font-size="11" text-anchor="middle">${e}</text>
+          <text x="80" y="${76+i*18}" fill="${c}" font-size="7.5" font-family="monospace" font-weight="700">${n}</text>
+          <text x="200" y="${76+i*18}" fill="#7b82b4" font-size="6.5" font-family="monospace">${d}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">📋 Chính sách Sử dụng Hợp lệ (AUP) – 3 phần chính quan trọng</div>
+    </div>`;
+  }
+
+  // ── Sao lưu / Backup ─────────────────────────────────────
+  if (txt.includes('sao lưu') || txt.includes('backup') || txt.includes('khôi phục') || txt.includes('đồng bộ') || txt.includes('sync') || txt.includes('phiên bản') && txt.includes('tập tin')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#00d4aa" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Sao lưu Dữ liệu (Data Backup)</text>
+        <text x="60" y="72" font-size="28" text-anchor="middle">💻</text>
+        <text x="60" y="90" fill="#7b82b4" font-size="7" text-anchor="middle" font-family="monospace">Thiết bị gốc</text>
+        <text x="160" y="72" font-size="28" text-anchor="middle">☁️</text>
+        <text x="160" y="90" fill="#00d4aa" font-size="7" text-anchor="middle" font-family="monospace">Cloud Backup</text>
+        <text x="265" y="72" font-size="28" text-anchor="middle">💾</text>
+        <text x="265" y="90" fill="#ffd166" font-size="7" text-anchor="middle" font-family="monospace">Ổ cứng ngoài</text>
+        <line x1="88" y1="75" x2="130" y2="75" stroke="#00d4aa" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="188" y1="75" x2="235" y2="75" stroke="#ffd166" stroke-width="2" marker-end="url(#arrow)"/>
+        <text x="109" y="68" fill="#00d4aa" font-size="9" text-anchor="middle">→</text>
+        <text x="212" y="68" fill="#ffd166" font-size="9" text-anchor="middle">→</text>
+        ${[['Sao lưu tự động','Đặt lịch tự động hàng ngày','#06d6a0'],['Quy tắc 3-2-1','3 bản, 2 loại media, 1 bản off-site','#ffd166'],['Kiểm tra backup','Thử khôi phục định kỳ','#6c63ff']].map(([n,d,c],i)=>`
+          <rect x="${10+i*103}" y="100" width="93" height="42" rx="5" fill="#161929" stroke="${c}" stroke-width="1"/>
+          <text x="${56+i*103}" y="117" fill="${c}" font-size="7" text-anchor="middle" font-family="monospace" font-weight="700">${n}</text>
+          <text x="${56+i*103}" y="${i===1?127:130}" fill="#7b82b4" font-size="${i===1?5.5:6}" text-anchor="middle" font-family="monospace">${d}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">💾 Chiến lược Sao lưu 3-2-1: 3 bản sao, 2 loại media, 1 bản off-site</div>
+    </div>`;
+  }
+
+  // ── Thiên kiến / Bias / Thông tin sai ────────────────────
+  if (txt.includes('thiên kiến') || txt.includes('bias') || txt.includes('thông tin sai') || txt.includes('thông tin') && txt.includes('chính xác') && txt.includes('nguồn') || txt.includes('kiểm chứng')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#ffd166" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Nhận biết Thông tin & Thiên kiến</text>
+        <rect x="10" y="32" width="143" height="110" rx="6" fill="#161929" stroke="#ff6b6b" stroke-width="1.5"/>
+        <text x="81" y="50" fill="#ff6b6b" font-size="8" text-anchor="middle" font-family="monospace" font-weight="700">⚠ Dấu hiệu nghi ngờ</text>
+        ${['🚩 Tiêu đề giật gân','🚩 Không có nguồn dẫn','🚩 Ngôn ngữ cảm xúc','🚩 Thông tin một chiều','🚩 Tác giả không rõ'].map((t,i)=>`
+          <text x="20" y="${66+i*14}" fill="#ff6b6b" font-size="6.5" font-family="monospace">${t}</text>`).join('')}
+        <rect x="167" y="32" width="143" height="110" rx="6" fill="#161929" stroke="#06d6a0" stroke-width="1.5"/>
+        <text x="238" y="50" fill="#06d6a0" font-size="8" text-anchor="middle" font-family="monospace" font-weight="700">✅ Kiểm chứng thông tin</text>
+        ${['✔ Kiểm tra nhiều nguồn','✔ Tìm nguồn gốc bài viết','✔ Đọc kỹ toàn bộ bài','✔ Tra cứu fact-check sites','✔ Hỏi người có chuyên môn'].map((t,i)=>`
+          <text x="172" y="${66+i*14}" fill="#06d6a0" font-size="6.5" font-family="monospace">${t}</text>`).join('')}
+      </svg>
+      <div class="img-caption">🔍 Nhận biết Thiên kiến và kiểm chứng thông tin trực tuyến</div>
+    </div>`;
+  }
+
+  // ── Kỹ năng thế kỷ 21 / 21st century skills ─────────────
+  if (txt.includes('kỹ năng') && (txt.includes('thế kỷ') || txt.includes('tư duy') || txt.includes('cộng tác') || txt.includes('sáng tạo') || txt.includes('phản biện'))) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">4 Kỹ năng Thế kỷ 21 (4Cs)</text>
+        ${[
+          ['💡','Critical Thinking','Tư duy Phản biện','#ffd166'],
+          ['🤝','Collaboration','Hợp tác Nhóm','#06d6a0'],
+          ['🎨','Creativity','Sáng tạo','#6c63ff'],
+          ['💬','Communication','Giao tiếp Hiệu quả','#ff6b6b'],
+        ].map(([e,n,v,c],i)=>`
+          <rect x="${10+(i%2)*155}" y="${34+Math.floor(i/2)*58}" width="145" height="52" rx="8" fill="#161929" stroke="${c}" stroke-width="1.5"/>
+          <text x="${40+(i%2)*155}" y="${63+Math.floor(i/2)*58}" font-size="20" text-anchor="middle">${e}</text>
+          <text x="${100+(i%2)*155}" y="${55+Math.floor(i/2)*58}" fill="${c}" font-size="8" text-anchor="middle" font-family="monospace" font-weight="700">${n}</text>
+          <text x="${100+(i%2)*155}" y="${68+Math.floor(i/2)*58}" fill="#7b82b4" font-size="7" text-anchor="middle" font-family="monospace">${v}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">🌟 Bốn kỹ năng quan trọng thế kỷ 21: Tư duy, Hợp tác, Sáng tạo, Giao tiếp</div>
+    </div>`;
+  }
+
+  // ── Công dân kỹ thuật số / Digital citizen ───────────────
+  if (txt.includes('công dân kỹ thuật số') || txt.includes('digital citizen') || txt.includes('trách nhiệm') && txt.includes('kỹ thuật số') || txt.includes('đạo đức') && txt.includes('kỹ thuật số')) {
+    return `<div class="img-illus">
+      <svg viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="310" height="155" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+        <text x="160" y="24" fill="#e8eaf6" font-size="10" text-anchor="middle" font-family="monospace">Công dân Kỹ thuật số Mẫu mực</text>
+        <text x="160" y="65" font-size="28" text-anchor="middle">🏅</text>
+        ${[
+          ['💬','Giao tiếp lịch sự'],['🔒','Bảo vệ thông tin cá nhân'],
+          ['©','Tôn trọng bản quyền'],['📢','Báo cáo nội dung xấu'],
+          ['🤝','Hỗ trợ người khác'],['🧠','Tư duy phê phán'],
+        ].map(([e,t],i)=>`
+          <rect x="${10+(i%3)*103}" y="${84+Math.floor(i/3)*32}" width="93" height="26" rx="5" fill="#161929" stroke="#6c63ff" stroke-width="0.8"/>
+          <text x="${28+(i%3)*103}" y="${100+Math.floor(i/3)*32}" font-size="11" text-anchor="middle">${e}</text>
+          <text x="${64+(i%3)*103}" y="${101+Math.floor(i/3)*32}" fill="#7b82b4" font-size="6" text-anchor="middle" font-family="monospace">${t}</text>
+        `).join('')}
+      </svg>
+      <div class="img-caption">🏅 Công dân Kỹ thuật số – hành động có trách nhiệm trên mạng</div>
+    </div>`;
+  }
+
+  // ── Default: generic visual based on question type ───────
+  const colors = ['#6c63ff','#00d4aa','#ffd166','#ff6b6b','#06d6a0','#f4845f'];
+  const icons = q.type==='truefalse'?['✅','❌']:q.type==='matching'?['↔','🔗']:q.type==='multi'?['☑','☑','☑']:['◎'];
+  return `<div class="img-illus">
+    <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
+      <rect x="5" y="5" width="310" height="120" rx="8" fill="#1e2236" stroke="#6c63ff" stroke-width="1.5"/>
+      <text x="160" y="32" fill="#e8eaf6" font-size="9" text-anchor="middle" font-family="monospace">📚 Khái niệm liên quan</text>
+      ${(q.options||q.pairs?.map(p=>p.left)||q.statements?.map(s=>s.text)||['Nội dung câu hỏi']).slice(0,6).map((item,i)=>`
+        <rect x="${10+(i%3)*103}" y="${40+Math.floor(i/3)*38}" width="93" height="30" rx="5" fill="#161929" stroke="${colors[i%6]}" stroke-width="1"/>
+        <text x="${56+(i%3)*103}" y="${58+Math.floor(i/3)*38}" fill="${colors[i%6]}" font-size="6" text-anchor="middle" font-family="monospace">${String(item).substring(0,25)}</text>
+      `).join('')}
+    </svg>
+    <div class="img-caption">📖 Hình minh họa nội dung câu hỏi</div>
+  </div>`;
 }
 
 /* ── SINGLE ── */
