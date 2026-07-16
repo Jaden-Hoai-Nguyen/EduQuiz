@@ -14,7 +14,7 @@
 
 // 🔗 Dán URL Google Apps Script Web App của bạn vào đây
 // Ví dụ: 'https://script.google.com/macros/s/AKfy.../exec'
-const APPS_SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+const APPS_SCRIPT_URL = 'https://docs.google.com/spreadsheets/d/1KPXrvgrEDhO_bMPxOBvIdgeo1PPWx6bA9F89Itos2cQ/edit?usp=sharing';
 
 // ⏱️ Timeout: Nếu request quá 10 giây → báo lỗi (đơn vị: ms)
 const REQUEST_TIMEOUT_MS = 10000;

@@ -6,7 +6,7 @@
 
 // ⚙️ CẤU HÌNH – Thay ID sheet của bạn vào đây
 // Lấy ID từ URL: https://docs.google.com/spreadsheets/d/[SHEET_ID]/edit
-var SHEET_ID   = 'PASTE_YOUR_GOOGLE_SHEET_ID_HERE';
+var SHEET_ID = '1KPXrvgrEDhO_bMPxOBvIdgeo1PPWx6bA9F89Itos2cQ';
 var SHEET_NAME = 'Kết quả thi';   // Tên tab trong Google Sheet
 
 // ============================================================
