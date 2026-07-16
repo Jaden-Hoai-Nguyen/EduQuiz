@@ -1,0 +1,124 @@
+/* ════════════════════════════════════════════════════════════
+   EduQuiz — SHARED DESIGN TOKENS
+   Dùng chung cho index.html, ic3-dashboard.html, image-manager.html
+
+   ★ ĐÂY LÀ NƠI DUY NHẤT nên sửa khi đổi màu thương hiệu / bo góc /
+   đổ bóng cho toàn bộ nền tảng. Đừng khai báo lại --purple, --bg...
+   trong <style> riêng của từng trang nữa — chỉ viết CSS riêng cho
+   từng trang (layout, component) và luôn dùng var(--...) từ đây.
+
+   Cách thêm vào 1 trang mới:
+     <link rel="stylesheet" href="css/theme.css">
+   (đặt TRƯỚC style.css hoặc <style> riêng của trang, để trang có
+   thể ghi đè nếu thật sự cần)
+   ════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Backgrounds */
+  --bg:        #f0f4ff;
+  --surface:   #ffffff;
+  --card:      #ffffff;
+  --card2:     #f6f8ff;
+  --border:    #d0d8f0;
+
+  /* Text */
+  --text:      #1a1f3d;
+  --muted:     #6b7280;
+
+  /* Brand palette (indigo-purple) */
+  --purple:    #6c63ff;
+  --purple-lt: #ede9ff;
+  --teal:      #00c9a0;
+  --teal-lt:   #d6faf3;
+  --red:       #ff5252;
+  --red-lt:    #ffe5e5;
+  --yellow:    #ffb300;
+  --yellow-lt: #fff8e1;
+  --green:     #00c853;
+  --green-lt:  #e8f5e9;
+  --orange:    #ff7043;
+  --blue:      #2979ff;
+  --blue-lt:   #e3eeff;
+  --pink:      #e040fb;
+
+  /* Aliases */
+  --accent1: var(--purple);
+  --accent2: var(--teal);
+  --accent3: var(--red);
+  --accent4: var(--yellow);
+  --accent5: var(--green);
+
+  --color-text-primary:   #1a1f3d;
+  --color-text-secondary: #6b7280;
+
+  /* Layout */
+  --radius:    18px;
+  --radius-sm: 12px;
+  --shadow:    0 4px 20px rgba(108,99,255,.1);
+  --shadow-lg: 0 8px 40px rgba(108,99,255,.16);
+
+  --lobby-bg: linear-gradient(160deg,#eef2ff 0%,#f0fdf9 50%,#fff8e1 100%);
+  --lobby-blob1: rgba(108,99,255,.18);
+  --lobby-blob2: rgba(0,201,160,.18);
+
+  /* ── Alias cho tên biến cũ của ic3-dashboard.html ──
+     Giữ lại để không phải sửa từng chỗ dùng trong file đó.
+     Trang mới nên dùng thẳng bộ biến chuẩn phía trên. */
+  --bg-main:        var(--bg);
+  --bg-sidebar:     var(--surface);
+  --bg-card:        var(--card);
+  --bg-topbar:      var(--surface);
+  --text-primary:   var(--text);
+  --text-secondary: var(--muted);
+  --text-muted:     #9ca3af;
+  --border-color:   var(--border);
+  --accent-purple:       var(--purple);
+  --accent-purple-light: var(--purple-lt);
+  --sidebar-active-bg:   var(--purple-lt);
+  --input-bg:            var(--card2);
+  --modal-overlay:       rgba(17, 24, 39, 0.6);
+  --shadow-card:       0 4px 0 #c7d2fe, 0 6px 20px rgba(99,102,241,0.12);
+  --shadow-card-hover: 0 6px 0 #a5b4fc, 0 10px 30px rgba(99,102,241,0.2);
+  --shadow-btn:        0 3px 0 rgba(0,0,0,0.25);
+  --tag-elementary-bg:   #d1fae5;
+  --tag-elementary-text: #065f46;
+  --tag-middle-bg:       #dbeafe;
+  --tag-middle-text:     #1e40af;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Dark Mode ── */
+[data-theme="dark"] {
+  --bg:        #0d0f1a;
+  --surface:   #161929;
+  --card:      #1e2236;
+  --card2:     #252840;
+  --border:    #2e3358;
+  --text:      #e8eaf6;
+  --muted:     #8892c8;
+  --purple-lt: rgba(108,99,255,.18);
+  --teal-lt:   rgba(0,201,160,.15);
+  --red-lt:    rgba(255,82,82,.15);
+  --yellow-lt: rgba(255,179,0,.12);
+  --green-lt:  rgba(0,200,83,.12);
+  --blue-lt:   rgba(41,121,255,.15);
+  --shadow:    0 4px 24px rgba(0,0,0,.4);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,.5);
+  --lobby-bg:  linear-gradient(160deg,#0d0f1a 0%,#111428 50%,#160f1a 100%);
+  --lobby-blob1: rgba(108,99,255,.25);
+  --lobby-blob2: rgba(0,201,160,.2);
+  --color-text-primary:   #e8eaf6;
+  --color-text-secondary: #8892c8;
+
+  --bg-main: var(--bg);
+  --bg-sidebar: var(--surface);
+  --bg-card: var(--card);
+  --bg-topbar: var(--surface);
+  --text-primary: var(--text);
+  --text-secondary: var(--muted);
+  --text-muted: #6b7280;
+  --border-color: var(--border);
+  --sidebar-active-bg: rgba(108,99,255,.18);
+  --input-bg: var(--card2);
+  --modal-overlay: rgba(0,0,0,.7);
+}

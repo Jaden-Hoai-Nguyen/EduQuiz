@@ -1,0 +1,16 @@
+﻿📊 TỔNG HỢP 4 MINITEST K3 - Câu hỏi Công nghệ Thông tin,,,,,
+Minitest,Số câu hỏi,Phân loại câu hỏi,MCQ,Dropdown/Matching,Image-click
+Minitest 1,32,"MCQ, Multi-select, Dropdown, Matching, Image-click, Fill",20,5,7
+Minitest 2,31,"MCQ, Multi-select, Dropdown, Matching, Image-click",21,4,6
+Minitest 3,31,"MCQ, Multi-select, Dropdown, Matching, Image-click",21,5,5
+Minitest 4,33,"MCQ, Multi-select, Dropdown, Matching, Image-click",22,5,6
+TỔNG,127,,84,19,24
+,,,,,
+📝 GHI CHÚ CẤU TRÚC DỮ LIỆU:,,,,,
+• MCQ: Câu hỏi trắc nghiệm 1 đáp án đúng,,,,,
+• Multi-select: Câu hỏi chọn nhiều đáp án (ghi rõ số lượng cần chọn),,,,,
+"• Dropdown: Câu hỏi kéo-thả / nối cặp với hộp thả xuống (Đúng/Sai, Mạnh/Yếu, Thực tế/Quan điểm...)",,,,,
+• Matching: Câu hỏi nối thuật ngữ với định nghĩa,,,,,
+• Image-click: Câu hỏi click vào vị trí đúng trong hình ảnh (xem hình ảnh gốc để biết vị trí),,,,,
+• Image-MCQ: Câu hỏi xem hình ảnh rồi chọn đáp án,,,,,
+• Cột 'Correct Answer': Đáp án đúng đã được xác nhận từ hệ thống quiz,,,,,
