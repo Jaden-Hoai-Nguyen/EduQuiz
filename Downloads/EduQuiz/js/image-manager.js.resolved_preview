@@ -1,0 +1,258 @@
+@@MANUAL_CONFLICT_1@@
+let usedPictureNums = new Set();
+let nextPictureCounter = 1;
+
+const PAGE_SIZE = 20;
+let currentPage = 1;
+let filtered = [];
+
+const state = { search: '', grade: '', minitest: '', status: '' };
+
+@@MANUAL_CONFLICT_2@@
+          });
+        });
+      });
+    });
+@@MANUAL_CONFLICT_3@@
+    const id = q.image_id || '';
+    const m = /^Upload(\d+)$/.exec(id);
+    if (m) usedPictureNums.add(parseInt(m[1], 10));
+  });
+  let n = 1;
+  while (usedPictureNums.has(n)) n++;
+  nextPictureCounter = n;
+}
+function claimNextPictureNumber() {
+  let n = nextPictureCounter;
+  while (usedPictureNums.has(n)) n++;
+  usedPictureNums.add(n);
+  nextPictureCounter = n + 1;
+  return n;
+}
+
+/* ============================================================
+   FILTER OPTIONS
+   ============================================================ */
+function buildFilterOptions() {
+@@MANUAL_CONFLICT_4@@
+  const gSel = document.getElementById('gradeFilter');
+  gSel.innerHTML = '<option value="">Tất cả khối</option>' +
+    grades.map(g => `<option value="${escAttr(g)}">${esc(g)}</option>`).join('');
+
+@@MANUAL_CONFLICT_5@@
+  const mSel = document.getElementById('minitestFilter');
+  mSel.innerHTML = '<option value="">Tất cả Minitest</option>' +
+    mts.map(m => `<option value="${escAttr(m)}">${esc(m)}</option>`).join('');
+}
+
+function questionStatus(q) {
+  if (q.imageUrl) return 'have';
+  if (q.image === true) return 'need';
+  return 'skip';
+}
+
+/* ============================================================
+   FILTER + RENDER
+   ============================================================ */
+function applyFilters() {
+  const s = state.search.trim().toLowerCase();
+  filtered = QUESTIONS.filter(item => {
+@@MANUAL_CONFLICT_6@@
+    if (state.status && questionStatus(item.q) !== state.status) return false;
+    if (s && !(item.q.question || '').toLowerCase().includes(s)) return false;
+    return true;
+  });
+  currentPage = 1;
+  renderStats();
+  renderList();
+}
+
+function renderStats() {
+  let need = 0, have = 0, skip = 0;
+@@MANUAL_CONFLICT_7@@
+    const st = questionStatus(q);
+    if (st === 'need') need++;
+    else if (st === 'have') have++;
+    else skip++;
+  });
+  document.getElementById('statTotal').textContent = QUESTIONS.length;
+  document.getElementById('statNeed').textContent = need;
+  document.getElementById('statHave').textContent = have;
+  document.getElementById('statSkip').textContent = skip;
+}
+
+function renderList() {
+  const list = document.getElementById('qlist');
+  const empty = document.getElementById('emptyState');
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  currentPage = Math.min(currentPage, totalPages);
+  const startIdx = (currentPage - 1) * PAGE_SIZE;
+  const pageItems = filtered.slice(startIdx, startIdx + PAGE_SIZE);
+
+  document.getElementById('pageInfo').textContent =
+    filtered.length ? `Trang ${currentPage}/${totalPages} — ${filtered.length} câu` : 'Không có kết quả';
+  document.getElementById('prevPage').disabled = currentPage <= 1;
+  document.getElementById('nextPage').disabled = currentPage >= totalPages;
+
+  if (!pageItems.length) {
+    list.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+@@MANUAL_CONFLICT_8@@
+  const status = questionStatus(q);
+  const tagHtml = status === 'have'
+    ? '<span class="qtag have">✅ Đã có ảnh</span>'
+    : status === 'need'
+      ? '<span class="qtag need">🟡 Cần ảnh</span>'
+      : '<span class="qtag skip">— Không cần</span>';
+
+  const imgHtml = q.imageUrl
+    ? `<img src="${escAttr(q.imageUrl)}" alt="preview">`
+    : `<div class="qimg-placeholder">🖼️</div>`;
+  const fname = q.image_file ? `<div class="fname">${esc(q.image_file)}</div>` : '';
+
+@@MANUAL_CONFLICT_9@@
+      ${imgHtml}
+      ${fname}
+    </div>
+    <div class="qbody">
+@@MANUAL_CONFLICT_10@@
+    </div>
+  </div>`;
+}
+
+@@MANUAL_CONFLICT_11@@
+    toast('Đã xoá ảnh của câu ' + (item.q.id ?? ''));
+  });
+
+  const toggleBtn = card.querySelector('.toggleSkipBtn');
+@@MANUAL_CONFLICT_12@@
+    if (e.key !== 'Enter') return;
+    const val = urlInput.value.trim();
+    if (!val) return;
+    item.q.imageUrl = val;
+    item.q.image = true;
+@@MANUAL_CONFLICT_13@@
+  const reader = new FileReader();
+  reader.onload = () => {
+    const dataUrl = reader.result;
+    const ext = (file.name.split('.').pop() || 'png').toLowerCase().replace(/[^a-z0-9]/g, '') || 'png';
+    const num = claimNextPictureNumber();
+    const suggested = `Upload${num}.${ext}`;
+
+@@MANUAL_CONFLICT_14@@
+    box.style.display = 'flex';
+    box.innerHTML = `
+      <div class="row"><img src="${dataUrl}" style="max-height:90px;border-radius:8px" alt="new preview"></div>
+      <div class="row" style="font-size:.75rem;color:var(--muted)">Chọn cách lưu ảnh cho câu này:</div>
+      <div class="row">
+@@MANUAL_CONFLICT_15@@
+      </div>
+      <div class="row">
+        <input class="fname-edit" value="${suggested}">
+        <button class="btn btn-primary btn-sm fileRefBtn">💾 Lưu thành file riêng + tải xuống</button>
+      </div>
+      <div class="row" style="font-size:.7rem;color:var(--muted)">
+@@MANUAL_CONFLICT_16@@
+      const fnameInput = box.querySelector('.fname-edit');
+      let fname = (fnameInput.value || suggested).trim();
+      if (!/\.[a-z0-9]+$/i.test(fname)) fname += '.' + ext;
+      const idOnly = fname.replace(/\.[a-z0-9]+$/i, '');
+
+      item.q.imageUrl = 'img/' + fname;
+      item.q.image_file = fname;
+      item.q.image_id = idOnly;
+      item.q.image = true;
+@@MANUAL_CONFLICT_17@@
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = fname;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      box.style.display = 'none';
+      renderStats();
+@@MANUAL_CONFLICT_18@@
+    });
+  };
+  reader.readAsDataURL(file);
+}
+
+/* ============================================================
+@@MANUAL_CONFLICT_19@@
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+@@MANUAL_CONFLICT_20@@
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+@@MANUAL_CONFLICT_21@@
+});
+
+/* ============================================================
+   FILTER UI WIRING
+   ============================================================ */
+document.getElementById('searchBox').addEventListener('input', (e) => {
+  state.search = e.target.value;
+  applyFilters();
+});
+document.getElementById('gradeFilter').addEventListener('change', (e) => {
+  state.grade = e.target.value;
+  applyFilters();
+});
+document.getElementById('minitestFilter').addEventListener('change', (e) => {
+  state.minitest = e.target.value;
+  applyFilters();
+});
+document.querySelectorAll('#statusChips .chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('#statusChips .chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    state.status = chip.dataset.status;
+    applyFilters();
+  });
+});
+document.getElementById('prevPage').addEventListener('click', () => { currentPage--; renderList(); });
+document.getElementById('nextPage').addEventListener('click', () => { currentPage++; renderList(); });
+
+/* ============================================================
+   THEME
+   ============================================================ */
+const themeBtn = document.getElementById('themeToggle');
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  themeBtn.textContent = t === 'dark' ? '☀️' : '🌙';
+}
+applyTheme(localStorage.getItem('ic3_theme') === 'dark' ? 'dark' : 'light');
+themeBtn.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  applyTheme(isDark ? 'light' : 'dark');
+  localStorage.setItem('ic3_theme', isDark ? 'light' : 'dark');
+});
+
+/* ============================================================
+   UTIL
+   ============================================================ */
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function escAttr(s) { return esc(s); }
+function cssEsc(s) { return String(s).replace(/["\\]/g, '\\$&'); }
+
+let toastTimer = null;
+function toast(msg, duration) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), duration || 2600);
+}
+
+boot();
