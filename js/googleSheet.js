@@ -14,7 +14,7 @@
 
 // 🔗 Dán URL Google Apps Script Web App của bạn vào đây
 // Ví dụ: 'https://script.google.com/macros/s/AKfy.../exec'
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxjhgkU7lRQ95wO6CLRBEpb_UXICeWp8ObON7_zHrZsoEwZc9YIRv9PsT31c9psnGp_/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyuUMMy9_lzU-WQhPq4nXmuRcIIf_KuX2OMnfeF-9Rl07LB8p5DEafPFJd1yhxccZPx/exec';
 
 // ⏱️ Timeout: Nếu request quá 10 giây → báo lỗi (đơn vị: ms)
 const REQUEST_TIMEOUT_MS = 10000;
