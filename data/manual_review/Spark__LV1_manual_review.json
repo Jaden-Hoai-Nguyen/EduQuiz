@@ -1,0 +1,241 @@
+[
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn muốn tìm một trò chơi được cài đặt trên máy tính của mình. Trên thanh tác vụ được hiển thị, bạn nên nhấp vào đâu để tìm trò chơi? (Nhấp vào vị trí đúng trong hình để trả lời.)",
+    "image_file": "img-5f0b11f607be0c11931ece782443e451fc2a9d36.png",
+    "imageUrl": "img/img-5f0b11f607be0c11931ece782443e451fc2a9d36.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 1.49,
+          "y": 37.38,
+          "w": 7.19,
+          "h": 35.69
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn cần truy cập một trang Web khác. Trên trang Web được hiển thị, bạn nên nhập URL mới vào đâu? (Nhấp vào vị trí đúng trong hình để trả lời.)",
+    "image_file": "img-2602ca98466f97d775b096cde06a7b98720db310.png",
+    "imageUrl": "img/img-2602ca98466f97d775b096cde06a7b98720db310.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 21.94,
+          "y": 7.72,
+          "w": 59.04,
+          "h": 9.76
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Trong cửa sổ trình duyệt được hiển thị, bạn nên nhấp vào đâu để truy cập các trang khác của trang Web Net PC? (Nhấp vào vị trí đúng trong hình để trả lời.)",
+    "image_file": "img-61ec6844534aa52e3cf3f3c5218ceff050c3f362.png",
+    "imageUrl": "img/img-61ec6844534aa52e3cf3f3c5218ceff050c3f362.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 27.45,
+          "y": 39.08,
+          "w": 46.94,
+          "h": 9.76
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn cần đóng (Close) cửa sổ trình duyệt hiển thị. Bạn nên nhấp hoặc nhấn vào biểu tượng nào? (Nhấp vào vị trí đúng trong hình để trả lời.)",
+    "image_file": "img-728ecf91d9eb51c1d3f0f76dac3e39567fb1757c.png",
+    "imageUrl": "img/img-728ecf91d9eb51c1d3f0f76dac3e39567fb1757c.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 92.49,
+          "y": 1.31,
+          "w": 6.55,
+          "h": 10.86
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn sẽ tìm thấy lệnh Đóng (Close) trong thẻ (Tab) nào sau đây? (Nhấp vào vị trí đúng trong hình bên để trả lời.)",
+    "image_file": "img-06657d738cf6d0e5f4258b53714284a81bebc58a.png",
+    "imageUrl": "img/img-06657d738cf6d0e5f4258b53714284a81bebc58a.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 0.53,
+          "y": 5.04,
+          "w": 8.78,
+          "h": 38.0
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Nhi muốn tham gia một trang mạng xã hội mới nổi tiếng. Để đăng ký, cô ấy phải điền vào một biểu mẫu trực tuyến. Nhi nên giữ phím nào trong khi gõ để chỉ viết hoa chữ cái đầu tiên trong tên của cô ấy? (Chọn phím thích hợp trong khu vực trả lời).",
+    "image_file": "img-75888e086c9a6a57a0a3c4cff5e0717d90dfbb82.png",
+    "imageUrl": "img/img-75888e086c9a6a57a0a3c4cff5e0717d90dfbb82.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 2",
+        "rect_percent": {
+          "x": 0.0,
+          "y": 61.48,
+          "w": 11.44,
+          "h": 17.07
+        },
+        "correct": true
+      },
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 2",
+        "rect_percent": {
+          "x": 66.22,
+          "y": 61.79,
+          "w": 10.9,
+          "h": 17.07
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Nhi đang viết một báo cáo trên máy tính của mình. Bạn ấy được yêu cầu thụt lề dòng đầu tiên của mỗi đoạn 1.5 inch. Nhi nên nhấn phím nào (một lần) để thụt lề chính xác dòng đầu tiên? (Chọn phím thích hợp trong khu vực trả lời).",
+    "image_file": "img-75888e086c9a6a57a0a3c4cff5e0717d90dfbb82.png",
+    "imageUrl": "img/img-75888e086c9a6a57a0a3c4cff5e0717d90dfbb82.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 2",
+        "rect_percent": {
+          "x": 0.0,
+          "y": 23.27,
+          "w": 7.13,
+          "h": 14.63
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "WordBank",
+    "question": "Hầu hết các thư và Email đều có Câu chào hỏi và Câu kết thúc. Bạn hãy kéo thả vào đúng vị trí Câu chào hỏi hoặc Câu kết thúc.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi kéo-thả từ ngân hàng từ vào chỗ trống trong đoạn văn. Xem full_text (chứa [[từ cần kéo vào]] đánh dấu ngay vị trí).",
+    "full_text": "[[Câu kết thúc]] Trân trọng (Sincerely yours).\n[[Câu chào hỏi]] Cô An thân mến (Dear miss An).\n[[Câu chào hỏi]] Xin chào buổi sáng (Good morning).\n[[Câu kết thúc]] Kính chào (lời chúc tốt đẹp)."
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "An cần gửi Email cảm ơn đến giáo viên của mình nhưng bạn ấy không biết nên sử dụng phông chữ nào. Phông chữ nào thích hợp nhất cho thông báo này? (Nhấp chọn vào vòng tròn để trả lời)",
+    "image_file": "img-7892a4b2695c52bc18161b47d8a46b5ed9ea59c0.png",
+    "imageUrl": "img/img-7892a4b2695c52bc18161b47d8a46b5ed9ea59c0.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 1.08,
+          "y": 2.52,
+          "w": 97.11,
+          "h": 21.0
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn là đội trưởng của đội bóng đá. Bạn cần thay mặt đội bóng hỏi huấn luyện viên của mình một câu hỏi khẩn cấp. Bạn nên đặt chủ đề khẩn cấp (UGRENT) ở đâu để đảm bảo rằng huấn luyện viên của bạn nhận được thông báo và mở Email một cách nhanh chóng? (Nhấp chọn 1 trong các chữ A-B-C-D)",
+    "image_file": "img-b5f8216ad430f7092a02a213fd384d2ecbfb14b3.png",
+    "imageUrl": "img/img-b5f8216ad430f7092a02a213fd384d2ecbfb14b3.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 9.98,
+          "y": 28.56,
+          "w": 39.94,
+          "h": 11.66
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn cần gửi Email cho giáo viên. Bạn nên đặt địa chỉ Email của giáo viên ở đâu? (Nhấp chọn 1 trong các chữ A-B-C)",
+    "image_file": "img-418176fc93ae04213eaa7265156431171efe26be.png",
+    "imageUrl": "img/img-418176fc93ae04213eaa7265156431171efe26be.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 14.31,
+          "y": 1.05,
+          "w": 6.28,
+          "h": 9.51
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Ryan đang gửi cho cô Dung một Email. Bạn ấy biết có năm phần quan trọng cần đưa vào Email. Lời chào là phần nào? (Nhấp chọn 1 trong các chữ A-B-C-D-E)",
+    "image_file": "img-7f100be57b1886b9da887406e6bf37fc204f5eda.png",
+    "imageUrl": "img/img-7f100be57b1886b9da887406e6bf37fc204f5eda.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 6.49,
+          "y": 43.57,
+          "w": 40.37,
+          "h": 11.54
+        },
+        "correct": true
+      }
+    ]
+  }
+]

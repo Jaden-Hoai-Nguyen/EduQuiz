@@ -1,0 +1,2595 @@
+{
+  "id": "LV3",
+  "name": "Spark LV3",
+  "grade": "LV3",
+  "cat_id": "Spark",
+  "minitests": {
+    "Minitest 1": [
+      {
+        "question": "Em định quyên góp cho một tổ chức gây quỹ và muốn đảm bảo rằng mình đang ở đúng trang web. Tùy chọn nào sau đây là phần đuôi đúng cho trang web chính thức của một tổ chức phi lợi nhuận?",
+        "type": "single",
+        "options": [
+          ".com",
+          ".edu",
+          ".org",
+          ".net"
+        ],
+        "correct": [
+          ".org"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 1,
+        "uid": "spark__lv3__mt1__q1"
+      },
+      {
+        "question": "Với mỗi phát biểu về công nghệ, em hãy chọn Có nếu phát biểu đó nói về một điều khả thi hoặc chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Các công nhân ở một khu mỏ có thể nhận được dữ liệu thời gian thực từ các công nhân ở một khu mỏ khác.",
+            "answer": "true"
+          },
+          {
+            "text": "Một y tá làm việc từ xa có thể sử dụng dữ liệu y tế thời gian thực để chẩn đoán các vấn đề cho một bệnh nhân đang ở nhà.",
+            "answer": "true"
+          },
+          {
+            "text": "Máy học (Machine Learning) có thể giúp các nhạc sĩ sáng tác thêm nhiều bài hát nổi tiếng.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 2,
+        "uid": "spark__lv3__mt1__q2"
+      },
+      {
+        "question": "Em hãy cho biết, lợi ích của việc lưu trữ đám mây là gì?",
+        "type": "single",
+        "options": [
+          "Bản in trên giấy (Physical Copies) của tài liệu được lưu trữ.",
+          "Dữ liệu được tự động đồng bộ hóa trên tất cả các thiết bị.",
+          "Thông tin chỉ có thể được truy cập bởi một thiết bị tại một thời điểm.",
+          "Bất kì ai cũng có thể truy cập tập tin mà không cần xin phép."
+        ],
+        "correct": [
+          "Dữ liệu được tự động đồng bộ hóa trên tất cả các thiết bị."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 3,
+        "uid": "spark__lv3__mt1__q3"
+      },
+      {
+        "question": "Em hãy di chuyển từng loại lưu trữ dữ liệu từ danh sách bên phải sang trường hợp sử dụng phù hợp ở bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Em muốn sao chép hình ảnh giữa hai máy tính mà không cần kết nối mạng.",
+            "right": "USB"
+          },
+          {
+            "left": "Em muốn dữ liệu của mình được sao lưu và lưu trữ một cách an toàn bởi một công ty khác.",
+            "right": "Lưu trữ đám mây (Cloud Storage)"
+          },
+          {
+            "left": "Em chỉ muốn lưu trữ dữ liệu trên máy tính xách tay của mình.",
+            "right": "Ổ cứng (Hard Drive)"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 4,
+        "uid": "spark__lv3__mt1__q4"
+      },
+      {
+        "question": "Em hãy chọn Có nếu tính năng của USB và chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Có thể mang theo.",
+            "answer": "true"
+          },
+          {
+            "text": "Không gian lưu trữ.",
+            "answer": "true"
+          },
+          {
+            "text": "Truyền tải tập tin.",
+            "answer": "true"
+          },
+          {
+            "text": "Kết nối không dây.",
+            "answer": "false"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 5,
+        "uid": "spark__lv3__mt1__q5"
+      },
+      {
+        "question": "Với mỗi câu phát biểu về việc thu thập dữ liệu, em hãy chọn Có nếu nguồn đó thu thập dữ liệu về hoạt động sử dụng của em hoặc chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Google",
+            "answer": "true"
+          },
+          {
+            "text": "GPS ô tô",
+            "answer": "true"
+          },
+          {
+            "text": "Điện thoại thông minh",
+            "answer": "true"
+          },
+          {
+            "text": "Mạng xã hội",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 6,
+        "uid": "spark__lv3__mt1__q6"
+      },
+      {
+        "question": "Máy tính của em bị chậm. Em nên làm gì trước tiên?",
+        "type": "single",
+        "options": [
+          "Rút phích cắm máy tính.",
+          "Đóng các ứng dụng hoặc cửa sổ không sử dụng.",
+          "Cập nhật hệ điều hành.",
+          "Nhấp chuột liên tục."
+        ],
+        "correct": [
+          "Đóng các ứng dụng hoặc cửa sổ không sử dụng."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 7,
+        "uid": "spark__lv3__mt1__q7"
+      },
+      {
+        "question": "Orson là tài xế xe buýt của một trường học. Anh ấy đang chở một đoàn học sinh đi thực tế tới một nơi chưa từng đến. Anh ấy có thể sử dụng loại công nghệ nào để giúp mình định hướng được vị trí cần đến?",
+        "type": "single",
+        "options": [
+          "Quả địa cầu (Globe)",
+          "Hệ thống định vị toàn cầu (GPS - Global Positioning System).",
+          "Máy phát MP3 (MP3 Player)",
+          "Radio"
+        ],
+        "correct": [
+          "Hệ thống định vị toàn cầu (GPS - Global Positioning System)."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 8,
+        "uid": "spark__lv3__mt1__q8"
+      },
+      {
+        "question": "Em hãy cho biết, tùy chọn nào dưới đây mô tả đúng về USB Drive?",
+        "type": "single",
+        "options": [
+          "Một thiết bị lưu trữ dạng cắm.",
+          "Một không gian lưu trữ trên một ổ cứng.",
+          "Một cơ sở dữ liệu lưu trữ các tập tin trực tuyến.",
+          "Một thiết bị nhớ hoạt động trên đám mây."
+        ],
+        "correct": [
+          "Một thiết bị lưu trữ dạng cắm."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 9,
+        "uid": "spark__lv3__mt1__q9"
+      },
+      {
+        "question": "Em hãy cho biết, địa chỉ URL nào có định dạng đúng?",
+        "type": "single",
+        "options": [
+          "https://.companypro.net/test",
+          "http://www.companypro/test",
+          "https://www.companypro.net/test",
+          "https://www.companypro/net/test"
+        ],
+        "correct": [
+          "https://www.companypro.net/test"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 10,
+        "uid": "spark__lv3__mt1__q10"
+      },
+      {
+        "question": "Máy in của em ngừng in, em nên làm gì trước tiên để giải quyết vấn đề này?",
+        "type": "single",
+        "options": [
+          "Thay đổi trình điều khiển máy in.",
+          "Dọn sạch hàng chờ máy in.",
+          "Khởi động lại máy tính.",
+          "Kiểm tra dây cáp hoặc kết nối của máy in."
+        ],
+        "correct": [
+          "Kiểm tra dây cáp hoặc kết nối của máy in."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 11,
+        "uid": "spark__lv3__mt1__q11"
+      },
+      {
+        "question": "Em hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang phát biểu tương ứng ở bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Hành động có trách nhiệm, tôn trọng và hợp pháp khi sử dụng các công cụ kỹ thuật số và trực tuyến.",
+            "right": "Ethical (Đạo đức)."
+          },
+          {
+            "left": "Không xác định được danh tính hoặc che giấu thông tin cá nhân trực tuyến.",
+            "right": "Anonymity (Ẩn danh)."
+          },
+          {
+            "left": "Người sử dụng các kỹ năng và kiến thức máy tính để thử nghiệm, khám phá và giải quyết các vấn đề về công nghệ.",
+            "right": "Hacker (Người xâm nhập)."
+          },
+          {
+            "left": "Sao chép, phân phối hoặc sử dụng nội dung kỹ thuật số mà không có sự cho phép của chủ sở hữu.",
+            "right": "Piracy (Vi phạm bản quyền)."
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 12,
+        "uid": "spark__lv3__mt1__q12"
+      },
+      {
+        "question": "Em hãy di chuyển mỗi loại tin tặc (Hacker) từ danh sách bên phải sang ví dụ tương ứng bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Tấn công một hệ thống mạng để chặn không cho người dùng truy cập các tập tin của họ.",
+            "right": "Tin tặc vô đạo đức (Unethical Hacker)"
+          },
+          {
+            "left": "Tấn công một công ty để lôi kéo sự chú ý về một vấn đề nào đó, ví dụ như trả lương không công bằng cho nhân viên.",
+            "right": "Tin tặc kiêm nhà hoạt động (Hacktivist)"
+          },
+          {
+            "left": "Kiểm tra hệ thống mạng của một công ty để xem có dễ để tìm mật khẩu hay không, rồi cho công ty đó biết cách khắc phục.",
+            "right": "Tin tặc có đạo đức (Ethical Hacker)"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 13,
+        "uid": "spark__lv3__mt1__q13"
+      },
+      {
+        "question": "Khi muốn tìm ra nhiều trang Web viết về chủ đề khủng long, em nên sử dụng trang Web nào để thực hiện một lệnh tìm kiếm?",
+        "type": "single",
+        "options": [
+          "wikipedia.com",
+          "dinosaurs.com",
+          "google.com",
+          "encyclopedia.com"
+        ],
+        "correct": [
+          "google.com"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 14,
+        "uid": "spark__lv3__mt1__q14"
+      },
+      {
+        "question": "Với mỗi câu phát biểu về công dân số, em hãy chọn Đúng hoặc Sai",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Ấn danh là sử dụng họ và tên thật của em trên Internet.",
+            "answer": "false"
+          },
+          {
+            "text": "Tấn công xâm nhập (Hacking) là truy cập trái phép vào một thiết bị.",
+            "answer": "true"
+          },
+          {
+            "text": "Lừa đảo công nghệ cao (Catfishing) là giả vờ làm một người khác.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Đúng",
+        "label_false": "Sai",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 15,
+        "uid": "spark__lv3__mt1__q15"
+      },
+      {
+        "question": "Em hãy cho biết, hai loại tin tặc nào dù không có mục đích xấu, nhưng cũng không được tự ý xâm nhập vào hệ thống? (Chọn 2)",
+        "type": "multi",
+        "options": [
+          "Tin tặc mũ xám (Grey hat hacker.).",
+          "Tin tặc mũ đen (Black hat hacker).",
+          "Tin tặc mũ trắng (White hat hacker).",
+          "Tin tặc kiêm nhà hoạt động (Hacktivist)."
+        ],
+        "correct": [
+          "Tin tặc mũ xám (Grey hat hacker.).",
+          "Tin tặc kiêm nhà hoạt động (Hacktivist)."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 16,
+        "uid": "spark__lv3__mt1__q16"
+      },
+      {
+        "question": "Em hãy hoàn thành câu dưới đây bằng cách chọn câu trả lời đúng từ danh sách thả xuống.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "hoạt động để xác định lỗ hổng bảo mật và đưa ra đề xuất để cải thiện.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Tin tặc có đạo đức",
+        "label_false": "Tin tặc không có đạo đức",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 17,
+        "uid": "spark__lv3__mt1__q17"
+      },
+      {
+        "question": "Hãy nối các thuật ngữ ở cột bên phải với định nghĩa phù hợp ở cột bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Mạo danh là một người khác với ý định lừa đảo.",
+            "right": "Lừa đảo công nghệ cao (Catfishing)"
+          },
+          {
+            "left": "Truy cập trái phép vào một tài nguyên với ý định gây hại.",
+            "right": "Tấn công xâm nhập (Hacking)"
+          },
+          {
+            "left": "Đánh cắp ứng dụng thương mại và cung cấp cho người khác.",
+            "right": "Vi phạm Bản quyền (Piracy)"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 18,
+        "uid": "spark__lv3__mt1__q18"
+      },
+      {
+        "question": "Hãy nối các thuật ngữ về bảo mật từ danh sách bên phải sang mô tả tương ứng bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Trang Web hoặc Email giả mạo dùng để thu thập thông tin cá nhân.",
+            "right": "Tấn công giả mạo (Phishing)"
+          },
+          {
+            "left": "Các tập tin được lưu trên một máy tính từ các trang Web để theo dõi dữ liệu.",
+            "right": "Cookies"
+          },
+          {
+            "left": "Được sử dụng để lọc những dữ liệu vào hoặc ra khỏi một máy tính, nhằm giới hạn việc truy cập trái phép.",
+            "right": "Tường lửa (Firewall)"
+          },
+          {
+            "left": "Một chương trình được dùng để đánh cắp thông tin hoặc tổn hại đến máy tính.",
+            "right": "Virus"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 19,
+        "uid": "spark__lv3__mt1__q19"
+      },
+      {
+        "question": "Với mỗi câu phát biểu, em hãy chọn Có nếu nguồn đó đáng tin cậy hoặc chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Tác giả sử dụng trang web của National Geographic về cá voi xanh.",
+            "answer": "true"
+          },
+          {
+            "text": "Tác giả không có thông tin trích dẫn nào trong bài viết về cá voi xanh.",
+            "answer": "false"
+          },
+          {
+            "text": "Tác giả nghiên cứu nhiều nguồn để đánh giá nơi cá voi xanh di cư đến.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 20,
+        "uid": "spark__lv3__mt1__q20"
+      },
+      {
+        "question": "Em hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang phát biểu tương ứng ở bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Dữ liệu được thu thập về dữ kiện hoặc một người để giúp đưa ra các quyết định đủ thông tin.",
+            "right": "Kiến thức"
+          },
+          {
+            "left": "Dữ liệu thô, chưa được phân tích và sắp xếp.",
+            "right": "Dữ liệu"
+          },
+          {
+            "left": "Dữ liệu được chuẩn bị, đã được xử lý, phân tích và lập cấu trúc.",
+            "right": "Thông tin"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 21,
+        "uid": "spark__lv3__mt1__q21"
+      },
+      {
+        "question": "Em hãy cho biết, phương tiện nào được sử dụng để bảo vệ sách, phim, trò chơi điện tử và hình ảnh?",
+        "type": "single",
+        "options": [
+          "Bằng sáng chế (Patent).",
+          "Mã nguồn mở (Open Source).",
+          "Bản quyền (Copyright).",
+          "Nhãn hiệu (Trademark)."
+        ],
+        "correct": [
+          "Bản quyền (Copyright)."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 22,
+        "uid": "spark__lv3__mt1__q22"
+      },
+      {
+        "question": "Em hãy cho biết, tổ chức nào cung cấp phương thức để người sáng tạo có thể cấp quyền sử dụng miễn phí sản phẩm sáng tạo của họ theo luật bản quyền?",
+        "type": "single",
+        "options": [
+          "Wix",
+          "Canva",
+          "Creative Commons",
+          "Shutterstock"
+        ],
+        "correct": [
+          "Creative Commons"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 23,
+        "uid": "spark__lv3__mt1__q23"
+      },
+      {
+        "question": "Em hãy cho biết, tùy chọn nào trả lời cho các câu hỏi vì sao và như thế nào?",
+        "type": "single",
+        "options": [
+          "Kiến thức",
+          "Dữ liệu",
+          "Cộng tác",
+          "Thông tin"
+        ],
+        "correct": [
+          "Kiến thức"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 24,
+        "uid": "spark__lv3__mt1__q24"
+      },
+      {
+        "question": "Hãy di chuyển từng thuật ngữ từ danh sách bên phải sang phát biểu tương ứng ở bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Màu đỏ.",
+            "right": "Dữ liệu"
+          },
+          {
+            "left": "Những chiếc xe hơi có màu đỏ sẽ nổi bật hơn trong bãi đỗ xe.",
+            "right": "Kiến thức"
+          },
+          {
+            "left": "Chiếc xe hơi màu đỏ.",
+            "right": "Thông tin"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 25,
+        "uid": "spark__lv3__mt1__q25"
+      },
+      {
+        "question": "Với mỗi phát biểu về việc xác định một nguồn thông tin đáng tin cậy, hãy chọn Có nếu đó là việc làm phù hợp và chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Đọc bình luận từ mạng xã hội.",
+            "answer": "false"
+          },
+          {
+            "text": "Thực hiện một khảo sát với những người bạn thân.",
+            "answer": "false"
+          },
+          {
+            "text": "Sử dụng một bách khoa toàn thư trực tuyến mà trường của em giới thiệu.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 26,
+        "uid": "spark__lv3__mt1__q26"
+      },
+      {
+        "question": "Bạn cần tìm các nguồn thông tin đáng tin cậy và hợp lệ cho một bài viết của mình về tình hình sử dụng công nghệ hiện nay ở trường học. Với mỗi phát biểu về các nguồn thông tin, em hãy chọn Có nếu là nguồn đáng tin cậy, chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Một bài viết được đăng bởi một trường đại học với URL có đuôi là .com.",
+            "answer": "false"
+          },
+          {
+            "text": "Trang Web được phát hành vào tháng 01 năm 1989.",
+            "answer": "false"
+          },
+          {
+            "text": "Có hai nguồn tài nguyên khác đồng ý với trang Web này.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 27,
+        "uid": "spark__lv3__mt1__q27"
+      },
+      {
+        "question": "Em hãy cho biết, thuật ngữ nào chỉ các bit dữ liệu nhỏ được thu thập bởi trang Web mà em truy cập?",
+        "type": "single",
+        "options": [
+          "Cookies",
+          "Bảng tính",
+          "Tấn công xâm nhập",
+          "Dữ kiện"
+        ],
+        "correct": [
+          "Cookies"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 28,
+        "uid": "spark__lv3__mt1__q28"
+      },
+      {
+        "question": "Khi tìm một nhà hàng bán thức ăn nhanh trên mạng, hành động nào sẽ có thể giúp ẩn vị trí của em?",
+        "type": "single",
+        "options": [
+          "Xóa Cache (bộ đệm ẩn) sau khi ngừng duyệt Web.",
+          "Bật duyệt Web ở chế độ riêng tư.",
+          "Xóa Cookies của em.",
+          "Tải phần mềm chặn quảng cáo."
+        ],
+        "correct": [
+          "Bật duyệt Web ở chế độ riêng tư."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 29,
+        "uid": "spark__lv3__mt1__q29"
+      },
+      {
+        "question": "Em hãy cho biết, tùy chọn nào là mục tiêu chính của Creative Commons?",
+        "type": "single",
+        "options": [
+          "Để đảm bảo mọi phần mềm đều được sở hữu độc quyền.",
+          "Để giới hạn việc sáng tác nghệ thuật.",
+          "Để áp dụng luật bản quyền đến mức độ cao nhất.",
+          "Để phân phối thông tin một cách tự do."
+        ],
+        "correct": [
+          "Để phân phối thông tin một cách tự do."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 30,
+        "uid": "spark__lv3__mt1__q30"
+      },
+      {
+        "question": "Mục đích của Creative Commons là gì?",
+        "type": "single",
+        "options": [
+          "Cho phép nhà sáng tạo trao quyền sử dụng sản phẩm của họ cho người khác.",
+          "Cho phép nhà sáng tạo từ bỏ mọi quyền đối với sản phẩm của họ.",
+          "Cho phép mọi người tự do sao chép mọi sản phẩm mà không cần ghi công người sáng tạo.",
+          "Cho phép mọi người chỉnh sửa và bán sản phẩm của người khác."
+        ],
+        "correct": [
+          "Cho phép nhà sáng tạo trao quyền sử dụng sản phẩm của họ cho người khác."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 31,
+        "uid": "spark__lv3__mt1__q31"
+      },
+      {
+        "question": "Em hãy cho biết, tùy chọn nào sau đây sẽ cho em biết tác giả của một trang web?",
+        "type": "single",
+        "options": [
+          "Số điện thoại ở mục liên hệ với chúng tôi.",
+          "Địa chỉ trang web URL.",
+          "Trang giới thiệu.",
+          "Trang hỗ trợ khách hàng."
+        ],
+        "correct": [
+          "Trang giới thiệu."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 32,
+        "uid": "spark__lv3__mt1__q32"
+      },
+      {
+        "question": "Với mỗi câu phát biểu, em hãy chọn Có nếu nguồn đó đáng tin cậy hoặc chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Tác giả sử dụng trang web của National Geographic về cá voi xanh.",
+            "answer": "true"
+          },
+          {
+            "text": "Không có thông tin trích dẫn nào trong bài viết về cá voi xanh.",
+            "answer": "false"
+          },
+          {
+            "text": "Sử dụng một bách khoa toàn thư trực tuyến mà trường của em giới thiệu.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 33,
+        "uid": "spark__lv3__mt1__q33"
+      },
+      {
+        "question": "Em đang chuẩn bị một bài trình chiếu để trình bày trước lớp. Với mỗi phát biểu, em hãy chọn Có nếu cần trích dẫn nguồn hoặc Không nếu không cần.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Em dùng chữ \"Chúc mừng sinh nhật\" trong bài trình chiếu của mình.",
+            "answer": "false"
+          },
+          {
+            "text": "Em dùng hình ảnh về một siêu anh hùng do một tác giả nổi tiếng tạo ra.",
+            "answer": "true"
+          },
+          {
+            "text": "Em trích dẫn một đoạn về số lượng cá voi từ bài nghiên cứu do National Geographic xuất bản.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 34,
+        "uid": "spark__lv3__mt1__q34"
+      },
+      {
+        "question": "Em nhận được tin nhắn sau: \"Laptop đang được giảm giá 40%. Đặt hàng ngay hôm nay để được giao hàng miễn phí. Chúng tôi có đủ mọi cấu hình.\" Với mỗi câu trong tin nhắn này, bạn hãy chọn \"Có\" nếu câu đó có chứa thiên kiến hoặc chọn \"Không\" nếu không có.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Laptop đang được giảm giá 40%.",
+            "answer": "false"
+          },
+          {
+            "text": "Đặt hàng ngay hôm nay để được giao hàng miễn phí.",
+            "answer": "false"
+          },
+          {
+            "text": "Chúng tôi có đủ mọi cấu hình.",
+            "answer": "false"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 35,
+        "uid": "spark__lv3__mt1__q35"
+      },
+      {
+        "question": "Em nhận được Email sau:\n\"Orson D đang tranh cử cho chức chủ tịch của câu lạc bộ khoa học. Tớ biết bạn ấy ghét khoa học vì bạn ấy chẳng bao giờ tham gia hội chợ khoa học nào cả. Bạn ấy nhận được một điểm B ở bài kiểm tra tuần trước.\"\nVới mỗi câu phát biểu trích từ Email này, em hãy chọn Có nếu phát biểu đó có bao gồm thiên kiến hoặc Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Orson D đang tranh cử cho chức chủ tịch của câu lạc bộ khoa học.",
+            "answer": "false"
+          },
+          {
+            "text": "Tớ biết bạn ấy ghét khoa học vì bạn ấy chẳng bao giờ tham gia hội chợ khoa học nào cả.",
+            "answer": "true"
+          },
+          {
+            "text": "Bạn ấy nhận được một điểm B ở bài kiểm tra tuần trước.",
+            "answer": "false"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 36,
+        "uid": "spark__lv3__mt1__q36"
+      },
+      {
+        "question": "Em đọc được bài đăng sau trên mạng xã hội:\n\"Biến đổi khí hậu chắc chắn là không có thật vì Orson bỏ phiếu chống lại chuyện đó. Mùa hè năm nay mát hơn mùa hè năm ngoái. Hầu hết những người tin vào biến đổi khí hậu là những người đưa ra thuyết âm mưu.\"\nVới mỗi câu phát biểu trong bài đăng trên mạng xã hội này, hãy chọn Có nếu phát biểu đó có bao gồm thiên kiến hoặc Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Biến đổi khí hậu chắc chắn là không có thật vì Orson bỏ phiếu chống lại chuyện đó.",
+            "answer": "true"
+          },
+          {
+            "text": "Mùa hè năm nay mát hơn mùa hè năm ngoái.",
+            "answer": "false"
+          },
+          {
+            "text": "Hầu hết những người tin vào biến đổi khí hậu là những người đưa ra thuyết âm mưu.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 37,
+        "uid": "spark__lv3__mt1__q37"
+      },
+      {
+        "question": "Em hãy cho biết, tùy chọn nào là khả năng tiếp cận trong công nghệ là gì?",
+        "type": "single",
+        "options": [
+          "Sự dễ dàng sử dụng và sẵn có của công nghệ dành cho người khuyết tật.",
+          "Cách dữ liệu được gửi qua Internet.",
+          "Quá trình lưu trữ dữ liệu trên đám mây.",
+          "Khả năng kết nối với mạng."
+        ],
+        "correct": [
+          "Sự dễ dàng sử dụng và sẵn có của công nghệ dành cho người khuyết tật."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 38,
+        "uid": "spark__lv3__mt1__q38"
+      },
+      {
+        "question": "Em hãy cho biết, cài đặt thiết bị di động nào cho phép ứng dụng theo dõi vị trí của em?",
+        "type": "single",
+        "options": [
+          "Cài đặt độ sáng màn hình.",
+          "Cài đặt Wifi.",
+          "Cài đặt vị trí.",
+          "Cài đặt thông báo"
+        ],
+        "correct": [
+          "Cài đặt vị trí."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 39,
+        "uid": "spark__lv3__mt1__q39"
+      },
+      {
+        "question": "Em hãy cho biết, Internet là gì?",
+        "type": "single",
+        "options": [
+          "Một mạng lưới toàn cầu gồm các máy tính và thiết bị được kết nối.",
+          "Một vị trí vật lý nơi dữ liệu được lưu trữ.",
+          "Một trình duyệt Web.",
+          "Một thiết bị để thực hiện cuộc gọi điện thoại."
+        ],
+        "correct": [
+          "Một mạng lưới toàn cầu gồm các máy tính và thiết bị được kết nối."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 40,
+        "uid": "spark__lv3__mt1__q40"
+      },
+      {
+        "question": "Em hãy cho biết, giao thức nào đảm bảo kết nối an toàn và được mã hóa giữa trình duyệt Web và trang Web?",
+        "type": "single",
+        "options": [
+          "HTTP",
+          "SMTP",
+          "FTP",
+          "HTTPS"
+        ],
+        "correct": [
+          "HTTPS"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 41,
+        "uid": "spark__lv3__mt1__q41"
+      }
+    ],
+    "Minitest 2": [
+      {
+        "question": "Em định quyên góp cho một tổ chức gây quỹ và muốn đảm bảo rằng mình đang ở đúng trang web. Tùy chọn nào sau đây là phần đuôi đúng cho trang web chính thức của một tổ chức phi lợi nhuận?",
+        "type": "single",
+        "options": [
+          ".com",
+          ".edu",
+          ".org",
+          ".net"
+        ],
+        "correct": [
+          ".org"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 42,
+        "uid": "spark__lv3__mt2__q1"
+      },
+      {
+        "question": "Với mỗi phát biểu về công nghệ, em hãy chọn Có nếu phát biểu đó nói về một điều khả thi hoặc chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Các công nhân ở một khu mỏ có thể nhận được dữ liệu thời gian thực từ các công nhân ở một khu mỏ khác.",
+            "answer": "true"
+          },
+          {
+            "text": "Một y tá làm việc từ xa có thể sử dụng dữ liệu y tế thời gian thực để chẩn đoán các vấn đề cho một bệnh nhân đang ở nhà.",
+            "answer": "true"
+          },
+          {
+            "text": "Máy học (Machine Learning) có thể giúp các nhạc sĩ sáng tác thêm nhiều bài hát nổi tiếng.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 43,
+        "uid": "spark__lv3__mt2__q2"
+      },
+      {
+        "question": "Em hãy cho biết, lợi ích của việc lưu trữ đám mây là gì?",
+        "type": "single",
+        "options": [
+          "Bản in trên giấy (Physical Copies) của tài liệu được lưu trữ.",
+          "Dữ liệu được tự động đồng bộ hóa trên tất cả các thiết bị.",
+          "Thông tin chỉ có thể được truy cập bởi một thiết bị tại một thời điểm.",
+          "Bất kì ai cũng có thể truy cập tập tin mà không cần xin phép."
+        ],
+        "correct": [
+          "Dữ liệu được tự động đồng bộ hóa trên tất cả các thiết bị."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 44,
+        "uid": "spark__lv3__mt2__q3"
+      },
+      {
+        "question": "Em hãy di chuyển từng loại lưu trữ dữ liệu từ danh sách bên phải sang trường hợp sử dụng phù hợp ở bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Em muốn sao chép hình ảnh giữa hai máy tính mà không cần kết nối mạng.",
+            "right": "USB"
+          },
+          {
+            "left": "Em muốn dữ liệu của mình được sao lưu và lưu trữ một cách an toàn bởi một công ty khác.",
+            "right": "Lưu trữ đám mây (Cloud Storage)"
+          },
+          {
+            "left": "Em chỉ muốn lưu trữ dữ liệu trên máy tính xách tay của mình.",
+            "right": "Ổ cứng (Hard Drive)"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 45,
+        "uid": "spark__lv3__mt2__q4"
+      },
+      {
+        "question": "Em hãy chọn Có nếu tính năng của USB và chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Có thể mang theo.",
+            "answer": "true"
+          },
+          {
+            "text": "Không gian lưu trữ.",
+            "answer": "true"
+          },
+          {
+            "text": "Truyền tải tập tin.",
+            "answer": "true"
+          },
+          {
+            "text": "Kết nối không dây.",
+            "answer": "false"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 46,
+        "uid": "spark__lv3__mt2__q5"
+      },
+      {
+        "question": "Với mỗi câu phát biểu về việc thu thập dữ liệu, em hãy chọn Có nếu nguồn đó thu thập dữ liệu về hoạt động sử dụng của em hoặc chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Google",
+            "answer": "true"
+          },
+          {
+            "text": "GPS ô tô",
+            "answer": "true"
+          },
+          {
+            "text": "Điện thoại thông minh",
+            "answer": "true"
+          },
+          {
+            "text": "Mạng xã hội",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 47,
+        "uid": "spark__lv3__mt2__q6"
+      },
+      {
+        "question": "Máy tính của em bị chậm. Em nên làm gì trước tiên?",
+        "type": "single",
+        "options": [
+          "Rút phích cắm máy tính.",
+          "Đóng các ứng dụng hoặc cửa sổ không sử dụng.",
+          "Cập nhật hệ điều hành.",
+          "Nhấp chuột liên tục."
+        ],
+        "correct": [
+          "Đóng các ứng dụng hoặc cửa sổ không sử dụng."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 48,
+        "uid": "spark__lv3__mt2__q7"
+      },
+      {
+        "question": "Orson là tài xế xe buýt của một trường học. Anh ấy đang chở một đoàn học sinh đi thực tế tới một nơi chưa từng đến. Anh ấy có thể sử dụng loại công nghệ nào để giúp mình định hướng được vị trí cần đến?",
+        "type": "single",
+        "options": [
+          "Quả địa cầu (Globe)",
+          "Hệ thống định vị toàn cầu (GPS - Global Positioning System).",
+          "Máy phát MP3 (MP3 Player)",
+          "Radio"
+        ],
+        "correct": [
+          "Hệ thống định vị toàn cầu (GPS - Global Positioning System)."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 49,
+        "uid": "spark__lv3__mt2__q8"
+      },
+      {
+        "question": "Em hãy cho biết, tùy chọn nào dưới đây mô tả đúng về USB Drive?",
+        "type": "single",
+        "options": [
+          "Một thiết bị lưu trữ dạng cắm.",
+          "Một không gian lưu trữ trên một ổ cứng.",
+          "Một cơ sở dữ liệu lưu trữ các tập tin trực tuyến.",
+          "Một thiết bị nhớ hoạt động trên đám mây."
+        ],
+        "correct": [
+          "Một thiết bị lưu trữ dạng cắm."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 50,
+        "uid": "spark__lv3__mt2__q9"
+      },
+      {
+        "question": "Em hãy cho biết, địa chỉ URL nào có định dạng đúng?",
+        "type": "single",
+        "options": [
+          "https://.companypro.net/test",
+          "http://www.companypro/test",
+          "https://www.companypro.net/test",
+          "https://www.companypro/net/test"
+        ],
+        "correct": [
+          "https://www.companypro.net/test"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 51,
+        "uid": "spark__lv3__mt2__q10"
+      },
+      {
+        "question": "Máy in của em ngừng in, em nên làm gì trước tiên để giải quyết vấn đề này?",
+        "type": "single",
+        "options": [
+          "Thay đổi trình điều khiển máy in.",
+          "Dọn sạch hàng chờ máy in.",
+          "Khởi động lại máy tính.",
+          "Kiểm tra dây cáp hoặc kết nối của máy in."
+        ],
+        "correct": [
+          "Kiểm tra dây cáp hoặc kết nối của máy in."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 52,
+        "uid": "spark__lv3__mt2__q11"
+      },
+      {
+        "question": "Em hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang phát biểu tương ứng ở bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Hành động có trách nhiệm, tôn trọng và hợp pháp khi sử dụng các công cụ kỹ thuật số và trực tuyến.",
+            "right": "Ethical (Đạo đức)."
+          },
+          {
+            "left": "Không xác định được danh tính hoặc che giấu thông tin cá nhân trực tuyến.",
+            "right": "Anonymity (Ẩn danh)."
+          },
+          {
+            "left": "Người sử dụng các kỹ năng và kiến thức máy tính để thử nghiệm, khám phá và giải quyết các vấn đề về công nghệ.",
+            "right": "Hacker (Người xâm nhập)."
+          },
+          {
+            "left": "Sao chép, phân phối hoặc sử dụng nội dung kỹ thuật số mà không có sự cho phép của chủ sở hữu.",
+            "right": "Piracy (Vi phạm bản quyền)."
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 53,
+        "uid": "spark__lv3__mt2__q12"
+      },
+      {
+        "question": "Em hãy di chuyển mỗi loại tin tặc (Hacker) từ danh sách bên phải sang ví dụ tương ứng bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Tấn công một hệ thống mạng để chặn không cho người dùng truy cập các tập tin của họ.",
+            "right": "Tin tặc vô đạo đức (Unethical Hacker)"
+          },
+          {
+            "left": "Tấn công một công ty để lôi kéo sự chú ý về một vấn đề nào đó, ví dụ như trả lương không công bằng cho nhân viên.",
+            "right": "Tin tặc kiêm nhà hoạt động (Hacktivist)"
+          },
+          {
+            "left": "Kiểm tra hệ thống mạng của một công ty để xem có dễ để tìm mật khẩu hay không, rồi cho công ty đó biết cách khắc phục.",
+            "right": "Tin tặc có đạo đức (Ethical Hacker)"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 54,
+        "uid": "spark__lv3__mt2__q13"
+      },
+      {
+        "question": "Khi muốn tìm ra nhiều trang Web viết về chủ đề khủng long, em nên sử dụng trang Web nào để thực hiện một lệnh tìm kiếm?",
+        "type": "single",
+        "options": [
+          "wikipedia.com",
+          "dinosaurs.com",
+          "google.com",
+          "encyclopedia.com"
+        ],
+        "correct": [
+          "google.com"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 55,
+        "uid": "spark__lv3__mt2__q14"
+      },
+      {
+        "question": "Với mỗi câu phát biểu về công dân số, em hãy chọn Đúng hoặc Sai",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Ấn danh là sử dụng họ và tên thật của em trên Internet.",
+            "answer": "false"
+          },
+          {
+            "text": "Tấn công xâm nhập (Hacking) là truy cập trái phép vào một thiết bị.",
+            "answer": "true"
+          },
+          {
+            "text": "Lừa đảo công nghệ cao (Catfishing) là giả vờ làm một người khác.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Đúng",
+        "label_false": "Sai",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 56,
+        "uid": "spark__lv3__mt2__q15"
+      },
+      {
+        "question": "Em hãy cho biết, hai loại tin tặc nào dù không có mục đích xấu, nhưng cũng không được tự ý xâm nhập vào hệ thống? (Chọn 2)",
+        "type": "multi",
+        "options": [
+          "Tin tặc mũ xám (Grey hat hacker.).",
+          "Tin tặc mũ đen (Black hat hacker).",
+          "Tin tặc mũ trắng (White hat hacker).",
+          "Tin tặc kiêm nhà hoạt động (Hacktivist)."
+        ],
+        "correct": [
+          "Tin tặc mũ xám (Grey hat hacker.).",
+          "Tin tặc kiêm nhà hoạt động (Hacktivist)."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 57,
+        "uid": "spark__lv3__mt2__q16"
+      },
+      {
+        "question": "Em hãy hoàn thành câu dưới đây bằng cách chọn câu trả lời đúng từ danh sách thả xuống.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "hoạt động để xác định lỗ hổng bảo mật và đưa ra đề xuất để cải thiện.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Tin tặc có đạo đức",
+        "label_false": "Tin tặc không có đạo đức",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 58,
+        "uid": "spark__lv3__mt2__q17"
+      },
+      {
+        "question": "Hãy nối các thuật ngữ ở cột bên phải với định nghĩa phù hợp ở cột bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Mạo danh là một người khác với ý định lừa đảo.",
+            "right": "Lừa đảo công nghệ cao (Catfishing)"
+          },
+          {
+            "left": "Truy cập trái phép vào một tài nguyên với ý định gây hại.",
+            "right": "Tấn công xâm nhập (Hacking)"
+          },
+          {
+            "left": "Đánh cắp ứng dụng thương mại và cung cấp cho người khác.",
+            "right": "Vi phạm Bản quyền (Piracy)"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 59,
+        "uid": "spark__lv3__mt2__q18"
+      },
+      {
+        "question": "Hãy nối các thuật ngữ về bảo mật từ danh sách bên phải sang mô tả tương ứng bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Trang Web hoặc Email giả mạo dùng để thu thập thông tin cá nhân.",
+            "right": "Tấn công giả mạo (Phishing)"
+          },
+          {
+            "left": "Các tập tin được lưu trên một máy tính từ các trang Web để theo dõi dữ liệu.",
+            "right": "Cookies"
+          },
+          {
+            "left": "Được sử dụng để lọc những dữ liệu vào hoặc ra khỏi một máy tính, nhằm giới hạn việc truy cập trái phép.",
+            "right": "Tường lửa (Firewall)"
+          },
+          {
+            "left": "Một chương trình được dùng để đánh cắp thông tin hoặc tổn hại đến máy tính.",
+            "right": "Virus"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 60,
+        "uid": "spark__lv3__mt2__q19"
+      },
+      {
+        "question": "Với mỗi câu phát biểu, em hãy chọn Có nếu nguồn đó đáng tin cậy hoặc chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Tác giả sử dụng trang web của National Geographic về cá voi xanh.",
+            "answer": "true"
+          },
+          {
+            "text": "Tác giả không có thông tin trích dẫn nào trong bài viết về cá voi xanh.",
+            "answer": "false"
+          },
+          {
+            "text": "Tác giả nghiên cứu nhiều nguồn để đánh giá nơi cá voi xanh di cư đến.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 61,
+        "uid": "spark__lv3__mt2__q20"
+      },
+      {
+        "question": "Em hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang phát biểu tương ứng ở bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Dữ liệu được thu thập về dữ kiện hoặc một người để giúp đưa ra các quyết định đủ thông tin.",
+            "right": "Kiến thức"
+          },
+          {
+            "left": "Dữ liệu thô, chưa được phân tích và sắp xếp.",
+            "right": "Dữ liệu"
+          },
+          {
+            "left": "Dữ liệu được chuẩn bị, đã được xử lý, phân tích và lập cấu trúc.",
+            "right": "Thông tin"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 62,
+        "uid": "spark__lv3__mt2__q21"
+      },
+      {
+        "question": "Em hãy cho biết, phương tiện nào được sử dụng để bảo vệ sách, phim, trò chơi điện tử và hình ảnh?",
+        "type": "single",
+        "options": [
+          "Bằng sáng chế (Patent).",
+          "Mã nguồn mở (Open Source).",
+          "Bản quyền (Copyright).",
+          "Nhãn hiệu (Trademark)."
+        ],
+        "correct": [
+          "Bản quyền (Copyright)."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 63,
+        "uid": "spark__lv3__mt2__q22"
+      },
+      {
+        "question": "Em hãy cho biết, tổ chức nào cung cấp phương thức để người sáng tạo có thể cấp quyền sử dụng miễn phí sản phẩm sáng tạo của họ theo luật bản quyền?",
+        "type": "single",
+        "options": [
+          "Wix",
+          "Canva",
+          "Creative Commons",
+          "Shutterstock"
+        ],
+        "correct": [
+          "Creative Commons"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 64,
+        "uid": "spark__lv3__mt2__q23"
+      },
+      {
+        "question": "Em hãy cho biết, tùy chọn nào trả lời cho các câu hỏi vì sao và như thế nào?",
+        "type": "single",
+        "options": [
+          "Kiến thức",
+          "Dữ liệu",
+          "Cộng tác",
+          "Thông tin"
+        ],
+        "correct": [
+          "Kiến thức"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 65,
+        "uid": "spark__lv3__mt2__q24"
+      },
+      {
+        "question": "Hãy di chuyển từng thuật ngữ từ danh sách bên phải sang phát biểu tương ứng ở bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Màu đỏ.",
+            "right": "Dữ liệu"
+          },
+          {
+            "left": "Xe hơi có màu đỏ nhiều hơn màu khác trong bãi xe.",
+            "right": "Kiến thức"
+          },
+          {
+            "left": "Chiếc xe hơi màu đỏ.",
+            "right": "Thông tin"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 66,
+        "uid": "spark__lv3__mt2__q25"
+      },
+      {
+        "question": "Với mỗi phát biểu về việc xác định một nguồn thông tin đáng tin cậy, hãy chọn Có nếu đó là việc làm phù hợp và chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Đọc bình luận từ mạng xã hội.",
+            "answer": "false"
+          },
+          {
+            "text": "Thực hiện một khảo sát với những người bạn thân.",
+            "answer": "false"
+          },
+          {
+            "text": "Sử dụng một bách khoa toàn thư trực tuyến mà trường của em giới thiệu.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 67,
+        "uid": "spark__lv3__mt2__q26"
+      },
+      {
+        "question": "Bạn cần tìm các nguồn thông tin đáng tin cậy và hợp lệ cho một bài viết của mình về tình hình sử dụng công nghệ hiện nay ở trường học. Với mỗi phát biểu về các nguồn thông tin, em hãy chọn Có nếu là nguồn đáng tin cậy, chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Một bài viết được đăng bởi một trường đại học với URL có đuôi là .com.",
+            "answer": "false"
+          },
+          {
+            "text": "Trang Web được phát hành vào tháng 01 năm 1989.",
+            "answer": "false"
+          },
+          {
+            "text": "Có hai nguồn tài nguyên khác đồng ý với trang Web này.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 68,
+        "uid": "spark__lv3__mt2__q27"
+      },
+      {
+        "question": "Em hãy cho biết, thuật ngữ nào chỉ các bit dữ liệu nhỏ được thu thập bởi trang Web mà em truy cập?",
+        "type": "single",
+        "options": [
+          "Cookies",
+          "Bảng tính",
+          "Tấn công xâm nhập",
+          "Dữ kiện"
+        ],
+        "correct": [
+          "Cookies"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 69,
+        "uid": "spark__lv3__mt2__q28"
+      },
+      {
+        "question": "Khi tìm một nhà hàng bán thức ăn nhanh trên mạng, hành động nào sẽ có thể giúp ẩn vị trí của em?",
+        "type": "single",
+        "options": [
+          "Xóa Cache (bộ đệm ẩn) sau khi ngừng duyệt Web.",
+          "Bật duyệt Web ở chế độ riêng tư.",
+          "Xóa Cookies của em.",
+          "Tải phần mềm chặn quảng cáo."
+        ],
+        "correct": [
+          "Bật duyệt Web ở chế độ riêng tư."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 70,
+        "uid": "spark__lv3__mt2__q29"
+      },
+      {
+        "question": "Em hãy cho biết, tùy chọn nào là mục tiêu chính của Creative Commons?",
+        "type": "single",
+        "options": [
+          "Để đảm bảo mọi phần mềm đều được sở hữu độc quyền.",
+          "Để giới hạn việc sáng tác nghệ thuật.",
+          "Để áp dụng luật bản quyền đến mức độ cao nhất.",
+          "Để phân phối thông tin một cách tự do."
+        ],
+        "correct": [
+          "Để phân phối thông tin một cách tự do."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 71,
+        "uid": "spark__lv3__mt2__q30"
+      },
+      {
+        "question": "Mục đích của Creative Commons là gì?",
+        "type": "single",
+        "options": [
+          "Cho phép nhà sáng tạo trao quyền sử dụng sản phẩm của họ cho người khác.",
+          "Cho phép nhà sáng tạo từ bỏ mọi quyền đối với sản phẩm của họ.",
+          "Cho phép mọi người tự do sao chép mọi sản phẩm mà không cần ghi công người sáng tạo.",
+          "Cho phép mọi người chỉnh sửa và bán sản phẩm của người khác."
+        ],
+        "correct": [
+          "Cho phép nhà sáng tạo trao quyền sử dụng sản phẩm của họ cho người khác."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 72,
+        "uid": "spark__lv3__mt2__q31"
+      },
+      {
+        "question": "Em hãy cho biết, tùy chọn nào sau đây sẽ cho em biết tác giả của một trang web?",
+        "type": "single",
+        "options": [
+          "Số điện thoại ở mục liên hệ với chúng tôi.",
+          "Địa chỉ trang web URL.",
+          "Trang giới thiệu.",
+          "Trang hỗ trợ khách hàng."
+        ],
+        "correct": [
+          "Trang giới thiệu."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 73,
+        "uid": "spark__lv3__mt2__q32"
+      },
+      {
+        "question": "Với mỗi câu phát biểu, em hãy chọn Có nếu nguồn đó đáng tin cậy hoặc chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Tác giả sử dụng trang web của National Geographic về cá voi xanh.",
+            "answer": "true"
+          },
+          {
+            "text": "Không có thông tin trích dẫn nào trong bài viết về cá voi xanh.",
+            "answer": "false"
+          },
+          {
+            "text": "Sử dụng một bách khoa toàn thư trực tuyến mà trường của em giới thiệu.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 74,
+        "uid": "spark__lv3__mt2__q33"
+      },
+      {
+        "question": "Em đang chuẩn bị một bài trình chiếu để trình bày trước lớp. Với mỗi phát biểu, em hãy chọn Có nếu cần trích dẫn nguồn hoặc Không nếu không cần.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Em dùng chữ \"Chúc mừng sinh nhật\" trong bài trình chiếu của mình.",
+            "answer": "false"
+          },
+          {
+            "text": "Em dùng hình ảnh về một siêu anh hùng do một tác giả nổi tiếng tạo ra.",
+            "answer": "true"
+          },
+          {
+            "text": "Em trích dẫn một đoạn về số lượng cá voi từ bài nghiên cứu do National Geographic xuất bản.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 75,
+        "uid": "spark__lv3__mt2__q34"
+      },
+      {
+        "question": "Em nhận được tin nhắn sau: \"Laptop đang được giảm giá 40%. Đặt hàng ngay hôm nay để được giao hàng miễn phí. Chúng tôi có đủ mọi cấu hình.\" Với mỗi câu trong tin nhắn này, bạn hãy chọn \"Có\" nếu câu đó có chứa thiên kiến hoặc chọn \"Không\" nếu không có.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Laptop đang được giảm giá 40%.",
+            "answer": "false"
+          },
+          {
+            "text": "Đặt hàng ngay hôm nay để được giao hàng miễn phí.",
+            "answer": "false"
+          },
+          {
+            "text": "Chúng tôi có đủ mọi cấu hình.",
+            "answer": "false"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 76,
+        "uid": "spark__lv3__mt2__q35"
+      },
+      {
+        "question": "Em nhận được Email sau:\n\"Orson D đang tranh cử cho chức chủ tịch của câu lạc bộ khoa học. Tớ biết bạn ấy ghét khoa học vì bạn ấy chẳng bao giờ tham gia hội chợ khoa học nào cả. Bạn ấy nhận được một điểm B ở bài kiểm tra tuần trước.\"\nVới mỗi câu phát biểu trích từ Email này, em hãy chọn Có nếu phát biểu đó có bao gồm thiên kiến hoặc Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Orson D đang tranh cử cho chức chủ tịch của câu lạc bộ khoa học.",
+            "answer": "false"
+          },
+          {
+            "text": "Tớ biết bạn ấy ghét khoa học vì bạn ấy chẳng bao giờ tham gia hội chợ khoa học nào cả.",
+            "answer": "true"
+          },
+          {
+            "text": "Bạn ấy nhận được một điểm B ở bài kiểm tra tuần trước.",
+            "answer": "false"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 77,
+        "uid": "spark__lv3__mt2__q36"
+      },
+      {
+        "question": "Em đọc được bài đăng sau trên mạng xã hội:\n\"Biến đổi khí hậu chắc chắn là không có thật vì Orson bỏ phiếu chống lại chuyện đó. Mùa hè năm nay mát hơn mùa hè năm ngoái. Hầu hết những người tin vào biến đổi khí hậu là những người đưa ra thuyết âm mưu.\"\nVới mỗi câu phát biểu trong bài đăng trên mạng xã hội này, hãy chọn Có nếu phát biểu đó có bao gồm thiên kiến hoặc Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Biến đổi khí hậu chắc chắn là không có thật vì Orson bỏ phiếu chống lại chuyện đó.",
+            "answer": "true"
+          },
+          {
+            "text": "Mùa hè năm nay mát hơn mùa hè năm ngoái.",
+            "answer": "false"
+          },
+          {
+            "text": "Hầu hết những người tin vào biến đổi khí hậu là những người đưa ra thuyết âm mưu.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 78,
+        "uid": "spark__lv3__mt2__q37"
+      },
+      {
+        "question": "Em hãy cho biết, tùy chọn nào là khả năng tiếp cận trong công nghệ là gì?",
+        "type": "single",
+        "options": [
+          "Sự dễ dàng sử dụng và sẵn có của công nghệ dành cho người khuyết tật.",
+          "Cách dữ liệu được gửi qua Internet.",
+          "Quá trình lưu trữ dữ liệu trên đám mây.",
+          "Khả năng kết nối với mạng."
+        ],
+        "correct": [
+          "Sự dễ dàng sử dụng và sẵn có của công nghệ dành cho người khuyết tật."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 79,
+        "uid": "spark__lv3__mt2__q38"
+      },
+      {
+        "question": "Em hãy cho biết, cài đặt thiết bị di động nào cho phép ứng dụng theo dõi vị trí của em?",
+        "type": "single",
+        "options": [
+          "Cài đặt độ sáng màn hình.",
+          "Cài đặt Wifi.",
+          "Cài đặt vị trí.",
+          "Cài đặt thông báo"
+        ],
+        "correct": [
+          "Cài đặt vị trí."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 80,
+        "uid": "spark__lv3__mt2__q39"
+      },
+      {
+        "question": "Em hãy cho biết, Internet là gì?",
+        "type": "single",
+        "options": [
+          "Một mạng lưới toàn cầu gồm các máy tính và thiết bị được kết nối.",
+          "Một vị trí vật lý nơi dữ liệu được lưu trữ.",
+          "Một trình duyệt Web.",
+          "Một thiết bị để thực hiện cuộc gọi điện thoại."
+        ],
+        "correct": [
+          "Một mạng lưới toàn cầu gồm các máy tính và thiết bị được kết nối."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 81,
+        "uid": "spark__lv3__mt2__q40"
+      },
+      {
+        "question": "Em hãy cho biết, giao thức nào đảm bảo kết nối an toàn và được mã hóa giữa trình duyệt Web và trang Web?",
+        "type": "single",
+        "options": [
+          "HTTP",
+          "SMTP",
+          "FTP",
+          "HTTPS"
+        ],
+        "correct": [
+          "HTTPS"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 82,
+        "uid": "spark__lv3__mt2__q41"
+      }
+    ],
+    "Minitest 3": [
+      {
+        "question": "Với mỗi tình huống dưới đây, bạn có cần xin phép người trong ảnh hoặc người giám hộ của họ để đăng ảnh lên mạng xã hội không? Hãy chọn \"Có\" nếu cần xin phép và \"Không\" nếu không cần.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Một nhân viên nhà trẻ muốn đăng hình về một em bé sơ sinh tại nhà trẻ.",
+            "answer": "true"
+          },
+          {
+            "text": "Một tài xế xe buýt muốn đăng hình về một em học sinh cấp một trên xe buýt.",
+            "answer": "true"
+          },
+          {
+            "text": "Một y tá muốn đăng ảnh về một bệnh nhân tại bệnh viện.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 83,
+        "uid": "spark__lv3__mt3__q1"
+      },
+      {
+        "question": "Em cần thực hiện bước đầu tiên để đảm bảo rằng dấu chân kỹ thuật số (Digital Footprint) của em được tích cực. Em nên làm gì?",
+        "type": "single",
+        "options": [
+          "Yêu cầu báo cáo tín dụng từ ba cơ quan tín dụng.",
+          "Chặn bài đăng của những người bạn không biết trên mạng xã hội.",
+          "Thỉnh thoảng tìm kiếm bản thân trên Internet.",
+          "Yêu cầu từng trang mạng xã hội xóa các bài đăng về mình."
+        ],
+        "correct": [
+          "Thỉnh thoảng tìm kiếm bản thân trên Internet."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 84,
+        "uid": "spark__lv3__mt3__q2"
+      },
+      {
+        "question": "Em hãy cho biết, những tác hại nào có thể xảy ra nếu em xem màn hình quá lâu? (Chọn 2)",
+        "type": "multi",
+        "options": [
+          "Rút lui khỏi công nghệ (Technology Withdrawal)",
+          "Tăng cân",
+          "Khó ngủ",
+          "Suy giảm thính giác"
+        ],
+        "correct": [
+          "Tăng cân",
+          "Khó ngủ"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 85,
+        "uid": "spark__lv3__mt3__q3"
+      },
+      {
+        "question": "Với mỗi tình huống dưới đây, em có cần xin phép người khác để chụp ảnh không? Hãy chọn \"Có\" nếu cần và \"Không\" nếu không cần.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Những hàng người đứng chờ thật dài tại công viên giải trí.",
+            "answer": "false"
+          },
+          {
+            "text": "Những cầu thủ trên sân trong một trận bóng rổ.",
+            "answer": "false"
+          },
+          {
+            "text": "Những người trong khu giữ đồ ở phòng Gym.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 86,
+        "uid": "spark__lv3__mt3__q4"
+      },
+      {
+        "question": "Em hãy cho biết, lựa chọn nào là hành động hợp lí khi sử dụng thiết bị điện tử?",
+        "type": "single",
+        "options": [
+          "Nghỉ giải lao và giới hạn thời gian sử dụng thiết bị.",
+          "Sử dụng thiết bị bao lâu tùy thích mà không bị giới hạn thời gian.",
+          "Đừng bao giờ sử dụng công nghệ.",
+          "Chỉ sử dụng công nghệ vào ban đêm."
+        ],
+        "correct": [
+          "Nghỉ giải lao và giới hạn thời gian sử dụng thiết bị."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 87,
+        "uid": "spark__lv3__mt3__q5"
+      },
+      {
+        "question": "Em đã tạo một blog cho lớp, cho phép các bạn khác đăng ảnh lên. Với mỗi bức ảnh sau đây, hãy chọn \"Có\" nếu cần xin phép trước khi đăng hoặc \"Không\" nếu không cần:",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Ảnh chụp thầy cô và các phụ huynh tại một sự kiện công cộng.",
+            "answer": "false"
+          },
+          {
+            "text": "Ảnh của khối lớp 3.",
+            "answer": "true"
+          },
+          {
+            "text": "Ảnh kỷ yếu của học sinh được chụp chuyên nghiệp.",
+            "answer": "true"
+          },
+          {
+            "text": "Các hình ảnh của Creative Commons.",
+            "answer": "false"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 88,
+        "uid": "spark__lv3__mt3__q6"
+      },
+      {
+        "question": "Em từng chia sẻ tên tài khoản và mật khẩu của một ứng dụng xem phim với bạn mình. Bây giờ em nhận ra rằng bạn mình có thể xem được lịch sử xem phim của mình. Vậy em nên làm gì để ngăn chặn việc này?",
+        "type": "single",
+        "options": [
+          "Tải phần mềm chống virus trên thiết bị của em.",
+          "Xóa lịch sử trình duyệt trên thiết bị của em.",
+          "Kết nối ứng dụng với một mạng riêng ảo (VPN) khi xem phim.",
+          "Đổi mật khẩu và không chia sẻ mật khẩu mới với bạn của em."
+        ],
+        "correct": [
+          "Đổi mật khẩu và không chia sẻ mật khẩu mới với bạn của em."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 89,
+        "uid": "spark__lv3__mt3__q7"
+      },
+      {
+        "question": "Em hãy cho biết, vì sao em nên ý thức về những phát biểu mình đăng trên mạng xã hội?",
+        "type": "single",
+        "options": [
+          "Các trang mạng xã hội thu thập dữ liệu và có thể lưu trữ rất lâu, kể cả nếu em đã xóa dữ liệu.",
+          "Việc đăng thông tin sai trên mạng xã hội là bất hợp pháp.",
+          "Dữ liệu em đăng có tác động đến điểm uy tín của em.",
+          "Các phát biểu của em cần phải đại diện cho thông tin thực tế và không được dựa trên ý kiến của chính em."
+        ],
+        "correct": [
+          "Các trang mạng xã hội thu thập dữ liệu và có thể lưu trữ rất lâu, kể cả nếu em đã xóa dữ liệu."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 90,
+        "uid": "spark__lv3__mt3__q8"
+      },
+      {
+        "question": "Hãy chọn \"Có\" nếu câu phát biểu đó nói về ảnh hưởng của bắt nạt trực tuyến (Cyberbullying) hoặc chọn \"Không\" nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Đạt điểm cao hơn ở trường.",
+            "answer": "false"
+          },
+          {
+            "text": "Suy giảm lòng tự trọng.",
+            "answer": "true"
+          },
+          {
+            "text": "Khó ngủ.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 91,
+        "uid": "spark__lv3__mt3__q9"
+      },
+      {
+        "question": "Rian vừa đăng Video trực tiếp khi đang đi du lịch với gia đình. Bài đăng nêu cả địa điểm và số ngày đi chơi của cả gia đình. Em cần xác định các rủi ro liên quan đến bài đăng này. Với mỗi câu phát biểu về bài đăng, hãy chọn Đúng hoặc Sai.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Kẻ cắp có thể biết được rằng gia đình của Rian không có ở nhà và có thể đột nhập để ăn trộm.",
+            "answer": "true"
+          },
+          {
+            "text": "Một tội phạm có thể chọn gia đình của Rian làm mục tiêu vì biết được vị trí chính xác của họ.",
+            "answer": "true"
+          },
+          {
+            "text": "Một kẻ lừa đảo có thể theo dõi hoạt động gia đình của Rian và dùng thông tin đó vì lợi ích cá nhân",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Đúng",
+        "label_false": "Sai",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 92,
+        "uid": "spark__lv3__mt3__q10"
+      },
+      {
+        "question": "Em nhận ra rằng mình đã đăng thông tin không phù hợp hoặc chia sẻ quá mức trên mạng. Em nên làm gì trước tiên?",
+        "type": "single",
+        "options": [
+          "Xóa nội dung đó.",
+          "Không làm gì.",
+          "Báo cáo với cảnh sát.",
+          "Nói với cha mẹ."
+        ],
+        "correct": [
+          "Xóa nội dung đó."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 93,
+        "uid": "spark__lv3__mt3__q11"
+      },
+      {
+        "question": "Có người đã đe dọa sẽ gây hại cho em trên một nền tảng mạng xã hội. Em nên làm gì trước tiên?",
+        "type": "single",
+        "options": [
+          "Chụp ảnh màn hình.",
+          "Nói cho bạn thân của em.",
+          "Trả lời với họ rằng: Hãy để tôi yên!",
+          "Viết lại đoạn tin nhắn."
+        ],
+        "correct": [
+          "Chụp ảnh màn hình."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 94,
+        "uid": "spark__lv3__mt3__q12"
+      },
+      {
+        "question": "Đối với các phát biểu về chia sẻ dữ liệu, chọn \"Có\" nếu đó là hành động chia sẻ quá mức, ngược lại chọn \"Không\".",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Đăng ảnh của bạn khi đi du lịch trực tiếp.",
+            "answer": "true"
+          },
+          {
+            "text": "Đăng ảnh của bạn với gia đình.",
+            "answer": "false"
+          },
+          {
+            "text": "Gắn thẻ (tag) tên bạn bè trên các bài đăng mạng xã hội mà không có sự cho phép.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 95,
+        "uid": "spark__lv3__mt3__q13"
+      },
+      {
+        "question": "Với mỗi tình huống dưới đây, hãy chọn \"Có\" nếu cần xin phép trước khi đăng ảnh lên mạng xã hội, hoặc chọn \"Không\" nếu không cần:",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Em chụp ảnh những người hâm mộ ở một cuộc thi điền kinh.",
+            "answer": "false"
+          },
+          {
+            "text": "Em chụp ảnh mình và bạn thân tại nhà của mình.",
+            "answer": "true"
+          },
+          {
+            "text": "Em chụp ảnh mình và hai người bạn khác tại trung tâm mua sắm.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 96,
+        "uid": "spark__lv3__mt3__q14"
+      },
+      {
+        "question": "Em đã tạo một blog cho lớp, cho phép các bạn khác đăng ảnh lên. Với mỗi tình huống dưới đây, hãy chọn Có nếu việc đăng ảnh đó cần được phép hoặc chọn Không nếu không cần.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Một học sinh chụp ảnh giáo viên đang giảng bài.",
+            "answer": "true"
+          },
+          {
+            "text": "Một phụ huynh muốn đăng ảnh về một đứa trẻ khác đang dự bữa tiệc sinh nhật.",
+            "answer": "true"
+          },
+          {
+            "text": "Một học sinh quay video về cuộc thi thể thao ngoài trời.",
+            "answer": "false"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 97,
+        "uid": "spark__lv3__mt3__q15"
+      },
+      {
+        "question": "Với mỗi câu phát biểu, em hãy chọn Có nếu phát biểu đó thể hiện sự thay đổi hành vi vì bị bắt nạt trực tuyến hoặc chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Nạn nhân có thể ngừng sử dụng mạng xã hội.",
+            "answer": "true"
+          },
+          {
+            "text": "Nạn nhân có thể tham gia nhiều buổi họp mặt xã hội và sự kiện hơn.",
+            "answer": "false"
+          },
+          {
+            "text": "Nạn nhân có thể cảm thấy khó tập trung vào việc học ở trường.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 98,
+        "uid": "spark__lv3__mt3__q16"
+      },
+      {
+        "question": "Với mỗi câu phát biểu về tác động tiêu cực của bắt nạt trực tuyến (Cyberbullying), em hãy chọn Đúng hoặc Sai.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Nạn nhân có thể cảm thấy hoàn toàn bất lực.",
+            "answer": "true"
+          },
+          {
+            "text": "Nạn nhân có thể thu mình lại.",
+            "answer": "true"
+          },
+          {
+            "text": "Nạn nhân có thể bị căng thẳng về lâu dài.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Đúng",
+        "label_false": "Sai",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 99,
+        "uid": "spark__lv3__mt3__q17"
+      },
+      {
+        "question": "Với mỗi câu phát biểu về việc sử dụng thiết bị, em hãy chọn Đúng nếu đó là một lựa chọn lành mạnh hoặc chọn Sai nếu lựa chọn đó không lành mạnh.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Tạm ngưng sử dụng thiết bị sau mỗi 20 phút.",
+            "answer": "true"
+          },
+          {
+            "text": "Để điện thoại cạnh giường ngủ để em có thể sử dụng chức năng báo thức.",
+            "answer": "false"
+          },
+          {
+            "text": "Chớp mắt thường xuyên để giảm mỏi mắt.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Đúng",
+        "label_false": "Sai",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 100,
+        "uid": "spark__lv3__mt3__q18"
+      },
+      {
+        "question": "Giáo viên vừa đăng một hình ảnh về em và các học sinh khác trên mạng xã hội. Em không muốn hình của mình có trên Internet. Em nên làm gì trước tiên?",
+        "type": "single",
+        "options": [
+          "Chụp ảnh giáo viên và đăng trên trang của em.",
+          "Thuê một luật sư.",
+          "Liên hệ với hiệu trưởng.",
+          "Yêu cầu giáo viên xóa hình."
+        ],
+        "correct": [
+          "Yêu cầu giáo viên xóa hình."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 101,
+        "uid": "spark__lv3__mt3__q19"
+      },
+      {
+        "question": "Em và các bạn đang trò chuyện khi chơi game online. Cuộc trò chuyện khiến em cảm thấy khó chịu và lo rằng một người chơi khác đang bị bắt nạt. Em nên làm gì?",
+        "type": "single",
+        "options": [
+          "Xóa cuộc trò chuyện.",
+          "Nói với bạn của mình đừng trò chuyện nữa và tập trung vào trò chơi.",
+          "Thoát trò chơi.",
+          "Chụp ảnh màn hình và chia sẻ với bố mẹ: Đây là lựa chọn tốt nhất."
+        ],
+        "correct": [
+          "Chụp ảnh màn hình và chia sẻ với bố mẹ: Đây là lựa chọn tốt nhất."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 102,
+        "uid": "spark__lv3__mt3__q20"
+      },
+      {
+        "question": "Em không kết nối được với Internet ở nhà mình, không ai khác trong nhà gặp vấn đề này. Em nên làm gì trước tiên để khắc phục?",
+        "type": "single",
+        "options": [
+          "Tắt hoặc vô hiệu hóa Bluetooth trên thiết bị của em.",
+          "Thay Pin cho thiết bị của em.",
+          "Di chuyển đến gần bộ định tuyến hơn.",
+          "Khởi động lại bộ chuyển đổi không dây wifi."
+        ],
+        "correct": [
+          "Khởi động lại bộ chuyển đổi không dây wifi."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 103,
+        "uid": "spark__lv3__mt3__q21"
+      },
+      {
+        "question": "Em hãy cho biết, lựa chọn nào là hành động hợp lí khi sử dụng thiết bị điện tử?",
+        "type": "single",
+        "options": [
+          "Sử dụng thiết bị bao lâu tùy thích mà không bị giới hạn thời gian.",
+          "Đừng bao giờ sử dụng công nghệ.",
+          "Nghỉ giải lao và giới hạn thời gian sử dụng thiết bị.",
+          "Chỉ sử dụng công nghệ vào ban đêm."
+        ],
+        "correct": [
+          "Nghỉ giải lao và giới hạn thời gian sử dụng thiết bị."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 104,
+        "uid": "spark__lv3__mt3__q22"
+      },
+      {
+        "question": "Với mỗi hành động tham gia trực tuyến, em hãy chọn Có nếu đó là hành động phù hợp. Hoặc chọn Không nếu không phù hợp.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Tác giả viết một bài báo và sử dụng một nhân vật hoạt hình thay cho danh tính thật.",
+            "answer": "true"
+          },
+          {
+            "text": "Tác giả sử dụng tài khoản ẩn danh để đăng thông tin sai lệch hoặc thông tin giả mạo.",
+            "answer": "false"
+          },
+          {
+            "text": "Em cho người khác một bản sao của trò chơi điện tử đã mua.",
+            "answer": "false"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 105,
+        "uid": "spark__lv3__mt3__q23"
+      },
+      {
+        "question": "Em hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang phát biểu tương ứng ở bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Những mẩu dữ liệu nhỏ mà các trang Web lưu trữ trên máy tính hoặc thiết bị của em.",
+            "right": "Cookies"
+          },
+          {
+            "left": "Những sáng tạo của trí tuệ được pháp luật bảo vệ để trao cho người sáng tạo hoặc chủ sở hữu các quyền độc quyền để kiểm soát và hưởng lợi từ những sáng tạo của họ.",
+            "right": "Sở hữu trí tuệ"
+          },
+          {
+            "left": "Phần mềm hoặc công nghệ được cung cấp miễn phí cho mọi người sử dụng, sửa đổi và phân phối.",
+            "right": "Nguồn mở"
+          },
+          {
+            "left": "Công nghệ thuộc sở hữu của một công ty hoặc cá nhân cụ thể.",
+            "right": "Độc quyền"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 106,
+        "uid": "spark__lv3__mt3__q24"
+      },
+      {
+        "question": "Em hãy cho biết, khi nào em cần xin phép khi chụp ảnh ai đó?",
+        "type": "single",
+        "options": [
+          "Không bao giờ, việc chụp ảnh ai đó mà không được phép luôn là điều bình thường.",
+          "Chỉ khi người đó là người nổi tiếng.",
+          "Chỉ khi đó là thành viên trong gia đình.",
+          "Luôn luôn, bất kể người đó là ai."
+        ],
+        "correct": [
+          "Luôn luôn, bất kể người đó là ai."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 107,
+        "uid": "spark__lv3__mt3__q25"
+      },
+      {
+        "question": "Em hãy cho biết, trong trường hợp nào em nên xin phép trước khi đăng ảnh của một ai đó lên mạng?",
+        "type": "single",
+        "options": [
+          "Khi người đó là người lạ.",
+          "Bạn nên xin phép trong mọi tình huống.",
+          "Khi người đó có một công việc quan trọng.",
+          "Khi người đó đang làm điều gì đáng xấu hổ."
+        ],
+        "correct": [
+          "Bạn nên xin phép trong mọi tình huống."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 108,
+        "uid": "spark__lv3__mt3__q26"
+      },
+      {
+        "question": "Với mỗi nguồn trên mạng, em hãy chọn Có nếu nguồn đó có thể thu thập dữ liệu của em hoặc chọn Không nếu không thể.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Trò chơi.",
+            "answer": "true"
+          },
+          {
+            "text": "Khảo sát.",
+            "answer": "true"
+          },
+          {
+            "text": "Bộ câu hỏi.",
+            "answer": "true"
+          },
+          {
+            "text": "Ứng dụng giáo dục.",
+            "answer": "true"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 109,
+        "uid": "spark__lv3__mt3__q27"
+      },
+      {
+        "question": "Em hãy chọn Có nếu đó là ẩn danh hoặc chọn Không nếu không phải.",
+        "type": "truefalse",
+        "statements": [
+          {
+            "text": "Em viết một bài viết và lấy nhân vật hoạt hình làm tên tác giả.",
+            "answer": "true"
+          },
+          {
+            "text": "Em vẽ 1 bức ảnh và lấy 1 dãy số ngẫu nhiên làm tên tác giả.",
+            "answer": "true"
+          },
+          {
+            "text": "Em làm ra 1 trang web và lấy mã số học sinh của em để làm tên tác giả.",
+            "answer": "false"
+          }
+        ],
+        "label_true": "Có",
+        "label_false": "Không",
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 110,
+        "uid": "spark__lv3__mt3__q28"
+      },
+      {
+        "question": "Em hãy cho biết, tùy chọn nào dưới đây là ví dụ về giao tiếp không đồng bộ (Asynchronous Communication)?",
+        "type": "single",
+        "options": [
+          "Có một cuộc trò chuyện trực tiếp.",
+          "Chủ trì cuộc họp Video cho một nhóm người.",
+          "Nói chuyện điện thoại với ai đó ở múi giờ khác.",
+          "Gửi và nhận tin nhắn văn bản."
+        ],
+        "correct": [
+          "Gửi và nhận tin nhắn văn bản."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 111,
+        "uid": "spark__lv3__mt3__q29"
+      },
+      {
+        "question": "Em đang dự một hội thảo video trực tiếp. Hội thảo cho phép Em gửi tin nhắn, bật camera và nói chuyện qua micro. Em không đồng ý với một ý kiến mà diễn giả đang nói. Em nên làm gì?",
+        "type": "single",
+        "options": [
+          "Gửi emoji ra hiệu từ chối vào phần trò chuyện.",
+          "Lập tức rời hội thảo.",
+          "Ngắt lời diễn giả trước khi bài giảng kết thúc.",
+          "Đợi diễn giả trình bày đến một điểm dừng rồi mới nói lên ý kiến của mình."
+        ],
+        "correct": [
+          "Đợi diễn giả trình bày đến một điểm dừng rồi mới nói lên ý kiến của mình."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 112,
+        "uid": "spark__lv3__mt3__q30"
+      },
+      {
+        "question": "Em hãy cho biết, hành động nào có các lợi ích như: tiết kiệm thời gian, khám phá nhiều quan điểm đa dạng và có thể phân chia công việc cho phù hợp với thế mạnh cá nhân?",
+        "type": "single",
+        "options": [
+          "Sử dụng công cụ thu thập dữ liệu.",
+          "Áp dụng các công cụ quản lí thông tin.",
+          "Hành động của công dân kĩ thuật số tích cực.",
+          "Sử dụng một quy trình cộng tác."
+        ],
+        "correct": [
+          "Sử dụng một quy trình cộng tác."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 113,
+        "uid": "spark__lv3__mt3__q31"
+      },
+      {
+        "question": "Em đang học trực tuyến qua ứng dụng video. Ứng dụng cho phép gửi tin nhắn, bật camera và micro. Trong buổi học, em muốn cho giáo viên biết rằng mình đang chú ý nghe giảng. Em nên làm gì?",
+        "type": "single",
+        "options": [
+          "Gửi emoji ra hiệu đồng ý trong phần trò chuyện.",
+          "Giữ im lặng trong suốt bài trình bày.",
+          "Bật micro lên và vỗ tay.",
+          "Bật camera lên và nói thành tiếng \"Hay lắm\"."
+        ],
+        "correct": [
+          "Gửi emoji ra hiệu đồng ý trong phần trò chuyện."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 114,
+        "uid": "spark__lv3__mt3__q32"
+      },
+      {
+        "question": "Nếu 2 người bạn muốn cùng làm bài tập cùng 1 thời gian thì phải làm thế nào?",
+        "type": "single",
+        "options": [
+          "Gửi mail",
+          "Nhập ghi chú",
+          "Gọi hội nghị video vào lúc 5h chiều",
+          "Chụp màn hình"
+        ],
+        "correct": [
+          "Gọi hội nghị video vào lúc 5h chiều"
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 115,
+        "uid": "spark__lv3__mt3__q33"
+      },
+      {
+        "question": "Em hãy cho biết, tùy chọn nào sau đây là lợi ích khi cộng tác với người khác? (Chọn 2)",
+        "type": "multi",
+        "options": [
+          "Tiết kiệm thời gian.",
+          "Làm việc một mình.",
+          "Đồng quan điểm.",
+          "Đa dạng quan điểm."
+        ],
+        "correct": [
+          "Tiết kiệm thời gian.",
+          "Đa dạng quan điểm."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 116,
+        "uid": "spark__lv3__mt3__q34"
+      },
+      {
+        "question": "Rian muốn cộng tác với một nhóm để làm bài tập của mình. Bạn ấy sẽ nhận được lợi ích gì từ việc này? (Chọn 2)",
+        "type": "multi",
+        "options": [
+          "Đạt được điểm số cao nhất.",
+          "Chia sẻ bớt khối lượng công việc.",
+          "Có nhiều quyền kiểm soát hơn đối với bài tập.",
+          "Nhiều ý tưởng sáng tạo hơn."
+        ],
+        "correct": [
+          "Chia sẻ bớt khối lượng công việc.",
+          "Nhiều ý tưởng sáng tạo hơn."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 117,
+        "uid": "spark__lv3__mt3__q35"
+      },
+      {
+        "question": "Ken và Orson đều đang ở nhà. Họ có thể làm bài tập về nhà cùng nhau và cùng lúc qua hình thức kỹ thuật số nào?",
+        "type": "single",
+        "options": [
+          "Tạo một hội thảo Video lúc 5 giờ chiều.",
+          "Gửi Email vào buổi sáng.",
+          "Chụp ảnh để chia sẻ ở trường.",
+          "Viết ghi chú cho nhau."
+        ],
+        "correct": [
+          "Tạo một hội thảo Video lúc 5 giờ chiều."
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 118,
+        "uid": "spark__lv3__mt3__q36"
+      },
+      {
+        "question": "Em hãy ghép các công nghệ ở cột bên phải với cách sử dụng phù hợp ở cột bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Mọi người hợp tác cùng tạo ra sản phẩm.",
+            "right": "Cộng tác"
+          },
+          {
+            "left": "Mọi người cùng tạo ra sản phẩm trong cùng một thời gian.",
+            "right": "Giao tiếp đồng bộ"
+          },
+          {
+            "left": "Mọi người cùng sử dụng chung một tài liệu để tạo ra sản phẩm ở những thời gian khác nhau.",
+            "right": "Giao tiếp không đồng bộ"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 119,
+        "uid": "spark__lv3__mt3__q37"
+      },
+      {
+        "question": "Em hãy ghép nối các kiểu hợp tác kỹ thuật số ở cột bên phải với ví dụ phù hợp ở cột bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Em tổ chức một hội thảo video cho đội bóng chuyền để có thể bàn bạc về các chiến thuật mới.",
+            "right": "Cộng tác đồng bộ"
+          },
+          {
+            "left": "Em và bạn cùng lớp mỗi người tạo 5 trang chiếu cho bài trình chiếu về động vật hoang dã.",
+            "right": "Đồng tác giả"
+          },
+          {
+            "left": "Em lên lịch gửi email sau giờ học để hỏi người bạn của mình về các mẹo cải thiện bài tập.",
+            "right": "Cộng tác không đồng bộ"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 120,
+        "uid": "spark__lv3__mt3__q38"
+      },
+      {
+        "question": "Em hãy ghép nối các kiểu hợp tác kỹ thuật số ở cột bên phải với ví dụ phù hợp ở cột bên trái.",
+        "type": "matching",
+        "pairs": [
+          {
+            "left": "Em và năm học sinh khác làm bài tập nhóm bằng cách sử dụng một tài liệu dùng chung.",
+            "right": "Cộng tác không đồng bộ"
+          },
+          {
+            "left": "Em và một bạn cùng lớp ngồi trong thư viện để cùng thiết kế trang Web cho lớp.",
+            "right": "Cộng tác đồng bộ"
+          },
+          {
+            "left": "Em và một bạn cùng lớp tạo một ứng dụng bằng cách hợp tác ở lớp và làm việc một mình khi ở nhà.",
+            "right": "Đồng tác giả"
+          }
+        ],
+        "image": false,
+        "image_file": null,
+        "image_id": null,
+        "id": 121,
+        "uid": "spark__lv3__mt3__q39"
+      }
+    ]
+  }
+}

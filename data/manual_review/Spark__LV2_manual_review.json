@@ -1,0 +1,183 @@
+[
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Bạn cần hoàn thành một dự án nghiên cứu, vì vậy bạn mở trình duyệt web trên máy tính để làm. Hoàn thành các câu dưới đây bằng cách lựa chọn Đúng từ danh sách thả xuống.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "+ Để bắt đầu tìm kiếm, bạn phải[[điều hướng đến ]] một trang web trên Internet.\n+ Bạn đang đọc tài liệu nghiên cứu thì trang bị đứng hoàn toàn, nên bạn phải[[tải lại]]  trang đó.\n+ Bạn muốn sau này có thể truy cập lại vào trang web, nên bạn phải[[đánh dấu trang]] web."
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn cần chỉ ra các phần của một tài liệu. Hãy chọn đúng Tiêu đề trong phần trả lời.",
+    "image_file": "img-1ef466b2ec9fa77e71c7a0298009cb4f5e3030a7.png",
+    "imageUrl": "img/img-1ef466b2ec9fa77e71c7a0298009cb4f5e3030a7.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 84.29,
+          "h": 9.68
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn hãy chọn đúng Đề mục (Heading) trong tài liệu bên dưới.",
+    "image_file": "img-1ef466b2ec9fa77e71c7a0298009cb4f5e3030a7.png",
+    "imageUrl": "img/img-1ef466b2ec9fa77e71c7a0298009cb4f5e3030a7.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 0.0,
+          "y": 28.94,
+          "w": 94.22,
+          "h": 10.89
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn làm việc tại tiệm bánh Doe’s Bakery. Người chủ nhờ bạn đổi danh sách menu từ kiểu có ký hiệu đầu hàng thành đánh số. Trên tài liệu Word, đâu là danh sách có ký hiệu đầu hàng? Nhấp vào vị trí để chọn đáp án đúng.",
+    "image_file": "img-fa058ecf0bf8ab8521d2bfd86f59c0b0877a7c0e.png",
+    "imageUrl": "img/img-fa058ecf0bf8ab8521d2bfd86f59c0b0877a7c0e.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 10.64,
+          "y": 11.08,
+          "w": 73.06,
+          "h": 47.58
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Hãy chọn đúng ứng dụng được dùng để tạo bài trình chiếu.",
+    "image_file": "img-e4af801105b50c3b8bb730ae0d67c9797988cccf.png",
+    "imageUrl": "img/img-e4af801105b50c3b8bb730ae0d67c9797988cccf.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 50.99,
+          "y": 0.0,
+          "w": 13.22,
+          "h": 100.0
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "DND",
+    "question": "Ở mỗi tình huống bạn cần tạo danh sách, hãy chọn xem bạn nên tạo dưới dạng Danh sách đánh số hoặc Danh sách có ký hiệu đầu hàng. (Kéo và thả vào ô thích hợp).",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi kéo-thả đối tượng vào vùng đích trên slide (không phải kéo chữ vào văn bản). Cần xem lại trực quan trong iSpring vì object/target chỉ có tên hình dạng (shape name), không có nội dung văn bản trích xuất được tự động.",
+    "drag_drop_pairs": [
+      {
+        "o": {
+          "s": "Text Box 4"
+        },
+        "d": {
+          "s": "Rectangle 2"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Text Box 6"
+        },
+        "d": {
+          "s": "Rectangle 1"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Text Box 5"
+        },
+        "d": {
+          "s": "Rectangle 1"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Text Box 7"
+        },
+        "d": {
+          "s": "Rectangle 2"
+        },
+        "s": 0
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn làm việc cho tiệm bánh Doe’s Bakery. Bạn đã thêm 4 ảnh mẫu vào tài liệu, nhưng thực tế chỉ cần 1. Bạn nên giữ lại hình nào? Hãy nhấp chọn vào hình cần giữ lại.",
+    "image_file": "img-565195b6023ada179126949a7340bd210fc93ba1.png",
+    "imageUrl": "img/img-565195b6023ada179126949a7340bd210fc93ba1.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 74.47,
+          "y": 33.83,
+          "w": 10.56,
+          "h": 32.8
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn được yêu cầu tạo một bài trình chiếu về các chú chó đang chơi đùa. Hãy chọn hình ảnh phù hợp nhất với chủ đề này trong phần trả lời.",
+    "image_file": "img-675657880b867cde76c864e17a098148d29e9218.png",
+    "imageUrl": "img/img-675657880b867cde76c864e17a098148d29e9218.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 24.73,
+          "y": 0.0,
+          "w": 23.85,
+          "h": 100.0
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Hoàn thành các câu dưới đây bằng cách lựa chọn đúng tùy chọn từ mỗi danh sách thả xuống.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "+ Địa chỉ bạn nhập vào khi mua hàng trên mạng là ví dụ về[[Nội dung điền vào biểu mẫu]]\n+ Tên tài khoản và mật khẩu dùng để đăng nhập tài khoản Email là ví dụ về[[Thông tin xác thực]]\n+ Thông tin liên kết với hoạt động của bạn trên trực tuyến và được một máy chủ web thu thập là ví dụ về[[Cookie]]"
+  }
+]

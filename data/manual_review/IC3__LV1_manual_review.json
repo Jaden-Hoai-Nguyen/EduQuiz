@@ -1,0 +1,167 @@
+[
+  {
+    "original_type": "Hotspot",
+    "question": "Đâu là thiết bị nhập (nhấp vào vị trí thiết bị). (Chọn 3)",
+    "image_file": "img-c333f1414e89ae897a66763dabf194edd4a0c421.png",
+    "imageUrl": "img/img-c333f1414e89ae897a66763dabf194edd4a0c421.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 36.62,
+          "y": 69.75,
+          "w": 41.85,
+          "h": 10.92
+        },
+        "correct": true
+      },
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 2",
+        "rect_percent": {
+          "x": 80.62,
+          "y": 65.55,
+          "w": 11.08,
+          "h": 10.5
+        },
+        "correct": true
+      },
+      {
+        "shape": "oval",
+        "label": "Oval 1",
+        "rect_percent": {
+          "x": 81.97,
+          "y": 78.15,
+          "w": 15.57,
+          "h": 19.33
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "DND",
+    "question": "Hãy chọn tên phù hợp cho các cổng kết nối (kéo tên và thả vào ô trống bên dưới hình).",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi kéo-thả đối tượng vào vùng đích trên slide (không phải kéo chữ vào văn bản). Cần xem lại trực quan trong iSpring vì object/target chỉ có tên hình dạng (shape name), không có nội dung văn bản trích xuất được tự động.",
+    "drag_drop_pairs": [
+      {
+        "o": {
+          "s": "Rectangle 1"
+        },
+        "d": {
+          "s": "Rectangle 5"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Rectangle 2"
+        },
+        "d": {
+          "s": "Rectangle 9"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Rectangle 3"
+        },
+        "d": {
+          "s": "Rectangle 10"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Rectangle 4"
+        },
+        "d": {
+          "s": "Rectangle 11"
+        },
+        "s": 0
+      }
+    ]
+  },
+  {
+    "original_type": "WordBank",
+    "question": "Với mỗi Hệ điều hành, bạn hãy kéo, thả tên Công ty phát triển tương ứng bên trái sang ô trống bên phải.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi kéo-thả từ ngân hàng từ vào chỗ trống trong đoạn văn. Xem full_text (chứa [[từ cần kéo vào]] đánh dấu ngay vị trí).",
+    "full_text": "[[Google]] Android\n[[Google]] Chrome OS.\n[[Microsoft]] Windows.\n[[Apple]] IOS\n[[Apple]] MAC OS"
+  },
+  {
+    "original_type": "WordBank",
+    "question": "Với mỗi loại phần mềm, hãy xác định xem đó là phần mềm Hệ thống hay phần mềm Ứng dụng. (Kéo thả vào vị trí tương ứng)",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi kéo-thả từ ngân hàng từ vào chỗ trống trong đoạn văn. Xem full_text (chứa [[từ cần kéo vào]] đánh dấu ngay vị trí).",
+    "full_text": "[[Phần mềm ứng dụng]] Trình duyệt Web.\n[[Phần mềm ứng dụng]] Bộ phát đa phương tiện.\n[[Phần mềm hệ thống]] Trình điều khiển card đồ họa.\n[[Phần mềm hệ thống]] Trình quản lý phân vùng ổ đĩa."
+  },
+  {
+    "original_type": "WordBank",
+    "question": "Bạn cần xác định mục đích của các công cụ trình duyệt Web phổ biến. Để trả lời, hãy di chuyển từng công cụ từ danh sách ở bên trái sang hành động tương ứng ở bên phải.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi kéo-thả từ ngân hàng từ vào chỗ trống trong đoạn văn. Xem full_text (chứa [[từ cần kéo vào]] đánh dấu ngay vị trí).",
+    "full_text": "[[Refresh button]] Tải lại trang Web hiện tại.\n[[History]] Liệt kê các trang Web bạn đã truy cập gần đây.\n[[Address box]] Hiển thị URL của trang Web hiện tại.\n[[Back button]] Hiển thị lại một trang Web đã truy cập trước đó."
+  },
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Bạn hãy chọn Đúng ý nghĩa cho câu phát biểu sau.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "Ngôn ngữ hòa nhập tránh [[Thiên kiến (Bias)]] đối với mọi người bất kể chủng tộc hay giới tính của họ."
+  },
+  {
+    "original_type": "DND",
+    "question": "Hãy chọn hình phù hợp các khổ giấy (kéo hình vào ô trống)",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi kéo-thả đối tượng vào vùng đích trên slide (không phải kéo chữ vào văn bản). Cần xem lại trực quan trong iSpring vì object/target chỉ có tên hình dạng (shape name), không có nội dung văn bản trích xuất được tự động.",
+    "drag_drop_pairs": [
+      {
+        "o": {
+          "s": "Picture 5"
+        },
+        "d": {
+          "s": "Rectangle 12"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Picture 6"
+        },
+        "d": {
+          "s": "Rectangle 13"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Picture 7"
+        },
+        "s": 0
+      }
+    ]
+  },
+  {
+    "original_type": "Sequence",
+    "question": "Arrange the following items in the correct order:",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi sắp xếp thứ tự đúng. Thứ tự liệt kê dưới đây theo đúng thứ tự chính xác (item đầu tiên = bước 1, ...).",
+    "ordered_items": [
+      "Tải trình cài đặt phần mềm từ trang web uy tín.",
+      "Nhấp đúp chuột để bắt đầu quá trình cài đặt.",
+      "Tiếp tục các bước cài đặt theo hướng dẫn, đồng ý với các điều khoản, chọn các tùy chọn theo ý thích.",
+      "Khời chạy phần mềm."
+    ]
+  }
+]

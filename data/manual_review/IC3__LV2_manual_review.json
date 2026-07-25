@@ -1,0 +1,416 @@
+[
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn hãy nhấp chọn vào tính năng chia sẻ toàn bộ lịch của bạn với người khác trong hình sau đây?",
+    "image_file": "img-3c25df40245dd3ce4ce0d966095a0d7e1fc3fcc5.png",
+    "imageUrl": "img/img-3c25df40245dd3ce4ce0d966095a0d7e1fc3fcc5.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 54.26,
+          "y": 3.88,
+          "w": 6.65,
+          "h": 19.11
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "DND",
+    "question": "Bạn hãy kéo, thả để xác định ưu điểm của máy in phun và máy in laser.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi kéo-thả đối tượng vào vùng đích trên slide (không phải kéo chữ vào văn bản). Cần xem lại trực quan trong iSpring vì object/target chỉ có tên hình dạng (shape name), không có nội dung văn bản trích xuất được tự động.",
+    "drag_drop_pairs": [
+      {
+        "o": {
+          "s": "Rectangle 2"
+        },
+        "d": {
+          "s": "Rounded Rectangle 2"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Rectangle 1"
+        },
+        "d": {
+          "s": "Rounded Rectangle 1"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Rectangle 3"
+        },
+        "d": {
+          "s": "Rounded Rectangle 1"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Rectangle 4"
+        },
+        "d": {
+          "s": "Rounded Rectangle 2"
+        },
+        "s": 0
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn cần thêm cuộc họp hội Sinh viên tháng tới vào lịch của mình. Hãy chọn vị trí để mở hộp thoại sự kiện? (Chọn 2)",
+    "image_file": "img-a6e0e55b1bee3ded05d70545878eb8d7f50d60d5.png",
+    "imageUrl": "img/img-a6e0e55b1bee3ded05d70545878eb8d7f50d60d5.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 1.07,
+          "y": 19.32,
+          "w": 15.82,
+          "h": 17.18
+        },
+        "correct": true
+      },
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 2",
+        "rect_percent": {
+          "x": 33.62,
+          "y": 17.03,
+          "w": 65.45,
+          "h": 81.78
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Trong hình ảnh sau đây, tùy chọn nào sẽ được sử dụng để hiển thị lịch theo tháng? (Nhấp vào vị trí bạn thấy Đúng)",
+    "image_file": "img-f24224dd9ebb54f8dde9bdc7566a0c95c0505b2a.png",
+    "imageUrl": "img/img-f24224dd9ebb54f8dde9bdc7566a0c95c0505b2a.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 83.71,
+          "y": 3.26,
+          "w": 8.42,
+          "h": 6.73
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn muốn đặt lịch để nhắc ngày thứ Tư hàng tuần ăn trưa cùng Fran hàng tuần. Bạn sẽ chọn tuỳ chọn nào trong hình?  (Nhấp vào vị trí bạn thấy Đúng)",
+    "image_file": "img-1cf6ede182d4aabe8b3f55811c6b7fcd900b20a1.png",
+    "imageUrl": "img/img-1cf6ede182d4aabe8b3f55811c6b7fcd900b20a1.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 44.31,
+          "y": 45.15,
+          "w": 20.11,
+          "h": 12.81
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn sẽ nhấp vào mục nào trong hình ảnh sau đây để truy cập các tính năng lọc kết quả tìm kiếm trên Google?",
+    "image_file": "img-88680267cad67f51e25622babef0406635d03a68.png",
+    "imageUrl": "img/img-88680267cad67f51e25622babef0406635d03a68.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 72.07,
+          "y": 14.13,
+          "w": 5.0,
+          "h": 11.31
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "WordBank",
+    "question": "Các nhà cung cấp thương mại điện tử bán nhiều hàng hóa và dịch vụ khác nhau trên mạng. Hãy phân loại từng mục sau đây. *",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi kéo-thả từ ngân hàng từ vào chỗ trống trong đoạn văn. Xem full_text (chứa [[từ cần kéo vào]] đánh dấu ngay vị trí).",
+    "full_text": "[[Hàng hoá]] Tai nghe Bluetooth.\n[[Hàng hoá]] Bộ định tuyến mạng.\n[[Dịch vụ]] Lưu trữ đám mây.\n[[Dịch vụ]] Đăng ký phần mềm."
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn đang viết báo cáo về chiến tranh năm 1812. Bạn thực hiện tìm kiếm trực tuyến cho các bài viết về chiến tranh. Bạn cần lọc kết quả của mình để chỉ hiển thị các bài viết được xuất bản trong năm qua. Bạn có thể chọn nút nào để đạt được mục tiêu? Nhấp vào vị trí Đúng.",
+    "image_file": "img-7846b79dad5eda5997ec59de17617b539e6acf22.png",
+    "imageUrl": "img/img-7846b79dad5eda5997ec59de17617b539e6acf22.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 86.97,
+          "y": 23.93,
+          "w": 9.52,
+          "h": 12.32
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn sẽ sử dụng nhóm nào sau đây để tạo danh sách các thuật ngữ hoặc thông tin chính và vị trí của chúng trong tài liệu?",
+    "image_file": "img-5403e127d09ebd2302c515334ac10dc229ff8982.png",
+    "imageUrl": "img/img-5403e127d09ebd2302c515334ac10dc229ff8982.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 66.86,
+          "y": 22.38,
+          "w": 14.31,
+          "h": 75.87
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn viết một bài luận. Một người bạn cùng lớp nhận xét bài luận này và gợi ý sửa chữa như hình. Bạn đồng ý việc thực hiện các sửa chữa vĩnh viễn trong tài liệu. Bạn nên sử dụng chức năng nào? Hãy nhấp vào công cụ phù hợp.",
+    "image_file": "img-a76f4b6157d73c37937976f302b440009aa095ff.png",
+    "imageUrl": "img/img-a76f4b6157d73c37937976f302b440009aa095ff.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 67.19,
+          "y": 7.19,
+          "w": 6.07,
+          "h": 17.54
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Sequence",
+    "question": "Bạn đang chuẩn bị tài liệu đề xuất dự án với đối tác ở một tỉnh thành khác trong nước, rất xa bạn. Khi bạn và đối tác thêm nội dung vào tài liệu, cả hai cần phải cộng tác để sửa đổi đề xuất này. Cần thực hiện các hành động theo trình tự nào? Để trả lời, bạn hãy sắp xếp các hành động theo đúng thứ tự. *",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi sắp xếp thứ tự đúng. Thứ tự liệt kê dưới đây theo đúng thứ tự chính xác (item đầu tiên = bước 1, ...).",
+    "ordered_items": [
+      "Tạo tài liệu mới.",
+      "Tải tài liệu lên bộ nhớ đám mây.",
+      "Chia sẻ liên kết đến tài liệu.",
+      "Thêm chú thích và theo dõi các thay đổi trong tài liệu.",
+      "Xem xét và chấp nhận hoặc từ chối chú thích và thay đổi."
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Chức năng nào sau đây dùng để sử dụng tính năng đồng tác giả (Co-authoring) trên tập tin hiện tại. Hãy nhấp vào công cụ đó.",
+    "image_file": "img-796b56f58afed95e38ce3323ed35a73ebbaad463.png",
+    "imageUrl": "img/img-796b56f58afed95e38ce3323ed35a73ebbaad463.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 92.38,
+          "y": 1.82,
+          "w": 6.47,
+          "h": 5.38
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Sequence",
+    "question": "Trong trình duyệt Google Chrome, vô hiệu hóa quyền truy cập vào camera trên thiết bị hiện tại. Để trả lời, bạn hãy sắp xếp các hành động theo đúng thứ tự.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi sắp xếp thứ tự đúng. Thứ tự liệt kê dưới đây theo đúng thứ tự chính xác (item đầu tiên = bước 1, ...).",
+    "ordered_items": [
+      "Chọn Tùy chỉnh và điều khiển dấu chấm lửng dọc của Google Chrome.",
+      "Chọn Settings.",
+      "Chọn Privacy and security.",
+      "Chọn Site Settings.",
+      "Chọn Camera.",
+      "Chọn biểu tượng On/Offt cho Ask before accessing."
+    ]
+  },
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Bạn đang nghiên cứu cho một dự án ở trường về trí tuệ nhân tạo (AI). Bạn đang cố gắng quyết định tìm kiếm sự trợ giúp về chủ đề này ở đâu. Với mỗi tài nguyên, hãy chọn Có nếu hữu ích hoặc Không nếu không. *",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "* Hỏi giáo viên và bạn bè. [[Có]]\n* Hỏi bạn cùng lớp..[[Không]]\n* Thực hiện tìm kiếm trên internet.[[Có ]]\n* Tìm kiếm trong diễn đàn trực tuyến. [[Không]]"
+  },
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Các biểu hiện có thể do chấn thương lặp đi lặp lại (RSI) gây ra khi sử dụng máy tính. *",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "* Ngứa da. [[Không]]\n* Đau cổ. [[Có ]]\n* Yếu cơ. [[Có ]]\n* Tê bì tay. [[Có ]]"
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Hãy nhấp đúng vào vị trí trên hình để chỉnh tốc độ di chuyển chuột (Mouse)?",
+    "image_file": "img-e5d99ad5d66310b4d07649933eed9e95c49baf4a.png",
+    "imageUrl": "img/img-e5d99ad5d66310b4d07649933eed9e95c49baf4a.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 51.61,
+          "y": 9.24,
+          "w": 37.51,
+          "h": 10.3
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Hãy chọn tính năng trên màn hình cung cấp khả năng bảo vệ tập tin để người khác không thể đọc.",
+    "image_file": "img-ccc34f0d7c62a03fde196c79b1769f8ca5629e08.png",
+    "imageUrl": "img/img-ccc34f0d7c62a03fde196c79b1769f8ca5629e08.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 3.81,
+          "y": 78.84,
+          "w": 8.45,
+          "h": 8.01
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "DND",
+    "question": "Bạn hãy kéo, thả để xác định hàng hóa và dịch vụ.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi kéo-thả đối tượng vào vùng đích trên slide (không phải kéo chữ vào văn bản). Cần xem lại trực quan trong iSpring vì object/target chỉ có tên hình dạng (shape name), không có nội dung văn bản trích xuất được tự động.",
+    "drag_drop_pairs": [
+      {
+        "o": {
+          "s": "Rectangle 2"
+        },
+        "d": {
+          "s": "Rounded Rectangle 2"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Rectangle 1"
+        },
+        "d": {
+          "s": "Rounded Rectangle 1"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Rectangle 3"
+        },
+        "d": {
+          "s": "Rounded Rectangle 1"
+        },
+        "s": 0
+      },
+      {
+        "o": {
+          "s": "Rectangle 4"
+        },
+        "d": {
+          "s": "Rounded Rectangle 2"
+        },
+        "s": 0
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn muốn thay đổi độ tương phản của màn hình trên máy tính. Nhấp vào tính năng sẽ cho phép bạn điều chỉnh cài đặt độ tương phản trên máy tính Windows này.",
+    "image_file": "img-39c39f9f2cc1ce6022c10539c8bade3b075a4545.png",
+    "imageUrl": "img/img-39c39f9f2cc1ce6022c10539c8bade3b075a4545.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 5.32,
+          "y": 68.79,
+          "w": 26.63,
+          "h": 14.22
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn muốn giảm độ sáng của màn hình trên máy tính. Nhấp vào tính năng cho phép bạn điều chỉnh cài đặt độ sáng trên máy tính Windows này.",
+    "image_file": "img-452e721ee3e28c3ea43afd253e2e41dce0b79c79.png",
+    "imageUrl": "img/img-452e721ee3e28c3ea43afd253e2e41dce0b79c79.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 1.11,
+          "y": 28.59,
+          "w": 97.61,
+          "h": 8.01
+        },
+        "correct": true
+      }
+    ]
+  }
+]

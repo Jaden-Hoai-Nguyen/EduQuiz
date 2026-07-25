@@ -1,1 +1,253 @@
-{"categories":[{"id":"THCS","name":"THCS – IC3","color":"#4CAF50","levels":[{"id":"LV1","file":"THCS__LV1.json","name":"Level 1 – Khối 6","grade":"K6","minitests":{"Minitest 1":{"count":45,"types":{"multi":17,"matching":5,"truefalse":12,"single":11}},"Minitest 2":{"count":45,"types":{"matching":7,"truefalse":13,"single":12,"multi":13}},"Minitest 3":{"count":45,"types":{"single":11,"multi":14,"truefalse":17,"matching":3}},"Minitest 4":{"count":45,"types":{"multi":13,"single":9,"truefalse":17,"matching":6}}}},{"id":"LV2","file":"THCS__LV2.json","name":"Level 2 – Khối 7","grade":"K7","minitests":{"Minitest 1":{"count":50,"types":{"truefalse":10,"matching":11,"multi":12,"single":17}},"Minitest 2":{"count":50,"types":{"matching":8,"truefalse":9,"multi":21,"single":12}},"Minitest 3":{"count":48,"types":{"multi":12,"truefalse":15,"single":12,"matching":9}},"Minitest 4":{"count":41,"types":{"truefalse":9,"multi":12,"single":13,"matching":7}}}},{"id":"LV3","file":"THCS__LV3.json","name":"Level 3 – Khối 8","grade":"K8","minitests":{"Minitest 1":{"count":42,"types":{"single":19,"truefalse":8,"multi":8,"matching":7}},"Minitest 2":{"count":42,"types":{"multi":17,"matching":11,"single":11,"truefalse":3}},"Minitest 3":{"count":40,"types":{"single":9,"multi":19,"truefalse":12}},"Minitest 4":{"count":42,"types":{"truefalse":11,"single":13,"multi":13,"matching":5}}}}]},{"id":"TIH","name":"TiH – Spark","color":"#2196F3","levels":[{"id":"LV1","file":"TIH__LV1.json","name":"Level 1 – Khối 3","grade":"K3","minitests":{"Minitest 1":{"count":32,"types":{"single":26,"multi":1,"truefalse":2,"matching":3}},"Minitest 2":{"count":31,"types":{"single":26,"matching":1,"truefalse":4}},"Minitest 3":{"count":31,"types":{"single":26,"truefalse":3,"multi":1,"matching":1}},"Minitest 4":{"count":33,"types":{"single":26,"multi":1,"truefalse":6}}}},{"id":"LV2","file":"TIH__LV2.json","name":"Level 2 – Khối 4","grade":"K4","minitests":{"Minitest 1":{"count":35,"types":{"truefalse":12,"multi":4,"single":15,"matching":4}},"Minitest 2":{"count":36,"types":{"single":17,"matching":8,"truefalse":11}},"Minitest 3":{"count":35,"types":{"matching":4,"single":22,"multi":5,"truefalse":4}},"Minitest 4":{"count":36,"types":{"single":19,"truefalse":10,"matching":5,"multi":2}}}},{"id":"LV3","file":"TIH__LV3.json","name":"Level 3 – Khối 5","grade":"K5","minitests":{"Minitest 1":{"count":44,"types":{"matching":6,"truefalse":13,"single":23,"multi":2}},"Minitest 2":{"count":43,"types":{"truefalse":9,"multi":2,"single":21,"matching":11}},"Minitest 3":{"count":44,"types":{"matching":8,"truefalse":16,"single":18,"multi":2}},"Minitest 4":{"count":45,"types":{"truefalse":14,"single":23,"matching":5,"multi":3}}}}]}]}
+{
+  "categories": [
+    {
+      "id": "Spark",
+      "name": "Spark (GS6)",
+      "color": "#FF9800",
+      "levels": [
+        {
+          "id": "LV1",
+          "file": "Spark__LV1.json",
+          "name": "Spark LV1",
+          "grade": "LV1",
+          "minitests": {
+            "Minitest 1": {
+              "count": 39,
+              "types": {
+                "single": 31,
+                "truefalse": 6,
+                "matching": 1,
+                "multi": 1
+              }
+            },
+            "Minitest 2": {
+              "count": 38,
+              "types": {
+                "matching": 3,
+                "single": 28,
+                "truefalse": 5,
+                "multi": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "LV2",
+          "file": "Spark__LV2.json",
+          "name": "Spark LV2",
+          "grade": "LV2",
+          "minitests": {
+            "Minitest 1": {
+              "count": 34,
+              "types": {
+                "single": 21,
+                "matching": 6,
+                "truefalse": 3,
+                "multi": 4
+              }
+            },
+            "Minitest 2": {
+              "count": 34,
+              "types": {
+                "matching": 3,
+                "single": 15,
+                "truefalse": 14,
+                "multi": 2
+              }
+            },
+            "Minitest 3": {
+              "count": 34,
+              "types": {
+                "single": 13,
+                "multi": 4,
+                "truefalse": 13,
+                "matching": 4
+              }
+            }
+          }
+        },
+        {
+          "id": "LV3",
+          "file": "Spark__LV3.json",
+          "name": "Spark LV3",
+          "grade": "LV3",
+          "minitests": {
+            "Minitest 1": {
+              "count": 41,
+              "types": {
+                "single": 20,
+                "truefalse": 13,
+                "matching": 7,
+                "multi": 1
+              }
+            },
+            "Minitest 2": {
+              "count": 41,
+              "types": {
+                "single": 20,
+                "truefalse": 13,
+                "matching": 7,
+                "multi": 1
+              }
+            },
+            "Minitest 3": {
+              "count": 39,
+              "types": {
+                "truefalse": 14,
+                "single": 18,
+                "multi": 3,
+                "matching": 4
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "IC3",
+      "name": "IC3 (GS6)",
+      "color": "#9C27B0",
+      "levels": [
+        {
+          "id": "LV1",
+          "file": "IC3__LV1.json",
+          "name": "IC3 LV1",
+          "grade": "LV1",
+          "minitests": {
+            "Minitest 1": {
+              "count": 38,
+              "types": {
+                "multi": 16,
+                "matching": 2,
+                "truefalse": 4,
+                "single": 16
+              }
+            },
+            "Minitest 2": {
+              "count": 38,
+              "types": {
+                "multi": 19,
+                "single": 19
+              }
+            },
+            "Minitest 3": {
+              "count": 38,
+              "types": {
+                "single": 11,
+                "multi": 18,
+                "truefalse": 5,
+                "matching": 4
+              }
+            },
+            "Minitest 4": {
+              "count": 36,
+              "types": {
+                "truefalse": 9,
+                "multi": 3,
+                "single": 18,
+                "matching": 6
+              }
+            }
+          }
+        },
+        {
+          "id": "LV2",
+          "file": "IC3__LV2.json",
+          "name": "IC3 LV2",
+          "grade": "LV2",
+          "minitests": {
+            "Minitest 1": {
+              "count": 45,
+              "types": {
+                "truefalse": 7,
+                "single": 11,
+                "multi": 21,
+                "matching": 6
+              }
+            },
+            "Minitest 2": {
+              "count": 45,
+              "types": {
+                "single": 10,
+                "multi": 23,
+                "truefalse": 4,
+                "matching": 8
+              }
+            },
+            "Minitest 3": {
+              "count": 45,
+              "types": {
+                "single": 16,
+                "truefalse": 8,
+                "multi": 17,
+                "matching": 4
+              }
+            },
+            "Minitest 4": {
+              "count": 43,
+              "types": {
+                "single": 26,
+                "multi": 5,
+                "matching": 6,
+                "truefalse": 6
+              }
+            }
+          }
+        },
+        {
+          "id": "LV3",
+          "file": "IC3__LV3.json",
+          "name": "IC3 LV3",
+          "grade": "LV3",
+          "minitests": {
+            "Minitest 1": {
+              "count": 37,
+              "types": {
+                "single": 21,
+                "multi": 7,
+                "matching": 4,
+                "truefalse": 5
+              }
+            },
+            "Minitest 2": {
+              "count": 37,
+              "types": {
+                "single": 12,
+                "matching": 8,
+                "multi": 15,
+                "truefalse": 2
+              }
+            },
+            "Minitest 3": {
+              "count": 37,
+              "types": {
+                "multi": 28,
+                "truefalse": 1,
+                "single": 5,
+                "matching": 3
+              }
+            },
+            "Minitest 4": {
+              "count": 37,
+              "types": {
+                "multi": 23,
+                "truefalse": 1,
+                "matching": 1,
+                "single": 12
+              }
+            },
+            "Minitest 5": {
+              "count": 35,
+              "types": {
+                "multi": 9,
+                "single": 20,
+                "truefalse": 4,
+                "matching": 2
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

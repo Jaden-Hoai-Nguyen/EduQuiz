@@ -1,0 +1,92 @@
+[
+  {
+    "original_type": "Hotspot",
+    "question": "Bạn cần tìm phiên bản Windows mà máy tính của bạn đang chạy. Bạn nên thực hiện hành động này trong khu vực nào của Windows Settings? Để trả lời, hãy nhấp vào vị trí thích hợp trong hình.",
+    "image_file": "img-e7b88d072656d46798b8a5ac09fcb60c570035ce.png",
+    "imageUrl": "img/img-e7b88d072656d46798b8a5ac09fcb60c570035ce.png",
+    "note": "Câu hỏi bấm vào vị trí trên ảnh (hotspot). rect_percent (x/y/w/h, đơn vị % 0-100 theo kích thước ảnh gốc, góc trên-trái) đã được quy đổi sẵn -- có thể dùng trực tiếp như field \"regions\" trong README của EduQuiz cho câu matching-trên-ảnh, hoặc làm cơ sở để thêm 1 loại câu \"hotspot\" mới vào engine.",
+    "hotspot_areas": [
+      {
+        "shape": "rectangle",
+        "label": "Rectangle 1",
+        "rect_percent": {
+          "x": 8.08,
+          "y": 25.48,
+          "w": 26.6,
+          "h": 16.83
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Hoàn thành các câu bằng cách chọn tùy chọn chính xác từ mỗi danh sách thả xuống.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "- Dấu vân tay và nhận dạng khuôn mặt là những ví dụ về các yếu tố xác thực  [[Sinh trắc (Biometric). ]].\n- Điện thoại thông minh và thẻ truy cập của nhân viên là những ví dụ về các yếu tố xác thực [[Vật chất (Physical)]].\n- Mật khẩu và số nhận dạng cá nhân (MÃ PIN) là những ví dụ về các yếu tố xác thực [[Logic (Logical). ]]."
+  },
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Bạn đang tiến hành nghiên cứu trực tuyến. Khi nào bạn nên sử dụng tìm kiếm Boolean? Hoàn thành các câu bằng cách chọn tùy chọn chính xác từ mỗi danh sách thả xuống.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "- Để [[thu hẹp]] kết quả tìm kiếm bằng cách [[kết hợp các cụm từ tìm kiếm ]] sử dụng toán tử AND.\n- Để [[mở rộng]] kết quả tìm kiếm [[bao gồm nhiều lựa chọn thay thế tìm kiếm ]] bằng cách sử dụng toán tử OR.\n- Để [[thu hẹp]] kết quả tìm kiếm [[không chứa một số từ]] bằng cách sử dụng toán tử NOT."
+  },
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Bạn soạn hồ sơ để đi kèm với một tập hợp các hướng dẫn. Tham khảo hình ảnh bên dưới và hoàn thành các câu bằng cách chọn tự chọn đúng từ mỗi danh sách thả xuống.",
+    "image_file": "img-d2a77144cdd4ce5a587ef0363d10e7d323006a89.png",
+    "imageUrl": "img/img-d2a77144cdd4ce5a587ef0363d10e7d323006a89.png",
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "Khi soạn lưu đồ, một quyết định (decision) như Có so với Không hoặc Đúng so với Sai được biểu thị bằng [[Hình B]]. Có thể được sử dụng để biểu diễn Đầu vào (input) hoặc Đầu ra (output) trong một lưu đồ [[Hình C]]. Đánh dấu phần đầu và phần cuối của một sơ đồ bằng [[Hình A]]. Các quy trình trong một lưu đồ được biểu diễn bằng [[Hình D]]"
+  },
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Bạn đang tạo nội dung cho trang web. Bạn cần phải tuân theo các tiêu chuẩn tiếp cận (accessibility standards). Hoàn thành các câu bằng cách chọn tùy chọn chính xác từ danh sách thả xuống. (Đã sửa ngày 4.6.2025)",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "- Kiểu phông chữ phù hợp là  [[Sans serif ]].\n- Kích thước phông chữ tối thiểu được đề xuất cho thân văn bản (body text) của trang web là [[12 Point/16 Pixel ]].\n- Bạn nên duy trì [[Tương phản cao ]] giữa màu phông chữ và màu nền."
+  },
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Xác định định dạng trực quan thích hợp để thể hiện tập dữ liệu được mô tả tả. Hoàn thành các câu bằng cách chọn tùy chọn đúng mỗi danh sách thả xuống.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "- Một [[Pie Chart ]] sẽ là tốt nhất để minh họa cho các mối quan hệ đơn giản giữa một phần và toàn bộ trong một tập dữ liệu nhỏ.\n- Để hiển thị cách một hoặc nhiều chuỗi dữ liệu thay đổi theo thời gian, bạn nên sử dụng [[  Line Graph]].\n- Hiển thị khối lượng bán hàng của các sản phẩm khác nhau được minh họa rõ nhất với một [[Column Chart]]."
+  },
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Bạn có một lượng lớn dữ liệu thô để chia sẻ với khách hàng bạn quyết định tạo một trình bày trực quan. Hoàn thành các câu bằng cách chọn tùy chọn đúng từ mỗi danh sách thả xuống.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "- Để hiển thị 1 so sánh xếp hạng của dữ liệu, hãy sử dụng [[Bar Chart.]].\n- Để tóm tắt các phép đo chính xác, hãy sử dụng [[Table.  ]].\n- Để hiển thị các thay đổi hoặc xu hướng trong dữ liệu theo thời gian hãy sử dụng [[  Line Chart.  ]].\n- Để hiển thị mối quan hệ của các phần dữ liệu với một tổng thể, hãy sử dụng [[Pie Chart]]."
+  },
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Khi chọn cách tốt nhất để phân phối thông tin, bạn nên xem xét đối tượng và hình thức truyền thông có sẵn. Hoàn thành các câu bằng cách chọn tùy chọn đúng từ mỗi danh sách thả xuống.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "- Bạn có một lý thuyết để chia sẻ với người khác dưới dạng podcast. Cách tốt nhất để phân phối nó sẽ là sử dụng [[Audio.]].\n- Một cửa hàng đang có đợt giảm giá vào dịp lễ và muốn gửi phiếu giảm giá cho khách hàng thân thiết của họ. Họ quyết định cách tốt nhất để phân phối phiếu giảm giá của họ là sử dụng [[Email]].\n- Một dàn hợp xướng địa phương muốn quảng bá album Giáng sinh mới của họ. Họ muốn tiếp cận càng nhiều người đăng ký càng tốt bằng cách giới thiệu một vài bài hát trong album. Cách tốt nhất để phân số những bài hát này đến khán giả của họ là sử dụng [[Social Media]].\n- Một huấn luyện viên thể dục đã tạo ra một thói quen mới cho khách hàng của mình. Bài tập kéo dài khoảng 30 phút. Cách tốt nhất để anh ta phân phát hướng dẫn của mình là sử dụng  [[ Video]]."
+  },
+  {
+    "original_type": "Sequence",
+    "question": "Sắp xếp theo đúng thứ tự các bước trong quy trình thiết kế để xác định và hoàn thiện yêu cầu của dự án.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi sắp xếp thứ tự đúng. Thứ tự liệt kê dưới đây theo đúng thứ tự chính xác (item đầu tiên = bước 1, ...).",
+    "ordered_items": [
+      "Xác định yêu cầu",
+      "Tạo ý tưởng",
+      "Phát triển bản mẫu",
+      "Kiểm tra bản mẫu",
+      "Tinh chỉnh bản mẫu"
+    ]
+  }
+]

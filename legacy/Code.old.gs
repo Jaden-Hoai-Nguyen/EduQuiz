@@ -6,7 +6,7 @@
 
 // ⚙️ CẤU HÌNH – Thay ID sheet của bạn vào đây
 // Lấy ID từ URL: https://docs.google.com/spreadsheets/d/[SHEET_ID]/edit
-var SHEET_ID   = 'PASTE_YOUR_GOOGLE_SHEET_ID_HERE';
+var SHEET_ID = '1KPXrvgrEDhO_bMPxOBvIdgeo1PPWx6bA9F89Itos2cQ';
 var SHEET_NAME = 'Kết quả thi';   // Tên tab trong Google Sheet
 
 // ============================================================
@@ -28,6 +28,18 @@ function doPost(e) {
   // ── Bước 1: Cho phép mọi domain gọi được (CORS) ──────────
   var output = ContentService.createTextOutput();
   output.setMimeType(ContentService.MimeType.JSON);
+
+  // ── Khóa ghi (LockService): tránh 2 học sinh nộp bài cùng lúc
+  //    ghi đè/mất dòng của nhau khi Sheet nhận nhiều request song song.
+  var lock = LockService.getScriptLock();
+  var gotLock = lock.tryLock(10000); // chờ tối đa 10s để lấy khóa
+  if (!gotLock) {
+    output.setContent(JSON.stringify({
+      success: false,
+      error:   'Hệ thống đang bận, vui lòng thử nộp lại sau vài giây.'
+    }));
+    return output;
+  }
 
   try {
     // ── Bước 2: Parse JSON từ request body ────────────────
@@ -137,6 +149,65 @@ function doPost(e) {
       success: false,
       error:   err.toString()
     }));
+  } finally {
+    lock.releaseLock();
+  }
+
+  return output;
+}
+
+// ============================================================
+//  🏆 doGet: BẢNG XẾP HẠNG (đọc read-only, không cần OAuth)
+//  Gọi từ front-end bằng GET, ví dụ:
+//    APPS_SCRIPT_URL + '?action=leaderboard&limit=10'
+//    APPS_SCRIPT_URL + '?action=leaderboard&class=6A1&limit=10'
+// ============================================================
+function doGet(e) {
+  var output = ContentService.createTextOutput();
+  output.setMimeType(ContentService.MimeType.JSON);
+
+  try {
+    var params    = (e && e.parameter) || {};
+    var action    = params.action || 'leaderboard';
+    var limit     = parseInt(params.limit, 10) || 10;
+    var classFilt = params.class || null;
+
+    if (action !== 'leaderboard') {
+      output.setContent(JSON.stringify({ success: false, error: 'Unknown action' }));
+      return output;
+    }
+
+    var ss    = SpreadsheetApp.openById(SHEET_ID);
+    var sheet = ss.getSheetByName(SHEET_NAME);
+    if (!sheet || sheet.getLastRow() < 2) {
+      output.setContent(JSON.stringify({ success: true, leaderboard: [] }));
+      return output;
+    }
+
+    // Cột theo đúng thứ tự header ở doPost():
+    // STT, Thời gian nộp, Họ tên, Lớp, Trường, Tên bài thi, Điểm(%), Đúng/Tổng, ...
+    var values = sheet.getRange(2, 1, sheet.getLastRow() - 1, 8).getValues();
+
+    var rows = values
+      .map(function (r) {
+        return {
+          time:     r[1],
+          name:     r[2],
+          class:    r[3],
+          school:   r[4],
+          testName: r[5],
+          score:    Number(r[6]) || 0,
+          correct:  r[7],
+        };
+      })
+      .filter(function (r) { return !classFilt || r.class === classFilt; })
+      .sort(function (a, b) { return b.score - a.score; })
+      .slice(0, limit);
+
+    output.setContent(JSON.stringify({ success: true, leaderboard: rows }));
+  } catch (err) {
+    Logger.log('❌ Lỗi doGet: ' + err.toString());
+    output.setContent(JSON.stringify({ success: false, error: err.toString() }));
   }
 
   return output;

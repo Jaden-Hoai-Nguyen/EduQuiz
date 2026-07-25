@@ -1,0 +1,31 @@
+[
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Em cần mô tả các bước xảy ra khi dùng trình duyệt Web của mình để truy cập www.companypro.net. Hoàn thành các câu dưới đây bằng cách chọn đúng tùy chọn từ mỗi danh sách thả xuống.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "+ Kết nối được thiết lập đến [[Máy chủ Web (Web Server)]].\n+ [[Trang Web (Web Page)]] được gửi đến máy tính của người dùng.\n+ [[Trình duyệt Web (Web Browser)]] hiển thị trang Web."
+  },
+  {
+    "original_type": "MultipleChoiceText",
+    "question": "Em cần mô tả các bước xảy ra khi dùng trình duyệt Web của mình để truy cập www.companypro.net. Hoàn thành các câu dưới đây bằng cách chọn đúng tùy chọn từ mỗi danh sách thả xuống.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi dạng chọn nhanh trong dòng văn bản (vd Đúng/Sai hoặc phân loại). Xem full_text (chứa [[đáp án đúng]] đánh dấu ngay trong câu) để tái tạo lại.",
+    "full_text": "+ Kết nối được thiết lập đến [[Máy chủ Web (Web Server)]].\n+ [[Trang Web (Web Page)]] được gửi đến máy tính của người dùng.\n+ [[Trình duyệt Web (Web Browser)]] hiển thị trang Web."
+  },
+  {
+    "original_type": "Sequence",
+    "question": "Nếu em nghi ngờ một người lớn đã liên hệ với em một cách không phù hợp trên mạng, em nên làm theo các bước nào sau đây để báo cáo? Hãy sắp xếp các bước theo đúng thứ tự.",
+    "image_file": null,
+    "imageUrl": null,
+    "note": "Câu hỏi sắp xếp thứ tự đúng. Thứ tự liệt kê dưới đây theo đúng thứ tự chính xác (item đầu tiên = bước 1, ...).",
+    "ordered_items": [
+      "Chụp ảnh màn hình.",
+      "Kể cho một người lớn mà em tin tưởng.",
+      "Liên hệ cơ quan hành pháp và báo cáo chuyện này.",
+      "Làm theo sự hướng dẫn của cơ quan hành pháp."
+    ]
+  }
+]
