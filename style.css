@@ -217,7 +217,7 @@ body {
 .form-group input:focus,
 .form-group select:focus {
   border-color: var(--purple);
-  box-shadow: 0 0 0 3px rgba(108,99,255,.15);
+  box-shadow: 0 0 0 3px rgba(79,107,255,.15);
   background: var(--card);
 }
 .form-group select {
@@ -244,7 +244,7 @@ body {
   letter-spacing: .3px;
   margin-top: .4rem;
   transition: transform .15s, box-shadow .15s, opacity .15s;
-  box-shadow: 0 6px 24px rgba(108,99,255,.4);
+  box-shadow: 0 6px 24px rgba(79,107,255,.4);
   position: relative;
   overflow: hidden;
 }
@@ -259,7 +259,7 @@ body {
 .btn-start:hover:not(:disabled)::after { opacity: 1 }
 .btn-start:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(108,99,255,.5);
+  box-shadow: 0 10px 32px rgba(79,107,255,.5);
 }
 .btn-start:active:not(:disabled) { transform: translateY(0) }
 .btn-start:disabled { opacity: .45; cursor: not-allowed }
@@ -273,11 +273,11 @@ body {
   padding: .3rem .75rem;
   border-radius: 100px;
   background: var(--purple-lt);
-  border: 1.5px solid rgba(108,99,255,.3);
+  border: 1.5px solid rgba(79,107,255,.3);
   color: var(--purple);
 }
 .chip.green { background: var(--green-lt); border-color: rgba(0,200,83,.3); color: #00a040 }
-.chip.purple { background: var(--purple-lt); border-color: rgba(108,99,255,.3); color: var(--purple) }
+.chip.purple { background: var(--purple-lt); border-color: rgba(79,107,255,.3); color: var(--purple) }
 
 /* ══════════════════════════════════════════════
    EXAM LAYOUT
@@ -329,7 +329,7 @@ body {
   align-items: center;
   gap: .5rem;
   background: var(--purple-lt);
-  border: 2px solid rgba(108,99,255,.25);
+  border: 2px solid rgba(79,107,255,.25);
   border-radius: 100px;
   padding: .4rem 1rem;
   margin-left: auto;
@@ -486,7 +486,7 @@ body {
   font-size: .9rem;
   font-weight: 700;
   color: #fff;
-  box-shadow: 0 4px 12px rgba(108,99,255,.35);
+  box-shadow: 0 4px 12px rgba(79,107,255,.35);
 }
 
 .q-meta { display: flex; flex-direction: column; gap: .35rem; flex: 1 }
@@ -504,7 +504,7 @@ body {
   border-radius: 100px;
   background: var(--purple-lt);
   color: var(--purple);
-  border: 1.5px solid rgba(108,99,255,.25);
+  border: 1.5px solid rgba(79,107,255,.25);
   width: fit-content;
 }
 
@@ -519,7 +519,7 @@ body {
 /* Image illustration area */
 .img-illus {
   background: var(--purple-lt);
-  border: 2px solid rgba(108,99,255,.2);
+  border: 2px solid rgba(79,107,255,.2);
   border-radius: var(--radius-sm);
   padding: .6rem;
   margin-bottom: 1rem;
@@ -599,15 +599,21 @@ body {
   border-color: var(--purple);
   background: var(--purple-lt);
   transform: translateX(4px);
-  box-shadow: 0 4px 16px rgba(108,99,255,.2);
+  box-shadow: 0 4px 16px rgba(79,107,255,.2);
 }
-/* Color variants for selected */
-.option-btn.selected.c0 { border-color: var(--pink);   background: rgba(224,64,251,.1) }
-.option-btn.selected.c1 { border-color: var(--yellow);  background: var(--yellow-lt) }
-.option-btn.selected.c2 { border-color: var(--teal);   background: var(--teal-lt) }
-.option-btn.selected.c3 { border-color: var(--orange);  background: rgba(255,112,67,.1) }
-.option-btn.selected.c4 { border-color: var(--blue);    background: var(--blue-lt) }
-.option-btn.selected.c5 { border-color: var(--green);   background: var(--green-lt) }
+/* Trạng thái "đã chọn" dùng MỘT màu nhất quán (brand primary) cho mọi đáp án —
+   trước đây tô màu cầu vồng theo vị trí (kể cả xanh lá), khiến học sinh dễ
+   nhầm là hệ thống đang báo đúng/sai trước khi nộp bài. Việc "đã chọn" chỉ
+   cần rõ ràng, không cần phân biệt màu theo thứ tự. */
+.option-btn.selected.c0,
+.option-btn.selected.c1,
+.option-btn.selected.c2,
+.option-btn.selected.c3,
+.option-btn.selected.c4,
+.option-btn.selected.c5 {
+  border-color: var(--purple);
+  background: var(--purple-lt);
+}
 
 /* Letter marker */
 .option-marker {
@@ -627,7 +633,7 @@ body {
   background: var(--purple);
   border-color: var(--purple);
   color: #fff;
-  box-shadow: 0 2px 8px rgba(108,99,255,.4);
+  box-shadow: 0 2px 8px rgba(79,107,255,.4);
 }
 .option-btn:hover .option-marker { border-color: var(--purple); color: var(--purple) }
 .option-btn.multi-style .option-marker { border-radius: 8px }
@@ -670,8 +676,10 @@ body {
   transition: all .15s;
 }
 .tf-btn:hover { border-color: var(--purple); color: var(--purple); background: var(--purple-lt) }
-.tf-btn.selected-true  { border-color: var(--teal); background: var(--teal-lt); color: #008060 }
-.tf-btn.selected-false { border-color: var(--red);  background: var(--red-lt);  color: #cc0000 }
+/* Chỉ đánh dấu ĐÃ CHỌN (chưa biết đúng/sai) — dùng xanh dương/cam thay vì
+   xanh lá/đỏ để học sinh không nhầm đây là kết quả chấm điểm. */
+.tf-btn.selected-true  { border-color: var(--blue);   background: var(--blue-lt);   color: #1c5fad }
+.tf-btn.selected-false { border-color: var(--orange); background: var(--orange-lt); color: #a4530f }
 
 /* ══════════════════════════════════════════════
    MATCHING — Drag & Drop
@@ -716,8 +724,8 @@ body {
 .match-region-wrap img { width: 100%; height: auto; display: block; }
 .match-region-hotspot {
   position: absolute;
-  border: 2px dashed rgba(108,99,255,.55);
-  background: rgba(108,99,255,.08);
+  border: 2px dashed rgba(79,107,255,.55);
+  background: rgba(79,107,255,.08);
   border-radius: 8px;
   cursor: pointer;
   padding: 0;
@@ -725,7 +733,7 @@ body {
 }
 .match-region-hotspot:hover {
   border-color: var(--purple);
-  background: rgba(108,99,255,.22);
+  background: rgba(79,107,255,.22);
   transform: scale(1.03);
 }
 .match-region-hotspot.matched {
@@ -779,7 +787,7 @@ body {
   margin-bottom: 1rem;
   padding: .8rem;
   background: var(--purple-lt);
-  border: 2px solid rgba(108,99,255,.2);
+  border: 2px solid rgba(79,107,255,.2);
   border-radius: var(--radius-sm);
   min-height: 56px;
 }
@@ -801,13 +809,13 @@ body {
 .drag-chip:active, .drag-chip.dragging { cursor:grabbing; opacity:.5; transform:scale(.93) }
 .drag-chip.tap-selected {
   border-color: var(--purple); color: var(--purple); background: var(--purple-lt);
-  box-shadow: 0 0 0 4px rgba(108,99,255,.25);
+  box-shadow: 0 0 0 4px rgba(79,107,255,.25);
   transform: translateY(-3px);
 }
 .match-hint {
   font-size: .85rem; color: var(--purple);
   background: var(--purple-lt);
-  border: 1.5px solid rgba(108,99,255,.25);
+  border: 1.5px solid rgba(79,107,255,.25);
   border-radius: var(--radius-sm);
   padding: .55rem .9rem;
   margin-bottom: .75rem;
@@ -853,7 +861,7 @@ body {
   color: var(--purple);
   background: var(--purple-lt);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(108,99,255,.2);
+  box-shadow: 0 4px 16px rgba(79,107,255,.2);
 }
 .btn-nav:disabled { opacity:.3; cursor:not-allowed }
 .btn-flag {
@@ -873,11 +881,11 @@ body {
   background: linear-gradient(135deg, var(--purple), #8b5cf6);
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 4px 16px rgba(108,99,255,.35);
+  box-shadow: 0 4px 16px rgba(79,107,255,.35);
 }
 .btn-next-primary:hover {
   transform: translateY(-1px) !important;
-  box-shadow: 0 8px 24px rgba(108,99,255,.45) !important;
+  box-shadow: 0 8px 24px rgba(79,107,255,.45) !important;
   border-color: transparent !important;
   color: #fff !important;
 }
@@ -1053,7 +1061,7 @@ body {
 .btn-export {
   padding: .5rem 1.1rem;
   background: var(--purple-lt);
-  border: 1.5px solid rgba(108,99,255,.3);
+  border: 1.5px solid rgba(79,107,255,.3);
   color: var(--purple);
   border-radius: var(--radius-sm);
   font-family: 'Baloo 2', sans-serif;
@@ -1062,7 +1070,7 @@ body {
   cursor: pointer;
   transition: all .15s;
 }
-.btn-export:hover { background:rgba(108,99,255,.2) }
+.btn-export:hover { background:rgba(79,107,255,.2) }
 .btn-danger {
   padding: .5rem 1.1rem;
   background: var(--red-lt);
@@ -1221,3 +1229,27 @@ body {
   .result-stat { padding: .8rem .5rem }
   .result-stat-val { font-size: 1.5rem }
 }
+
+/* ============================================================
+   UTILITY CLASSES bổ sung
+   (thay cho style="..." nội tuyến còn sót trong index.html)
+   ============================================================ */
+.admin-entry-link {
+  position: fixed; top: 18px; left: 18px; z-index: 500;
+  font-size: .78rem; font-weight: 700;
+  color: var(--muted); text-decoration: none;
+  display: flex; align-items: center; gap: 4px;
+  padding: .4rem .7rem; border-radius: 100px;
+  background: var(--card); border: 1.5px solid var(--border);
+  box-shadow: var(--shadow); transition: all .2s;
+}
+.admin-entry-link:hover { border-color: var(--purple); color: var(--purple) }
+
+.theme-toggle-exam {
+  background: none; border: 1.5px solid var(--border); border-radius: 50%;
+  width: 36px; height: 36px; font-size: 1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .2s; color: var(--text);
+}
+.theme-toggle-exam:hover { border-color: var(--purple) }
+.lobby-game-strip { margin-top: 18px; }

@@ -1,0 +1,128 @@
+/* ============================================================
+   ADMIN USERS — trang quản lý tài khoản (chỉ admin)
+   Dùng chung css/theme.css cho biến màu.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+
+body {
+  font-family: 'Baloo 2', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.6rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.topbar h1 { font-size: 1.1rem; font-weight: 800 }
+.spacer { flex: 1 }
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: .6rem 1.2rem;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: .85rem;
+  cursor: pointer;
+}
+.btn-ghost {
+  background: var(--card2);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 2rem 1.6rem }
+.whoami { font-size: .8rem; color: var(--muted); font-weight: 700 }
+
+.table-scroll { overflow-x: auto; border-radius: var(--radius-sm) }
+table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+th, td { padding: .8rem .9rem; text-align: left; font-size: .85rem; border-bottom: 1px solid var(--border) }
+th { background: var(--card2); font-weight: 800; font-size: .75rem; text-transform: uppercase; color: var(--muted) }
+tr:last-child td { border-bottom: none }
+
+select {
+  font-family: inherit;
+  font-size: .8rem;
+  padding: .4rem .65rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  background: var(--card2);
+  color: var(--text);
+}
+
+.badge { display: inline-flex; padding: .25rem .65rem; border-radius: 999px; font-size: .68rem; font-weight: 800 }
+.badge.admin   { background: #ffe5b0; color: #a97a00 }
+.badge.teacher { background: var(--purple-lt); color: var(--purple) }
+.badge.student { background: var(--teal-lt);   color: var(--teal) }
+.badge.pending { background: var(--yellow-lt); color: #a97a00; margin-left: .3rem }
+
+.approveBtn {
+  background: var(--teal-lt);
+  color: var(--teal);
+  border: none;
+  border-radius: 999px;
+  padding: .35rem .75rem;
+  font-size: .72rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.banner {
+  background: var(--purple-lt);
+  border: 1.5px solid rgba(79,107,255,.25);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.6rem;
+  font-size: .85rem;
+  line-height: 1.6;
+}
+
+.toast {
+  position: fixed;
+  bottom: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: var(--bg);
+  padding: .75rem 1.3rem;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+.toast.show { opacity: 1 }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .wrap { padding: 1.4rem 1rem }
+  .topbar { padding: .8rem 1rem }
+  .topbar h1 { font-size: 1rem }
+}

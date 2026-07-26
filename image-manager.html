@@ -12,7 +12,7 @@
 <body>
 
 <div class="topbar">
-  <a href="ic3-dashboard.html" class="btn btn-ghost btn-sm" style="text-decoration:none;display:inline-flex;align-items:center;gap:4px;">← Dashboard</a>
+  <a href="ic3-dashboard.html" class="btn btn-ghost btn-sm link-plain-flex">← Dashboard</a>
   <h1>🖼️ Quản lý câu hỏi &amp; hình ảnh</h1>
   <span class="sub">EduQuiz IC3 · Lưu trực tiếp lên Firebase</span>
   <div class="spacer"></div>
@@ -30,17 +30,17 @@
     không cần xuất file thủ công nữa. Nút "Sao lưu JSON" chỉ để tải một bản dự phòng, không phải bước bắt buộc.
   </div>
 
-  <div id="migrateBox" class="banner" style="display:none;background:var(--yellow-lt);border-color:rgba(255,193,7,.4)">
+  <div id="migrateBox" class="banner banner-warn hidden">
     Chưa có dữ liệu câu hỏi nào trên Firebase. Bấm nút bên dưới để nhập dữ liệu từ
     <code>quiz_data.json</code> hiện có (chỉ cần làm 1 lần).
-    <div style="margin-top:.6rem">
+    <div class="mt-sm">
       <button type="button" class="btn btn-primary btn-sm" id="migrateBtn">📥 Nhập dữ liệu từ quiz_data.json</button>
     </div>
   </div>
 
   <div id="loadState" class="loadbar">⏳ Đang tải dữ liệu câu hỏi từ Firebase…</div>
 
-  <div id="app" style="display:none">
+  <div id="app" class="hidden">
     <div class="stats">
       <div class="stat-card"><div class="n" id="statTotal">0</div><div class="l">Tổng số câu</div></div>
       <div class="stat-card need"><div class="n" id="statNeed">0</div><div class="l">Cần ảnh (chưa có)</div></div>
@@ -64,7 +64,7 @@
     <div id="newQuestionBox"></div>
 
     <div id="qlist" class="qlist"></div>
-    <div id="emptyState" class="empty-state" style="display:none">Không có câu hỏi nào khớp bộ lọc 🎈</div>
+    <div id="emptyState" class="empty-state hidden">Không có câu hỏi nào khớp bộ lọc 🎈</div>
 
     <div class="pager">
       <button type="button" class="btn btn-ghost btn-sm" id="prevPage">← Trước</button>
@@ -76,7 +76,7 @@
 
 <div class="toast" id="toast"></div>
 
-<script>window.EDU_ALLOWED_ROLES = ['admin', 'teacher'];</script>
+<script src="js/image-manager-page.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>

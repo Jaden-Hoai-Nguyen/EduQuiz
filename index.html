@@ -16,11 +16,7 @@
 
 <!-- ── Lối vào khu quản trị (chỉ hiện ở màn lobby, ẩn lúc làm bài) ── -->
 <a href="ic3-dashboard.html" target="_blank" rel="noopener" id="adminEntryLink"
-   title="Dành cho giáo viên / quản trị viên"
-   style="position:fixed;top:18px;left:18px;z-index:500;font-size:.78rem;font-weight:700;
-          color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:4px;
-          padding:.4rem .7rem;border-radius:100px;background:var(--card);border:1.5px solid var(--border);
-          box-shadow:var(--shadow);transition:all .2s;">
+   title="Dành cho giáo viên / quản trị viên" class="admin-entry-link">
   🔑 <span class="admin-link-label">Quản trị</span>
 </a>
 
@@ -66,7 +62,7 @@
     </div>
 
     <!-- Streak / XP / huy hiệu của học sinh trên MÁY này (js/gamification.js) -->
-    <div id="lobbyGameStrip" style="margin-top:18px;"></div>
+    <div id="lobbyGameStrip" class="lobby-game-strip"></div>
   </div>
 
   <!-- Right: form -->
@@ -142,10 +138,7 @@
     </div>
     <button type="button" class="btn-submit-top" onclick="confirmSubmit()">Nộp bài ✓</button>
     <button type="button" onclick="toggleTheme()" title="Chế độ sáng/tối"
-      style="background:none;border:1.5px solid var(--border);border-radius:50%;width:36px;height:36px;
-             font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
-             flex-shrink:0;transition:all .2s;color:var(--text);"
-      id="themeToggleExam" onmouseover="this.style.borderColor='var(--purple)'" onmouseout="this.style.borderColor='var(--border)'">🌙</button>
+      class="theme-toggle-exam" id="themeToggleExam">🌙</button>
   </div>
   <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
   <div class="exam-body">
@@ -166,7 +159,7 @@
      RESULT
      ═══════════════════════════════════ -->
 <div id="result" style="display:none;min-height:100vh;align-items:center;justify-content:center;padding:2rem 1rem;flex-direction:column;position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center top,rgba(108,99,255,.15),transparent 60%);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center top,rgba(79,107,255,.15),transparent 60%);pointer-events:none;"></div>
   <div class="result-card">
     <span class="result-emoji" id="resultEmoji">🎉</span>
     <div class="result-score" id="resultScore">0%</div>

@@ -711,7 +711,7 @@ function renderMulti(q, qi) {
 
   document.getElementById('q-body').innerHTML = `
     <div class="multi-hint" style="
-        background:var(--purple-lt);border:1.5px solid rgba(108,99,255,.25);
+        background:var(--purple-lt);border:1.5px solid rgba(79,107,255,.25);
         border-radius:10px;padding:.55rem 1rem;margin-bottom:.8rem;
         font-size:.85rem;font-weight:700;color:var(--purple);">
       ☑ ${hint}
@@ -1532,7 +1532,7 @@ function backToLobby() {
    ============================================================ */
 
 function launchConfetti() {
-  const COLORS = ['#6c63ff','#00d4aa','#ffd166','#ff6b6b','#06d6a0','#f4845f'];
+  const COLORS = ['#4f6bff','#17b3a3','#f6a723','#ff8a3d','#2e8cf0','#dd4fa6'];
   for (let i = 0; i < 60; i++) {
     setTimeout(() => {
       const el = document.createElement('div');

@@ -7,34 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/theme.css">
-<style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Baloo 2',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:3rem}
-  .topbar{
-    position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
-    padding:.9rem 1.4rem;background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--shadow);
-  }
-  .topbar h1{font-size:1.1rem;font-weight:800}
-  .spacer{flex:1}
-  .btn{border:none;border-radius:999px;padding:.55rem 1.1rem;font-family:inherit;font-weight:700;font-size:.85rem;cursor:pointer}
-  .btn-ghost{background:var(--card2);color:var(--text);border:1.5px solid var(--border);text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
-  .wrap{max-width:980px;margin:0 auto;padding:1.4rem}
-  .whoami{font-size:.8rem;color:var(--muted);font-weight:700}
-  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden}
-  th,td{padding:.7rem .8rem;text-align:left;font-size:.85rem;border-bottom:1px solid var(--border)}
-  th{background:var(--card2);font-weight:800;font-size:.75rem;text-transform:uppercase;color:var(--muted)}
-  tr:last-child td{border-bottom:none}
-  select{font-family:inherit;font-size:.8rem;padding:.35rem .6rem;border-radius:8px;border:1.5px solid var(--border);background:var(--card2);color:var(--text)}
-  .badge{display:inline-flex;padding:.2rem .6rem;border-radius:999px;font-size:.68rem;font-weight:800}
-  .badge.admin{background:#ffe5b0;color:#a97a00}
-  .badge.teacher{background:var(--purple-lt);color:var(--purple)}
-  .badge.student{background:var(--green-lt);color:var(--green)}
-  .badge.pending{background:var(--red-lt);color:var(--red);margin-left:.3rem}
-  .approveBtn{background:var(--green-lt);color:var(--green);border:none;border-radius:999px;padding:.3rem .7rem;font-size:.72rem;font-weight:800;cursor:pointer}
-  .banner{background:var(--purple-lt);border:1.5px solid rgba(108,99,255,.3);border-radius:var(--radius-sm);padding:.8rem 1rem;margin-bottom:1.2rem;font-size:.82rem;line-height:1.6}
-  .toast{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:.7rem 1.2rem;border-radius:999px;font-size:.82rem;font-weight:700;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:opacity .25s}
-  .toast.show{opacity:1}
-</style>
+<link rel="stylesheet" href="css/admin-users.css">
 </head>
 <body>
 
@@ -51,15 +24,16 @@
     Chỉ <b>Quản trị viên</b> mới thấy trang này. Tại đây bạn có thể duyệt giáo viên mới đăng ký,
     và đổi vai trò (Học sinh / Giáo viên / Quản trị viên) của bất kỳ tài khoản nào.
   </div>
-  <table>
-    <thead><tr><th>Tên</th><th>Email</th><th>Vai trò hiện tại</th><th>Đổi vai trò</th><th>Trạng thái</th></tr></thead>
-    <tbody id="userRows"><tr><td colspan="5">Đang tải...</td></tr></tbody>
-  </table>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Tên</th><th>Email</th><th>Vai trò hiện tại</th><th>Đổi vai trò</th><th>Trạng thái</th></tr></thead>
+      <tbody id="userRows"><tr><td colspan="5">Đang tải...</td></tr></tbody>
+    </table>
+  </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
-<script>window.EDU_ALLOWED_ROLES = ['admin'];</script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
@@ -67,85 +41,6 @@
 <script src="js/auth.js"></script>
 <script src="js/auth-guard.js"></script>
 <script src="js/idle-logout.js"></script>
-<script>
-  function toast(msg) {
-    const el = document.getElementById('toast');
-    el.textContent = msg;
-    el.classList.add('show');
-    clearTimeout(toast._t);
-    toast._t = setTimeout(() => el.classList.remove('show'), 2600);
-  }
-
-  document.getElementById('logoutBtn').addEventListener('click', async () => {
-    await EduAuth.logoutUser();
-    window.location.href = 'login.html';
-  });
-
-  window.addEventListener('edu:ready', ({ detail }) => {
-    const { user, profile } = detail;
-    document.getElementById('whoami').textContent = `${profile.name || user.email} · ${EduAuth.ROLE_LABEL[profile.role]}`;
-    loadUsers();
-  });
-
-  async function loadUsers() {
-    const tbody = document.getElementById('userRows');
-    const snap = await EduFirebase.db.collection('users').orderBy('createdAt', 'desc').get();
-    if (snap.empty) {
-      tbody.innerHTML = '<tr><td colspan="5">Chưa có tài khoản nào.</td></tr>';
-      return;
-    }
-    tbody.innerHTML = snap.docs.map(doc => {
-      const u = doc.data();
-      const pending = u.role === 'teacher' && u.approved === false;
-      return `
-      <tr data-uid="${doc.id}">
-        <td>${esc(u.name || '(chưa đặt tên)')}</td>
-        <td>${esc(u.email || '')}</td>
-        <td><span class="badge ${esc(u.role)}">${esc(EduAuth.ROLE_LABEL[u.role] || u.role)}</span>${pending ? '<span class="badge pending">Chờ duyệt</span>' : ''}</td>
-        <td>
-          <select class="roleSelect">
-            <option value="student" ${u.role === 'student' ? 'selected' : ''}>🎓 Học sinh</option>
-            <option value="teacher" ${u.role === 'teacher' ? 'selected' : ''}>🧑‍🏫 Giáo viên</option>
-            <option value="admin" ${u.role === 'admin' ? 'selected' : ''}>👑 Quản trị viên</option>
-          </select>
-        </td>
-        <td>${pending ? '<button class="approveBtn">✅ Duyệt ngay</button>' : '—'}</td>
-      </tr>`;
-    }).join('');
-
-    tbody.querySelectorAll('.roleSelect').forEach(sel => {
-      sel.addEventListener('change', async (e) => {
-        const uid = e.target.closest('tr').dataset.uid;
-        const newRole = e.target.value;
-        try {
-          await EduFirebase.db.collection('users').doc(uid).set(
-            { role: newRole, approved: true }, { merge: true }
-          );
-          toast('✅ Đã cập nhật vai trò');
-          loadUsers();
-        } catch (err) {
-          toast('❌ Lỗi: ' + err.message);
-        }
-      });
-    });
-
-    tbody.querySelectorAll('.approveBtn').forEach(btn => {
-      btn.addEventListener('click', async (e) => {
-        const uid = e.target.closest('tr').dataset.uid;
-        try {
-          await EduFirebase.db.collection('users').doc(uid).set({ approved: true }, { merge: true });
-          toast('✅ Đã duyệt tài khoản giáo viên');
-          loadUsers();
-        } catch (err) {
-          toast('❌ Lỗi: ' + err.message);
-        }
-      });
-    });
-  }
-
-  function esc(s) {
-    return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  }
-</script>
+<script src="js/admin-users.js"></script>
 </body>
 </html>

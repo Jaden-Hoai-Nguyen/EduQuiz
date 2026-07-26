@@ -137,6 +137,7 @@ body {
   padding: 10px 12px;
   background: var(--sidebar-active-bg);
   border-radius: 12px;
+  cursor: pointer;
 }
 .user-avatar {
   width: 34px; height: 34px;
@@ -753,3 +754,27 @@ tr:hover td { background: var(--sidebar-active-bg); }
   table { font-size: 12px; }
   th, td { padding: 10px 10px; }
 }
+
+/* ============================================================
+   UTILITY CLASSES
+   (thay cho các style="..." nội tuyến trong ic3-dashboard.html,
+   để CSS không bị trộn lẫn trong file HTML)
+   ============================================================ */
+.link-plain { text-decoration: none; color: inherit; }
+.topbar-actions-left { display: flex; align-items: center; gap: 14px; }
+.pill-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: .5rem 1rem; border-radius: 999px;
+  background: var(--accent-purple-light); color: var(--accent-purple);
+  font-weight: 700; font-size: .85rem; text-decoration: none; white-space: nowrap;
+}
+.section-title-lg { font-family: 'Baloo 2', cursive; font-size: 22px; font-weight: 800; margin-bottom: 24px; }
+.settings-row-col { flex-direction: column; align-items: flex-start; gap: 8px; }
+.btn-danger-outline {
+  padding: 8px 16px; background: var(--red-lt); color: var(--red);
+  border: 2px solid rgba(240,72,62,.4); border-radius: 8px;
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; cursor: pointer;
+}
+.info-value { font-weight: 800; font-size: 13px; }
+.table-empty-cell { text-align: center; color: var(--text-muted); padding: 32px; }
+.table-scroll-x { overflow-x: auto; }

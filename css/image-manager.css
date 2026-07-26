@@ -31,7 +31,7 @@ a{color:inherit}
 }
 .btn:hover{transform:translateY(-1px)}
 .btn:active{transform:translateY(0)}
-.btn-primary{background:var(--purple);color:#fff;box-shadow:0 4px 14px rgba(108,99,255,.35)}
+.btn-primary{background:var(--purple);color:#fff;box-shadow:0 4px 14px rgba(79,107,255,.35)}
 .btn-ghost{background:var(--card2);color:var(--text);border:1.5px solid var(--border)}
 .btn-danger{background:var(--red-lt);color:var(--red)}
 .btn-green{background:var(--green-lt);color:var(--green)}
@@ -78,6 +78,13 @@ a{color:inherit}
   padding:1rem;box-shadow:var(--shadow);display:grid;grid-template-columns:220px 1fr;gap:1rem;
 }
 @media (max-width:680px){ .qcard{grid-template-columns:1fr} }
+@media (max-width:560px){
+  .wrap{padding:1rem .8rem}
+  .topbar{padding:.75rem 1rem}
+  .topbar h1{font-size:1rem}
+  .topbar .sub{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
 
 .qimg-area{
   display:flex;flex-direction:column;gap:.5rem;align-items:center;
@@ -138,7 +145,7 @@ a{color:inherit}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(-6px)}
 
 .banner{
-  background:var(--purple-lt);border:1.5px solid rgba(108,99,255,.3);border-radius:var(--radius-sm);
+  background:var(--purple-lt);border:1.5px solid rgba(79,107,255,.3);border-radius:var(--radius-sm);
   padding:.8rem 1rem;margin-bottom:1.2rem;font-size:.82rem;color:var(--text);line-height:1.6;
 }
 .banner b{color:var(--purple)}
@@ -197,3 +204,12 @@ a{color:inherit}
 .new-q-form .row2{display:flex;gap:.5rem;flex-wrap:wrap}
 .new-q-form .row2 input{flex:1;min-width:140px}
 .new-q-form label{font-size:.7rem;font-weight:800;color:var(--muted)}
+
+/* ============================================================
+   UTILITY CLASSES
+   (thay cho style="..." nội tuyến trong image-manager.html)
+   ============================================================ */
+.hidden { display: none; }
+.link-plain-flex { text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+.mt-sm { margin-top: .6rem; }
+.banner.banner-warn { background: var(--yellow-lt); border-color: rgba(246,167,35,.4); }

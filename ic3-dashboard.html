@@ -34,18 +34,18 @@
       <span class="nav-icon">⚙️</span>
       <span>Cài đặt hệ thống</span>
     </div>
-    <a class="nav-item" href="image-manager.html" style="text-decoration:none;color:inherit;">
+    <a class="nav-item link-plain" href="image-manager.html">
       <span class="nav-icon">🖼️</span>
       <span>Quản lý hình ảnh câu hỏi</span>
     </a>
-    <a class="nav-item" href="admin-users.html" id="adminUsersLink" style="text-decoration:none;color:inherit;display:none;">
+    <a class="nav-item link-plain" href="admin-users.html" id="adminUsersLink" style="display:none;">
       <span class="nav-icon">👑</span>
       <span>Quản lý tài khoản</span>
     </a>
   </nav>
 
   <div class="sidebar-footer">
-    <div class="user-chip" id="userChip" style="cursor:pointer" title="Bấm để đăng xuất">
+    <div class="user-chip" id="userChip" title="Bấm để đăng xuất">
       <div class="user-avatar">👩‍🏫</div>
       <div class="user-info">
         <strong id="userChipName">Đang tải...</strong>
@@ -65,15 +65,12 @@
 
   <!-- TOPBAR -->
   <header id="topbar">
-    <div style="display:flex;align-items:center;gap:14px;">
+    <div class="topbar-actions-left">
       <button type="button" id="hamburger" onclick="toggleSidebar()">☰</button>
       <div class="topbar-title" id="topbar-title">📚 Bộ đề của tôi</div>
     </div>
     <div class="topbar-right">
-      <a href="index.html" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:6px;padding:.5rem 1rem;border-radius:999px;
-                background:var(--accent-purple-light);color:var(--accent-purple);font-weight:700;
-                font-size:.85rem;text-decoration:none;white-space:nowrap;">
+      <a href="index.html" target="_blank" rel="noopener" class="pill-link">
         🎓 Xem trang học sinh
       </a>
       <div class="theme-toggle" id="themeToggle" title="Chuyển đổi sáng/tối"></div>
@@ -140,7 +137,7 @@
       <!-- Table -->
       <div class="report-table-wrap">
         <div class="report-table-header">🗂️ Chi tiết lượt làm bài</div>
-        <div style="overflow-x:auto;">
+        <div class="table-scroll-x">
           <table id="reportTable">
             <thead>
               <tr>
@@ -152,7 +149,7 @@
               </tr>
             </thead>
             <tbody id="reportBody">
-              <tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:32px;">Chưa có dữ liệu. Học sinh bắt đầu làm bài để xem kết quả.</td></tr>
+              <tr><td colspan="5" class="table-empty-cell">Chưa có dữ liệu. Học sinh bắt đầu làm bài để xem kết quả.</td></tr>
             </tbody>
           </table>
         </div>
@@ -163,7 +160,7 @@
          SETTINGS SECTION
          ======================================== -->
     <section class="section" id="section-settings">
-      <h2 style="font-family:'Baloo 2',cursive;font-size:22px;font-weight:800;margin-bottom:24px;">⚙️ Cài đặt hệ thống</h2>
+      <h2 class="section-title-lg">⚙️ Cài đặt hệ thống</h2>
       <div class="settings-grid">
         <div class="settings-card">
           <h3>🔒 Bảo mật &amp; Chống gian lận</h3>
@@ -209,17 +206,17 @@
             <label>Lưu vào LocalStorage</label>
             <button type="button" aria-label="Lưu vào LocalStorage" class="toggle-switch on" onclick="this.classList.toggle('on')"></button>
           </div>
-          <div class="settings-row" style="flex-direction:column;align-items:flex-start;gap:8px;">
+          <div class="settings-row settings-row-col">
             <label>Xóa toàn bộ dữ liệu phiên</label>
-            <button type="button" onclick="clearAllData()" style="padding:8px 16px;background:#fee2e2;color:#dc2626;border:2px solid #fca5a5;border-radius:8px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer;">🗑️ Xóa tất cả</button>
+            <button type="button" onclick="clearAllData()" class="btn-danger-outline">🗑️ Xóa tất cả</button>
           </div>
         </div>
         <div class="settings-card">
           <h3>ℹ️ Thông tin hệ thống</h3>
-          <div class="settings-row"><label>Phiên bản</label><span style="font-weight:800;font-size:13px;">v2.0.2025</span></div>
-          <div class="settings-row"><label>Năm học</label><span style="font-weight:800;font-size:13px;">2025–2026</span></div>
-          <div class="settings-row"><label>Nền tảng</label><span style="font-weight:800;font-size:13px;">IC3 GS5</span></div>
-          <div class="settings-row"><label>Đơn vị</label><span style="font-weight:800;font-size:13px;">WIT Education</span></div>
+          <div class="settings-row"><label>Phiên bản</label><span class="info-value">v2.0.2025</span></div>
+          <div class="settings-row"><label>Năm học</label><span class="info-value">2025–2026</span></div>
+          <div class="settings-row"><label>Nền tảng</label><span class="info-value">IC3 GS5</span></div>
+          <div class="settings-row"><label>Đơn vị</label><span class="info-value">WIT Education</span></div>
         </div>
       </div>
     </section>
@@ -255,7 +252,7 @@
 <!-- ========================================
      JAVASCRIPT
      ======================================== -->
-<script>window.EDU_ALLOWED_ROLES = ['admin', 'teacher'];</script>
+<script src="js/dashboard-page.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
@@ -263,22 +260,6 @@
 <script src="js/auth.js"></script>
 <script src="js/auth-guard.js"></script>
 <script src="js/idle-logout.js"></script>
-<script>
-  window.addEventListener('edu:ready', ({ detail }) => {
-    const { user, profile } = detail;
-    document.getElementById('userChipName').textContent = profile.name || user.email;
-    document.getElementById('userChipRole').textContent = EduAuth.ROLE_LABEL[profile.role] || profile.role;
-    if (profile.role === 'admin') {
-      document.getElementById('adminUsersLink').style.display = 'flex';
-    }
-    document.getElementById('userChip').addEventListener('click', async () => {
-      if (confirm('Đăng xuất khỏi EduQuiz?')) {
-        await EduAuth.logoutUser();
-        window.location.href = 'login.html';
-      }
-    });
-  });
-</script>
 <script src="js/dashboard.js"></script>
 </body>
 </html>

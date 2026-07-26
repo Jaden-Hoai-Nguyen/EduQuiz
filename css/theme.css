@@ -1,6 +1,7 @@
 /* ════════════════════════════════════════════════════════════
    EduQuiz — SHARED DESIGN TOKENS
-   Dùng chung cho index.html, ic3-dashboard.html, image-manager.html
+   Dùng chung cho index.html, ic3-dashboard.html, image-manager.html,
+   login.html, admin-users.html
 
    ★ ĐÂY LÀ NƠI DUY NHẤT nên sửa khi đổi màu thương hiệu / bo góc /
    đổ bóng cho toàn bộ nền tảng. Đừng khai báo lại --purple, --bg...
@@ -9,37 +10,48 @@
 
    Cách thêm vào 1 trang mới:
      <link rel="stylesheet" href="css/theme.css">
-   (đặt TRƯỚC style.css hoặc <style> riêng của trang, để trang có
+   (đặt TRƯỚC style.css hoặc CSS riêng của trang, để trang có
    thể ghi đè nếu thật sự cần)
+
+   ── BẢNG MÀU (2026 refresh) ──
+   Primary:  Indigo-blue #4F6BFF  — thương hiệu, nút chính, focus
+   Accent 1: Cyan-teal   #17B3A3 — điểm nhấn phụ, trạng thái "true"
+   Accent 2: Amber       #F6A723 — cảnh báo nhẹ, trạng thái phụ
+   Accent 3: Orange      #FF8A3D — điểm nhấn phụ 2, trạng thái "false"
+   Semantic success/danger (--green/--red) CHỈ dùng để chấm điểm
+   cuối bài (đúng/sai đã biết kết quả) — KHÔNG dùng để tô màu lúc
+   học sinh đang chọn đáp án, để tránh gây hiểu lầm đúng/sai trước
+   khi nộp bài.
    ════════════════════════════════════════════════════════════ */
 
 :root {
   /* Backgrounds */
-  --bg:        #f0f4ff;
+  --bg:        #f3f5fc;
   --surface:   #ffffff;
   --card:      #ffffff;
-  --card2:     #f6f8ff;
-  --border:    #d0d8f0;
+  --card2:     #f6f8fe;
+  --border:    #e1e6f4;
 
   /* Text */
-  --text:      #1a1f3d;
-  --muted:     #6b7280;
+  --text:      #1b2036;
+  --muted:     #667085;
 
-  /* Brand palette (indigo-purple) */
-  --purple:    #6c63ff;
-  --purple-lt: #ede9ff;
-  --teal:      #00c9a0;
-  --teal-lt:   #d6faf3;
-  --red:       #ff5252;
-  --red-lt:    #ffe5e5;
-  --yellow:    #ffb300;
-  --yellow-lt: #fff8e1;
-  --green:     #00c853;
-  --green-lt:  #e8f5e9;
-  --orange:    #ff7043;
-  --blue:      #2979ff;
-  --blue-lt:   #e3eeff;
-  --pink:      #e040fb;
+  /* Brand palette (indigo-blue primary) */
+  --purple:    #4f6bff;   /* primary brand / interactive accent */
+  --purple-lt: #ecf0ff;
+  --teal:      #17b3a3;   /* secondary accent — "true" state, highlights */
+  --teal-lt:   #e3faf6;
+  --red:       #f0483e;   /* semantic danger — grading / errors ONLY */
+  --red-lt:    #fde8e7;
+  --yellow:    #f6a723;   /* tertiary accent — warnings, notices */
+  --yellow-lt: #fff6e3;
+  --green:     #21b36b;   /* semantic success — grading ONLY */
+  --green-lt:  #e4faee;
+  --orange:    #ff8a3d;   /* secondary accent 2 — "false" state, highlights */
+  --orange-lt: #ffefe2;
+  --blue:      #2e8cf0;   /* secondary accent 3 */
+  --blue-lt:   #e7f2fe;
+  --pink:      #dd4fa6;
 
   /* Aliases */
   --accent1: var(--purple);
@@ -48,18 +60,21 @@
   --accent4: var(--yellow);
   --accent5: var(--green);
 
-  --color-text-primary:   #1a1f3d;
-  --color-text-secondary: #6b7280;
+  --color-text-primary:   #1b2036;
+  --color-text-secondary: #667085;
 
   /* Layout */
   --radius:    18px;
   --radius-sm: 12px;
-  --shadow:    0 4px 20px rgba(108,99,255,.1);
-  --shadow-lg: 0 8px 40px rgba(108,99,255,.16);
+  --gap-sm: .6rem;
+  --gap-md: 1.2rem;
+  --gap-lg: 2rem;
+  --shadow:    0 4px 20px rgba(79,107,255,.10);
+  --shadow-lg: 0 10px 40px rgba(79,107,255,.16);
 
-  --lobby-bg: linear-gradient(160deg,#eef2ff 0%,#f0fdf9 50%,#fff8e1 100%);
-  --lobby-blob1: rgba(108,99,255,.18);
-  --lobby-blob2: rgba(0,201,160,.18);
+  --lobby-bg: linear-gradient(160deg,#eef1ff 0%,#eafbf7 50%,#fff8ea 100%);
+  --lobby-blob1: rgba(79,107,255,.16);
+  --lobby-blob2: rgba(23,179,163,.16);
 
   /* ── Alias cho tên biến cũ của ic3-dashboard.html ──
      Giữ lại để không phải sửa từng chỗ dùng trong file đó.
@@ -77,8 +92,8 @@
   --sidebar-active-bg:   var(--purple-lt);
   --input-bg:            var(--card2);
   --modal-overlay:       rgba(17, 24, 39, 0.6);
-  --shadow-card:       0 4px 0 #c7d2fe, 0 6px 20px rgba(99,102,241,0.12);
-  --shadow-card-hover: 0 6px 0 #a5b4fc, 0 10px 30px rgba(99,102,241,0.2);
+  --shadow-card:       0 4px 0 #c9d3ff, 0 6px 20px rgba(79,107,255,0.12);
+  --shadow-card-hover: 0 6px 0 #a9b8ff, 0 10px 30px rgba(79,107,255,0.2);
   --shadow-btn:        0 3px 0 rgba(0,0,0,0.25);
   --tag-elementary-bg:   #d1fae5;
   --tag-elementary-text: #065f46;
@@ -96,17 +111,18 @@
   --border:    #2e3358;
   --text:      #e8eaf6;
   --muted:     #8892c8;
-  --purple-lt: rgba(108,99,255,.18);
-  --teal-lt:   rgba(0,201,160,.15);
-  --red-lt:    rgba(255,82,82,.15);
-  --yellow-lt: rgba(255,179,0,.12);
-  --green-lt:  rgba(0,200,83,.12);
-  --blue-lt:   rgba(41,121,255,.15);
+  --purple-lt: rgba(79,107,255,.18);
+  --teal-lt:   rgba(23,179,163,.15);
+  --red-lt:    rgba(240,72,62,.15);
+  --yellow-lt: rgba(246,167,35,.12);
+  --green-lt:  rgba(33,179,107,.12);
+  --orange-lt: rgba(255,138,61,.15);
+  --blue-lt:   rgba(46,140,240,.15);
   --shadow:    0 4px 24px rgba(0,0,0,.4);
   --shadow-lg: 0 8px 40px rgba(0,0,0,.5);
   --lobby-bg:  linear-gradient(160deg,#0d0f1a 0%,#111428 50%,#160f1a 100%);
-  --lobby-blob1: rgba(108,99,255,.25);
-  --lobby-blob2: rgba(0,201,160,.2);
+  --lobby-blob1: rgba(79,107,255,.25);
+  --lobby-blob2: rgba(23,179,163,.2);
   --color-text-primary:   #e8eaf6;
   --color-text-secondary: #8892c8;
 
@@ -118,7 +134,7 @@
   --text-secondary: var(--muted);
   --text-muted: #6b7280;
   --border-color: var(--border);
-  --sidebar-active-bg: rgba(108,99,255,.18);
+  --sidebar-active-bg: rgba(79,107,255,.18);
   --input-bg: var(--card2);
   --modal-overlay: rgba(0,0,0,.7);
 }
