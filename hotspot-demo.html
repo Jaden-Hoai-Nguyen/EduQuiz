@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo — Hotspot Question Component</title>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/hotspot-question.css">
+<style>
+  body { max-width: 700px; margin: 2rem auto; padding: 0 1rem; font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); }
+  .demo-btn {
+    margin-top: 1rem; padding: .7rem 1.4rem; border-radius: 10px; border: none;
+    background: var(--purple); color: #fff; font-weight: 700; cursor: pointer; font-size: .95rem;
+  }
+  .demo-btn:hover { filter: brightness(1.08); }
+  .demo-btn.secondary { background: var(--muted); }
+  .demo-result { margin-top: 1rem; font-weight: 700; font-size: .95rem; }
+</style>
+</head>
+<body>
+  <h2>🎯 Demo — Câu hỏi Hotspot (có vùng đúng + vùng nhiễu)</h2>
+  <p style="color:var(--muted)">Bấm vào 1 vùng trên ảnh rồi bấm "Nộp bài" để xem kết quả.</p>
+
+  <div id="hotspotContainer"></div>
+
+  <button class="demo-btn" id="btnSubmit">✅ Nộp bài</button>
+  <button class="demo-btn secondary" id="btnReset">↺ Làm lại</button>
+  <div class="demo-result" id="resultText"></div>
+
+  <script src="js/hotspot-question.js"></script>
+  <script>
+    const questionData = {
+      question: 'Bấm vào vùng ĐÚNG trên hình (có 1 vùng đúng + 2 vùng nhiễu để minh hoạ):',
+      imagePath: 'img/img-06657d738cf6d0e5f4258b53714284a81bebc58a.png',
+      hotspots: [
+        { id: 'h1', shape: 'rect',   x: 10, y: 10, width: 25, height: 20, isCorrect: false },
+        { id: 'h2', shape: 'circle', x: 60, y: 55, radius: 12,            isCorrect: true  },
+        { id: 'h3', shape: 'rect',   x: 65, y: 10, width: 25, height: 20, isCorrect: false },
+      ],
+    };
+
+    const hsq = createHotspotQuestion(
+      document.getElementById('hotspotContainer'),
+      questionData,
+      {
+        onSelect: (id) => console.log('Đã chọn:', id),
+        onSubmit: (result) => console.log('Kết quả:', result),
+      }
+    );
+
+    document.getElementById('btnSubmit').onclick = () => {
+      const result = hsq.submit();
+      const resultEl = document.getElementById('resultText');
+      if (!result.submitted) {
+        resultEl.textContent = '';
+        return;
+      }
+      resultEl.textContent = result.isCorrect ? '🎉 Chính xác!' : '❌ Sai rồi, xem vùng viền xanh là đáp án đúng.';
+      resultEl.style.color = result.isCorrect ? 'var(--teal)' : 'var(--red)';
+    };
+
+    document.getElementById('btnReset').onclick = () => {
+      hsq.reset();
+      document.getElementById('resultText').textContent = '';
+    };
+  </script>
+</body>
+</html>

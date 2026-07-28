@@ -38,6 +38,7 @@ window.EDU_ALLOWED_ROLES = ['admin'];
           <select class="roleSelect">
             <option value="student" ${u.role === 'student' ? 'selected' : ''}>🎓 Học sinh</option>
             <option value="teacher" ${u.role === 'teacher' ? 'selected' : ''}>🧑‍🏫 Giáo viên</option>
+            <option value="coordinator" ${u.role === 'coordinator' ? 'selected' : ''}>🧭 Điều phối đào tạo</option>
             <option value="admin" ${u.role === 'admin' ? 'selected' : ''}>👑 Quản trị viên</option>
           </select>
         </td>

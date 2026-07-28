@@ -87,7 +87,9 @@ async function saveToGoogleSheet(data) {
   // ── Chuẩn bị payload JSON đầy đủ ────────────────────────
   const payload = {
     submissionId,
-    studentName: data.studentName  || 'Ẩn danh',
+    studentName:   data.studentName   || 'Ẩn danh',
+    studentClass:  data.studentClass  || '',
+    studentSchool: data.studentSchool || '',
     testName:    data.testName     || 'Không rõ',
     score:       data.score        ?? 0,
     correct:     data.correct      || '0/0',
@@ -273,7 +275,9 @@ async function submitToGoogleSheet(result, elapsedSec, integrity) {
 
   // Chuẩn bị dữ liệu gửi đi
   const sheetData = {
-    studentName: s.studentName,
+    studentName:   s.studentName,
+    studentClass:  s.studentClass  || '',
+    studentSchool: s.studentSchool || '',
     testName:    fullTestName,
     score:       pct,
     correct:     `${result.correct}/${result.total}`,

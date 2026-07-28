@@ -45,51 +45,113 @@ window.quizRepository = null;
    chạy scripts/split-quiz-data.py), tự động rơi về cách cũ: tải
    nguyên quiz_data.json — đảm bảo không phá vỡ trang đang chạy.
    ============================================================ */
-const _levelCache = new Map(); // "CAT__LV" → { minitests: {...} }
+const _levelCache   = new Map(); // "CAT__LV" → { minitests: {...} }   (bộ nhớ RAM, mất khi reload)
+const _levelPending  = new Map(); // "CAT__LV" → Promise                (chống fetch trùng khi bấm nhanh)
+const LS_PREFIX      = 'eduquiz_lv_'; // tiền tố key trong localStorage (cache bền, còn sau khi reload)
 
 function _levelKey(catId, levelId) {
   return `${catId}__${levelId}`;
 }
 
-/** Tải đầy đủ câu hỏi của 1 level (có cache), trả về { minitests }. */
+/**
+ * Đọc cache bền (localStorage), có kiểm tra "version" từ meta.json.
+ * Khi nội dung đề thi cập nhật, chỉ cần đổi State.quizData.version
+ * (field mới trong meta.json) là toàn bộ cache cũ tự động hết hạn —
+ * không cần học sinh phải xoá cache tay hay Ctrl+F5.
+ */
+function _readPersistentCache(key) {
+  try {
+    const raw = localStorage.getItem(LS_PREFIX + key);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    const currentVersion = State.quizData?.version || 'v1';
+    if (parsed.v !== currentVersion) return null; // dữ liệu cũ → bỏ qua
+    return parsed.data;
+  } catch {
+    return null; // localStorage bị chặn (private mode…) → im lặng bỏ qua, không phá trang
+  }
+}
+
+function _writePersistentCache(key, data) {
+  try {
+    const currentVersion = State.quizData?.version || 'v1';
+    localStorage.setItem(LS_PREFIX + key, JSON.stringify({ v: currentVersion, data }));
+  } catch {
+    // Hết dung lượng hoặc bị chặn → bỏ qua, cache RAM (_levelCache) vẫn hoạt động bình thường
+  }
+}
+
+/**
+ * Tải đầy đủ câu hỏi của 1 level, trả về { minitests }.
+ * Thứ tự ưu tiên (mỗi bước chỉ tải đúng 1 lần, không tải thừa):
+ *   1. _levelCache      — đã có sẵn trong RAM của lần thi trước đó cùng phiên
+ *   2. localStorage      — đã tải ở lần ghé trang trước (còn hợp lệ theo version)
+ *   3. fetch data/ic3/<file>.json — file gọn theo từng khối (lazy-load thật sự)
+ *   4. quizFullData / quiz_data.json — chỉ dùng khi dự án chưa split dữ liệu
+ * _levelPending đảm bảo nếu học sinh đổi qua đổi lại dropdown thật nhanh,
+ * cùng 1 khối không bị gọi fetch() song song nhiều lần.
+ */
 async function _fetchLevelData(catId, levelId) {
   const key = _levelKey(catId, levelId);
   if (_levelCache.has(key)) return _levelCache.get(key);
+  if (_levelPending.has(key)) return _levelPending.get(key); // đang tải rồi → chờ chung 1 promise
 
-  // ── Đường lazy-load (dự án đã chạy scripts/split-quiz-data.py) ──
-  const metaLevel = _findMetaLevel(catId, levelId);
-  if (metaLevel?.file) {
-    try {
-      const res = await fetch(`data/ic3/${metaLevel.file}`);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const full = await res.json();
-      _levelCache.set(key, full);
-      return full;
-    } catch (err) {
-      console.warn(`[EduQuiz] Không tải được data/ic3/${metaLevel.file}, thử fallback quiz_data.json`, err.message);
+  const promise = (async () => {
+    // ── Bước 2: cache bền trong localStorage (khỏi tải lại qua session) ──
+    const cached = _readPersistentCache(key);
+    if (cached) return cached;
+
+    // ── Bước 3: lazy-load file gọn theo khối (dự án đã chạy split-quiz-data.py) ──
+    const metaLevel = _findMetaLevel(catId, levelId);
+    if (metaLevel?.file) {
+      try {
+        const res = await fetch(`data/ic3/${metaLevel.file}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const full = await res.json();
+        _writePersistentCache(key, full);
+        return full;
+      } catch (err) {
+        console.warn(`[EduQuiz] Không tải được data/ic3/${metaLevel.file}, thử fallback quiz_data.json`, err.message);
+      }
     }
-  }
 
-  // ── Fallback: đã có sẵn toàn bộ dữ liệu trong quizFullData ───────
-  if (window.quizFullData) {
-    const cat = window.quizFullData.categories?.find(c => c.id === catId);
+    // ── Bước 4a: đã có sẵn toàn bộ dữ liệu trong quizFullData ───────
+    if (window.quizFullData) {
+      const cat = window.quizFullData.categories?.find(c => c.id === catId);
+      const lv  = cat?.levels?.find(l => l.id === levelId);
+      if (lv) return lv;
+    }
+
+    // ── Bước 4b: tải nguyên quiz_data.json 1 lần rồi tự cache ──
+    if (!window.quizFullData) {
+      try {
+        const res = await fetch('quiz_data.json');
+        if (res.ok) window.quizFullData = await res.json();
+      } catch (err) {
+        console.warn('[EduQuiz] Không tải được quiz_data.json (fallback cuối):', err.message);
+      }
+    }
+    const cat = window.quizFullData?.categories?.find(c => c.id === catId);
     const lv  = cat?.levels?.find(l => l.id === levelId);
-    if (lv) { _levelCache.set(key, lv); return lv; }
-  }
+    return lv || { minitests: {} };
+  })();
 
-  // ── Fallback cuối: tải nguyên quiz_data.json 1 lần rồi tự cache ──
-  if (!window.quizFullData) {
-    try {
-      const res = await fetch('quiz_data.json');
-      if (res.ok) window.quizFullData = await res.json();
-    } catch (err) {
-      console.warn('[EduQuiz] Không tải được quiz_data.json (fallback cuối):', err.message);
-    }
-  }
-  const cat = window.quizFullData?.categories?.find(c => c.id === catId);
-  const lv  = cat?.levels?.find(l => l.id === levelId);
-  if (lv) _levelCache.set(key, lv);
-  return lv || { minitests: {} };
+  _levelPending.set(key, promise);
+  const result = await promise;
+  _levelCache.set(key, result);
+  _levelPending.delete(key);
+  return result;
+}
+
+/**
+ * Tải trước (prefetch) dữ liệu của 1 khối ngay khi học sinh vừa chọn xong
+ * category/level trong lobby — tận dụng thời gian họ gõ tên/lớp/trường để
+ * tải ngầm, giúp lúc bấm "Bắt đầu thi" gần như tức thì (0 chờ đợi).
+ * Không throw lỗi ra ngoài vì đây chỉ là tối ưu UX, không phải luồng chính.
+ */
+function _prefetchLevelData(catId, levelId) {
+  if (!catId || !levelId) return;
+  _fetchLevelData(catId, levelId).catch(() => {});
 }
 
 function _findMetaLevel(catId, levelId) {
@@ -131,6 +193,7 @@ const State = {
   timeLeft:  1200,
   matching:  {},     // qi → { left: right }
   matchSel:  {},
+  hotspot:   {},     // qi → Set<areaId> đã bấm chọn
   session:   {}
 };
 
@@ -269,6 +332,7 @@ function initLobby() {
       lvlSel.appendChild(new Option(lv.name, lv.id));
     });
     refreshMinitests();
+    _prefetchLevelData(catSel.value, lvlSel.value); // tải ngầm trước khi bấm "Bắt đầu thi"
   };
 
   // ── Hàm cập nhật Minitest khi đổi Level ───────────────────
@@ -305,6 +369,7 @@ function initLobby() {
         multi:     'Nhiều đáp án',
         truefalse: 'Đúng/Sai',
         matching:  'Nối cột',
+        hotspot:   'Bấm vào hình',
       };
       const breakdown = Object.entries(typeCounts)
         .map(([t, n]) => `${n} ${typeLabels[t] || t}`)
@@ -388,6 +453,7 @@ async function startExam() {
   State.current   = 0;
   State.matching  = {};
   State.matchSel  = {};
+  State.hotspot   = {};
   State.timeLeft  = parseInt(document.getElementById('timeSelect')?.value || '1200', 10);
 
   // ── Khởi tạo session (dữ liệu anti-cheat) ─────────────────
@@ -524,6 +590,9 @@ function isAnswered(i) {
       if (!q.pairs || q.pairs.length === 0) return false;
       return Object.keys(State.matching[i] || {}).length > 0;
 
+    case 'hotspot':
+      return (State.hotspot[i]?.size || 0) > 0;
+
     case 'truefalse':
       // Phải trả lời ĐỦ tất cả statements
       return Object.keys(State.answers[i] || {}).length === (q.statements?.length || 0);
@@ -571,6 +640,7 @@ function renderQuestion(idx) {
     multi:     { icon: '☑', label: 'Nhiều lựa chọn' },
     truefalse: { icon: '⇄', label: 'Đúng / Sai' },
     matching:  { icon: '↔', label: 'Nối cột' },
+    hotspot:   { icon: '🎯', label: 'Bấm vào hình' },
   };
   const { icon, label } = TYPE_META[q.type] || { icon: '?', label: q.type };
 
@@ -584,7 +654,8 @@ function renderQuestion(idx) {
   </button>`;
 
   // Hình ảnh — ưu tiên imageUrl (từ image_file), sau đó SVG minh họa
-  const imgBlock = _buildImageBlock(q);
+  // (câu hotspot tự vẽ ảnh + vùng bấm bên trong renderHotspot() → không dùng block chung)
+  const imgBlock = q.type === 'hotspot' ? '' : _buildImageBlock(q);
 
   panel.innerHTML = `
     <div class="q-card">
@@ -606,6 +677,7 @@ function renderQuestion(idx) {
     multi:     renderMulti,
     truefalse: renderTrueFalse,
     matching:  renderMatching,
+    hotspot:   renderHotspot,
   };
   (renderers[q.type] || (() => {}))(q, idx);
 
@@ -1133,6 +1205,76 @@ function selectMatchRight() {}
 function removeMatch(el)    { removeMatchDrop(el); }
 
 /* ============================================================
+   § 14b — RENDER HOTSPOT  (type = "hotspot")
+   Bấm trực tiếp lên đúng (các) vị trí trên hình. Dữ liệu q.areas
+   là danh sách vùng (x/y/w/h tính theo % kích thước ảnh gốc, góc
+   trên-trái) — mỗi vùng có cờ correct true/false. Học sinh cần
+   bấm chọn đúng toàn bộ vùng correct:true (không thừa, không thiếu)
+   thì câu mới được tính là đúng — giống hệt cách chấm của "multi".
+   ============================================================ */
+
+function renderHotspot(q, qi) {
+  const body = document.getElementById('q-body');
+  if (!body) return;
+
+  if (!State.hotspot[qi]) State.hotspot[qi] = new Set();
+  const sel = State.hotspot[qi];
+  const src = q.imageUrl || (q.image_file ? `img/${q.image_file}` : '');
+  const areas = q.areas || [];
+  const totalCorrect = areas.filter(a => a.correct).length || areas.length;
+
+  if (!src || areas.length === 0) {
+    body.innerHTML = `<div class="q-img-notice">🖼️ Câu hỏi này thiếu dữ liệu hình ảnh — vui lòng báo cho giáo viên/quản trị viên.</div>`;
+    return;
+  }
+
+  const areasHtml = areas.map(a => {
+    const isSel = sel.has(a.id);
+    const shapeCls = a.shape === 'oval' ? 'hotspot-oval' : 'hotspot-rect';
+    return `<button type="button"
+              class="hotspot-area ${shapeCls} ${isSel ? 'selected' : ''}"
+              style="left:${a.x}%;top:${a.y}%;width:${a.w}%;height:${a.h}%;"
+              data-qi="${qi}" data-id="${a.id}"
+              onclick="toggleHotspot(this)"
+              aria-label="Khu vực ${a.id}"></button>`;
+  }).join('');
+
+  body.innerHTML = `
+    <div class="match-hint" style="
+        font-size:.82rem;font-weight:700;color:var(--muted);margin-bottom:.75rem;
+        background:var(--yellow-lt);border:1.5px solid rgba(255,179,0,.25);
+        border-radius:10px;padding:.5rem .9rem;">
+      🎯 Bấm vào đúng <strong>${totalCorrect}</strong> vị trí trên hình
+      <span style="margin-left:.75rem;color:var(--teal);">
+        Đã chọn: <span id="hotspot-count-${qi}">${sel.size}</span>/${totalCorrect}
+      </span>
+    </div>
+    <div class="hotspot-wrap">
+      <img src="${src}" alt="Bấm trực tiếp vào hình để chọn đáp án" loading="lazy"
+           onerror="this.parentElement.innerHTML='<div class=&quot;q-img-notice&quot;>🖼️ Không tải được hình ảnh.</div>'">
+      ${areasHtml}
+    </div>
+    <div class="match-region-tip">👆 Bấm trực tiếp vào vị trí đúng trên hình. Bấm lại để bỏ chọn.</div>`;
+}
+
+function toggleHotspot(el) {
+  const qi = parseInt(el.dataset.qi);
+  const id = el.dataset.id;
+  if (!State.hotspot[qi]) State.hotspot[qi] = new Set();
+  const sel = State.hotspot[qi];
+
+  if (sel.has(id)) sel.delete(id);
+  else sel.add(id);
+
+  State.session.clicks++;
+  el.classList.toggle('selected');
+  const counter = document.getElementById(`hotspot-count-${qi}`);
+  if (counter) counter.textContent = sel.size;
+  animatePick(el);
+  updateSidebar();
+}
+
+/* ============================================================
    § 15 — FLAG
    ============================================================ */
 
@@ -1177,9 +1319,35 @@ function submitExam() {
     });
   }
 
-  // Gửi lên Google Sheet (chạy nền)
+  // Gửi lên Google Sheet (chạy nền, chỉ để đối chiếu/dự phòng)
   if (typeof submitToGoogleSheet === 'function') {
     submitToGoogleSheet(result, elapsed, integrity);
+  }
+
+  // Lưu vào Firestore (nguồn dữ liệu CHÍNH cho trang Báo cáo trực quan
+  // ic3-dashboard.html — điều phối đào tạo / giáo viên / admin xem)
+  if (typeof saveResultToFirestore === 'function') {
+    const s   = State.session;
+    const pct = Math.round((result.correct / result.total) * 100);
+    saveResultToFirestore({
+      studentName:   s.studentName,
+      studentClass:  s.studentClass  || '',
+      studentSchool: s.studentSchool || '',
+      category:      s.category,
+      level:         s.level,
+      minitest:      s.minitest,
+      score:         pct,
+      correct:       result.correct,
+      incorrect:     result.incorrect,
+      skipped:       result.skipped,
+      total:         result.total,
+      elapsedSec:    elapsed,
+      tabSwitches:   integrity.tabSwitches,
+      clicks:        integrity.clicks,
+      integrityOk:   integrity.valid,
+      flags:         integrity.flags,
+      timedOut:      s.timedOut,
+    });
   }
 }
 
@@ -1245,6 +1413,20 @@ function gradeExam() {
           skipped++;
         } else {
           const ok = q.pairs.every(p => ma[p.left] === p.right);
+          if (ok) { correct++; status = 'correct'; }
+          else    { incorrect++; status = 'incorrect'; }
+        }
+        break;
+      }
+
+      case 'hotspot': {
+        const selSet = State.hotspot[i];
+        const correctIds = (q.areas || []).filter(a => a.correct).map(a => a.id).sort();
+        if (!selSet || selSet.size === 0) {
+          skipped++;
+        } else {
+          const selArr = [...selSet].sort();
+          const ok = JSON.stringify(selArr) === JSON.stringify(correctIds);
           if (ok) { correct++; status = 'correct'; }
           else    { incorrect++; status = 'incorrect'; }
         }

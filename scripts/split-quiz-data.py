@@ -26,6 +26,8 @@ Khi nào cần chạy lại:
   cả quiz_data.json lẫn data/ic3/*.json.
 ────────────────────────────────────────────────────────────────────────
 """
+import datetime
+import hashlib
 import json
 import pathlib
 import sys
@@ -39,6 +41,7 @@ TYPE_LABELS = {
     "multi": "multi",
     "truefalse": "truefalse",
     "matching": "matching",
+    "hotspot": "hotspot",
 }
 
 
@@ -46,10 +49,18 @@ def main():
     if not SRC.exists():
         sys.exit(f"❌ Không tìm thấy {SRC}")
 
-    data = json.loads(SRC.read_text(encoding="utf-8"))
+    src_bytes = SRC.read_bytes()
+    data = json.loads(src_bytes.decode("utf-8"))
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    meta = {"categories": []}
+    # "version" = ngày hôm nay + 8 ký tự đầu hash nội dung quiz_data.json.
+    # Front-end (js/quiz-engine.js) dùng field này để tự invalidate cache
+    # localStorage mỗi khi dữ liệu đề thi thay đổi — không cần học sinh
+    # phải xoá cache tay hay Ctrl+F5.
+    content_hash = hashlib.sha1(src_bytes).hexdigest()[:8]
+    version = f"{datetime.date.today().isoformat()}.{content_hash}"
+
+    meta = {"version": version, "categories": []}
     total_levels = 0
     total_questions = 0
 

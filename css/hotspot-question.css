@@ -1,0 +1,101 @@
+/* ══════════════════════════════════════════════════════════════════
+   HOTSPOT QUESTION COMPONENT — style dùng chung design token của theme.css
+   (--purple, --teal, --red, --yellow, --border, --card, --muted, --radius-sm, --shadow)
+   ══════════════════════════════════════════════════════════════════ */
+
+.hsq-container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.hsq-question-text {
+  font-size: clamp(.95rem, 2.5vw, 1.1rem);
+  font-weight: 700;
+  color: var(--text, #1a1e2e);
+  margin-bottom: .75rem;
+}
+
+/* Wrapper co giãn theo ảnh gốc — mọi hotspot con định vị bằng % nên tự
+   responsive theo mọi kích thước màn hình, không cần JS tính lại khi resize. */
+.hsq-image-wrap {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  user-select: none;
+}
+.hsq-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none; /* click luôn đi qua ảnh xuống nút hotspot bên trên */
+}
+
+/* ── Vùng hotspot (mặc định: viền chấm mờ, không lộ đáp án) ── */
+.hsq-hotspot {
+  position: absolute;
+  border: 2px dashed rgba(79, 107, 255, .45);
+  background: rgba(79, 107, 255, .06);
+  padding: 0;
+  cursor: pointer;
+  transition: transform .15s, border-color .15s, background-color .15s;
+}
+.hsq-shape-rect  { border-radius: 8px; }
+.hsq-shape-oval,
+.hsq-shape-circle { border-radius: 50%; }
+
+.hsq-hotspot:hover:not(.hsq-locked) {
+  border-color: var(--purple);
+  background: rgba(79, 107, 255, .18);
+  transform: scale(1.04);
+}
+
+/* Đang được highlight (chưa nộp bài) */
+.hsq-hotspot.hsq-selected {
+  border-style: solid;
+  border-color: var(--purple);
+  background: rgba(79, 107, 255, .22);
+  box-shadow: 0 0 0 3px rgba(79, 107, 255, .18);
+}
+
+/* ── Trạng thái sau khi Nộp bài ── */
+.hsq-hotspot.hsq-locked { cursor: default; }
+.hsq-hotspot.hsq-locked:hover { transform: none; }
+
+.hsq-hotspot.hsq-correct {
+  border-style: solid;
+  border-color: var(--teal);
+  background: rgba(23, 179, 163, .28);
+  box-shadow: 0 0 0 3px rgba(23, 179, 163, .2);
+}
+
+.hsq-hotspot.hsq-incorrect {
+  border-style: solid;
+  border-color: var(--red);
+  background: rgba(240, 72, 62, .25);
+  box-shadow: 0 0 0 3px rgba(240, 72, 62, .18);
+}
+
+/* Vùng đúng thật sự, hiện lên khi học sinh chọn sai — chỉ viền, không tô nền
+   đặc để không lẫn với .hsq-correct (vùng học sinh đã bấm trúng). */
+.hsq-hotspot.hsq-reveal-correct {
+  border-style: solid;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(23, 179, 163, .15);
+}
+
+.hsq-warning {
+  margin-top: .6rem;
+  padding: .55rem .9rem;
+  border-radius: 10px;
+  background: var(--yellow-lt);
+  border: 1.5px solid rgba(246, 167, 35, .35);
+  color: #92650a;
+  font-size: .85rem;
+  font-weight: 700;
+}

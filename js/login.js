@@ -19,9 +19,18 @@
       if (!profile) return; // hồ sơ chưa kịp tạo (vừa đăng ký) — để luồng register tự điều hướng
       if (profile.role === 'student') {
         window.location.href = 'index.html';
-      } else {
-        window.location.href = nextUrl;
+        return;
       }
+      // Giáo viên chưa được duyệt: KHÔNG điều hướng sang trang quản trị (sẽ bị
+      // auth-guard.js chặn ngay), tránh vòng lặp "đẩy ra đẩy vào" giữa login.html
+      // và trang quản trị. Hiện thông báo tại chỗ và đăng xuất để người dùng có
+      // thể thử tài khoản khác ngay.
+      if (profile.role === 'teacher' && profile.approved === false) {
+        setMsg('⏳ Tài khoản giáo viên của bạn đang chờ quản trị viên duyệt. Vui lòng thử lại sau, hoặc đăng nhập bằng tài khoản khác.', 'err');
+        await EduAuth.logoutUser();
+        return;
+      }
+      window.location.href = nextUrl;
     } catch (e) { /* ignore, ở lại trang login */ }
   }
 

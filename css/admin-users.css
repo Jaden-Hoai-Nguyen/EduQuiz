@@ -79,6 +79,7 @@ select {
 .badge.admin   { background: #ffe5b0; color: #a97a00 }
 .badge.teacher { background: var(--purple-lt); color: var(--purple) }
 .badge.student { background: var(--teal-lt);   color: var(--teal) }
+.badge.coordinator { background: var(--blue-lt); color: var(--blue) }
 .badge.pending { background: var(--yellow-lt); color: #a97a00; margin-left: .3rem }
 
 .approveBtn {

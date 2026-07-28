@@ -107,7 +107,29 @@
     <section class="section" id="section-reports">
       <div class="reports-header">
         <h2>📊 Báo cáo kết quả</h2>
-        <button type="button" class="btn-create" onclick="exportReport()">⬇️ Xuất báo cáo</button>
+        <button type="button" class="btn-create" onclick="exportReport()">⬇️ Xuất báo cáo (CSV)</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="report-filters">
+        <div class="report-filter-item">
+          <label for="filterClass">Lớp</label>
+          <select id="filterClass"><option value="">Tất cả</option></select>
+        </div>
+        <div class="report-filter-item">
+          <label for="filterTest">Bộ đề / Bài thi</label>
+          <select id="filterTest"><option value="">Tất cả</option></select>
+        </div>
+        <div class="report-filter-item">
+          <label for="filterRange">Khoảng thời gian</label>
+          <select id="filterRange">
+            <option value="7">7 ngày qua</option>
+            <option value="30" selected>30 ngày qua</option>
+            <option value="90">90 ngày qua</option>
+            <option value="all">Toàn bộ</option>
+          </select>
+        </div>
+        <button type="button" class="btn-refresh" onclick="updateReportTab()" title="Tải lại dữ liệu">🔄 Làm mới</button>
       </div>
 
       <!-- Stats Row -->
@@ -119,8 +141,8 @@
         </div>
         <div class="stat-card">
           <div class="stat-icon">✅</div>
-          <div class="stat-label">Hoàn thành</div>
-          <div class="stat-value" id="totalDone">0</div>
+          <div class="stat-label">Tỉ lệ đạt (≥70%)</div>
+          <div class="stat-value" id="totalDone">—</div>
         </div>
         <div class="stat-card">
           <div class="stat-icon">⭐</div>
@@ -134,14 +156,31 @@
         </div>
       </div>
 
+      <!-- Charts -->
+      <div class="report-charts-grid">
+        <div class="chart-card">
+          <div class="chart-card-title">🥧 Tỉ lệ Đạt / Chưa đạt</div>
+          <div class="chart-card-body"><canvas id="chartPassFail"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-title">📊 Điểm trung bình theo lớp</div>
+          <div class="chart-card-body"><canvas id="chartByClass"></canvas></div>
+        </div>
+        <div class="chart-card chart-card-wide">
+          <div class="chart-card-title">📈 Xu hướng điểm trung bình theo ngày</div>
+          <div class="chart-card-body"><canvas id="chartTrend"></canvas></div>
+        </div>
+      </div>
+
       <!-- Table -->
       <div class="report-table-wrap">
-        <div class="report-table-header">🗂️ Chi tiết lượt làm bài</div>
+        <div class="report-table-header">🗂️ Chi tiết lượt làm bài (tối đa 200 lượt gần nhất)</div>
         <div class="table-scroll-x">
           <table id="reportTable">
             <thead>
               <tr>
                 <th scope="col">Học sinh</th>
+                <th scope="col">Lớp</th>
                 <th scope="col">Bộ đề</th>
                 <th scope="col">Thời gian</th>
                 <th scope="col">Điểm số</th>
@@ -149,7 +188,7 @@
               </tr>
             </thead>
             <tbody id="reportBody">
-              <tr><td colspan="5" class="table-empty-cell">Chưa có dữ liệu. Học sinh bắt đầu làm bài để xem kết quả.</td></tr>
+              <tr><td colspan="6" class="table-empty-cell">Đang tải dữ liệu...</td></tr>
             </tbody>
           </table>
         </div>
@@ -253,6 +292,7 @@
      JAVASCRIPT
      ======================================== -->
 <script src="js/dashboard-page.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>

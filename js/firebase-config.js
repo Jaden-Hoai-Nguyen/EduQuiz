@@ -38,8 +38,18 @@
     firebase.firestore().enablePersistence({ synchronizeTabs: true }).catch(() => {});
   } catch (e) { /* ignore */ }
 
+  // firebase.auth() chỉ tồn tại nếu trang có nạp firebase-auth-compat.js.
+  // index.html (trang học sinh làm bài) không yêu cầu đăng nhập nên có thể
+  // không nạp Auth SDK — tránh throw lỗi làm hỏng cả Firestore.
+  let authInstance = null;
+  try {
+    if (firebase.auth) authInstance = firebase.auth();
+  } catch (e) {
+    console.warn('[EduQuiz] Firebase Auth SDK chưa được nạp trên trang này (bình thường với index.html).');
+  }
+
   window.EduFirebase = {
-    auth: firebase.auth(),
+    auth: authInstance,
     db: firebase.firestore(),
   };
 })();

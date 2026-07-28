@@ -58,3 +58,29 @@ Bản cập nhật này thêm vào dự án:
 - Nút **"⬇️ Sao lưu JSON"** trong `image-manager.html` chỉ để tải một bản dự
   phòng từ dữ liệu hiện có trên Firestore — không còn là bước bắt buộc trong
   quy trình chỉnh sửa như bản cũ.
+
+## 📊 Báo cáo kết quả trực quan (mục mới)
+
+- Sau khi học sinh nộp bài trên `index.html`, kết quả được ghi vào **2 nơi
+  song song**:
+  1. **Firestore, collection `quiz_results`** (`js/firestore-results.js`) —
+     nguồn dữ liệu CHÍNH cho biểu đồ/báo cáo trong app.
+  2. **Google Sheet** qua Apps Script (`js/googleSheet.js` + `apps/Code.gs`,
+     đã có sẵn từ trước) — vẫn giữ lại làm bản sao lưu/đối chiếu thủ công.
+  Học sinh **không cần đăng nhập** để làm bài, nên việc ghi vào `quiz_results`
+  được `firestore.rules` cho phép công khai nhưng có kiểm tra dữ liệu tối
+  thiểu (đúng kiểu, điểm 0–100, dấu thời gian phải khớp server) để chống
+  giả mạo; **chỉ đọc được** bởi admin/giáo viên/điều phối đào tạo.
+- Xem báo cáo tại `ic3-dashboard.html` → mục **"📊 Báo cáo kết quả"**: có bộ
+  lọc theo lớp / bộ đề / khoảng thời gian, 4 chỉ số tổng quan, 3 biểu đồ
+  (Đạt/Chưa đạt, điểm TB theo lớp, xu hướng điểm TB theo ngày — dùng
+  Chart.js qua CDN) và bảng chi tiết + nút xuất CSV.
+- **Vai trò mới: `coordinator` ("🧭 Điều phối đào tạo")** — chỉ xem được mục
+  Báo cáo kết quả (không thấy "Bộ đề của tôi"/"Cài đặt", không có quyền sửa
+  câu hỏi hay tài khoản). Giống `admin`, vai trò này **không tự đăng ký
+  được** — admin phải vào `admin-users.html` → đổi vai trò một tài khoản có
+  sẵn thành "🧭 Điều phối đào tạo".
+- **Nhớ dán lại `firestore.rules`** (bản mới có thêm rule cho `quiz_results`
+  và role `coordinator`) vào Console → Firestore Database → Rules → Publish,
+  nếu không học sinh sẽ không lưu được kết quả và điều phối đào tạo sẽ
+  không xem được báo cáo.

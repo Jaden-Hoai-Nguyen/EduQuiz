@@ -222,44 +222,199 @@ function simulateScore(sessionId, setId) {
 }
 
 /* ========================================
-   REPORT TAB
+   REPORT TAB — dữ liệu thật từ Firestore (collection "quiz_results")
    ======================================== */
-function updateReportTab() {
-  const sessions = getSessions();
+let _reportRawDocs   = null;  // cache toàn bộ bản ghi tải từ Firestore (chưa lọc)
+let _reportFiltered  = [];    // bản ghi sau khi áp bộ lọc (dùng để xuất CSV)
+let _reportCharts    = {};    // instance Chart.js đang hiển thị (để destroy trước khi vẽ lại)
+let _reportFiltersBuilt = false;
+
+/** Tải dữ liệu (nếu chưa có cache) rồi áp bộ lọc + vẽ lại toàn bộ báo cáo. */
+async function updateReportTab() {
   const body = document.getElementById('reportBody');
 
-  const done = sessions.filter(s => s.status === 'Hoàn thành');
-  const scores = done.map(s => s.score).filter(x => x !== null);
-  const avgScore = scores.length ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : null;
-  const topScore = scores.length ? Math.max(...scores) : null;
-
-  document.getElementById('totalSessions').textContent = sessions.length;
-  document.getElementById('totalDone').textContent = done.length;
-  document.getElementById('avgScore').textContent = avgScore !== null ? avgScore + '%' : '—';
-  document.getElementById('topScore').textContent = topScore !== null ? topScore + '%' : '—';
-
-  if (sessions.length === 0) {
-    body.innerHTML = `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:32px;">Chưa có dữ liệu. Học sinh bắt đầu làm bài để xem kết quả.</td></tr>`;
+  if (!window.EduFirebase || !window.EduFirebase.db) {
+    body.innerHTML = `<tr><td colspan="6" class="table-empty-cell">⚠️ Chưa kết nối được Firestore.</td></tr>`;
     return;
   }
 
-  // Reverse to show newest first
-  body.innerHTML = [...sessions].reverse().map(s => `
+  if (_reportRawDocs === null) {
+    body.innerHTML = `<tr><td colspan="6" class="table-empty-cell">Đang tải dữ liệu...</td></tr>`;
+    try {
+      const snap = await window.EduFirebase.db.collection('quiz_results')
+        .orderBy('submittedAt', 'desc')
+        .limit(500)
+        .get();
+      _reportRawDocs = snap.docs.map(doc => {
+        const d = doc.data();
+        return Object.assign({ id: doc.id }, d, {
+          submittedAtMs: d.submittedAt && d.submittedAt.toMillis ? d.submittedAt.toMillis() : Date.now(),
+        });
+      });
+    } catch (err) {
+      console.error('[EduQuiz] Lỗi tải báo cáo Firestore:', err);
+      body.innerHTML = `<tr><td colspan="6" class="table-empty-cell">❌ Không tải được dữ liệu: ${err.message}</td></tr>`;
+      return;
+    }
+  }
+
+  buildReportFilterOptions(_reportRawDocs);
+  applyReportFiltersAndRender();
+}
+
+/** Đổ dữ liệu lớp / bài thi vào 2 dropdown lọc (chỉ dựng 1 lần khi có dữ liệu mới). */
+function buildReportFilterOptions(docs) {
+  if (_reportFiltersBuilt) return;
+  const classSel = document.getElementById('filterClass');
+  const testSel  = document.getElementById('filterTest');
+
+  const classes = [...new Set(docs.map(d => d.studentClass).filter(Boolean))].sort();
+  const tests   = [...new Set(docs.map(d => d.testName).filter(Boolean))].sort();
+
+  classes.forEach(c => classSel.insertAdjacentHTML('beforeend', `<option value="${escHtml(c)}">${escHtml(c)}</option>`));
+  tests.forEach(t => testSel.insertAdjacentHTML('beforeend', `<option value="${escHtml(t)}">${escHtml(t)}</option>`));
+
+  [classSel, testSel, document.getElementById('filterRange')].forEach(sel => {
+    sel.addEventListener('change', applyReportFiltersAndRender);
+  });
+  _reportFiltersBuilt = true;
+}
+
+/** Áp bộ lọc hiện tại (lớp / bài thi / khoảng thời gian) lên _reportRawDocs rồi vẽ lại UI. */
+function applyReportFiltersAndRender() {
+  const classVal = document.getElementById('filterClass').value;
+  const testVal  = document.getElementById('filterTest').value;
+  const rangeVal = document.getElementById('filterRange').value;
+
+  const now = Date.now();
+  const rangeMs = { '7': 7, '30': 30, '90': 90 }[rangeVal];
+  const cutoff = rangeMs ? now - rangeMs * 86400000 : null;
+
+  _reportFiltered = (_reportRawDocs || []).filter(d =>
+    (!classVal || d.studentClass === classVal) &&
+    (!testVal || d.testName === testVal) &&
+    (!cutoff || d.submittedAtMs >= cutoff)
+  );
+
+  renderReportStats(_reportFiltered);
+  renderReportTable(_reportFiltered);
+  renderReportCharts(_reportFiltered);
+}
+
+function renderReportStats(rows) {
+  const scores = rows.map(r => r.score).filter(x => typeof x === 'number');
+  const passed = scores.filter(s => s >= 70);
+  const avgScore = scores.length ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : null;
+  const topScore = scores.length ? Math.max(...scores) : null;
+  const passRate = scores.length ? Math.round((passed.length / scores.length) * 100) : null;
+
+  document.getElementById('totalSessions').textContent = rows.length;
+  document.getElementById('totalDone').textContent = passRate !== null ? passRate + '%' : '—';
+  document.getElementById('avgScore').textContent = avgScore !== null ? avgScore + '%' : '—';
+  document.getElementById('topScore').textContent = topScore !== null ? topScore + '%' : '—';
+}
+
+function renderReportTable(rows) {
+  const body = document.getElementById('reportBody');
+  if (rows.length === 0) {
+    body.innerHTML = `<tr><td colspan="6" class="table-empty-cell">Chưa có dữ liệu phù hợp bộ lọc. Học sinh bắt đầu làm bài để xem kết quả.</td></tr>`;
+    return;
+  }
+  body.innerHTML = rows.slice(0, 200).map(r => {
+    const dateStr = new Date(r.submittedAtMs).toLocaleString('vi-VN');
+    const ok = r.integrityOk !== false;
+    return `
     <tr>
-      <td><strong>${s.studentName}</strong></td>
-      <td>${s.setTitle}</td>
-      <td style="color:var(--text-muted);font-size:12px;">${s.startTime}</td>
-      <td>${s.score !== null ? `
+      <td><strong>${escHtml(r.studentName || 'Ẩn danh')}</strong></td>
+      <td>${escHtml(r.studentClass || '—')}</td>
+      <td>${escHtml(r.testName || '—')}</td>
+      <td style="color:var(--text-muted);font-size:12px;">${dateStr}</td>
+      <td>
         <div class="score-bar-wrap">
-          <div class="score-bar"><div class="score-bar-fill" style="width:${s.score}%"></div></div>
-          <span class="score-label">${s.score}%</span>
-        </div>` : '<span style="color:var(--text-muted)">Đang làm...</span>'
-      }</td>
-      <td class="${s.status === 'Hoàn thành' ? 'status-done' : 'status-progress'}">
-        ${s.status === 'Hoàn thành' ? '✅ Hoàn thành' : '⏳ Đang làm'}
+          <div class="score-bar"><div class="score-bar-fill" style="width:${r.score}%"></div></div>
+          <span class="score-label">${r.score}%</span>
+        </div>
       </td>
-    </tr>
-  `).join('');
+      <td class="${ok ? 'status-done' : 'status-progress'}">${ok ? '✅ Hợp lệ' : '⚠️ Nghi vấn'}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderReportCharts(rows) {
+  if (typeof Chart === 'undefined') return; // thư viện chưa tải xong / bị chặn mạng
+
+  Object.values(_reportCharts).forEach(c => c && c.destroy());
+  _reportCharts = {};
+
+  const scores = rows.map(r => r.score).filter(x => typeof x === 'number');
+  const passed = scores.filter(s => s >= 70).length;
+  const failed = scores.length - passed;
+
+  // 1) Đạt / Chưa đạt
+  _reportCharts.passFail = new Chart(document.getElementById('chartPassFail'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Đạt (≥70%)', 'Chưa đạt (<70%)'],
+      datasets: [{ data: [passed, failed], backgroundColor: ['#21b36b', '#f0483e'], borderWidth: 0 }],
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } },
+  });
+
+  // 2) Điểm trung bình theo lớp
+  const byClass = {};
+  rows.forEach(r => {
+    const key = r.studentClass || 'Chưa rõ';
+    if (!byClass[key]) byClass[key] = [];
+    if (typeof r.score === 'number') byClass[key].push(r.score);
+  });
+  const classLabels = Object.keys(byClass).sort();
+  const classAverages = classLabels.map(k => Math.round(byClass[k].reduce((a, b) => a + b, 0) / byClass[k].length));
+
+  _reportCharts.byClass = new Chart(document.getElementById('chartByClass'), {
+    type: 'bar',
+    data: {
+      labels: classLabels,
+      datasets: [{ label: 'Điểm TB (%)', data: classAverages, backgroundColor: '#4f6bff', borderRadius: 6 }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true, max: 100 } },
+    },
+  });
+
+  // 3) Xu hướng điểm trung bình theo ngày
+  const byDay = {};
+  rows.forEach(r => {
+    const day = new Date(r.submittedAtMs).toLocaleDateString('vi-VN');
+    if (!byDay[day]) byDay[day] = [];
+    if (typeof r.score === 'number') byDay[day].push(r.score);
+  });
+  const dayEntries = Object.entries(byDay)
+    .map(([day, arr]) => ({ day, avg: Math.round(arr.reduce((a, b) => a + b, 0) / arr.length) }))
+    .sort((a, b) => new Date(a.day.split('/').reverse().join('-')) - new Date(b.day.split('/').reverse().join('-')));
+
+  _reportCharts.trend = new Chart(document.getElementById('chartTrend'), {
+    type: 'line',
+    data: {
+      labels: dayEntries.map(e => e.day),
+      datasets: [{
+        label: 'Điểm TB theo ngày (%)',
+        data: dayEntries.map(e => e.avg),
+        borderColor: '#17b3a3', backgroundColor: 'rgba(23,179,163,.15)',
+        fill: true, tension: 0.3, pointRadius: 3,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true, max: 100 } },
+    },
+  });
+}
+
+function escHtml(s) {
+  return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
 /* ========================================
@@ -484,13 +639,17 @@ function closeSidebar() {
 document.getElementById('sidebar-overlay').addEventListener('click', closeSidebar);
 
 /* ========================================
-   EXPORT REPORT (demo)
+   EXPORT REPORT — xuất CSV từ dữ liệu Firestore thật (đã áp bộ lọc hiện tại)
    ======================================== */
 function exportReport() {
-  const sessions = getSessions();
-  if (sessions.length === 0) { alert('Chưa có dữ liệu để xuất!'); return; }
-  const csv = ['Học sinh,Bộ đề,Thời gian,Điểm,Trạng thái',
-    ...sessions.map(s => `"${s.studentName}","${s.setTitle}","${s.startTime}","${s.score !== null ? s.score + '%' : ''}","${s.status}"`)
+  const rows = _reportFiltered;
+  if (!rows || rows.length === 0) { alert('Chưa có dữ liệu để xuất (theo bộ lọc hiện tại)!'); return; }
+  const csv = ['Học sinh,Lớp,Trường,Bộ đề,Thời gian nộp,Điểm (%),Đúng/Tổng,Trạng thái',
+    ...rows.map(r => {
+      const dateStr = new Date(r.submittedAtMs).toLocaleString('vi-VN');
+      const status = r.integrityOk !== false ? 'Hợp lệ' : 'Nghi vấn: ' + (r.flags || []).join('; ');
+      return `"${r.studentName || ''}","${r.studentClass || ''}","${r.studentSchool || ''}","${r.testName || ''}","${dateStr}","${r.score ?? ''}","${r.correct ?? ''}/${r.total ?? ''}","${status}"`;
+    })
   ].join('\n');
   const blob = new Blob(['\ufeff' + csv], {type: 'text/csv;charset=utf-8;'});
   const url = URL.createObjectURL(blob);
@@ -514,4 +673,6 @@ function clearAllData() {
    INIT
    ======================================== */
 renderCards();
-updateReportTab();
+// Báo cáo (Firestore) chỉ được tải khi vào tab "Báo cáo kết quả" (xem
+// listener .nav-item ở trên) — vừa tránh gọi Firestore trước khi đăng
+// nhập hoàn tất, vừa đỡ tốn quota khi người dùng không xem tab này.

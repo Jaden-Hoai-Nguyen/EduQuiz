@@ -8,7 +8,7 @@
    {
      name: "Nguyễn Văn A",
      email: "a@example.com",
-     role: "admin" | "teacher" | "student",
+     role: "admin" | "teacher" | "coordinator" | "student",
      approved: true|false,   // teacher cần admin duyệt mới approved=true
      createdAt: <timestamp>
    }
@@ -17,9 +17,11 @@
    - Đăng ký mới luôn tạo role mặc định "student" (approved=true) trừ khi
      người dùng tự chọn "Tôi là giáo viên" → role "teacher", approved=false
      (chờ admin duyệt trong trang admin-users.html).
-   - Tài khoản "admin" KHÔNG thể tự đăng ký — chỉ được admin khác nâng cấp
-     thủ công trong admin-users.html (hoặc gán tay lần đầu trong Firestore
-     Console để tạo admin gốc).
+   - Tài khoản "admin" và "coordinator" (Điều phối đào tạo) KHÔNG thể tự
+     đăng ký — chỉ được admin khác nâng cấp thủ công trong
+     admin-users.html (hoặc gán tay lần đầu trong Firestore Console).
+     "coordinator" chỉ có quyền ĐỌC báo cáo kết quả (mục Báo cáo trong
+     ic3-dashboard.html), không có quyền sửa câu hỏi/tài khoản.
    ============================================================ */
 (function (global) {
   'use strict';
@@ -83,7 +85,12 @@
     });
   }
 
-  const ROLE_LABEL = { admin: '👑 Quản trị viên', teacher: '🧑‍🏫 Giáo viên', student: '🎓 Học sinh' };
+  const ROLE_LABEL = {
+    admin: '👑 Quản trị viên',
+    teacher: '🧑‍🏫 Giáo viên',
+    coordinator: '🧭 Điều phối đào tạo',
+    student: '🎓 Học sinh',
+  };
 
   global.EduAuth = {
     registerUser,

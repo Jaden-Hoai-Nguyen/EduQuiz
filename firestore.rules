@@ -5,11 +5,20 @@ rules_version = '2';
 // Dán toàn bộ nội dung file này vào Firebase Console → Firestore
 // Database → Rules, rồi bấm "Publish".
 //
-// Vai trò (role): "admin" | "teacher" | "student"
-// - admin: toàn quyền.
-// - teacher: chỉ được sửa collection "questions" SAU KHI được admin
-//   duyệt (approved == true). Không được tự đổi role/approved của mình.
-// - student: chỉ đọc, không ghi được questions/users của người khác.
+// Vai trò (role): "admin" | "teacher" | "coordinator" | "student"
+// - admin:       toàn quyền.
+// - teacher:     chỉ được sửa collection "questions" SAU KHI được admin
+//                duyệt (approved == true). Không được tự đổi role/approved
+//                của mình. Được ĐỌC báo cáo kết quả (quiz_results).
+// - coordinator: "Điều phối đào tạo" — CHỈ ĐƯỢC ĐỌC quiz_results (báo cáo
+//                trực quan), không có quyền sửa questions/users. Tài
+//                khoản coordinator chỉ được ADMIN gán thủ công trong
+//                admin-users.html (không thể tự đăng ký).
+// - student:     chỉ đọc, không ghi được questions/users của người khác.
+//                Học sinh làm bài KHÔNG cần đăng nhập Firebase Auth — vì
+//                vậy việc ghi kết quả bài thi (quiz_results) phải cho phép
+//                cả người dùng CHƯA đăng nhập, nhưng có kiểm tra dữ liệu
+//                chặt để chống giả mạo.
 // ============================================================
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -26,8 +35,15 @@ service cloud.firestore {
     function isApprovedTeacher() {
       return isSignedIn() && myProfile().role == 'teacher' && myProfile().approved == true;
     }
+    function isCoordinator() {
+      return isSignedIn() && myProfile().role == 'coordinator';
+    }
     function isEditor() {
       return isAdmin() || isApprovedTeacher();
+    }
+    // Ai được phép XEM báo cáo (đọc quiz_results): admin, teacher, coordinator.
+    function canViewReports() {
+      return isAdmin() || isApprovedTeacher() || isCoordinator();
     }
 
     // ---- Tài khoản người dùng & phân quyền ----
@@ -36,6 +52,8 @@ service cloud.firestore {
 
       // Tự đăng ký: chỉ được tạo hồ sơ của chính mình, role student|teacher,
       // và không được tự "approved: true" nếu xin làm teacher.
+      // Lưu ý: role "admin" và "coordinator" KHÔNG nằm trong danh sách này —
+      // hai vai trò này chỉ có thể được ADMIN gán thủ công (admin-users.html).
       allow create: if isSignedIn() && request.auth.uid == userId
         && request.resource.data.role in ['student', 'teacher']
         && (
@@ -58,6 +76,27 @@ service cloud.firestore {
     match /questions/{questionId} {
       allow read: if true; // trang học sinh / app quiz có thể đọc công khai
       allow write: if isEditor();
+    }
+
+    // ---- Kết quả bài thi (dùng bởi index.html sau khi nộp bài, và
+    //      ic3-dashboard.html → mục "Báo cáo kết quả" cho điều phối
+    //      đào tạo / giáo viên / admin xem báo cáo trực quan) ----
+    match /quiz_results/{resultId} {
+      // Học sinh làm bài KHÔNG đăng nhập Firebase Auth → cho phép tạo mới
+      // mà không cần isSignedIn(), nhưng bắt buộc đúng cấu trúc dữ liệu
+      // tối thiểu để chống ghi rác/giả mạo, và document không được tự sửa
+      // lại (update/delete) sau khi đã tạo.
+      allow create: if
+        request.resource.data.studentName is string &&
+        request.resource.data.studentName.size() > 0 &&
+        request.resource.data.studentName.size() < 200 &&
+        request.resource.data.score is number &&
+        request.resource.data.score >= 0 && request.resource.data.score <= 100 &&
+        request.resource.data.total is number &&
+        request.resource.data.submittedAt == request.time;
+
+      allow read: if canViewReports();
+      allow update, delete: if isAdmin();
     }
   }
 }

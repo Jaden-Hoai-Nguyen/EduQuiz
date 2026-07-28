@@ -46,10 +46,20 @@
   overlay.innerHTML = `<div class="spin"></div><div class="msg">🔐 Đang kiểm tra đăng nhập...</div>`;
   document.addEventListener('DOMContentLoaded', () => document.body.appendChild(overlay));
 
-  function showDenied(message) {
+  function showDenied(message, needsSignOut) {
+    const btnLabel = needsSignOut ? 'Đăng xuất & về trang đăng nhập' : 'Về trang đăng nhập';
     overlay.innerHTML = `<div class="msg">🚫 ${message}</div>
-      <button class="btn" id="edu-guard-back">Về trang đăng nhập</button>`;
-    const back = () => { window.location.href = 'login.html?next=' + encodeURIComponent(location.pathname + location.search); };
+      <button class="btn" id="edu-guard-back">${btnLabel}</button>`;
+    const back = async () => {
+      // QUAN TRỌNG: phải đăng xuất trước khi quay về login.html — nếu không,
+      // login.html sẽ thấy phiên đăng nhập cũ vẫn còn, tự động điều hướng
+      // ngược lại trang này, và trang này lại từ chối → tạo vòng lặp
+      // "đẩy ra đẩy vào" vô hạn, khiến người dùng không thể đổi tài khoản.
+      if (needsSignOut && window.EduAuth) {
+        try { await EduAuth.logoutUser(); } catch (e) { /* ignore */ }
+      }
+      window.location.href = 'login.html?next=' + encodeURIComponent(location.pathname + location.search);
+    };
     document.getElementById('edu-guard-back')?.addEventListener('click', back);
     document.documentElement.classList.remove('edu-guard-locked');
     overlay.style.visibility = 'visible';
@@ -70,19 +80,19 @@
     }
     EduAuth.onAuthReady((user, profile) => {
       if (!user) {
-        setTimeout(() => showDenied('Bạn cần đăng nhập để xem trang này.'), 300);
+        setTimeout(() => showDenied('Bạn cần đăng nhập để xem trang này.', false), 300);
         return;
       }
       if (!profile) {
-        setTimeout(() => showDenied('Không tìm thấy hồ sơ tài khoản. Liên hệ quản trị viên.'), 300);
+        setTimeout(() => showDenied('Không tìm thấy hồ sơ tài khoản. Liên hệ quản trị viên.', true), 300);
         return;
       }
       if (!allowedRoles.includes(profile.role)) {
-        setTimeout(() => showDenied('Tài khoản của bạn không có quyền truy cập trang này.'), 300);
+        setTimeout(() => showDenied('Tài khoản của bạn không có quyền truy cập trang này.', true), 300);
         return;
       }
       if (profile.role === 'teacher' && profile.approved === false) {
-        setTimeout(() => showDenied('Tài khoản giáo viên của bạn đang chờ quản trị viên duyệt.'), 300);
+        setTimeout(() => showDenied('Tài khoản giáo viên của bạn đang chờ quản trị viên duyệt.', true), 300);
         return;
       }
       unlock(user, profile);
