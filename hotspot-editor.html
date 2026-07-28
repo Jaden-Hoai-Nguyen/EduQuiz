@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduQuiz — Trình chỉnh vị trí Hotspot</title>
+<style>
+  :root {
+    --bg:        #f3f5fc;
+    --surface:   #ffffff;
+    --card:      #ffffff;
+    --card2:     #f6f8fe;
+    --border:    #e1e6f4;
+    --text:      #1b2036;
+    --muted:     #667085;
+    --purple:    #4f6bff;
+    --purple-lt: #ecf0ff;
+    --teal:      #17b3a3;
+    --teal-lt:   #e3faf6;
+    --red:       #f0483e;
+    --red-lt:    #fde8e7;
+    --yellow:    #f6a723;
+    --yellow-lt: #fff6e3;
+    --green:     #21b36b;
+    --orange:    #ff8a3d;
+    --orange-lt: #ffefe2;
+    --radius-sm: 10px;
+    --radius-md: 14px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    font-size: 14px;
+  }
+  header {
+    display: flex; align-items: center; gap: .9rem;
+    padding: .75rem 1.25rem; background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 50;
+  }
+  header h1 {
+    font-size: 1.02rem; margin: 0; font-weight: 800; color: var(--purple);
+    display: flex; align-items: center; gap: .45rem; white-space: nowrap;
+  }
+  header h1 span.tag {
+    font-size: .68rem; font-weight: 800; color: var(--muted);
+    background: var(--card2); border: 1px solid var(--border);
+    padding: .15rem .5rem; border-radius: 999px; text-transform: uppercase; letter-spacing: .04em;
+  }
+  .spacer { flex: 1; }
+  .btn {
+    border: 1px solid var(--border); background: var(--card2); color: var(--text);
+    padding: .5rem .85rem; border-radius: 9px; font-weight: 700; font-size: .8rem;
+    cursor: pointer; transition: all .12s; display: inline-flex; align-items: center; gap: .4rem;
+  }
+  .btn:hover { border-color: var(--purple); color: var(--purple); }
+  .btn.primary { background: var(--purple); border-color: var(--purple); color: #fff; }
+  .btn.primary:hover { background: #3d58e6; color: #fff; }
+  .btn.ghost { background: transparent; }
+  .btn:disabled { opacity: .45; cursor: not-allowed; }
+  input[type=file] { display: none; }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    gap: 1px; background: var(--border);
+    height: calc(100vh - 57px);
+  }
+  .pane { background: var(--surface); overflow-y: auto; }
+  .pane-pad { padding: 1rem; }
+
+  /* ── Sidebar: question list ── */
+  .q-search {
+    width: 100%; padding: .55rem .75rem; border-radius: 9px;
+    border: 1.5px solid var(--border); font-size: .8rem; margin-bottom: .75rem;
+    font-family: inherit;
+  }
+  .mt-group-label {
+    font-size: .68rem; font-weight: 800; color: var(--muted); text-transform: uppercase;
+    letter-spacing: .06em; margin: 1rem 0 .4rem;
+  }
+  .q-item {
+    padding: .55rem .65rem; border-radius: 9px; cursor: pointer; margin-bottom: .3rem;
+    border: 1.5px solid transparent; display: flex; gap: .5rem; align-items: flex-start;
+  }
+  .q-item:hover { background: var(--card2); }
+  .q-item.active { background: var(--purple-lt); border-color: var(--purple); }
+  .q-item .qi-idx {
+    flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--card2);
+    color: var(--muted); font-size: .68rem; font-weight: 800; display: flex; align-items: center;
+    justify-content: center; margin-top: .05rem;
+  }
+  .q-item.active .qi-idx { background: var(--purple); color: #fff; }
+  .q-item .qi-text { font-size: .76rem; line-height: 1.35; color: var(--text); }
+  .q-item .qi-meta { font-size: .66rem; color: var(--muted); margin-top: .15rem; }
+  .q-item.dirty .qi-text::after { content: " ●"; color: var(--orange); }
+  .empty-hint {
+    color: var(--muted); font-size: .8rem; text-align: center; padding: 2rem 1rem; line-height: 1.6;
+  }
+
+  /* ── Center: editor ── */
+  .editor-toolbar {
+    display: flex; align-items: center; gap: .9rem; padding: .7rem 1rem;
+    border-bottom: 1px solid var(--border); flex-wrap: wrap;
+  }
+  .editor-toolbar .qtext {
+    font-weight: 700; font-size: .85rem; flex: 1 1 300px; min-width: 200px;
+  }
+  .width-slider-wrap { display: flex; align-items: center; gap: .5rem; font-size: .74rem; color: var(--muted); font-weight: 700; }
+  .width-slider-wrap input[type=range] { width: 110px; }
+  .editor-canvas-wrap {
+    padding: 1.5rem; display: flex; justify-content: center;
+  }
+  .stage {
+    position: relative; width: 100%; transition: max-width .15s;
+  }
+  .hotspot-wrap {
+    position: relative; width: 100%; border-radius: var(--radius-sm);
+    overflow: visible; border: 2px solid var(--border); background: var(--card2); line-height: 0;
+  }
+  .hotspot-wrap.add-mode { cursor: crosshair; }
+  .hotspot-wrap img { width: 100%; height: auto; display: block; border-radius: calc(var(--radius-sm) - 2px); user-select: none; -webkit-user-drag: none; }
+  .no-image-placeholder {
+    width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: .5rem; color: var(--muted); font-size: .8rem; text-align: center; padding: 1rem;
+  }
+  .hotspot-area {
+    position: absolute; border: 2px dashed rgba(246,167,35,.85); background: rgba(246,167,35,.14);
+    cursor: move; padding: 0; box-sizing: border-box;
+  }
+  .hotspot-area[data-shape="oval"] { border-radius: 50%; }
+  .hotspot-area[data-correct="true"] { border-color: var(--teal); background: rgba(23,179,163,.16); }
+  .hotspot-area[data-correct="false"] { border-color: var(--orange); background: rgba(255,138,61,.14); }
+  .hotspot-area.selected {
+    border-style: solid; border-width: 2.5px; border-color: var(--purple) !important;
+    background: rgba(79,107,255,.18) !important; z-index: 5;
+  }
+  .hotspot-area .area-label {
+    position: absolute; top: -1.35rem; left: -2px; background: var(--text); color: #fff;
+    font-size: .64rem; font-weight: 800; padding: .1rem .4rem; border-radius: 5px; white-space: nowrap;
+    pointer-events: none;
+  }
+  .hotspot-area.selected .area-label { background: var(--purple); }
+  .resize-handle {
+    position: absolute; right: -6px; bottom: -6px; width: 14px; height: 14px; border-radius: 50%;
+    background: var(--purple); border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    cursor: nwse-resize;
+  }
+  .editor-hint {
+    text-align: center; font-size: .74rem; color: var(--muted); padding: 0 1.5rem 1.25rem;
+  }
+
+  /* ── Right: properties ── */
+  .panel-title { font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: .75rem; }
+  .field { margin-bottom: .85rem; }
+  .field label { display: block; font-size: .72rem; font-weight: 700; color: var(--muted); margin-bottom: .3rem; }
+  .field input[type=number], .field select, .field input[type=text] {
+    width: 100%; padding: .5rem .6rem; border-radius: 8px; border: 1.5px solid var(--border);
+    font-size: .82rem; font-family: inherit; background: var(--surface); color: var(--text);
+  }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .toggle-row { display: flex; gap: .5rem; margin-bottom: .85rem; }
+  .toggle-btn {
+    flex: 1; padding: .5rem; border-radius: 8px; border: 1.5px solid var(--border); background: var(--card2);
+    font-weight: 800; font-size: .74rem; cursor: pointer; text-align: center; color: var(--muted);
+  }
+  .toggle-btn.on-correct.active { background: var(--teal-lt); border-color: var(--teal); color: var(--teal); }
+  .toggle-btn.on-distractor.active { background: var(--orange-lt); border-color: var(--orange); color: var(--orange); }
+  .area-list { margin-top: .5rem; }
+  .area-row {
+    display: flex; align-items: center; gap: .5rem; padding: .45rem .55rem; border-radius: 8px;
+    border: 1.5px solid var(--border); margin-bottom: .4rem; cursor: pointer; font-size: .74rem;
+  }
+  .area-row:hover { border-color: var(--purple); }
+  .area-row.selected { border-color: var(--purple); background: var(--purple-lt); }
+  .area-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .area-row .area-id { font-weight: 800; font-family: monospace; }
+  .area-row .area-flag { margin-left: auto; font-size: .64rem; font-weight: 800; padding: .1rem .4rem; border-radius: 999px; }
+  .area-row .area-flag.correct { background: var(--teal-lt); color: var(--teal); }
+  .area-row .area-flag.distractor { background: var(--orange-lt); color: var(--orange); }
+  .area-row .del-btn { border: none; background: none; color: var(--muted); cursor: pointer; font-size: .85rem; padding: .1rem .3rem; }
+  .area-row .del-btn:hover { color: var(--red); }
+  hr.sep { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+  .kbd { font-family: monospace; background: var(--card2); border: 1px solid var(--border); border-radius: 4px; padding: 0 .3rem; }
+  .note { font-size: .72rem; color: var(--muted); line-height: 1.6; }
+  .toast {
+    position: fixed; bottom: 1.25rem; left: 50%; transform: translateX(-50%);
+    background: var(--text); color: #fff; padding: .6rem 1.1rem; border-radius: 999px;
+    font-size: .8rem; font-weight: 700; z-index: 999; opacity: 0; pointer-events: none;
+    transition: opacity .2s, transform .2s;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(-6px); }
+  @media (max-width: 980px) {
+    .layout { grid-template-columns: 1fr; height: auto; }
+    .pane { max-height: 46vh; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎯 Hotspot Editor <span class="tag">EduQuiz Admin</span></h1>
+  <button class="btn" id="btnLoadJson">📂 Mở file câu hỏi (.json)</button>
+  <input type="file" id="fileJson" accept="application/json">
+  <button class="btn" id="btnLoadImages">🖼️ Nạp thư mục ảnh (img/)</button>
+  <input type="file" id="fileImages" webkitdirectory directory multiple>
+  <div class="spacer"></div>
+  <span class="note" id="statusText"></span>
+  <button class="btn primary" id="btnExport" disabled>⬇ Xuất JSON đã sửa</button>
+</header>
+
+<div class="layout">
+
+  <!-- LEFT: question list -->
+  <div class="pane">
+    <div class="pane-pad">
+      <input type="text" class="q-search" id="qSearch" placeholder="🔍 Tìm câu hỏi hotspot…">
+      <div id="qListWrap">
+        <div class="empty-hint">Mở một file JSON câu hỏi (vd. <b>IC3__LV1.json</b>) để bắt đầu.<br><br>Công cụ sẽ tự lọc ra tất cả câu dạng <b>hotspot</b> để bạn chỉnh vị trí.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CENTER: canvas editor -->
+  <div class="pane">
+    <div class="editor-toolbar" id="editorToolbar" style="display:none;">
+      <div class="qtext" id="qTextDisplay"></div>
+      <div class="width-slider-wrap">
+        📱 <input type="range" id="widthSlider" min="320" max="900" value="640" step="10"> 🖥️
+        <span id="widthLabel">640px</span>
+      </div>
+    </div>
+    <div class="editor-canvas-wrap" id="canvasWrap" style="display:none;">
+      <div class="stage" id="stage">
+        <div class="hotspot-wrap" id="hotspotWrap">
+          <div class="no-image-placeholder" id="noImagePlaceholder">
+            🖼️ Chưa có ảnh cho câu này<br><span class="note">Bấm "Nạp thư mục ảnh (img/)" ở trên và chọn thư mục <b>img</b> của dự án.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="editor-hint" id="editorHint" style="display:none;">
+      👆 Kéo ô để di chuyển · kéo chấm tím ở góc để đổi kích thước · dùng phím mũi tên để tinh chỉnh (giữ <span class="kbd">Shift</span> để di chuyển nhanh hơn) · <span class="kbd">Delete</span> để xoá vùng đang chọn
+    </div>
+    <div id="emptyCenterHint" class="empty-hint" style="padding-top:4rem;">Chọn một câu hỏi bên trái để bắt đầu chỉnh sửa vị trí các vùng bấm.</div>
+  </div>
+
+  <!-- RIGHT: properties -->
+  <div class="pane">
+    <div class="pane-pad" id="rightPanel">
+      <div class="empty-hint">—</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ============================================================
+   STATE
+   ============================================================ */
+const state = {
+  fullData: null,        // toàn bộ JSON đã nạp
+  fileName: 'quiz-edited.json',
+  questions: [],          // [{mtName, arr, idx, q}] — chỉ các câu type hotspot
+  currentIndex: -1,
+  images: new Map(),      // filename → objectURL
+  selectedAreaId: null,
+  dirtySet: new Set(),    // set các uid câu đã bị sửa
+  addMode: false,
+};
+
+const $ = sel => document.querySelector(sel);
+const els = {
+  fileJson: $('#fileJson'), btnLoadJson: $('#btnLoadJson'),
+  fileImages: $('#fileImages'), btnLoadImages: $('#btnLoadImages'),
+  btnExport: $('#btnExport'), statusText: $('#statusText'),
+  qSearch: $('#qSearch'), qListWrap: $('#qListWrap'),
+  editorToolbar: $('#editorToolbar'), qTextDisplay: $('#qTextDisplay'),
+  widthSlider: $('#widthSlider'), widthLabel: $('#widthLabel'),
+  canvasWrap: $('#canvasWrap'), stage: $('#stage'), hotspotWrap: $('#hotspotWrap'),
+  noImagePlaceholder: $('#noImagePlaceholder'), editorHint: $('#editorHint'),
+  emptyCenterHint: $('#emptyCenterHint'), rightPanel: $('#rightPanel'),
+  toast: $('#toast'),
+};
+
+function toast(msg) {
+  els.toast.textContent = msg;
+  els.toast.classList.add('show');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => els.toast.classList.remove('show'), 1800);
+}
+
+/* ============================================================
+   LOAD JSON
+   ============================================================ */
+els.btnLoadJson.addEventListener('click', () => els.fileJson.click());
+els.fileJson.addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  try {
+    const text = await file.text();
+    const data = JSON.parse(text);
+    loadData(data, file.name);
+  } catch (err) {
+    alert('Không đọc được file JSON: ' + err.message);
+  }
+});
+
+function loadData(data, fileName) {
+  state.fullData = data;
+  state.fileName = fileName;
+  state.questions = [];
+  state.dirtySet.clear();
+
+  const minitests = data.minitests || {};
+  Object.keys(minitests).forEach(mtName => {
+    const arr = minitests[mtName];
+    if (!Array.isArray(arr)) return;
+    arr.forEach((q, idx) => {
+      if (q && q.type === 'hotspot') {
+        state.questions.push({ mtName, arr, idx, q });
+      }
+    });
+  });
+
+  if (state.questions.length === 0) {
+    alert('File này không có câu hỏi dạng "hotspot" nào.');
+  }
+
+  state.currentIndex = -1;
+  renderQuestionList();
+  els.statusText.textContent = `${state.questions.length} câu hotspot — ${fileName}`;
+  els.btnExport.disabled = state.questions.length === 0;
+  selectQuestionByIndex(state.questions.length ? 0 : -1);
+}
+
+/* ============================================================
+   LOAD IMAGES (thư mục img/)
+   ============================================================ */
+els.btnLoadImages.addEventListener('click', () => els.fileImages.click());
+els.fileImages.addEventListener('change', (e) => {
+  const files = Array.from(e.target.files || []);
+  let count = 0;
+  files.forEach(f => {
+    if (/\.(png|jpe?g|gif|webp|svg)$/i.test(f.name)) {
+      state.images.set(f.name, URL.createObjectURL(f));
+      count++;
+    }
+  });
+  toast(`Đã nạp ${count} ảnh`);
+  renderEditor();
+});
+
+/* ============================================================
+   QUESTION LIST (sidebar)
+   ============================================================ */
+els.qSearch.addEventListener('input', renderQuestionList);
+
+function renderQuestionList() {
+  const term = els.qSearch.value.trim().toLowerCase();
+  if (!state.questions.length) {
+    els.qListWrap.innerHTML = '<div class="empty-hint">Mở một file JSON câu hỏi (vd. <b>IC3__LV1.json</b>) để bắt đầu.<br><br>Công cụ sẽ tự lọc ra tất cả câu dạng <b>hotspot</b> để bạn chỉnh vị trí.</div>';
+    return;
+  }
+
+  const groups = new Map();
+  state.questions.forEach((item, i) => {
+    if (term && !item.q.question?.toLowerCase().includes(term) && !item.q.uid?.toLowerCase().includes(term)) return;
+    if (!groups.has(item.mtName)) groups.set(item.mtName, []);
+    groups.get(item.mtName).push(i);
+  });
+
+  let html = '';
+  groups.forEach((indices, mtName) => {
+    html += `<div class="mt-group-label">${escHtml(mtName)}</div>`;
+    indices.forEach(i => {
+      const item = state.questions[i];
+      const active = i === state.currentIndex ? 'active' : '';
+      const dirty = state.dirtySet.has(item.q.uid || i) ? 'dirty' : '';
+      const nAreas = (item.q.areas || []).length;
+      const nCorrect = (item.q.areas || []).filter(a => a.correct).length;
+      html += `<div class="q-item ${active} ${dirty}" data-idx="${i}">
+        <div class="qi-idx">${i + 1}</div>
+        <div>
+          <div class="qi-text">${escHtml(truncate(item.q.question || '(không có nội dung)', 70))}</div>
+          <div class="qi-meta">${nAreas} vùng · ${nCorrect} đúng</div>
+        </div>
+      </div>`;
+    });
+  });
+  els.qListWrap.innerHTML = html || '<div class="empty-hint">Không tìm thấy câu nào khớp.</div>';
+
+  els.qListWrap.querySelectorAll('.q-item').forEach(el => {
+    el.addEventListener('click', () => selectQuestionByIndex(parseInt(el.dataset.idx)));
+  });
+}
+
+function truncate(s, n) { return s.length > n ? s.slice(0, n - 1) + '…' : s; }
+function escHtml(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* ============================================================
+   SELECT QUESTION → render editor
+   ============================================================ */
+function selectQuestionByIndex(i) {
+  state.currentIndex = i;
+  state.selectedAreaId = null;
+  state.addMode = false;
+  renderQuestionList();
+
+  if (i < 0) {
+    els.editorToolbar.style.display = 'none';
+    els.canvasWrap.style.display = 'none';
+    els.editorHint.style.display = 'none';
+    els.emptyCenterHint.style.display = 'block';
+    els.rightPanel.innerHTML = '<div class="empty-hint">—</div>';
+    return;
+  }
+
+  els.emptyCenterHint.style.display = 'none';
+  els.editorToolbar.style.display = 'flex';
+  els.canvasWrap.style.display = 'flex';
+  els.editorHint.style.display = 'block';
+
+  const item = state.questions[i];
+  els.qTextDisplay.textContent = `${i + 1}. ${item.q.question || ''}`;
+
+  renderEditor();
+  renderRightPanel();
+}
+
+/* ============================================================
+   EDITOR CANVAS — render image + area boxes
+   ============================================================ */
+els.widthSlider.addEventListener('input', () => {
+  els.stage.style.maxWidth = els.widthSlider.value + 'px';
+  els.widthLabel.textContent = els.widthSlider.value + 'px';
+});
+els.stage.style.maxWidth = els.widthSlider.value + 'px';
+els.widthLabel.textContent = els.widthSlider.value + 'px';
+
+function currentQ() {
+  if (state.currentIndex < 0) return null;
+  return state.questions[state.currentIndex].q;
+}
+
+function findImageUrl(q) {
+  const filename = q.image_file || (q.imageUrl ? q.imageUrl.split('/').pop() : null);
+  if (filename && state.images.has(filename)) return state.images.get(filename);
+  return null;
+}
+
+function renderEditor() {
+  const q = currentQ();
+  if (!q) return;
+  const wrap = els.hotspotWrap;
+  wrap.innerHTML = '';
+  wrap.classList.toggle('add-mode', state.addMode);
+
+  const imgUrl = findImageUrl(q);
+  if (!imgUrl) {
+    const ph = document.createElement('div');
+    ph.className = 'no-image-placeholder';
+    ph.innerHTML = `🖼️ Chưa có ảnh cho câu này<br><span class="note">Tên file cần: <b>${escHtml(q.image_file || '(không rõ)')}</b><br>Bấm "Nạp thư mục ảnh (img/)" ở trên và chọn thư mục <b>img</b> của dự án.</span>`;
+    wrap.appendChild(ph);
+    return;
+  }
+
+  const img = document.createElement('img');
+  img.src = imgUrl;
+  img.draggable = false;
+  img.alt = q.question || '';
+  wrap.appendChild(img);
+
+  (q.areas || []).forEach(a => {
+    wrap.appendChild(buildAreaEl(a, q));
+  });
+
+  wrap.addEventListener('mousedown', onCanvasMouseDownForAdd);
+
+  img.addEventListener('load', () => { /* image ready */ });
+}
+
+function buildAreaEl(a, q) {
+  const el = document.createElement('div');
+  el.className = 'hotspot-area';
+  el.dataset.id = a.id;
+  el.dataset.shape = a.shape === 'oval' ? 'oval' : 'rectangle';
+  el.dataset.correct = a.correct ? 'true' : 'false';
+  el.style.left = a.x + '%';
+  el.style.top = a.y + '%';
+  el.style.width = a.w + '%';
+  el.style.height = a.h + '%';
+  if (a.id === state.selectedAreaId) el.classList.add('selected');
+
+  const label = document.createElement('div');
+  label.className = 'area-label';
+  label.textContent = a.id + (a.correct ? ' ✓' : '');
+  el.appendChild(label);
+
+  if (a.id === state.selectedAreaId) {
+    const handle = document.createElement('div');
+    handle.className = 'resize-handle';
+    handle.addEventListener('mousedown', (e) => startResize(e, a, q));
+    el.appendChild(handle);
+  }
+
+  el.addEventListener('mousedown', (e) => {
+    if (e.target.classList.contains('resize-handle')) return;
+    e.stopPropagation();
+    selectArea(a.id);
+    startDrag(e, a, q);
+  });
+
+  return el;
+}
+
+function selectArea(id) {
+  state.selectedAreaId = id;
+  renderEditor();
+  renderRightPanel();
+}
+
+/* ── drag to move ── */
+function startDrag(e, a, q) {
+  e.preventDefault();
+  const imgEl = els.hotspotWrap.querySelector('img');
+  if (!imgEl) return;
+  const rect0 = imgEl.getBoundingClientRect();
+  const startMouseX = e.clientX, startMouseY = e.clientY;
+  const startX = a.x, startY = a.y;
+
+  function onMove(ev) {
+    const dxPct = (ev.clientX - startMouseX) / rect0.width * 100;
+    const dyPct = (ev.clientY - startMouseY) / rect0.height * 100;
+    a.x = clamp(startX + dxPct, 0, 100 - a.w);
+    a.y = clamp(startY + dyPct, 0, 100 - a.h);
+    markDirty(q);
+    renderEditor();
+  }
+  function onUp() {
+    document.removeEventListener('mousemove', onMove);
+    document.removeEventListener('mouseup', onUp);
+    renderRightPanel();
+  }
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseup', onUp);
+}
+
+/* ── drag handle to resize ── */
+function startResize(e, a, q) {
+  e.preventDefault();
+  e.stopPropagation();
+  const imgEl = els.hotspotWrap.querySelector('img');
+  if (!imgEl) return;
+  const rect0 = imgEl.getBoundingClientRect();
+  const startMouseX = e.clientX, startMouseY = e.clientY;
+  const startW = a.w, startH = a.h;
+
+  function onMove(ev) {
+    const dwPct = (ev.clientX - startMouseX) / rect0.width * 100;
+    const dhPct = (ev.clientY - startMouseY) / rect0.height * 100;
+    a.w = clamp(startW + dwPct, 2, 100 - a.x);
+    a.h = clamp(startH + dhPct, 2, 100 - a.y);
+    markDirty(q);
+    renderEditor();
+  }
+  function onUp() {
+    document.removeEventListener('mousemove', onMove);
+    document.removeEventListener('mouseup', onUp);
+    renderRightPanel();
+  }
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseup', onUp);
+}
+
+function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+
+/* ── add new area by drag-draw ── */
+function onCanvasMouseDownForAdd(e) {
+  if (!state.addMode) return;
+  if (e.target.closest('.hotspot-area')) return;
+  const imgEl = els.hotspotWrap.querySelector('img');
+  if (!imgEl) return;
+  const rect0 = imgEl.getBoundingClientRect();
+  const q = currentQ();
+  const startXPct = clamp((e.clientX - rect0.left) / rect0.width * 100, 0, 100);
+  const startYPct = clamp((e.clientY - rect0.top) / rect0.height * 100, 0, 100);
+
+  const newId = nextAreaId(q);
+  const newArea = { id: newId, shape: 'rectangle', x: startXPct, y: startYPct, w: 1, h: 1, correct: false };
+  q.areas = q.areas || [];
+  q.areas.push(newArea);
+
+  function onMove(ev) {
+    const curX = clamp((ev.clientX - rect0.left) / rect0.width * 100, 0, 100);
+    const curY = clamp((ev.clientY - rect0.top) / rect0.height * 100, 0, 100);
+    newArea.x = Math.min(startXPct, curX);
+    newArea.y = Math.min(startYPct, curY);
+    newArea.w = Math.max(1, Math.abs(curX - startXPct));
+    newArea.h = Math.max(1, Math.abs(curY - startYPct));
+    renderEditor();
+  }
+  function onUp() {
+    document.removeEventListener('mousemove', onMove);
+    document.removeEventListener('mouseup', onUp);
+    markDirty(q);
+    state.addMode = false;
+    state.selectedAreaId = newId;
+    renderEditor();
+    renderRightPanel();
+    toast(`Đã thêm vùng ${newId}`);
+  }
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseup', onUp);
+}
+
+function nextAreaId(q) {
+  const existing = new Set((q.areas || []).map(a => a.id));
+  let n = 1;
+  while (existing.has('a' + n)) n++;
+  return 'a' + n;
+}
+
+function markDirty(q) {
+  state.dirtySet.add(q.uid || q.question);
+  renderQuestionList();
+}
+
+/* ============================================================
+   KEYBOARD — nudge / delete selected area
+   ============================================================ */
+document.addEventListener('keydown', (e) => {
+  const q = currentQ();
+  if (!q || !state.selectedAreaId) return;
+  const a = (q.areas || []).find(x => x.id === state.selectedAreaId);
+  if (!a) return;
+  const step = e.shiftKey ? 1 : 0.1;
+  let handled = true;
+  if (e.key === 'ArrowLeft')  a.x = clamp(a.x - step, 0, 100 - a.w);
+  else if (e.key === 'ArrowRight') a.x = clamp(a.x + step, 0, 100 - a.w);
+  else if (e.key === 'ArrowUp')    a.y = clamp(a.y - step, 0, 100 - a.h);
+  else if (e.key === 'ArrowDown')  a.y = clamp(a.y + step, 0, 100 - a.h);
+  else if (e.key === 'Delete' || e.key === 'Backspace') deleteArea(a.id);
+  else if (e.key === 'Escape') { state.selectedAreaId = null; renderEditor(); renderRightPanel(); handled = false; }
+  else handled = false;
+  if (handled && e.key !== 'Delete' && e.key !== 'Backspace') {
+    e.preventDefault();
+    markDirty(q);
+    renderEditor();
+    renderRightPanel();
+  }
+});
+
+function deleteArea(id) {
+  const q = currentQ();
+  if (!q) return;
+  q.areas = (q.areas || []).filter(a => a.id !== id);
+  if (state.selectedAreaId === id) state.selectedAreaId = null;
+  markDirty(q);
+  renderEditor();
+  renderRightPanel();
+}
+
+/* ============================================================
+   RIGHT PANEL — properties + area list
+   ============================================================ */
+function renderRightPanel() {
+  const q = currentQ();
+  if (!q) { els.rightPanel.innerHTML = '<div class="empty-hint">—</div>'; return; }
+
+  const areas = q.areas || [];
+  const sel = areas.find(a => a.id === state.selectedAreaId);
+
+  let html = '';
+
+  if (sel) {
+    html += `<div class="panel-title">Vùng đang chọn: ${escHtml(sel.id)}</div>
+    <div class="toggle-row">
+      <div class="toggle-btn on-correct ${sel.correct ? 'active' : ''}" id="btnMarkCorrect">✓ Đáp án đúng</div>
+      <div class="toggle-btn on-distractor ${!sel.correct ? 'active' : ''}" id="btnMarkDistractor">✗ Vùng nhiễu</div>
+    </div>
+    <div class="field">
+      <label>Hình dạng</label>
+      <select id="fieldShape">
+        <option value="rectangle" ${sel.shape !== 'oval' ? 'selected' : ''}>Chữ nhật</option>
+        <option value="oval" ${sel.shape === 'oval' ? 'selected' : ''}>Oval / tròn</option>
+      </select>
+    </div>
+    <div class="field-row">
+      <div class="field"><label>X (%)</label><input type="number" id="fieldX" step="0.1" value="${round2(sel.x)}"></div>
+      <div class="field"><label>Y (%)</label><input type="number" id="fieldY" step="0.1" value="${round2(sel.y)}"></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label>Rộng (%)</label><input type="number" id="fieldW" step="0.1" value="${round2(sel.w)}"></div>
+      <div class="field"><label>Cao (%)</label><input type="number" id="fieldH" step="0.1" value="${round2(sel.h)}"></div>
+    </div>
+    <button class="btn ghost" id="btnDeleteArea" style="width:100%;color:var(--red);border-color:var(--red-lt);">🗑 Xoá vùng này</button>
+    <hr class="sep">`;
+  }
+
+  html += `<div class="panel-title">Tất cả vùng (${areas.length})</div>
+  <button class="btn ${state.addMode ? 'primary' : ''}" id="btnAddArea" style="width:100%;margin-bottom:.75rem;">${state.addMode ? '✏️ Đang vẽ — kéo trên ảnh…' : '+ Thêm vùng mới'}</button>
+  <div class="area-list">`;
+  areas.forEach(a => {
+    const dotColor = a.id === state.selectedAreaId ? 'var(--purple)' : (a.correct ? 'var(--teal)' : 'var(--orange)');
+    html += `<div class="area-row ${a.id === state.selectedAreaId ? 'selected' : ''}" data-id="${a.id}">
+      <span class="area-dot" style="background:${dotColor}"></span>
+      <span class="area-id">${escHtml(a.id)}</span>
+      <span class="area-flag ${a.correct ? 'correct' : 'distractor'}">${a.correct ? 'ĐÚNG' : 'NHIỄU'}</span>
+      <button class="del-btn" data-del="${a.id}" title="Xoá">✕</button>
+    </div>`;
+  });
+  html += `</div>
+  <hr class="sep">
+  <div class="note">💡 Vị trí lưu theo % kích thước ảnh — khớp đúng với cách trang quiz hiển thị (ảnh co giãn 100% chiều rộng khung chứa, không bị vỡ hình hay lệch vị trí ở bất kỳ kích thước màn hình nào). Kéo thanh 📱↔🖥️ phía trên ảnh để thử các độ rộng khác nhau và kiểm tra vùng bấm luôn khớp đúng icon/nút trong ảnh.</div>`;
+
+  els.rightPanel.innerHTML = html;
+
+  // bind events
+  if (sel) {
+    $('#btnMarkCorrect').addEventListener('click', () => { sel.correct = true; markDirty(q); renderEditor(); renderRightPanel(); });
+    $('#btnMarkDistractor').addEventListener('click', () => { sel.correct = false; markDirty(q); renderEditor(); renderRightPanel(); });
+    $('#fieldShape').addEventListener('change', (e) => { sel.shape = e.target.value; markDirty(q); renderEditor(); });
+    $('#fieldX').addEventListener('input', (e) => { sel.x = clamp(parseFloat(e.target.value) || 0, 0, 100 - sel.w); markDirty(q); renderEditor(); });
+    $('#fieldY').addEventListener('input', (e) => { sel.y = clamp(parseFloat(e.target.value) || 0, 0, 100 - sel.h); markDirty(q); renderEditor(); });
+    $('#fieldW').addEventListener('input', (e) => { sel.w = clamp(parseFloat(e.target.value) || 1, 1, 100 - sel.x); markDirty(q); renderEditor(); });
+    $('#fieldH').addEventListener('input', (e) => { sel.h = clamp(parseFloat(e.target.value) || 1, 1, 100 - sel.y); markDirty(q); renderEditor(); });
+    $('#btnDeleteArea').addEventListener('click', () => deleteArea(sel.id));
+  }
+  $('#btnAddArea').addEventListener('click', () => {
+    state.addMode = !state.addMode;
+    renderEditor();
+    renderRightPanel();
+  });
+  els.rightPanel.querySelectorAll('.area-row').forEach(row => {
+    row.addEventListener('click', (e) => {
+      if (e.target.dataset.del) return;
+      selectArea(row.dataset.id);
+    });
+  });
+  els.rightPanel.querySelectorAll('[data-del]').forEach(btn => {
+    btn.addEventListener('click', (e) => { e.stopPropagation(); deleteArea(btn.dataset.del); });
+  });
+}
+
+function round2(n) { return Math.round(n * 100) / 100; }
+
+/* ============================================================
+   EXPORT
+   ============================================================ */
+els.btnExport.addEventListener('click', () => {
+  if (!state.fullData) return;
+  const jsonStr = JSON.stringify(state.fullData);
+  const blob = new Blob([jsonStr], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = state.fileName.replace(/\.json$/i, '') + '-edited.json';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+  state.dirtySet.clear();
+  renderQuestionList();
+  toast('Đã xuất file JSON — thay thế file cũ trong data/ic3/');
+});
+</script>
+</body>
+</html>

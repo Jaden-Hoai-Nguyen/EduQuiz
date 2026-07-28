@@ -44,6 +44,13 @@
   padding: 0;
   cursor: pointer;
   transition: transform .15s, border-color .15s, background-color .15s;
+  /* Đảm bảo vùng bấm luôn đủ lớn để thao tác chính xác trên điện thoại,
+     kể cả khi % kích thước gốc rất nhỏ so với ảnh. */
+  min-width: 32px;
+  min-height: 32px;
+}
+@media (max-width: 720px) {
+  .hsq-hotspot { min-width: 40px; min-height: 40px; }
 }
 .hsq-shape-rect  { border-radius: 8px; }
 .hsq-shape-oval,

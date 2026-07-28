@@ -761,6 +761,10 @@ body {
   background: var(--card);
   line-height: 0; /* tránh khoảng trắng dưới <img> */
 }
+/* width:100% + height:auto → ảnh luôn co giãn khớp chiều rộng khung chứa ở
+   MỌI kích thước màn hình; toàn bộ vùng hotspot con định vị bằng % nên tự
+   động bám theo đúng vị trí tương ứng trên ảnh khi resize/xoay màn hình,
+   không cần JS tính lại toạ độ. */
 .hotspot-wrap img { width: 100%; height: auto; display: block; }
 .hotspot-area {
   position: absolute;
@@ -769,6 +773,11 @@ body {
   cursor: pointer;
   padding: 0;
   transition: all .15s;
+  /* Vùng % có thể rất nhỏ trên ảnh gốc — đảm bảo luôn có vùng bấm tối
+     thiểu đủ lớn (chuẩn accessibility ~44px) để bấm chính xác trên
+     điện thoại, không phụ thuộc hoàn toàn vào tỉ lệ % của vùng gốc. */
+  min-width: 32px;
+  min-height: 32px;
 }
 .hotspot-area.hotspot-rect { border-radius: 8px; }
 .hotspot-area.hotspot-oval { border-radius: 50%; }
@@ -781,6 +790,9 @@ body {
   border-style: solid;
   border-color: var(--teal);
   background: rgba(0,201,160,.25);
+}
+@media (max-width: 720px) {
+  .hotspot-area { min-width: 40px; min-height: 40px; border-width: 2.5px; }
 }
 
 /* Drop zone */
